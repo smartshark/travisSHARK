@@ -1,0 +1,1872 @@
+Using worker: worker-linux-6-1.bb.travis-ci.org:travis-linux-19
+
+travis_fold:start:git.1
+$ git clone --depth=50 --branch=master git://github.com/google/guice.git google/guice
+Cloning into 'google/guice'...
+remote: Counting objects: 2820, done.[K
+remote: Compressing objects:   0% (1/1732)   [K
+remote: Compressing objects:   1% (18/1732)   [K
+remote: Compressing objects:   2% (35/1732)   [K
+remote: Compressing objects:   3% (52/1732)   [K
+remote: Compressing objects:   4% (70/1732)   [K
+remote: Compressing objects:   5% (87/1732)   [K
+remote: Compressing objects:   6% (104/1732)   [K
+remote: Compressing objects:   7% (122/1732)   [K
+remote: Compressing objects:   8% (139/1732)   [K
+remote: Compressing objects:   9% (156/1732)   [K
+remote: Compressing objects:  10% (174/1732)   [K
+remote: Compressing objects:  11% (191/1732)   [K
+remote: Compressing objects:  12% (208/1732)   [K
+remote: Compressing objects:  13% (226/1732)   [K
+remote: Compressing objects:  14% (243/1732)   [K
+remote: Compressing objects:  15% (260/1732)   [K
+remote: Compressing objects:  16% (278/1732)   [K
+remote: Compressing objects:  17% (295/1732)   [K
+remote: Compressing objects:  18% (312/1732)   [K
+remote: Compressing objects:  19% (330/1732)   [K
+remote: Compressing objects:  20% (347/1732)   [K
+remote: Compressing objects:  21% (364/1732)   [K
+remote: Compressing objects:  22% (382/1732)   [K
+remote: Compressing objects:  23% (399/1732)   [K
+remote: Compressing objects:  24% (416/1732)   [K
+remote: Compressing objects:  25% (433/1732)   [K
+remote: Compressing objects:  26% (451/1732)   [K
+remote: Compressing objects:  27% (468/1732)   [K
+remote: Compressing objects:  28% (485/1732)   [K
+remote: Compressing objects:  29% (503/1732)   [K
+remote: Compressing objects:  30% (520/1732)   [K
+remote: Compressing objects:  31% (537/1732)   [K
+remote: Compressing objects:  32% (555/1732)   [K
+remote: Compressing objects:  33% (572/1732)   [K
+remote: Compressing objects:  34% (589/1732)   [K
+remote: Compressing objects:  35% (607/1732)   [K
+remote: Compressing objects:  36% (624/1732)   [K
+remote: Compressing objects:  37% (641/1732)   [K
+remote: Compressing objects:  38% (659/1732)   [K
+remote: Compressing objects:  39% (676/1732)   [K
+remote: Compressing objects:  40% (693/1732)   [K
+remote: Compressing objects:  41% (711/1732)   [K
+remote: Compressing objects:  42% (728/1732)   [K
+remote: Compressing objects:  43% (745/1732)   [K
+remote: Compressing objects:  44% (763/1732)   [K
+remote: Compressing objects:  45% (780/1732)   [K
+remote: Compressing objects:  46% (797/1732)   [K
+remote: Compressing objects:  47% (815/1732)   [K
+remote: Compressing objects:  48% (832/1732)   [K
+remote: Compressing objects:  49% (849/1732)   [K
+remote: Compressing objects:  50% (866/1732)   [K
+remote: Compressing objects:  51% (884/1732)   [K
+remote: Compressing objects:  52% (901/1732)   [K
+remote: Compressing objects:  53% (918/1732)   [K
+remote: Compressing objects:  54% (936/1732)   [K
+remote: Compressing objects:  55% (953/1732)   [K
+remote: Compressing objects:  56% (970/1732)   [K
+remote: Compressing objects:  57% (988/1732)   [K
+remote: Compressing objects:  58% (1005/1732)   [K
+remote: Compressing objects:  59% (1022/1732)   [K
+remote: Compressing objects:  60% (1040/1732)   [K
+remote: Compressing objects:  61% (1057/1732)   [K
+remote: Compressing objects:  62% (1074/1732)   [K
+remote: Compressing objects:  63% (1092/1732)   [K
+remote: Compressing objects:  64% (1109/1732)   [K
+remote: Compressing objects:  65% (1126/1732)   [K
+remote: Compressing objects:  66% (1144/1732)   [K
+remote: Compressing objects:  67% (1161/1732)   [K
+remote: Compressing objects:  68% (1178/1732)   [K
+remote: Compressing objects:  69% (1196/1732)   [K
+remote: Compressing objects:  70% (1213/1732)   [K
+remote: Compressing objects:  71% (1230/1732)   [K
+remote: Compressing objects:  72% (1248/1732)   [K
+remote: Compressing objects:  73% (1265/1732)   [K
+remote: Compressing objects:  74% (1282/1732)   [K
+remote: Compressing objects:  75% (1299/1732)   [K
+remote: Compressing objects:  76% (1317/1732)   [K
+remote: Compressing objects:  77% (1334/1732)   [K
+remote: Compressing objects:  78% (1351/1732)   [K
+remote: Compressing objects:  79% (1369/1732)   [K
+remote: Compressing objects:  80% (1386/1732)   [K
+remote: Compressing objects:  81% (1403/1732)   [K
+remote: Compressing objects:  82% (1421/1732)   [K
+remote: Compressing objects:  83% (1438/1732)   [K
+remote: Compressing objects:  84% (1455/1732)   [K
+remote: Compressing objects:  85% (1473/1732)   [K
+remote: Compressing objects:  86% (1490/1732)   [K
+remote: Compressing objects:  87% (1507/1732)   [K
+remote: Compressing objects:  88% (1525/1732)   [K
+remote: Compressing objects:  89% (1542/1732)   [K
+remote: Compressing objects:  90% (1559/1732)   [K
+remote: Compressing objects:  91% (1577/1732)   [K
+remote: Compressing objects:  92% (1594/1732)   [K
+remote: Compressing objects:  93% (1611/1732)   [K
+remote: Compressing objects:  94% (1629/1732)   [K
+remote: Compressing objects:  95% (1646/1732)   [K
+remote: Compressing objects:  96% (1663/1732)   [K
+remote: Compressing objects:  97% (1681/1732)   [K
+remote: Compressing objects:  98% (1698/1732)   [K
+remote: Compressing objects:  99% (1715/1732)   [K
+remote: Compressing objects: 100% (1732/1732)   [K
+remote: Compressing objects: 100% (1732/1732), done.[K
+Receiving objects:   0% (1/2820)
+Receiving objects:   1% (29/2820)
+Receiving objects:   2% (57/2820)
+Receiving objects:   3% (85/2820)
+Receiving objects:   4% (113/2820)
+Receiving objects:   5% (141/2820)
+Receiving objects:   6% (170/2820)
+Receiving objects:   7% (198/2820)
+Receiving objects:   8% (226/2820)
+Receiving objects:   9% (254/2820)
+Receiving objects:  10% (282/2820)
+Receiving objects:  11% (311/2820)
+Receiving objects:  12% (339/2820)
+Receiving objects:  13% (367/2820)
+Receiving objects:  14% (395/2820)
+Receiving objects:  15% (423/2820)
+Receiving objects:  16% (452/2820)
+Receiving objects:  17% (480/2820)
+Receiving objects:  18% (508/2820)
+Receiving objects:  19% (536/2820)
+Receiving objects:  20% (564/2820)
+Receiving objects:  21% (593/2820)
+Receiving objects:  22% (621/2820)
+Receiving objects:  23% (649/2820)
+Receiving objects:  24% (677/2820)
+Receiving objects:  25% (705/2820)
+Receiving objects:  26% (734/2820)
+Receiving objects:  27% (762/2820)
+Receiving objects:  28% (790/2820)
+Receiving objects:  29% (818/2820)
+Receiving objects:  30% (846/2820)
+Receiving objects:  31% (875/2820)
+Receiving objects:  32% (903/2820)
+Receiving objects:  33% (931/2820)
+Receiving objects:  34% (959/2820)
+Receiving objects:  35% (987/2820)
+Receiving objects:  36% (1016/2820)
+Receiving objects:  37% (1044/2820)
+Receiving objects:  38% (1072/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  39% (1100/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  40% (1128/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  41% (1157/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  42% (1185/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  43% (1213/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  44% (1241/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  45% (1269/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  46% (1298/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  47% (1326/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  48% (1354/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  49% (1382/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  50% (1410/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  51% (1439/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  52% (1467/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  53% (1495/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  54% (1523/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  55% (1551/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  56% (1580/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  57% (1608/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  58% (1636/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  59% (1664/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  60% (1692/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  61% (1721/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  62% (1749/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  63% (1777/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  64% (1805/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  65% (1833/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  66% (1862/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  67% (1890/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  68% (1918/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  69% (1946/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  70% (1974/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  71% (2003/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  72% (2031/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  73% (2059/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  74% (2087/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  75% (2115/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  76% (2144/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  77% (2172/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  78% (2200/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  79% (2228/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  80% (2256/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  81% (2285/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  82% (2313/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  83% (2341/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  84% (2369/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  85% (2397/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  86% (2426/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  87% (2454/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  88% (2482/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  89% (2510/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  90% (2538/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  91% (2567/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  92% (2595/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  93% (2623/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  94% (2651/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  95% (2679/2820), 17.59 MiB | 35.09 MiB/s
+remote: Total 2820 (delta 1310), reused 1933 (delta 698)[K
+Receiving objects:  96% (2708/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  97% (2736/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  98% (2764/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects:  99% (2792/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects: 100% (2820/2820), 17.59 MiB | 35.09 MiB/s
+Receiving objects: 100% (2820/2820), 25.23 MiB | 35.09 MiB/s, done.
+Resolving deltas:   0% (0/1310)
+Resolving deltas:   1% (14/1310)
+Resolving deltas:   2% (27/1310)
+Resolving deltas:   3% (46/1310)
+Resolving deltas:   4% (55/1310)
+Resolving deltas:   6% (80/1310)
+Resolving deltas:   7% (97/1310)
+Resolving deltas:   8% (105/1310)
+Resolving deltas:   9% (118/1310)
+Resolving deltas:  10% (131/1310)
+Resolving deltas:  11% (148/1310)
+Resolving deltas:  12% (159/1310)
+Resolving deltas:  13% (171/1310)
+Resolving deltas:  14% (184/1310)
+Resolving deltas:  15% (201/1310)
+Resolving deltas:  16% (210/1310)
+Resolving deltas:  17% (225/1310)
+Resolving deltas:  18% (236/1310)
+Resolving deltas:  19% (252/1310)
+Resolving deltas:  20% (263/1310)
+Resolving deltas:  21% (278/1310)
+Resolving deltas:  22% (289/1310)
+Resolving deltas:  23% (302/1310)
+Resolving deltas:  24% (316/1310)
+Resolving deltas:  25% (330/1310)
+Resolving deltas:  26% (341/1310)
+Resolving deltas:  27% (362/1310)
+Resolving deltas:  28% (367/1310)
+Resolving deltas:  29% (380/1310)
+Resolving deltas:  30% (396/1310)
+Resolving deltas:  31% (412/1310)
+Resolving deltas:  32% (422/1310)
+Resolving deltas:  33% (433/1310)
+Resolving deltas:  34% (447/1310)
+Resolving deltas:  35% (459/1310)
+Resolving deltas:  37% (488/1310)
+Resolving deltas:  38% (503/1310)
+Resolving deltas:  39% (521/1310)
+Resolving deltas:  40% (528/1310)
+Resolving deltas:  41% (540/1310)
+Resolving deltas:  42% (554/1310)
+Resolving deltas:  43% (564/1310)
+Resolving deltas:  44% (583/1310)
+Resolving deltas:  46% (612/1310)
+Resolving deltas:  48% (629/1310)
+Resolving deltas:  49% (649/1310)
+Resolving deltas:  50% (655/1310)
+Resolving deltas:  51% (671/1310)
+Resolving deltas:  52% (685/1310)
+Resolving deltas:  55% (721/1310)
+Resolving deltas:  58% (760/1310)
+Resolving deltas:  61% (800/1310)
+Resolving deltas:  62% (816/1310)
+Resolving deltas:  63% (837/1310)
+Resolving deltas:  64% (841/1310)
+Resolving deltas:  66% (874/1310)
+Resolving deltas:  67% (886/1310)
+Resolving deltas:  68% (895/1310)
+Resolving deltas:  69% (907/1310)
+Resolving deltas:  70% (919/1310)
+Resolving deltas:  73% (958/1310)
+Resolving deltas:  76% (999/1310)
+Resolving deltas:  77% (1009/1310)
+Resolving deltas:  78% (1029/1310)
+Resolving deltas:  79% (1041/1310)
+Resolving deltas:  80% (1050/1310)
+Resolving deltas:  81% (1062/1310)
+Resolving deltas:  82% (1079/1310)
+Resolving deltas:  83% (1094/1310)
+Resolving deltas:  84% (1106/1310)
+Resolving deltas:  85% (1115/1310)
+Resolving deltas:  86% (1128/1310)
+Resolving deltas:  87% (1146/1310)
+Resolving deltas:  88% (1153/1310)
+Resolving deltas:  89% (1174/1310)
+Resolving deltas:  90% (1183/1310)
+Resolving deltas:  91% (1193/1310)
+Resolving deltas:  92% (1206/1310)
+Resolving deltas:  96% (1259/1310)
+Resolving deltas:  98% (1286/1310)
+Resolving deltas:  99% (1297/1310)
+Resolving deltas: 100% (1310/1310)
+Resolving deltas: 100% (1310/1310), done.
+Checking connectivity... done.
+travis_fold:end:git.1
+$ cd google/guice
+travis_fold:start:git.3
+$ git checkout -qf 7b9fb9df9521ac6c5b60662bda6a22baf2aea058
+travis_fold:end:git.3
+$ export LABEL=ant
+$ export CMD="ant dist test.dist"
+$ export INSTALL="/bin/true"
+
+$ jdk_switcher use openjdk6
+Switching to OpenJDK6 (java-1.6.0-openjdk-amd64), JAVA_HOME will be set to /usr/lib/jvm/java-6-openjdk-amd64
+update-alternatives: error: no alternatives for apt.
+$ java -version
+java version "1.6.0_30"
+OpenJDK Runtime Environment (IcedTea6 1.13.1) (6b30-1.13.1-1ubuntu2~0.12.04.3)
+OpenJDK 64-Bit Server VM (build 23.25-b01, mixed mode)
+$ javac -version
+javac 1.6.0_30
+travis_fold:start:install
+$ ${INSTALL}
+travis_fold:end:install
+$ ${CMD}
+Buildfile: /home/travis/build/google/guice/build.xml
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/build
+      [zip] Building zip: /home/travis/build/google/guice/build/guice-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/build/classes
+    [javac] Compiling 189 source files to /home/travis/build/google/guice/build/classes
+    [javac] /home/travis/build/google/guice/core/src/com/google/inject/internal/Annotations.java:90: warning: [unchecked] unchecked cast
+    [javac] found   : java.lang.annotation.Annotation
+    [javac] required: T
+    [javac]     return (T)cache.getUnchecked(annotationType);
+    [javac]                                 ^
+    [javac] /home/travis/build/google/guice/core/src/com/google/inject/internal/Annotations.java:242: warning: [unchecked] unchecked generic array creation of type java.lang.Class<? extends java.lang.annotation.Annotation>[] for varargs parameter
+    [javac]       Arrays.asList(ScopeAnnotation.class, javax.inject.Scope.class));
+    [javac]                    ^
+    [javac] /home/travis/build/google/guice/core/src/com/google/inject/internal/Annotations.java:295: warning: [unchecked] unchecked generic array creation of type java.lang.Class<? extends java.lang.annotation.Annotation>[] for varargs parameter
+    [javac]       Arrays.asList(BindingAnnotation.class, Qualifier.class));
+    [javac]                    ^
+    [javac] /home/travis/build/google/guice/core/src/com/google/inject/internal/ProvisionListenerStackCallback.java:39: warning: [unchecked] unchecked call to ProvisionListenerStackCallback(com.google.inject.Binding<T>,java.util.List<com.google.inject.spi.ProvisionListener>) as a member of the raw type com.google.inject.internal.ProvisionListenerStackCallback
+    [javac]       new ProvisionListenerStackCallback(null /* unused, so ok */, ImmutableList.of());
+    [javac]       ^
+    [javac] /home/travis/build/google/guice/core/src/com/google/inject/internal/BindingBuilder.java:100: warning: [unchecked] unchecked cast
+    [javac] found   : com.google.inject.Provider<capture#976 of ? extends T>
+    [javac] required: javax.inject.Provider<T>
+    [javac]     return toProvider((javax.inject.Provider<T>) provider);
+    [javac]                                                  ^
+    [javac] /home/travis/build/google/guice/core/src/com/google/inject/internal/ProviderInstanceBindingImpl.java:69: warning: [deprecation] getProviderInstance() in com.google.inject.spi.ProviderInstanceBinding has been deprecated
+    [javac]   public Provider<? extends T> getProviderInstance() {
+    [javac]                                ^
+    [javac] 6 warnings
+    [javac] Creating empty /home/travis/build/google/guice/build/classes/com/google/inject/spi/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/build/classes/com/google/inject/name/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/build/classes/com/google/inject/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/build/classes/com/google/inject/binder/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/build/classes/com/google/inject/matcher/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/build/classes/com/google/inject/util/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/build/classes/com/google/inject/internal/package-info.class
+
+jar.withdeps:
+    [mkdir] Created dir: /home/travis/build/google/guice/build/dist
+   [jarjar] Building jar: /home/travis/build/google/guice/build/guice-with-deps.jar
+
+manifest:
+  [bndwrap] classes 343 0
+    [unjar] Expanding: /home/travis/build/google/guice/build/classes.bar into /home/travis/build/google/guice/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/build/dist/guice-snapshot.jar
+
+distjars:
+
+javadoc:
+  [javadoc] Generating Javadoc
+  [javadoc] Javadoc execution
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/AbstractModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Binder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Binding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/BindingAnnotation.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/ConfigurationException.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/CreationException.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Exposed.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Guice.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/ImplementedBy.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Inject.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Injector.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Key.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/MembersInjector.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Module.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/OutOfScopeException.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/PrivateBinder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/PrivateModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/ProvidedBy.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Provider.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Provides.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/ProvisionException.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Scope.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/ScopeAnnotation.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Scopes.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Singleton.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/Stage.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/binder/AnnotatedBindingBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/binder/AnnotatedConstantBindingBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/binder/AnnotatedElementBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/binder/ConstantBindingBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/binder/LinkedBindingBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/binder/ScopedBindingBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/binder/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/matcher/AbstractMatcher.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/matcher/Matcher.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/matcher/Matchers.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/matcher/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/name/Named.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/name/NamedImpl.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/name/Names.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/name/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/BindingScopingVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/BindingTargetVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ConstructorBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ConvertedConstantBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/DefaultBindingScopingVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/DefaultBindingTargetVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/DefaultElementVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/Dependency.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/DependencyAndSource.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/DisableCircularProxiesOption.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/Element.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/Elements.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ExposedBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/HasDependencies.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionListener.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionRequest.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/InstanceBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/InterceptorBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/LinkedKeyBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/MembersInjectorLookup.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/Message.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ModuleSource.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/PrivateElements.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderInstanceBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderKeyBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderWithDependencies.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderWithExtensionVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProvidesMethodBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProvidesMethodTargetVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProvisionListener.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ProvisionListenerBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireAtInjectOnConstructorsOption.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireExactBindingAnnotationsOption.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireExplicitBindingsOption.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/ScopeBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/StaticInjectionRequest.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/Toolable.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeConverter.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeConverterBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeEncounter.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeListener.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeListenerBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/UntargettedBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/spi/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/util/Modules.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/util/Providers.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/core/src/com/google/inject/util/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/AbstractServletModuleBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ContinuingHttpServletRequest.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/DefaultFilterPipeline.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/FilterChainInvocation.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/FilterDefinition.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/FilterPipeline.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/FiltersModuleBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/GuiceFilter.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/GuiceServletContextListener.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/InstanceFilterBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/InstanceFilterBindingImpl.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/InstanceServletBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/InstanceServletBindingImpl.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/InternalServletModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/LinkedFilterBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/LinkedFilterBindingImpl.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/LinkedServletBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/LinkedServletBindingImpl.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ManagedFilterPipeline.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ManagedServletPipeline.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/RequestParameters.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/RequestScoped.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ScopingException.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ScopingOnly.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletDefinition.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletModuleBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletModuleTargetVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletScopes.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletUtils.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletsModuleBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/SessionScoped.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/UriPatternMatcher.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/UriPatternType.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/spring/src/com/google/inject/spring/SpringIntegration.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/spring/src/com/google/inject/spring/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/Assisted.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/AssistedConstructor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/AssistedInject.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/AssistedInjectBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/AssistedInjectTargetVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/AssistedMethod.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/BindingCollector.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryModuleBuilder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/Parameter.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/ParameterListKey.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/jmx/src/com/google/inject/tools/jmx/ManagedBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/jmx/src/com/google/inject/tools/jmx/ManagedBindingMBean.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/jmx/src/com/google/inject/tools/jmx/Manager.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/jmx/src/com/google/inject/tools/jmx/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/jndi/src/com/google/inject/jndi/JndiIntegration.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/jndi/src/com/google/inject/jndi/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/CheckedProvideUtils.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/CheckedProvider.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/CheckedProviderMethod.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/CheckedProviderMethodsModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/CheckedProviderWithDependencies.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/CheckedProvides.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/ThrowingInject.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/ThrowingProvider.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/ThrowingProviderBinder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Element.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinderBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MultibinderBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MultibindingsTargetVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/OptionalBinder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/OptionalBinderBinding.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/RealElement.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/PersistFilter.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/PersistModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/PersistService.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/Transactional.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/UnitOfWork.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/finder/DynamicFinder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/finder/Finder.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/finder/FirstResult.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/finder/MaxResults.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/finder/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/Jpa.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/JpaFinderProxy.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/JpaLocalTxnInterceptor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/JpaPersistModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/JpaPersistService.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/package-info.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/AbstractInjectorGrapher.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/Alias.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/AliasCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/BindingEdge.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/DefaultEdgeCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/DefaultNodeCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/DefaultRootKeySetCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/DependencyEdge.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/Edge.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/EdgeCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ImplementationNode.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/InjectorGrapher.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/InstanceNode.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/InterfaceNode.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/NameFactory.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/Node.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/NodeCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/NodeId.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ProviderAliasCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/RootKeySetCreator.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ShortNameFactory.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/TransitiveDependencyVisitor.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/ArrowType.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/CompassPoint.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/EdgeStyle.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/Graphviz.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizEdge.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizGrapher.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizModule.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizNode.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/NodeShape.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/NodeStyle.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/PortIdFactory.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/PortIdFactoryImpl.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/Bind.java...
+  [javadoc] Loading source file /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/BoundFieldModule.java...
+  [javadoc] Constructing Javadoc information...
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/AbstractModule.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/AbstractModule.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/AbstractModule.java:20: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/AbstractModule.java:20: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkArgument;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkArgument;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:20: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:20: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:21: package com.google.inject.internal does not exist
+  [javadoc] import static com.google.inject.internal.Annotations.generateAnnotation;
+  [javadoc]                                         ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:21: static import only from classes and interfaces
+  [javadoc] import static com.google.inject.internal.Annotations.generateAnnotation;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:22: package com.google.inject.internal does not exist
+  [javadoc] import static com.google.inject.internal.Annotations.isAllDefaultMethods;
+  [javadoc]                                         ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:22: static import only from classes and interfaces
+  [javadoc] import static com.google.inject.internal.Annotations.isAllDefaultMethods;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:24: package com.google.common.base does not exist
+  [javadoc] import com.google.common.base.Supplier;
+  [javadoc]                              ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:25: package com.google.common.base does not exist
+  [javadoc] import com.google.common.base.Suppliers;
+  [javadoc]                              ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:26: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Annotations;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:27: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.MoreTypes;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkArgument;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkArgument;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:20: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:20: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:21: package com.google.inject.internal does not exist
+  [javadoc] import static com.google.inject.internal.MoreTypes.canonicalize;
+  [javadoc]                                         ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:21: static import only from classes and interfaces
+  [javadoc] import static com.google.inject.internal.MoreTypes.canonicalize;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:23: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableList;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:24: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.MoreTypes;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Message.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Message.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Message.java:21: package com.google.common.base does not exist
+  [javadoc] import com.google.common.base.Objects;
+  [javadoc]                              ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Message.java:22: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableList;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Message.java:24: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Errors;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Message.java:25: package com.google.inject.internal.util does not exist
+  [javadoc] import com.google.inject.internal.util.SourceProvider;
+  [javadoc]                                       ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:61: cannot find symbol
+  [javadoc] symbol  : class Supplier
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]   private final Supplier<String> toStringSupplier;
+  [javadoc]                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:157: cannot find symbol
+  [javadoc] symbol  : class Supplier
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]   private Supplier<String> createToStringSupplier() {
+  [javadoc]           ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InterceptorBinding.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InterceptorBinding.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InterceptorBinding.java:21: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableList;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ScopeBinding.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ScopeBinding.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeConverterBinding.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeConverterBinding.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeConverterBinding.java:23: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Errors;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionRequest.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionRequest.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/StaticInjectionRequest.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/StaticInjectionRequest.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:20: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:20: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:21: package com.google.inject.internal.RehashableKeys does not exist
+  [javadoc] import static com.google.inject.internal.RehashableKeys.Keys.needsRehashing;
+  [javadoc]                                                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:21: static import only from classes and interfaces
+  [javadoc] import static com.google.inject.internal.RehashableKeys.Keys.needsRehashing;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:22: package com.google.inject.internal.RehashableKeys does not exist
+  [javadoc] import static com.google.inject.internal.RehashableKeys.Keys.rehash;
+  [javadoc]                                                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:22: static import only from classes and interfaces
+  [javadoc] import static com.google.inject.internal.RehashableKeys.Keys.rehash;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:24: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableSet;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:28: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.RehashableKeys;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/MembersInjectorLookup.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/MembersInjectorLookup.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/MembersInjectorLookup.java:20: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/MembersInjectorLookup.java:20: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProvisionListenerBinding.java:19: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableList;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireExplicitBindingsOption.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireExplicitBindingsOption.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/DisableCircularProxiesOption.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/DisableCircularProxiesOption.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireAtInjectOnConstructorsOption.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireAtInjectOnConstructorsOption.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireExactBindingAnnotationsOption.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/RequireExactBindingAnnotationsOption.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/DependencyAndSource.java:22: package com.google.inject.internal.util does not exist
+  [javadoc] import com.google.inject.internal.util.StackTraceElements;
+  [javadoc]                                       ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InterceptorBinding.java:49: cannot find symbol
+  [javadoc] symbol  : class ImmutableList
+  [javadoc] location: class com.google.inject.spi.InterceptorBinding
+  [javadoc]   private final ImmutableList<MethodInterceptor> interceptors;
+  [javadoc]                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:19: package com.google.inject.internal does not exist
+  [javadoc] import static com.google.inject.internal.MoreTypes.getRawType;
+  [javadoc]                                         ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.inject.internal.MoreTypes.getRawType;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:21: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableList;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:22: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableSet;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:23: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.Lists;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:28: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Annotations;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:29: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Errors;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:30: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.ErrorsException;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:31: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Nullability;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:32: package com.google.inject.internal.util does not exist
+  [javadoc] import com.google.inject.internal.util.Classes;
+  [javadoc]                                       ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/ConfigurationException.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/ConfigurationException.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkState;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/ConfigurationException.java:21: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableSet;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/ConfigurationException.java:22: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Errors;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProviderLookup.java:120: cannot find symbol
+  [javadoc] symbol  : class RehashableKeys
+  [javadoc] location: class com.google.inject.spi.ProviderLookup<T>
+  [javadoc]   RehashableKeys getKeyRehasher() {
+  [javadoc]   ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Dependency.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Dependency.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkNotNull;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Dependency.java:21: package com.google.common.base does not exist
+  [javadoc] import com.google.common.base.Objects;
+  [javadoc]                              ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Dependency.java:22: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableSet;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/Dependency.java:23: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.Lists;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:67: cannot find symbol
+  [javadoc] symbol  : class ImmutableList
+  [javadoc] location: class com.google.inject.spi.InjectionPoint
+  [javadoc]   private final ImmutableList<Dependency<?>> dependencies;
+  [javadoc]                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:106: cannot find symbol
+  [javadoc] symbol  : class ImmutableList
+  [javadoc] location: class com.google.inject.spi.InjectionPoint
+  [javadoc]   private ImmutableList<Dependency<?>> forMember(Member member, TypeLiteral<?> type,
+  [javadoc]           ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:391: cannot find symbol
+  [javadoc] symbol  : class Errors
+  [javadoc] location: class com.google.inject.spi.InjectionPoint
+  [javadoc]   private static boolean checkForMisplacedBindingAnnotations(Member member, Errors errors) {
+  [javadoc]                                                                             ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:643: cannot find symbol
+  [javadoc] symbol  : class Errors
+  [javadoc] location: class com.google.inject.spi.InjectionPoint
+  [javadoc]       boolean statics, Errors errors) {
+  [javadoc]                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:770: cannot find symbol
+  [javadoc] symbol  : class Errors
+  [javadoc] location: class com.google.inject.spi.InjectionPoint
+  [javadoc]       Errors errors) {
+  [javadoc]       ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/ConfigurationException.java:36: cannot find symbol
+  [javadoc] symbol  : class ImmutableSet
+  [javadoc] location: class com.google.inject.ConfigurationException
+  [javadoc]   private final ImmutableSet<Message> messages;
+  [javadoc]                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/CreationException.java:19: package com.google.common.base does not exist
+  [javadoc] import static com.google.common.base.Preconditions.checkArgument;
+  [javadoc]                                     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/CreationException.java:19: static import only from classes and interfaces
+  [javadoc] import static com.google.common.base.Preconditions.checkArgument;
+  [javadoc] ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/CreationException.java:21: package com.google.common.collect does not exist
+  [javadoc] import com.google.common.collect.ImmutableSet;
+  [javadoc]                                 ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/CreationException.java:22: package com.google.inject.internal does not exist
+  [javadoc] import com.google.inject.internal.Errors;
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/CreationException.java:35: cannot find symbol
+  [javadoc] symbol  : class ImmutableSet
+  [javadoc] location: class com.google.inject.CreationException
+  [javadoc]   private final ImmutableSet<Message> messages;
+  [javadoc]                 ^
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizGrapher.java:49: cannot find symbol
+  [javadoc] symbol  : variable Maps
+  [javadoc] location: class com.google.inject.grapher.graphviz.GraphvizGrapher
+  [javadoc]   private final Map<NodeId, GraphvizNode> nodes = Maps.newHashMap();
+  [javadoc]                                                   ^
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizGrapher.java:50: cannot find symbol
+  [javadoc] symbol  : variable Lists
+  [javadoc] location: class com.google.inject.grapher.graphviz.GraphvizGrapher
+  [javadoc]   private final List<GraphvizEdge> edges = Lists.newArrayList();
+  [javadoc]                                            ^
+  [javadoc] /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/JpaPersistModule.java:102: cannot find symbol
+  [javadoc] symbol  : variable Lists
+  [javadoc] location: class com.google.inject.persist.jpa.JpaPersistModule
+  [javadoc]   private final List<Class<?>> dynamicFinders = Lists.newArrayList();
+  [javadoc]                                                 ^
+  [javadoc] /home/travis/build/google/guice/extensions/assistedinject/src/com/google/inject/assistedinject/BindingCollector.java:35: cannot find symbol
+  [javadoc] symbol  : variable Maps
+  [javadoc] location: class com.google.inject.assistedinject.BindingCollector
+  [javadoc]   private final Map<Key<?>, TypeLiteral<?>> bindings = Maps.newHashMap();
+  [javadoc]                                                        ^
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletScopes.java:49: cannot find symbol
+  [javadoc] symbol  : class HttpServletRequest
+  [javadoc] location: class com.google.inject.servlet.ServletScopes
+  [javadoc]       Key.get(HttpServletRequest.class),
+  [javadoc]               ^
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletScopes.java:50: cannot find symbol
+  [javadoc] symbol  : class HttpServletResponse
+  [javadoc] location: class com.google.inject.servlet.ServletScopes
+  [javadoc]       Key.get(HttpServletResponse.class),
+  [javadoc]               ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:78: cannot find symbol
+  [javadoc] symbol  : variable MoreTypes
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     this.typeLiteral = MoreTypes.canonicalizeForKey(
+  [javadoc]                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:100: cannot find symbol
+  [javadoc] symbol  : variable MoreTypes
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     this.typeLiteral = MoreTypes.canonicalizeForKey(
+  [javadoc]                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:120: cannot find symbol
+  [javadoc] symbol  : variable MoreTypes
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     this.typeLiteral = MoreTypes.canonicalizeForKey(
+  [javadoc]                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:132: cannot find symbol
+  [javadoc] symbol  : variable MoreTypes
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     this.typeLiteral = MoreTypes.canonicalizeForKey((TypeLiteral<T>) TypeLiteral.get(type));
+  [javadoc]                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:140: cannot find symbol
+  [javadoc] symbol  : variable MoreTypes
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     this.typeLiteral = MoreTypes.canonicalizeForKey(typeLiteral);
+  [javadoc]                        ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:160: cannot find symbol
+  [javadoc] symbol  : class Supplier
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     return Suppliers.memoize(new Supplier<String>() {
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:160: cannot find symbol
+  [javadoc] symbol  : variable Suppliers
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     return Suppliers.memoize(new Supplier<String>() {
+  [javadoc]            ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:368: cannot find symbol
+  [javadoc] symbol  : method checkNotNull(java.lang.annotation.Annotation,java.lang.String)
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     checkNotNull(annotation, "annotation");
+  [javadoc]     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:373: cannot find symbol
+  [javadoc] symbol  : variable Annotations
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     if (Annotations.isMarker(annotationType)) {
+  [javadoc]         ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:377: cannot find symbol
+  [javadoc] symbol  : variable Annotations
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     return new AnnotationInstanceStrategy(Annotations.canonicalizeIfNamed(annotation));
+  [javadoc]                                           ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:384: cannot find symbol
+  [javadoc] symbol  : variable Annotations
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     annotationType = Annotations.canonicalizeIfNamed(annotationType);
+  [javadoc]                      ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:385: cannot find symbol
+  [javadoc] symbol  : method isAllDefaultMethods(java.lang.Class<capture#622 of ? extends java.lang.annotation.Annotation>)
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     if (isAllDefaultMethods(annotationType)) {
+  [javadoc]         ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:386: cannot find symbol
+  [javadoc] symbol  : method generateAnnotation(java.lang.Class<capture#417 of ? extends java.lang.annotation.Annotation>)
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]       return strategyFor(generateAnnotation(annotationType));
+  [javadoc]                          ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:389: cannot find symbol
+  [javadoc] symbol  : method checkNotNull(java.lang.Class<capture#424 of ? extends java.lang.annotation.Annotation>,java.lang.String)
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     checkNotNull(annotationType, "annotation type");
+  [javadoc]     ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:398: cannot find symbol
+  [javadoc] symbol  : variable Annotations
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     checkArgument(Annotations.isRetainedAtRuntime(annotationType),
+  [javadoc]                   ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:404: cannot find symbol
+  [javadoc] symbol  : variable Annotations
+  [javadoc] location: class com.google.inject.Key<T>
+  [javadoc]     checkArgument(Annotations.isBindingAnnotation(annotationType),
+  [javadoc]                   ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:439: cannot find symbol
+  [javadoc] symbol  : method checkNotNull(java.lang.annotation.Annotation,java.lang.String)
+  [javadoc] location: class com.google.inject.Key.AnnotationInstanceStrategy
+  [javadoc]       this.annotation = checkNotNull(annotation, "annotation");
+  [javadoc]                         ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:485: cannot find symbol
+  [javadoc] symbol  : method checkNotNull(java.lang.Class<capture#725 of ? extends java.lang.annotation.Annotation>,java.lang.String)
+  [javadoc] location: class com.google.inject.Key.AnnotationTypeStrategy
+  [javadoc]       this.annotationType = checkNotNull(annotationType, "annotation type");
+  [javadoc]                             ^
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletScopes.java:48: cannot find symbol
+  [javadoc] symbol  : variable ImmutableSet
+  [javadoc] location: class com.google.inject.servlet.ServletScopes
+  [javadoc]   private static final ImmutableSet<Key<?>> REQUEST_CONTEXT_KEYS = ImmutableSet.of(
+  [javadoc]                                                                    ^
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletScopes.java:363: cannot find symbol
+  [javadoc] symbol  : variable Maps
+  [javadoc] location: class com.google.inject.servlet.ServletScopes.Context
+  [javadoc]     final Map<Key, Object> map = Maps.newHashMap();
+  [javadoc]                                  ^
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletsModuleBuilder.java:39: cannot find symbol
+  [javadoc] symbol  : variable Sets
+  [javadoc] location: class com.google.inject.servlet.ServletsModuleBuilder
+  [javadoc]   private final Set<String> servletUris = Sets.newHashSet();
+  [javadoc]                                           ^
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Binder.java:394: warning 101: Unresolved link/see tag "StackTraceElement" in com.google.inject.Binder
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Binder.java:407: warning 101: Unresolved link/see tag "StackTraceElement" in com.google.inject.Binder
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Binder.java:460: warning 101: Unresolved link/see tag "Proxy" in com.google.inject.Binder
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Guice.java:55: warning 101: Unresolved link/see tag "#createInjector(Stage, Module...)" in com.google.inject.Guice
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Injector.java:27: warning 101: Unresolved link/see tag "java.util.logging.Logger" in com.google.inject.Injector
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:146: warning 101: Unresolved link/see tag "com.google.inject.internal.RehashableKeys.Keys#needsRehashing" in com.google.inject.Key
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/Key.java:151: warning 101: Unresolved link/see tag "Supplier" in com.google.inject.Key
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/TypeLiteral.java:95: warning 101: Unresolved link/see tag "MoreTypes#canonicalize(Type)
+  [javadoc]  canonical form" in com.google.inject.TypeLiteral
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/BindingScopingVisitor.java:22: warning 101: Unresolved link/see tag "Void" in com.google.inject.spi.BindingScopingVisitor
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/BindingTargetVisitor.java:18: warning 101: Unresolved link/see tag "Void" in com.google.inject.spi.BindingTargetVisitor
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/DefaultBindingScopingVisitor.java:23: warning 101: Unresolved link/see tag "Void" in com.google.inject.spi.DefaultBindingScopingVisitor
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/DefaultBindingTargetVisitor.java:21: warning 101: Unresolved link/see tag "Void" in com.google.inject.spi.DefaultBindingTargetVisitor
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/DefaultElementVisitor.java:21: warning 101: Unresolved link/see tag "Void" in com.google.inject.spi.DefaultElementVisitor
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/DependencyAndSource.java:27: warning 101: Unresolved link/see tag "Binding#getSource()
+  [javadoc]  source" in com.google.inject.spi.DependencyAndSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:11: warning 101: Unresolved link/see tag "Binder" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:11: warning 101: Unresolved link/see tag "Element#applyTo()" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:11: warning 101: Unresolved link/see tag "Module modules" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:11: warning 101: Unresolved link/see tag "StackTraceElement StackTraceElements" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:43: warning 101: Unresolved link/see tag "ModuleSource source" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:46: warning 101: Unresolved link/see tag "Module#Configure(Binder)
+  [javadoc]  configure(Binder)" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:52: warning 101: Unresolved link/see tag "Constructor" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:52: warning 101: Unresolved link/see tag "Field" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:52: warning 101: Unresolved link/see tag "Method" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:52: warning 101: Unresolved link/see tag "StackTraceElement" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:60: warning 104: @param tag with name that doesn't match the parameter list: 'originalElementSource'
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:61: warning 103: Unknown tag: @ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:89: warning 101: Unresolved link/see tag "Constructor" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:89: warning 101: Unresolved link/see tag "Field" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:89: warning 101: Unresolved link/see tag "Method" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:89: warning 101: Unresolved link/see tag "StackTraceElement" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:108: warning 101: Unresolved link/see tag "Module#configure(Binder) configure(Binder)" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:140: warning 101: Unresolved link/see tag "Binder" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementSource.java:140: warning 101: Unresolved link/see tag "StackTraceElement StackTraceElements" in com.google.inject.spi.ElementSource
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ElementVisitor.java:21: warning 101: Unresolved link/see tag "Void" in com.google.inject.spi.ElementVisitor
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ExposedBinding.java:36: warning 101: Unresolved link/see tag "UnsupportedOperationException" in com.google.inject.spi.ExposedBinding
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:745: warning 101: Unresolved link/see tag "javax.inject.Inject" in com.google.inject.spi.InjectionPoint
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/InjectionPoint.java:745: warning 108: Link to hidden member: #isValidMethod
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/ProvisionListenerBinding.java:27: warning 101: Unresolved link/see tag "Binder#bindListener(Matcher, ProvisionListener...)" in com.google.inject.spi.ProvisionListenerBinding
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/spi/TypeListener.java:42: warning 104: @param tag with name that doesn't match the parameter list: '<I>'
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:43: warning 101: Unresolved link/see tag "java.io.Serializable serializable" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:53: warning 101: Unresolved link/see tag "java.io.Serializable serializable" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:64: warning 101: Unresolved link/see tag "java.io.Serializable serializable" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:93: warning 101: Unresolved link/see tag "java.io.Serializable serializable" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:94: warning 101: Unresolved link/see tag "List" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:103: warning 101: Unresolved link/see tag "java.io.Serializable serializable" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:104: warning 101: Unresolved link/see tag "Set" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:113: warning 101: Unresolved link/see tag "java.io.Serializable serializable" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:114: warning 101: Unresolved link/see tag "Map" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/core/src/com/google/inject/util/Types.java:125: warning 101: Unresolved link/see tag "java.io.Serializable serializable" in com.google.inject.util.Types
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/DefaultRootKeySetCreator.java:28: warning 101: Unresolved link/see tag "Logger" in com.google.inject.grapher.DefaultRootKeySetCreator
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ImplementationNode.java:24: warning 101: Unresolved link/see tag "Dependency" in com.google.inject.grapher.ImplementationNode
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ImplementationNode.java:24: warning 101: Unresolved link/see tag "InjectionPoint" in com.google.inject.grapher.ImplementationNode
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ImplementationNode.java:24: warning 101: Unresolved link/see tag "Member" in com.google.inject.grapher.ImplementationNode
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/NameFactory.java:24: warning 101: Unresolved link/see tag "Binding" in com.google.inject.grapher.NameFactory
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/NameFactory.java:24: warning 101: Unresolved link/see tag "String" in com.google.inject.grapher.NameFactory
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ShortNameFactory.java:97: warning 101: Unresolved link/see tag "Method" in com.google.inject.grapher.ShortNameFactory
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/ShortNameFactory.java:97: warning 101: Unresolved link/see tag "StackTraceElement" in com.google.inject.grapher.ShortNameFactory
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/TransitiveDependencyVisitor.java:38: warning 101: Unresolved link/see tag "BindingTargetVisitor" in com.google.inject.grapher.TransitiveDependencyVisitor
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/TransitiveDependencyVisitor.java:38: warning 101: Unresolved link/see tag "Collection" in com.google.inject.grapher.TransitiveDependencyVisitor
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizGrapher.java:41: warning 101: Unresolved link/see tag "InjectorGrapher" in com.google.inject.grapher.graphviz.GraphvizGrapher
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizGrapher.java:41: warning 101: Unresolved link/see tag "PrintWriter" in com.google.inject.grapher.graphviz.GraphvizGrapher
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizGrapher.java:202: warning 101: Unresolved link/see tag "List" in com.google.inject.grapher.graphviz.GraphvizGrapher
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizGrapher.java:202: warning 101: Unresolved link/see tag "String" in com.google.inject.grapher.graphviz.GraphvizGrapher
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/GraphvizNode.java:47: warning 101: Unresolved link/see tag "Map" in com.google.inject.grapher.graphviz.GraphvizNode
+  [javadoc] /home/travis/build/google/guice/extensions/grapher/src/com/google/inject/grapher/graphviz/PortIdFactory.java:22: warning 101: Unresolved link/see tag "ImplementationNode" in com.google.inject.grapher.graphviz.PortIdFactory
+  [javadoc] /home/travis/build/google/guice/extensions/jndi/src/com/google/inject/jndi/JndiIntegration.java:26: warning 101: Unresolved link/see tag "javax.naming.Context" in com.google.inject.jndi.JndiIntegration
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:69: warning 101: Unresolved link/see tag "Map" in com.google.inject.multibindings.MapBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:138: warning 101: Unresolved link/see tag "Map" in com.google.inject.multibindings.MapBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:153: warning 101: Unresolved link/see tag "Map" in com.google.inject.multibindings.MapBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:162: warning 101: Unresolved link/see tag "Map" in com.google.inject.multibindings.MapBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:177: warning 101: Unresolved link/see tag "Map" in com.google.inject.multibindings.MapBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:186: warning 101: Unresolved link/see tag "Map" in com.google.inject.multibindings.MapBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:201: warning 101: Unresolved link/see tag "Map" in com.google.inject.multibindings.MapBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinderBinding.java:68: warning 101: Unresolved link/see tag "UnsupportedOperationException" in com.google.inject.multibindings.MapBinderBinding
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinderBinding.java:81: warning 101: Unresolved link/see tag "UnsupportedOperationException" in com.google.inject.multibindings.MapBinderBinding
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java:58: warning 101: Unresolved link/see tag "Set" in com.google.inject.multibindings.Multibinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java:114: warning 101: Unresolved link/see tag "Set" in com.google.inject.multibindings.Multibinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java:126: warning 101: Unresolved link/see tag "Set" in com.google.inject.multibindings.Multibinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java:134: warning 101: Unresolved link/see tag "Set" in com.google.inject.multibindings.Multibinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java:147: warning 101: Unresolved link/see tag "Set" in com.google.inject.multibindings.Multibinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java:156: warning 101: Unresolved link/see tag "Set" in com.google.inject.multibindings.Multibinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java:169: warning 101: Unresolved link/see tag "Set" in com.google.inject.multibindings.Multibinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MultibinderBinding.java:51: warning 101: Unresolved link/see tag "UnsupportedOperationException" in com.google.inject.multibindings.MultibinderBinding
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MultibinderBinding.java:62: warning 101: Unresolved link/see tag "UnsupportedOperationException" in com.google.inject.multibindings.MultibinderBinding
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/OptionalBinder.java:55: warning 101: Unresolved link/see tag "Optional" in com.google.inject.multibindings.OptionalBinder
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/OptionalBinderBinding.java:45: warning 101: Unresolved link/see tag "UnsupportedOperationException" in com.google.inject.multibindings.OptionalBinderBinding
+  [javadoc] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/OptionalBinderBinding.java:56: warning 101: Unresolved link/see tag "UnsupportedOperationException" in com.google.inject.multibindings.OptionalBinderBinding
+  [javadoc] /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/PersistFilter.java:33: warning 101: Unresolved link/see tag "javax.servlet.Filter#destroy()" in com.google.inject.persist.PersistFilter
+  [javadoc] /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/PersistFilter.java:33: warning 101: Unresolved link/see tag "javax.servlet.Filter#init(javax.servlet.FilterConfig)" in com.google.inject.persist.PersistFilter
+  [javadoc] /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/Transactional.java:29: warning 101: Unresolved link/see tag "#ignore()" in com.google.inject.persist.Transactional
+  [javadoc] /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/Transactional.java:29: warning 101: Unresolved link/see tag "#rollbackOn()" in com.google.inject.persist.Transactional
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletModule.java:63: warning 101: Unresolved link/see tag "java.util.Map" in com.google.inject.servlet.ServletModule
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletModuleTargetVisitor.java:44: warning 101: Unresolved link/see tag "Filter" in com.google.inject.servlet.ServletModuleTargetVisitor
+  [javadoc] /home/travis/build/google/guice/extensions/servlet/src/com/google/inject/servlet/ServletModuleTargetVisitor.java:60: warning 101: Unresolved link/see tag "HttpServlet" in com.google.inject.servlet.ServletModuleTargetVisitor
+  [javadoc] /home/travis/build/google/guice/extensions/spring/src/com/google/inject/spring/SpringIntegration.java:38: warning 101: Unresolved link/see tag "org.springframework.beans.factory.BeanFactory" in com.google.inject.spring.SpringIntegration
+  [javadoc] /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/BoundFieldModule.java:37: warning 101: Unresolved link/see tag "Bind#to" in com.google.inject.testing.fieldbinder.BoundFieldModule
+  [javadoc] /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/BoundFieldModule.java:37: warning 101: Unresolved link/see tag "Integer" in com.google.inject.testing.fieldbinder.BoundFieldModule
+  [javadoc] /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/BoundFieldModule.java:37: warning 101: Unresolved link/see tag "Qualifier" in com.google.inject.testing.fieldbinder.BoundFieldModule
+  [javadoc] /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/BoundFieldModule.java:229: warning 101: Unresolved link/see tag "BoundFieldInfo" in com.google.inject.testing.fieldbinder.BoundFieldModule
+  [javadoc] /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/BoundFieldModule.java:229: warning 101: Unresolved link/see tag "Optional#absent()" in com.google.inject.testing.fieldbinder.BoundFieldModule
+  [javadoc] /home/travis/build/google/guice/extensions/testlib/src/com/google/inject/testing/fieldbinder/BoundFieldModule.java:269: warning 101: Unresolved link/see tag "javax.inject.Provider" in com.google.inject.testing.fieldbinder.BoundFieldModule
+  [javadoc] /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/CheckedProvides.java:28: warning 101: Unresolved link/see tag "Module" in com.google.inject.throwingproviders.CheckedProvides
+  [javadoc] DroidDoc took 14 sec. to write docs to /home/travis/build/google/guice/build/docs
+  [javadoc] 27 errors
+  [javadoc] 100 warnings
+     [move] Moving 222 files to /home/travis/build/google/guice/build/docs/javadoc
+
+dist:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/servlet/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/servlet/build/guice-servlet-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/servlet/build/classes
+    [javac] Compiling 35 source files to /home/travis/build/google/guice/extensions/servlet/build/classes
+    [javac] Creating empty /home/travis/build/google/guice/extensions/servlet/build/classes/com/google/inject/servlet/package-info.class
+
+manifest:
+  [bndwrap] classes 67 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/servlet/build/classes.bar into /home/travis/build/google/guice/extensions/servlet/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/servlet/build/guice-servlet-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/spring/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/spring/build/guice-spring-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/spring/build/classes
+    [javac] Compiling 2 source files to /home/travis/build/google/guice/extensions/spring/build/classes
+    [javac] Creating empty /home/travis/build/google/guice/extensions/spring/build/classes/com/google/inject/spring/package-info.class
+
+manifest:
+  [bndwrap] classes 4 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/spring/build/classes.bar into /home/travis/build/google/guice/extensions/spring/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/spring/build/guice-spring-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/struts2/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/struts2/build/guice-struts2-plugin-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/struts2/build/classes
+    [javac] Compiling 3 source files to /home/travis/build/google/guice/extensions/struts2/build/classes
+    [javac] /home/travis/build/google/guice/extensions/struts2/src/com/google/inject/struts2/GuiceObjectFactory.java:185: warning: [unchecked] unchecked conversion
+    [javac] found   : java.util.Map
+    [javac] required: java.util.Map<java.lang.String,java.lang.String>
+    [javac]     return super.buildInterceptor(interceptorConfig, interceptorRefParams);
+    [javac]                                                      ^
+    [javac] 1 warning
+     [copy] Copying 1 file to /home/travis/build/google/guice/extensions/struts2/build/classes
+
+manifest:
+  [bndwrap] classes 8 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/struts2/build/classes.bar into /home/travis/build/google/guice/extensions/struts2/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/struts2/build/guice-struts2-plugin-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/assistedinject/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/assistedinject/build/guice-assistedinject-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/assistedinject/build/classes
+    [javac] Compiling 13 source files to /home/travis/build/google/guice/extensions/assistedinject/build/classes
+    [javac] Creating empty /home/travis/build/google/guice/extensions/assistedinject/build/classes/com/google/inject/assistedinject/package-info.class
+
+manifest:
+  [bndwrap] classes 19 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/assistedinject/build/classes.bar into /home/travis/build/google/guice/extensions/assistedinject/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/assistedinject/build/guice-assistedinject-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/jmx/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/jmx/build/guice-jmx-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/jmx/build/classes
+    [javac] Compiling 4 source files to /home/travis/build/google/guice/extensions/jmx/build/classes
+    [javac] Creating empty /home/travis/build/google/guice/extensions/jmx/build/classes/com/google/inject/tools/jmx/package-info.class
+
+manifest:
+  [bndwrap] classes 4 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/jmx/build/classes.bar into /home/travis/build/google/guice/extensions/jmx/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/jmx/build/guice-jmx-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/jndi/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/jndi/build/guice-jndi-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/jndi/build/classes
+    [javac] Compiling 2 source files to /home/travis/build/google/guice/extensions/jndi/build/classes
+    [javac] Creating empty /home/travis/build/google/guice/extensions/jndi/build/classes/com/google/inject/jndi/package-info.class
+
+manifest:
+  [bndwrap] classes 3 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/jndi/build/classes.bar into /home/travis/build/google/guice/extensions/jndi/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/jndi/build/guice-jndi-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/throwingproviders/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/throwingproviders/build/guice-throwingproviders-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/throwingproviders/build/classes
+    [javac] Compiling 10 source files to /home/travis/build/google/guice/extensions/throwingproviders/build/classes
+    [javac] /home/travis/build/google/guice/extensions/throwingproviders/src/com/google/inject/throwingproviders/ThrowingProviderBinder.java:347: warning: [deprecation] com.google.inject.throwingproviders.ThrowingProvider in com.google.inject.throwingproviders has been deprecated
+    [javac]       boolean tpMode = interfaceType.getInterfaces()[0] == ThrowingProvider.class;
+    [javac]                                                            ^
+    [javac] 1 warning
+    [javac] Creating empty /home/travis/build/google/guice/extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/package-info.class
+
+manifest:
+  [bndwrap] Should not skip: ^
+  [bndwrap] classes 18 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/throwingproviders/build/classes.bar into /home/travis/build/google/guice/extensions/throwingproviders/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/throwingproviders/build/guice-throwingproviders-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/multibindings/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/multibindings/build/guice-multibindings-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/multibindings/build/classes
+    [javac] Compiling 10 source files to /home/travis/build/google/guice/extensions/multibindings/build/classes
+    [javac] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/MapBinder.java:458: warning: [unchecked] unchecked conversion
+    [javac] found   : com.google.inject.Key
+    [javac] required: com.google.inject.Key<? extends java.util.Map<K,javax.inject.Provider<V>>>
+    [javac]       binder.bind(javaxProviderMapKey).to(massagedProviderMapKey);
+    [javac]                                           ^
+    [javac] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/OptionalBinder.java:360: warning: [unchecked] unchecked conversion
+    [javac] found   : com.google.inject.Key
+    [javac] required: com.google.inject.Key<? extends com.google.common.base.Optional<javax.inject.Provider<T>>>
+    [javac]       binder.bind(optionalJavaxProviderKey).to(massagedOptionalProviderKey);
+    [javac]                                                ^
+    [javac] /home/travis/build/google/guice/extensions/multibindings/src/com/google/inject/multibindings/RealElement.java:242: warning: [unchecked] unchecked cast
+    [javac] found   : com.google.inject.Provider<capture#116 of ? extends T>
+    [javac] required: javax.inject.Provider<T>
+    [javac]       return toProvider((javax.inject.Provider<T>) provider);
+    [javac]                                                    ^
+    [javac] 3 warnings
+    [javac] Creating empty /home/travis/build/google/guice/extensions/multibindings/build/classes/com/google/inject/multibindings/package-info.class
+
+manifest:
+  [bndwrap] classes 35 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/multibindings/build/classes.bar into /home/travis/build/google/guice/extensions/multibindings/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/multibindings/build/guice-multibindings-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/persist/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/persist/build/guice-persist-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/persist/build/classes
+    [javac] Compiling 17 source files to /home/travis/build/google/guice/extensions/persist/build/classes
+    [javac] /home/travis/build/google/guice/extensions/persist/src/com/google/inject/persist/jpa/JpaFinderProxy.java:104: warning: [unchecked] unchecked conversion
+    [javac] found   : java.util.List
+    [javac] required: java.util.Collection<? extends capture#160 of ?>
+    [javac]     collection.addAll(results);
+    [javac]                       ^
+    [javac] 1 warning
+    [javac] Creating empty /home/travis/build/google/guice/extensions/persist/build/classes/com/google/inject/persist/jpa/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/extensions/persist/build/classes/com/google/inject/persist/finder/package-info.class
+    [javac] Creating empty /home/travis/build/google/guice/extensions/persist/build/classes/com/google/inject/persist/package-info.class
+
+manifest:
+  [bndwrap] classes 25 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/persist/build/classes.bar into /home/travis/build/google/guice/extensions/persist/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/persist/build/guice-persist-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/grapher/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/grapher/build/guice-grapher-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/grapher/build/classes
+    [javac] Compiling 34 source files to /home/travis/build/google/guice/extensions/grapher/build/classes
+
+manifest:
+  [bndwrap] classes 42 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/grapher/build/classes.bar into /home/travis/build/google/guice/extensions/grapher/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/grapher/build/guice-grapher-snapshot.jar
+
+distjars:
+
+source.jar:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/testlib/build
+      [zip] Building zip: /home/travis/build/google/guice/extensions/testlib/build/guice-testlib-snapshot-src.jar
+
+compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/extensions/testlib/build/classes
+    [javac] Compiling 2 source files to /home/travis/build/google/guice/extensions/testlib/build/classes
+
+manifest:
+  [bndwrap] classes 4 0
+    [unjar] Expanding: /home/travis/build/google/guice/extensions/testlib/build/classes.bar into /home/travis/build/google/guice/extensions/testlib/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/extensions/testlib/build/guice-testlib-snapshot.jar
+
+distjars:
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 2 files to /home/travis/build/google/guice/build/dist
+     [copy] Copying 1 file to /home/travis/build/google/guice/build/dist
+     [copy] Copying 3 files to /home/travis/build/google/guice/build/dist
+      [zip] Building zip: /home/travis/build/google/guice/build/guice-snapshot.zip
+      [zip] Building zip: /home/travis/build/google/guice/build/guice-snapshot-src.zip
+
+test.dist:
+
+compile:
+
+jar.withdeps:
+   [jarjar] Building jar: /home/travis/build/google/guice/build/guice-with-deps.jar
+
+manifest:
+  [bndwrap] classes 343 431435
+    [unjar] Expanding: /home/travis/build/google/guice/build/classes.bar into /home/travis/build/google/guice/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/build/dist/guice-snapshot.jar
+
+test.compile:
+    [mkdir] Created dir: /home/travis/build/google/guice/build/test
+    [javac] Compiling 85 source files to /home/travis/build/google/guice/build/test
+    [javac] Note: Some input files use or override a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+test.withdeps:
+   [jarjar] Building jar: /home/travis/build/google/guice/build/guice-snapshot-tests.jar
+
+test.dist.run:
+    [junit] Jul 9, 2014 7:53:21 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: protected void org.atinject.tck.auto.accessories.SpareTire.injectProtectedMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:21 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.accessories.SpareTire.injectPublicMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:21 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: void org.atinject.tck.auto.accessories.SpareTire.injectPackagePrivateMethod3() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:21 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.GasEngine.injectTwiceOverriddenWithOmissionInMiddle() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:21 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: void org.atinject.tck.auto.V8Engine.injectPackagePrivateMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:21 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.V8Engine.injectQualifiers(org.atinject.tck.auto.Seat,org.atinject.tck.auto.Seat,org.atinject.tck.auto.Tire,org.atinject.tck.auto.Tire) is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:21 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.V8Engine.injectTwiceOverriddenWithOmissionInSubclass() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] .........................................
+    [junit] ...................................com.google.inject.CreationException: Unable to create injector, see the following errors:
+    [junit]
+    [junit] 1) A binding to com.google.inject.BinderTest$HasImplementedBy1 was already configured at com.google.inject.BinderTest$19.configure(BinderTest.java:347).
+    [junit]   at com.google.inject.BinderTest$19.configure(BinderTest.java:346)
+    [junit]
+    [junit] 1 error
+    [junit] 	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:448)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:96)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:73)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:62)
+    [junit] 	at com.google.inject.BinderTest.testSettingAtImplementedByTwice(BinderTest.java:343)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:622)
+    [junit] 	at junit.framework.TestCase.runTest(TestCase.java:154)
+    [junit] 	at junit.framework.TestCase.runBare(TestCase.java:127)
+    [junit] 	at junit.framework.TestResult$1.protect(TestResult.java:106)
+    [junit] 	at junit.framework.TestResult.runProtected(TestResult.java:124)
+    [junit] 	at junit.framework.TestResult.run(TestResult.java:109)
+    [junit] 	at junit.framework.TestCase.run(TestCase.java:118)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.textui.TestRunner.doRun(TestRunner.java:116)
+    [junit] 	at junit.textui.TestRunner.start(TestRunner.java:172)
+    [junit] 	at junit.textui.TestRunner.main(TestRunner.java:138)
+    [junit] Jul 9, 2014 7:53:22 PM com.google.inject.internal.MessageProcessor visit
+    [junit] INFO: An exception was caught and reported. Message: java.lang.IllegalArgumentException
+    [junit] java.lang.IllegalArgumentException
+    [junit] 	at com.google.inject.BinderTest$24.configure(BinderTest.java:450)
+    [junit] 	at com.google.inject.AbstractModule.configure(AbstractModule.java:62)
+    [junit] 	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:259)
+    [junit] 	at com.google.inject.spi.Elements.getElements(Elements.java:109)
+    [junit] 	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:135)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:96)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:73)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:62)
+    [junit] 	at com.google.inject.BinderTest.testUserReportedErrorsAreAlsoLogged(BinderTest.java:447)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:622)
+    [junit] 	at junit.framework.TestCase.runTest(TestCase.java:154)
+    [junit] 	at junit.framework.TestCase.runBare(TestCase.java:127)
+    [junit] 	at junit.framework.TestResult$1.protect(TestResult.java:106)
+    [junit] 	at junit.framework.TestResult.runProtected(TestResult.java:124)
+    [junit] 	at junit.framework.TestResult.run(TestResult.java:109)
+    [junit] 	at junit.framework.TestCase.run(TestCase.java:118)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.textui.TestRunner.doRun(TestRunner.java:116)
+    [junit] 	at junit.textui.TestRunner.start(TestRunner.java:172)
+    [junit] 	at junit.textui.TestRunner.main(TestRunner.java:138)
+    [junit] ......
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .............................Jul 9, 2014 7:53:32 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$Sub.atInject() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:32 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$Sub.atInject() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:32 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$SubSub.privateGAndPublicAt() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] ............
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .............................aopalliance.jar 9 4576
+    [junit] javax.inject.jar 6 2845
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] guava.jar 1675 2199488
+    [junit] osgitests.jar 28 20422
+    [junit] ............
+    [junit] ..
+    [junit] Time: 19.055
+    [junit]
+    [junit] OK (863 tests)
+    [junit]
+
+compile:
+
+jar.withdeps:
+   [jarjar] Building jar: /home/travis/build/google/guice/build/guice-with-deps.jar
+
+manifest:
+  [bndwrap] classes 343 431435
+    [unjar] Expanding: /home/travis/build/google/guice/build/classes.bar into /home/travis/build/google/guice/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/build/dist/guice-snapshot.jar
+
+test.compile:
+
+test.withdeps:
+   [jarjar] Building jar: /home/travis/build/google/guice/build/guice-snapshot-tests.jar
+
+test.dist.run:
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: protected void org.atinject.tck.auto.accessories.SpareTire.injectProtectedMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.accessories.SpareTire.injectPublicMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: void org.atinject.tck.auto.accessories.SpareTire.injectPackagePrivateMethod3() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.GasEngine.injectTwiceOverriddenWithOmissionInMiddle() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: void org.atinject.tck.auto.V8Engine.injectPackagePrivateMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.V8Engine.injectTwiceOverriddenWithOmissionInSubclass() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.V8Engine.injectQualifiers(org.atinject.tck.auto.Seat,org.atinject.tck.auto.Seat,org.atinject.tck.auto.Tire,org.atinject.tck.auto.Tire) is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] .........................................
+    [junit] .................................com.google.inject.CreationException: Unable to create injector, see the following errors:
+    [junit]
+    [junit] 1) A binding to com.google.inject.BinderTest$HasImplementedBy1 was already configured at com.google.inject.BinderTest$19.configure(Unknown Source).
+    [junit]   at com.google.inject.BinderTest$19.configure(Unknown Source)
+    [junit]
+    [junit] 1 error
+    [junit] 	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:448)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:96)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:73)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:62)
+    [junit] 	at com.google.inject.BinderTest.testSettingAtImplementedByTwice(BinderTest.java:343)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:622)
+    [junit] 	at junit.framework.TestCase.runTest(TestCase.java:154)
+    [junit] 	at junit.framework.TestCase.runBare(TestCase.java:127)
+    [junit] 	at junit.framework.TestResult$1.protect(TestResult.java:106)
+    [junit] 	at junit.framework.TestResult.runProtected(TestResult.java:124)
+    [junit] 	at junit.framework.TestResult.run(TestResult.java:109)
+    [junit] 	at junit.framework.TestCase.run(TestCase.java:118)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.textui.TestRunner.doRun(TestRunner.java:116)
+    [junit] 	at junit.textui.TestRunner.start(TestRunner.java:172)
+    [junit] 	at junit.textui.TestRunner.main(TestRunner.java:138)
+    [junit] Jul 9, 2014 7:53:50 PM com.google.inject.internal.MessageProcessor visit
+    [junit] INFO: An exception was caught and reported. Message: java.lang.IllegalArgumentException
+    [junit] java.lang.IllegalArgumentException
+    [junit] 	at com.google.inject.BinderTest$24.configure(BinderTest.java:450)
+    [junit] 	at com.google.inject.AbstractModule.configure(AbstractModule.java:62)
+    [junit] 	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:259)
+    [junit] 	at com.google.inject.spi.Elements.getElements(Elements.java:109)
+    [junit] 	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:135)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:96)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:73)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:62)
+    [junit] 	at com.google.inject.BinderTest.testUserReportedErrorsAreAlsoLogged(BinderTest.java:447)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:622)
+    [junit] 	at junit.framework.TestCase.runTest(TestCase.java:154)
+    [junit] 	at junit.framework.TestCase.runBare(TestCase.java:127)
+    [junit] 	at junit.framework.TestResult$1.protect(TestResult.java:106)
+    [junit] 	at junit.framework.TestResult.runProtected(TestResult.java:124)
+    [junit] 	at junit.framework.TestResult.run(TestResult.java:109)
+    [junit] 	at junit.framework.TestCase.run(TestCase.java:118)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.textui.TestRunner.doRun(TestRunner.java:116)
+    [junit] 	at junit.textui.TestRunner.start(TestRunner.java:172)
+    [junit] 	at junit.textui.TestRunner.main(TestRunner.java:138)
+    [junit] ........
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] ...................................Jul 9, 2014 7:53:59 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$Sub.atInject() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:59 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$Sub.atInject() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:53:59 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$SubSub.privateGAndPublicAt() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] ......
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .............................aopalliance.jar 9 4577
+    [junit] javax.inject.jar 6 2844
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] guava.jar 1675 2199490
+    [junit] osgitests.jar 28 20419
+    [junit] ............
+    [junit] ..
+    [junit] Time: 16.89
+    [junit]
+    [junit] OK (863 tests)
+    [junit]
+
+compile:
+
+jar.withdeps:
+   [jarjar] Building jar: /home/travis/build/google/guice/build/guice-with-deps.jar
+
+manifest:
+  [bndwrap] classes 343 431435
+    [unjar] Expanding: /home/travis/build/google/guice/build/classes.bar into /home/travis/build/google/guice/build
+
+jar:
+      [jar] Building jar: /home/travis/build/google/guice/build/dist/guice-snapshot.jar
+
+test.compile:
+
+test.withdeps:
+   [jarjar] Building jar: /home/travis/build/google/guice/build/guice-snapshot-tests.jar
+
+test.dist.run:
+    [junit] Jul 9, 2014 7:54:18 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: protected void org.atinject.tck.auto.accessories.SpareTire.injectProtectedMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:18 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.accessories.SpareTire.injectPublicMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:18 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: void org.atinject.tck.auto.accessories.SpareTire.injectPackagePrivateMethod3() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:18 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.GasEngine.injectTwiceOverriddenWithOmissionInMiddle() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:18 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: void org.atinject.tck.auto.V8Engine.injectPackagePrivateMethodForOverride() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:18 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.V8Engine.injectQualifiers(org.atinject.tck.auto.Seat,org.atinject.tck.auto.Seat,org.atinject.tck.auto.Tire,org.atinject.tck.auto.Tire) is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:18 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void org.atinject.tck.auto.V8Engine.injectTwiceOverriddenWithOmissionInSubclass() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] .........................................
+    [junit] ...............................com.google.inject.CreationException: Unable to create injector, see the following errors:
+    [junit]
+    [junit] 1) A binding to com.google.inject.BinderTest$HasImplementedBy1 was already configured at com.google.inject.BinderTest$19.configure(BinderTest.java:347).
+    [junit]   at com.google.inject.BinderTest$19.configure(BinderTest.java:346)
+    [junit]
+    [junit] 1 error
+    [junit] 	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:448)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:96)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:73)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:62)
+    [junit] 	at com.google.inject.BinderTest.testSettingAtImplementedByTwice(BinderTest.java:343)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:622)
+    [junit] 	at junit.framework.TestCase.runTest(TestCase.java:154)
+    [junit] 	at junit.framework.TestCase.runBare(TestCase.java:127)
+    [junit] 	at junit.framework.TestResult$1.protect(TestResult.java:106)
+    [junit] 	at junit.framework.TestResult.runProtected(TestResult.java:124)
+    [junit] 	at junit.framework.TestResult.run(TestResult.java:109)
+    [junit] 	at junit.framework.TestCase.run(TestCase.java:118)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.textui.TestRunner.doRun(TestRunner.java:116)
+    [junit] 	at junit.textui.TestRunner.start(TestRunner.java:172)
+    [junit] 	at junit.textui.TestRunner.main(TestRunner.java:138)
+    [junit] .......Jul 9, 2014 7:54:19 PM com.google.inject.internal.MessageProcessor visit
+    [junit] INFO: An exception was caught and reported. Message: java.lang.IllegalArgumentException
+    [junit] java.lang.IllegalArgumentException
+    [junit] 	at com.google.inject.BinderTest$24.configure(BinderTest.java:450)
+    [junit] 	at com.google.inject.AbstractModule.configure(AbstractModule.java:62)
+    [junit] 	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:259)
+    [junit] 	at com.google.inject.spi.Elements.getElements(Elements.java:109)
+    [junit] 	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:135)
+    [junit] 	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:96)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:73)
+    [junit] 	at com.google.inject.Guice.createInjector(Guice.java:62)
+    [junit] 	at com.google.inject.BinderTest.testUserReportedErrorsAreAlsoLogged(BinderTest.java:447)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 	at java.lang.reflect.Method.invoke(Method.java:622)
+    [junit] 	at junit.framework.TestCase.runTest(TestCase.java:154)
+    [junit] 	at junit.framework.TestCase.runBare(TestCase.java:127)
+    [junit] 	at junit.framework.TestResult$1.protect(TestResult.java:106)
+    [junit] 	at junit.framework.TestResult.runProtected(TestResult.java:124)
+    [junit] 	at junit.framework.TestResult.run(TestResult.java:109)
+    [junit] 	at junit.framework.TestCase.run(TestCase.java:118)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+    [junit] 	at junit.framework.TestSuite.run(TestSuite.java:203)
+    [junit] 	at junit.textui.TestRunner.doRun(TestRunner.java:116)
+    [junit] 	at junit.textui.TestRunner.start(TestRunner.java:172)
+    [junit] 	at junit.textui.TestRunner.main(TestRunner.java:138)
+    [junit] ...
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .............................F.....F.F......
+    [junit] .........................................
+    [junit] .........................................
+    [junit] ..............................Jul 9, 2014 7:54:38 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$Sub.atInject() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:38 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$Sub.atInject() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] Jul 9, 2014 7:54:38 PM com.google.inject.spi.InjectionPoint getInjectionPoints
+    [junit] WARNING: Method: public void com.google.inject.spi.InjectionPointTest$SubSub.privateGAndPublicAt() is not annotated with @Inject but is overriding a method that is annotated with @javax.inject.Inject.  Because it is not annotated with @Inject, the method will not be injected. To fix this, annotate the method with @Inject.
+    [junit] ...........
+    [junit] .........................................
+    [junit] .........................................
+    [junit] .............................aopalliance.jar 9 4577
+    [junit] javax.inject.jar 6 2844
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] Should not skip: ^
+    [junit] guava.jar 1675 2199489
+    [junit] osgitests.jar 28 20420
+    [junit] ............
+    [junit] ..
+    [junit] Time: 28.182
+    [junit] There were 3 failures:
+    [junit] 1) testEviction_keyOverlap_2x(com.google.inject.internal.WeakKeySetTest)junit.framework.AssertionFailedError: expected:<1> but was:<2>
+    [junit] 	at com.google.inject.internal.WeakKeySetTest.testEviction_keyOverlap_2x(WeakKeySetTest.java:144)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 2) testWeakKeySet_integration(com.google.inject.internal.WeakKeySetTest)junit.framework.AssertionFailedError: expected:<false> but was:<true>
+    [junit] 	at com.google.inject.internal.WeakKeySetTest.assertBlacklistState(WeakKeySetTest.java:492)
+    [junit] 	at com.google.inject.internal.WeakKeySetTest.assertNotBlacklisted(WeakKeySetTest.java:488)
+    [junit] 	at com.google.inject.internal.WeakKeySetTest.testWeakKeySet_integration(WeakKeySetTest.java:405)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 3) testWeakKeySet_integration_multipleChildren(com.google.inject.internal.WeakKeySetTest)junit.framework.AssertionFailedError: expected:<false> but was:<true>
+    [junit] 	at com.google.inject.internal.WeakKeySetTest.assertBlacklistState(WeakKeySetTest.java:492)
+    [junit] 	at com.google.inject.internal.WeakKeySetTest.assertNotBlacklisted(WeakKeySetTest.java:488)
+    [junit] 	at com.google.inject.internal.WeakKeySetTest.testWeakKeySet_integration_multipleChildren(WeakKeySetTest.java:438)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+    [junit] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit]
+    [junit] FAILURES!!!
+    [junit] Tests run: 863,  Failures: 3,  Errors: 0
+    [junit]
+
+BUILD FAILED
+/home/travis/build/google/guice/build.xml:94: The following error occurred while executing this line:
+/home/travis/build/google/guice/build.xml:105: Java returned: 1
+
+Total time: 2 minutes 31 seconds
+
+[31;1mThe command "${CMD}" exited with 1.
+
+Done. Your build exited with 1.
