@@ -6,7 +6,7 @@ from travisshark.parsers.java_parser.ant_build_log_file_parser import AntBuildLo
 
 class MavenBuildLogFileParserTest(unittest.TestCase):
     def _get_log(self, filename):
-        with open(os.path.join(os.path.dirname(__file__), 'data', filename), 'r') as file:
+        with open(os.path.join(os.path.dirname(__file__), 'data', filename), 'r', encoding='utf8') as file:
             log = file.readlines()
 
             # We need to make some adaptions so that the file matches the return value from the api
