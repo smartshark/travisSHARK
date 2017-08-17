@@ -9,9 +9,7 @@ class GradleBuildLogFileParser(JavaBuildLogFileParser):
         pass
 
     def detect(self, job_config):
-        if ('env' in job_config and 'gradle' in job_config['env']) \
-                or ('install' in job_config and 'gradle' in ' '.join(job_config['install'])) \
-                or ('script' in job_config and 'gradle' in ' '.join(job_config['script'])):
+        if self.check_if_list_is_in_job_config(job_config, ['gradle', 'gradlew']):
             self.logger.debug("Found Gradle build file...")
             return True
         return False

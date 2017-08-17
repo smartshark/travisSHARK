@@ -19,10 +19,15 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
         return list(self.tests_failed), list(self.tests_errored), self.test_framework, self.tests_run_completely
 
     def detect(self, job_config):
-        if ('env' in job_config and 'mvn' in job_config['env']) \
-                or ('install' in job_config and 'mvn' in ' '.join(job_config['install'])) \
-                or ('script' in job_config and 'mvn' in ' '.join(job_config['script'])):
+        if self.check_if_list_is_in_job_config(job_config, ['mvn']):
             self.logger.debug("Found Maven build file...")
+            return True
+
+        # It seems that the default travis configuration is executing these commands
+        # See: https://s3.amazonaws.com/archive.travis-ci.org/jobs/124988080/log.txt
+        # And the travis yml for this build:
+        # https://github.com/alibaba/druid/blob/a30c83b73a2307d354a1a32e4a1991969074c634/.travis.yml
+        if "mvn install" in self.log or "mvn test" in self.log:
             return True
         return False
 
@@ -57,9 +62,13 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
             if failed_tests_started and line.strip():
                 # If we have found a failed test, we try to parse it. This is not always possible
                 try:
-                    self.tests_failed.add(self._get_fqn_from_line(line))
+                    fqn = self._get_fqn_from_line(line)
+                    if ':' not in fqn and ' ' not in fqn:
+                        self.tests_failed.add(fqn)
+                    else:
+                        self.logger.warning("Could not find test in line %s" % line)
                 except IndexError:
-                    self.logger.error("Could not parse line %s" % line)
+                    self.logger.warning("Could not parse line %s" % line)
 
             if errored_tests_started and line.strip():
                 line_part = line.strip().split(' ')[0]

@@ -2,11 +2,11 @@ import logging
 import datetime
 import timeit
 
-from mongoengine import connect
+from mongoengine import connect, DoesNotExist
 
 from pycoshark.mongomodels import TravisBuild, Commit, VCSSystem, TravisJob
 from pycoshark.utils import create_mongodb_uri_string
-from travisshark.client.travis_client import TravisClient
+from travisshark.client.travis_client import TravisClient, RequestException
 from travisshark.parsers.build_log_file_parser import BuildLogFileParser
 
 logger = logging.getLogger("main")
@@ -26,7 +26,7 @@ class TravisSHARK(object):
         self.cfg = cfg
 
     def run(self):
-        failed_jobs = []
+        failed_jobs = {}
 
         start_time = timeit.default_timer()
         logger.info("Starting extraction process for repository with slug %s..." % self.cfg.get_slug())
@@ -58,26 +58,38 @@ class TravisSHARK(object):
                         job.number, job_id, job.state
                     ))
                     continue
-                failed_jobs.append('https://api.travis-ci.org/jobs/%s/log.txt?deansi=true' % job_id)
 
-                logger.info("Collecting data for Job with id %s..." % job.tr_id)
-                log = self.client.get_log_for_job_id(job.tr_id)
+                # Debug stuff
+                failed_jobs['https://api.travis-ci.org/jobs/%s/log.txt?deansi=true' % job_id] = {}
 
                 try:
-                    parser = BuildLogFileParser(log, self.cfg.get_debug_level()).get_correct_parser(job.config)
-                except NotImplementedError as e:
-                    logger.warning("Got following error: %s" % e)
-                    continue
+                    logger.info("Collecting data for Job with id %s..." % job.tr_id)
+                    log = self.client.get_log_for_job_id(job.tr_id)
 
-                logger.info("Using %s." % parser.__class__.__name__)
+                    try:
+                        logger.debug("Looking at job config %s..." % job.config)
+                        parser = BuildLogFileParser(log, self.cfg.get_debug_level()).get_correct_parser(job.config)
+                    except NotImplementedError as e:
+                        logger.error("Got following error: %s" % e)
+                        continue
 
-                job.failed_tests, job.errored_tests, job.test_framework, job.tests_run = parser.parse()
-                logger.debug("The following tests failed: %s" % job.failed_tests)
-                logger.debug("The following tests errored: %s" % job.errored_tests)
+                    logger.info("Using %s." % parser.__class__.__name__)
+
+                    job.failed_tests, job.errored_tests, job.test_framework, job.tests_run = parser.parse()
+
+                    # Debug stuff
+                    failed_jobs['https://api.travis-ci.org/jobs/%s/log.txt?deansi=true' % job_id]['failed_tests'] = job.failed_tests
+                    failed_jobs['https://api.travis-ci.org/jobs/%s/log.txt?deansi=true' % job_id]['errored_tests'] = job.errored_tests
+                    logger.debug("The following tests failed: %s" % job.failed_tests)
+                    logger.debug("The following tests errored: %s" % job.errored_tests)
+                except RequestException:
+                    logger.warning("Could not get log file for job with id %s. Travis error..." % job.tr_id)
+
             build.save()
 
-        for failed_job in failed_jobs:
+        for failed_job, results in failed_jobs.items():
             print(failed_job)
+            print(results)
 
         elapsed = timeit.default_timer() - start_time
         logger.info("Execution time: %0.5f s" % elapsed)
@@ -115,10 +127,12 @@ class TravisSHARK(object):
     def _create_mongo_build(self, build):
         m_build = TravisBuild()
         if len(build['builds']) > 1:
-            raise Exception("More than one build!")
+            logger.warning("Build %s has more than one build!" % build)
+            #raise Exception("More than one build!")
 
         if len(build['commits']) > 1:
-            raise Exception("More than one commit!")
+            logger.warning("Build %s has more than one commit!" % build)
+            #raise Exception("More than one commit!")
 
         m_build.vcs_system_id = self.vcs_system_id
         m_build.state = build['builds'][0]['state']
@@ -136,8 +150,14 @@ class TravisSHARK(object):
         m_build.job_ids = build['builds'][0]['job_ids']
 
         if not m_build.pull_request:
-            m_build.commit_id = Commit.objects(vcs_system_id=self.vcs_system_id,
-                                               revision_hash=build['commits'][0]['sha']).only('id').get().id
+            # It can happen that we do not find the corresponding commit. This happens, e.g., if someone did a
+            # git rebase to change the history after a build -> travis build was done, but the commit is no longer
+            # existent
+            try:
+                m_build.commit_id = Commit.objects(vcs_system_id=self.vcs_system_id,
+                                                   revision_hash=build['commits'][0]['sha']).only('id').get().id
+            except DoesNotExist:
+                logger.warning("Could not find commit with hash %s." % build['commits'][0]['sha'])
         else:
             m_build.pr_number = int(build['commits'][0]['pull_request_number'])
 

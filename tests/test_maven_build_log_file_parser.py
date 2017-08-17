@@ -17,6 +17,12 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
                 new_lines.append(line.strip("\n")+"\r")
         return '\n'.join(new_lines)
 
+
+    def test_failed_tests_3(self):
+        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit_3.txt'), 'DEBUG')
+        parser.parse()
+        self.assertEqual(parser.tests_failed, {'org.apache.commons.io.filefilter.FileFilterTestCase.testAgeFilter'})
+
     def test_failed_tests(self):
         parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit.txt'), 'DEBUG')
         parser.parse()
@@ -29,6 +35,8 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
         parser.parse()
         self.assertEqual(parser.tests_failed, {'org.apache.commons.math4.random.RandomUtilsDataGeneratorJDKSecureRandomTest.testNextUniformUniformNegativeToPositiveBounds'})
 
+
+    
 
     def test_test_framework_junit(self):
         parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit.txt'), 'DEBUG')
@@ -55,9 +63,19 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
                                                    'org.apache.commons.math4.util.CombinatoricsUtilsTest.testStirlingS2Overflow',
                                                    'org.apache.commons.math4.util.CombinatoricsUtilsTest.testFactorialFail'})
 
-
-
-
+    def test_errored_tests_3(self):
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_3.txt'), 'DEBUG')
+        parser.parse()
+        self.assertSetEqual(parser.tests_errored, {'okio.BufferedSourceTest.longDecimalStringTooShortThrows',
+                                                   'okio.BufferedSourceTest.longDecimalStringAcrossSegment',
+                                                   'okio.BufferedSourceTest.longDecimalString',
+                                                   'okio.BufferedSourceTest.longDecimalStringTooLongThrows',
+                                                   'okio.BufferedSourceTest.longDecimalStringTooHighThrows',
+                                                   'okio.BufferedSourceTest.longDecimalStringTooShortThrows',
+                                                   'okio.BufferedSourceTest.longDecimalStringAcrossSegment',
+                                                   'okio.BufferedSourceTest.longDecimalString',
+                                                   'okio.BufferedSourceTest.longDecimalStringTooLongThrows',
+                                                   'okio.BufferedSourceTest'})
 
 
 if __name__ == '__main__':

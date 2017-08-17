@@ -3,6 +3,9 @@ import logging
 
 logger = logging.getLogger("main")
 
+class RequestException(Exception):
+    pass
+
 class TravisClient(object):
     def __init__(self, travis_token, proxy, debug_level):
         self.travis_token = travis_token
@@ -45,6 +48,7 @@ class TravisClient(object):
 
         if resp.status_code != 200:
             logger.error("Problem with getting data via url %s. Error: %s" % (url, resp.text))
+            raise RequestException("Problem with getting data via url %s. Error: %s" % (url, resp.text))
 
         if json_format:
             logger.debug('Got response: %s' % resp.json())

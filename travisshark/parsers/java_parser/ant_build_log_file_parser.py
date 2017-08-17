@@ -52,9 +52,7 @@ class AntBuildLogFileParser(JavaBuildLogFileParser):
                 self._test_lines.append(line)
 
     def detect(self, job_config):
-        if ('env' in job_config and 'ant' in job_config['env']) \
-                or ('install' in job_config and 'ant' in ' '.join(job_config['install'])) \
-                or ('script' in job_config and 'ant' in ' '.join(job_config['script'])):
+        if self.check_if_list_is_in_job_config(job_config, ['ant']):
             self.logger.debug("Found Ant build file...")
             return True
         return False
