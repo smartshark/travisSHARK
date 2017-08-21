@@ -1,9 +1,14 @@
 from travisshark.parsers.java_parser.java_build_log_file_parser import JavaBuildLogFileParser
 
-# This class is based on https://github.com/TestRoots/travistorrent-tools/blob/master/lib/languages/java_maven_log_file_analyzer.rb
+
+# Some parts of this class are based on
+# https://github.com/TestRoots/travistorrent-tools/blob/master/lib/languages/java_maven_log_file_analyzer.rb
 class MavenBuildLogFileParser(JavaBuildLogFileParser):
+
+
     def __init__(self, log, debug_level):
         super().__init__(log, debug_level)
+        self.LETTERS = "abcdefghijklmnopqrstuvwxyz"
         self.reactor_lines = []
         self._test_lines = []
         self._errored_tests_lines = []
@@ -19,7 +24,7 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
         return list(self.tests_failed), list(self.tests_errored), self.test_framework, self.tests_run_completely
 
     def detect(self, job_config):
-        if self.check_if_list_is_in_job_config(job_config, ['mvn']):
+        if self.check_if_list_is_in_job_config(job_config, ['mvn', 'maven']):
             self.logger.debug("Found Maven build file...")
             return True
 
@@ -27,7 +32,8 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
         # See: https://s3.amazonaws.com/archive.travis-ci.org/jobs/124988080/log.txt
         # And the travis yml for this build:
         # https://github.com/alibaba/druid/blob/a30c83b73a2307d354a1a32e4a1991969074c634/.travis.yml
-        if "mvn install" in self.log or "mvn test" in self.log:
+        if "mvn install" in self.log or "mvn test" in self.log or "maven-surefire-plugin" in self.log or \
+                        "mvn -Dtest" in self.log:
             return True
         return False
 
@@ -41,10 +47,19 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
 
         # If we have the information available which test method was failing, we directly grab it
         for errored_line in self._errored_tests_lines:
-            self.tests_errored.add(self._get_fqn_from_line(errored_line.split(' ')[0]))
+            if '(' in errored_line and ')' in errored_line and "unnecessary Mockito stubbings" not in errored_line:
+                errored_line = errored_line.replace("[ERROR]", "").strip()
+                self.tests_errored.add(self._get_fqn_from_line(errored_line.split(' ')[0]))
+            else:
+                self.logger.warning("Could not parse line %s. It should be a problem in the setup method"
+                                    "or mockito stubs method. Both is not on method level of the test." % errored_line)
 
         for failed_line in self._failed_tests_lines:
-            self.tests_failed.add(self._get_fqn_from_line(failed_line.split(' ')[0]))
+            if '(' in failed_line and ')' in failed_line and not failed_line.strip().startswith("at "):
+                failed_line = failed_line.replace("[ERROR]", "").strip()
+                self.tests_failed.add(self._get_fqn_from_line(failed_line.split(' ')[0]))
+            else:
+                self.logger.warning("Could not parse line %s. It should be a problem in the setup method" % failed_line)
 
         # If not, we need to parse through the file, till we get to the "Failed tests" / "Tests in error" part
         failed_tests_started = False
@@ -59,7 +74,7 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
                 self.test_framework = 'junit'
                 self.tests_run_completely = True
 
-            if failed_tests_started and line.strip():
+            if failed_tests_started and line.strip() and "unnecessary Mockito stubbings" not in line:
                 # If we have found a failed test, we try to parse it. This is not always possible
                 try:
                     fqn = self._get_fqn_from_line(line)
@@ -72,16 +87,20 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
 
             if errored_tests_started and line.strip():
                 line_part = line.strip().split(' ')[0]
-                if ':' in line_part or ('(' not in line_part and ')' not in line_part):
-                    fqn_parts = line_part.split(':')[0]
-                    class_name = fqn_parts.split('.')[0]
-                    method_name = fqn_parts.split('.')[1]
-                    # To get the fqn of the test, we need to go through all lines again to find the error line
-                    for n_line in self._test_lines:
-                        if n_line.startswith(method_name) and class_name in n_line:
-                            self.tests_errored.add(self._get_fqn_from_line(n_line))
+                if line_part[0].lower() in self.LETTERS and not line_part.startswith('Run'):
+                    if ':' in line_part or ('(' not in line_part and ')' not in line_part):
+                        fqn_parts = line_part.split(':')[0]
+                        class_name = fqn_parts.split('.')[0]
+                        method_name = fqn_parts.split('.')[1]
+                        # To get the fqn of the test, we need to go through all lines again to find the error line
+                        for n_line in self._test_lines:
+                            if method_name and class_name and n_line.startswith(method_name) and class_name in n_line \
+                                    and "unnecessary Mockito stubbings" not in n_line:
+                                self.tests_errored.add(self._get_fqn_from_line(n_line))
+                    else:
+                        self.tests_errored.add(self._get_fqn_from_line(line_part))
                 else:
-                    self.tests_errored.add(self._get_fqn_from_line(line_part))
+                    self.logger.warning("Could not parse line %s..." % line_part)
 
 
 

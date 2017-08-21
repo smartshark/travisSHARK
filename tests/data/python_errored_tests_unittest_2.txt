@@ -1,0 +1,2006 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: travis-worker-gce-org-prod-2:4d9d7eb7-7716-41f3-b557-ad47a733b2cc
+version: v2.3.1-34-g4ab376b https://github.com/travis-ci/worker/tree/4ab376ba587e12cb465474238c78e88e6600aca2
+instance: testing-gce-459342ad-0f9d-4076-bf54-a7e50faa4708:travis-ci-sugilite-trusty-1471824869
+startup: 21.186892184s
+travis_fold:end:worker_info
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: trusty
+Build id: 165866516
+Job id: 165866517
+travis-build version: c31595e05
+[34m[1mBuild image provisioning date and time[0m
+Mon Aug 22 00:52:43 UTC 2016
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.4 LTS
+Release:	14.04
+Codename:	trusty
+[34m[1mLinux Version[0m
+3.19.0-64-generic
+[34m[1mCookbooks Version[0m
+152b200 https://github.com/travis-ci/travis-cookbooks/tree/152b200
+[34m[1mgit version[0m
+git version 1.9.1
+[34m[1mbash version[0m
+GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+[34m[1mgcc version[0m
+gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mdocker version[0m
+Client:
+ Version:      1.12.0
+ API version:  1.24
+ Go version:   go1.6.3
+ Git commit:   8eab29e
+ Built:        Thu Jul 28 22:00:36 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.12.0
+ API version:  1.24
+ Go version:   go1.6.3
+ Git commit:   8eab29e
+ Built:        Thu Jul 28 22:00:36 2016
+ OS/Arch:      linux/amd64
+[34m[1mclang version[0m
+clang version 3.5.0 (tags/RELEASE_350/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mgimme version[0m
+v1.0.0
+[34m[1mnvm version[0m
+0.31.0
+[34m[1mperlbrew version[0m
+/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.73
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 9.5.4
+[34m[1mphpenv version[0m
+rbenv 1.0.0-30-g0c7224a
+[34m[1mrvm version[0m
+rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+[34m[1mdefault ruby version[0m
+ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+[34m[1mPre-installed Ruby versions[0m
+jruby-9.1.2.0
+ruby-1.9.3-p551
+ruby-2.0.0-p648
+ruby-2.1.9
+ruby-2.2.5
+ruby-2.3.1
+[34m[1mPre-installed Node.js versions[0m
+iojs-v1.6
+iojs-v1.6.4
+v0.10
+v0.10.40
+v0.11.16
+v0.12.2
+v0.12.7
+v0.6.21
+v0.8.28
+v4.1.2
+[34m[1mPre-installed Go versions[0m
+1.0.3
+1.1.2
+1.2.2
+1.3.3
+1.4.3
+1.5.4
+1.6.3
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.5.50, for debian-linux-gnu (x86_64) using readline 6.3
+[34m[1mPre-installed PostgreSQL versions[0m
+9.1.23
+9.2.18
+9.3.14
+9.4.9
+9.5.4
+[34m[1mRedis version[0m
+redis-server 3.0.6
+[34m[1mMongoDB version[0m
+MongoDB 3.2.9
+[34m[1mRabbitMQ Version[0m
+3.6.5
+[34m[1mInstalled Firefox version[0m
+firefox 38.4.0esr
+[34m[1mant version[0m
+Apache Ant(TM) version 1.9.3 compiled on April 8 2014
+[34m[1mmvn version[0m
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 15:22:22+0000)
+Maven home: /usr/local/maven
+Java version: 1.8.0_101, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.19.0-64-generic", arch: "amd64", family: "unix"
+[34m[1mgradle version[0m
+
+------------------------------------------------------------
+Gradle 2.13
+------------------------------------------------------------
+
+Build time:   2016-04-25 04:10:10 UTC
+Build number: none
+Revision:     3b427b1481e46232107303c90be7b05079b05b1c
+
+Groovy:       2.4.4
+Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+JVM:          1.8.0_101 (Oracle Corporation 25.101-b13)
+OS:           Linux 3.19.0-64-generic amd64
+
+[34m[1mkerl list installations[0m
+17.0
+17.1
+17.3
+17.4
+17.5
+18.0
+18.1
+18.2
+18.2.1
+R14B02
+R14B03
+R14B04
+R15B
+R15B01
+R15B02
+R15B03
+R16B
+R16B01
+R16B02
+R16B03
+R16B03-1
+[34m[1mkiex list[0m
+
+kiex elixirs
+
+   elixir-1.0.3
+=* elixir-1.0.4
+
+# => - current
+# =* - current && default
+#  * - default
+
+[34m[1mrebar --version[0m
+rebar 2.6.2 R15B03 20160628_123811 git 2.6.2
+[34m[1mlein version[0m
+WARNING: You're currently running as root; probably by accident.
+Press control-C to abort or Enter to continue as root.
+Set LEIN_ROOT to disable this warning.
+Leiningen 2.5.3 on Java 1.8.0_101 Java HotSpot(TM) 64-Bit Server VM
+[34m[1mperlbrew list[0m
+  5.8 (5.8.8)
+  5.10 (5.10.1)
+  5.12 (5.12.5)
+  5.14 (5.14.4)
+  5.16 (5.16.3)
+  5.18 (5.18.4)
+  5.20 (5.20.3)
+  5.20-extras (5.20.3)
+  5.20-shrplib (5.20.3)
+  5.20.3
+  5.22 (5.22.0)
+  5.22-extras (5.22.0)
+  5.22-shrplib (5.22.0)
+  5.22.0
+[34m[1mphpenv versions[0m
+  system
+  5.4
+  5.4.45
+  5.5.37
+  5.6
+* 5.6.24 (set by /home/travis/.phpenv/version)
+  7.0
+  7.0.7
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.2.0 2016-07-19 01:28:52
+travis_fold:end:system_info
+[0K
+travis_fold:start:fix.CVE-2015-7547
+[0K$ export DEBIAN_FRONTEND=noninteractive
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libc6 is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 105 not upgraded.
+travis_fold:end:fix.CVE-2015-7547
+[0Ktravis_fold:start:git.checkout
+[0Ktravis_time:start:146b23ae
+[0K$ git clone --depth=50 --branch=master https://github.com/MagicStack/uvloop.git MagicStack/uvloop
+Cloning into 'MagicStack/uvloop'...
+remote: Counting objects: 379, done.[K
+remote: Compressing objects:   0% (1/217)   [K
+remote: Compressing objects:   1% (3/217)   [K
+remote: Compressing objects:   2% (5/217)   [K
+remote: Compressing objects:   3% (7/217)   [K
+remote: Compressing objects:   4% (9/217)   [K
+remote: Compressing objects:   5% (11/217)   [K
+remote: Compressing objects:   6% (14/217)   [K
+remote: Compressing objects:   7% (16/217)   [K
+remote: Compressing objects:   8% (18/217)   [K
+remote: Compressing objects:   9% (20/217)   [K
+remote: Compressing objects:  10% (22/217)   [K
+remote: Compressing objects:  11% (24/217)   [K
+remote: Compressing objects:  12% (27/217)   [K
+remote: Compressing objects:  13% (29/217)   [K
+remote: Compressing objects:  14% (31/217)   [K
+remote: Compressing objects:  15% (33/217)   [K
+remote: Compressing objects:  16% (35/217)   [K
+remote: Compressing objects:  17% (37/217)   [K
+remote: Compressing objects:  18% (40/217)   [K
+remote: Compressing objects:  19% (42/217)   [K
+remote: Compressing objects:  20% (44/217)   [K
+remote: Compressing objects:  21% (46/217)   [K
+remote: Compressing objects:  22% (48/217)   [K
+remote: Compressing objects:  23% (50/217)   [K
+remote: Compressing objects:  24% (53/217)   [K
+remote: Compressing objects:  25% (55/217)   [K
+remote: Compressing objects:  26% (57/217)   [K
+remote: Compressing objects:  27% (59/217)   [K
+remote: Compressing objects:  28% (61/217)   [K
+remote: Compressing objects:  29% (63/217)   [K
+remote: Compressing objects:  30% (66/217)   [K
+remote: Compressing objects:  31% (68/217)   [K
+remote: Compressing objects:  32% (70/217)   [K
+remote: Compressing objects:  33% (72/217)   [K
+remote: Compressing objects:  34% (74/217)   [K
+remote: Compressing objects:  35% (76/217)   [K
+remote: Compressing objects:  36% (79/217)   [K
+remote: Compressing objects:  37% (81/217)   [K
+remote: Compressing objects:  38% (83/217)   [K
+remote: Compressing objects:  39% (85/217)   [K
+remote: Compressing objects:  40% (87/217)   [K
+remote: Compressing objects:  41% (89/217)   [K
+remote: Compressing objects:  42% (92/217)   [K
+remote: Compressing objects:  43% (94/217)   [K
+remote: Compressing objects:  44% (96/217)   [K
+remote: Compressing objects:  45% (98/217)   [K
+remote: Compressing objects:  46% (100/217)   [K
+remote: Compressing objects:  47% (102/217)   [K
+remote: Compressing objects:  48% (105/217)   [K
+remote: Compressing objects:  49% (107/217)   [K
+remote: Compressing objects:  50% (109/217)   [K
+remote: Compressing objects:  51% (111/217)   [K
+remote: Compressing objects:  52% (113/217)   [K
+remote: Compressing objects:  53% (116/217)   [K
+remote: Compressing objects:  54% (118/217)   [K
+remote: Compressing objects:  55% (120/217)   [K
+remote: Compressing objects:  56% (122/217)   [K
+remote: Compressing objects:  57% (124/217)   [K
+remote: Compressing objects:  58% (126/217)   [K
+remote: Compressing objects:  59% (129/217)   [K
+remote: Compressing objects:  60% (131/217)   [K
+remote: Compressing objects:  61% (133/217)   [K
+remote: Compressing objects:  62% (135/217)   [K
+remote: Compressing objects:  63% (137/217)   [K
+remote: Compressing objects:  64% (139/217)   [K
+remote: Compressing objects:  65% (142/217)   [K
+remote: Compressing objects:  66% (144/217)   [K
+remote: Compressing objects:  67% (146/217)   [K
+remote: Compressing objects:  68% (148/217)   [K
+remote: Compressing objects:  69% (150/217)   [K
+remote: Compressing objects:  70% (152/217)   [K
+remote: Compressing objects:  71% (155/217)   [K
+remote: Compressing objects:  72% (157/217)   [K
+remote: Compressing objects:  73% (159/217)   [K
+remote: Compressing objects:  74% (161/217)   [K
+remote: Compressing objects:  75% (163/217)   [K
+remote: Compressing objects:  76% (165/217)   [K
+remote: Compressing objects:  77% (168/217)   [K
+remote: Compressing objects:  78% (170/217)   [K
+remote: Compressing objects:  79% (172/217)   [K
+remote: Compressing objects:  80% (174/217)   [K
+remote: Compressing objects:  81% (176/217)   [K
+remote: Compressing objects:  82% (178/217)   [K
+remote: Compressing objects:  83% (181/217)   [K
+remote: Compressing objects:  84% (183/217)   [K
+remote: Compressing objects:  85% (185/217)   [K
+remote: Compressing objects:  86% (187/217)   [K
+remote: Compressing objects:  87% (189/217)   [K
+remote: Compressing objects:  88% (191/217)   [K
+remote: Compressing objects:  89% (194/217)   [K
+remote: Compressing objects:  90% (196/217)   [K
+remote: Compressing objects:  91% (198/217)   [K
+remote: Compressing objects:  92% (200/217)   [K
+remote: Compressing objects:  93% (202/217)   [K
+remote: Compressing objects:  94% (204/217)   [K
+remote: Compressing objects:  95% (207/217)   [K
+remote: Compressing objects:  96% (209/217)   [K
+remote: Compressing objects:  97% (211/217)   [K
+remote: Compressing objects:  98% (213/217)   [K
+remote: Compressing objects:  99% (215/217)   [K
+remote: Compressing objects: 100% (217/217)   [K
+remote: Compressing objects: 100% (217/217), done.[K
+Receiving objects:   0% (1/379)
+Receiving objects:   1% (4/379)
+Receiving objects:   2% (8/379)
+Receiving objects:   3% (12/379)
+Receiving objects:   4% (16/379)
+Receiving objects:   5% (19/379)
+Receiving objects:   6% (23/379)
+Receiving objects:   7% (27/379)
+Receiving objects:   8% (31/379)
+Receiving objects:   9% (35/379)
+Receiving objects:  10% (38/379)
+Receiving objects:  11% (42/379)
+Receiving objects:  12% (46/379)
+Receiving objects:  13% (50/379)
+Receiving objects:  14% (54/379)
+Receiving objects:  15% (57/379)
+Receiving objects:  16% (61/379)
+Receiving objects:  17% (65/379)
+Receiving objects:  18% (69/379)
+Receiving objects:  19% (73/379)
+Receiving objects:  20% (76/379)
+Receiving objects:  21% (80/379)
+Receiving objects:  22% (84/379)
+Receiving objects:  23% (88/379)
+Receiving objects:  24% (91/379)
+Receiving objects:  25% (95/379)
+Receiving objects:  26% (99/379)
+Receiving objects:  27% (103/379)
+Receiving objects:  28% (107/379)
+Receiving objects:  29% (110/379)
+Receiving objects:  30% (114/379)
+Receiving objects:  31% (118/379)
+Receiving objects:  32% (122/379)
+Receiving objects:  33% (126/379)
+Receiving objects:  34% (129/379)
+Receiving objects:  35% (133/379)
+Receiving objects:  36% (137/379)
+Receiving objects:  37% (141/379)
+Receiving objects:  38% (145/379)
+Receiving objects:  39% (148/379)
+Receiving objects:  40% (152/379)
+Receiving objects:  41% (156/379)
+Receiving objects:  42% (160/379)
+Receiving objects:  43% (163/379)
+Receiving objects:  44% (167/379)
+Receiving objects:  45% (171/379)
+Receiving objects:  46% (175/379)
+Receiving objects:  47% (179/379)
+Receiving objects:  48% (182/379)
+Receiving objects:  49% (186/379)
+Receiving objects:  50% (190/379)
+Receiving objects:  51% (194/379)
+Receiving objects:  52% (198/379)
+Receiving objects:  53% (201/379)
+Receiving objects:  54% (205/379)
+Receiving objects:  55% (209/379)
+Receiving objects:  56% (213/379)
+Receiving objects:  57% (217/379)
+Receiving objects:  58% (220/379)
+Receiving objects:  59% (224/379)
+Receiving objects:  60% (228/379)
+remote: Total 379 (delta 204), reused 267 (delta 152), pack-reused 0[K
+Receiving objects:  61% (232/379)
+Receiving objects:  62% (235/379)
+Receiving objects:  63% (239/379)
+Receiving objects:  64% (243/379)
+Receiving objects:  65% (247/379)
+Receiving objects:  66% (251/379)
+Receiving objects:  67% (254/379)
+Receiving objects:  68% (258/379)
+Receiving objects:  69% (262/379)
+Receiving objects:  70% (266/379)
+Receiving objects:  71% (270/379)
+Receiving objects:  72% (273/379)
+Receiving objects:  73% (277/379)
+Receiving objects:  74% (281/379)
+Receiving objects:  75% (285/379)
+Receiving objects:  76% (289/379)
+Receiving objects:  77% (292/379)
+Receiving objects:  78% (296/379)
+Receiving objects:  79% (300/379)
+Receiving objects:  80% (304/379)
+Receiving objects:  81% (307/379)
+Receiving objects:  82% (311/379)
+Receiving objects:  83% (315/379)
+Receiving objects:  84% (319/379)
+Receiving objects:  85% (323/379)
+Receiving objects:  86% (326/379)
+Receiving objects:  87% (330/379)
+Receiving objects:  88% (334/379)
+Receiving objects:  89% (338/379)
+Receiving objects:  90% (342/379)
+Receiving objects:  91% (345/379)
+Receiving objects:  92% (349/379)
+Receiving objects:  93% (353/379)
+Receiving objects:  94% (357/379)
+Receiving objects:  95% (361/379)
+Receiving objects:  96% (364/379)
+Receiving objects:  97% (368/379)
+Receiving objects:  98% (372/379)
+Receiving objects:  99% (376/379)
+Receiving objects: 100% (379/379)
+Receiving objects: 100% (379/379), 180.69 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/204)
+Resolving deltas:   1% (4/204)
+Resolving deltas:   3% (8/204)
+Resolving deltas:   4% (10/204)
+Resolving deltas:  15% (31/204)
+Resolving deltas:  28% (59/204)
+Resolving deltas:  30% (63/204)
+Resolving deltas:  38% (78/204)
+Resolving deltas:  39% (80/204)
+Resolving deltas:  40% (83/204)
+Resolving deltas:  41% (85/204)
+Resolving deltas:  43% (88/204)
+Resolving deltas:  55% (114/204)
+Resolving deltas:  57% (118/204)
+Resolving deltas:  58% (119/204)
+Resolving deltas:  59% (121/204)
+Resolving deltas:  61% (126/204)
+Resolving deltas:  62% (127/204)
+Resolving deltas:  63% (129/204)
+Resolving deltas:  66% (136/204)
+Resolving deltas:  67% (137/204)
+Resolving deltas:  68% (139/204)
+Resolving deltas:  69% (142/204)
+Resolving deltas:  73% (149/204)
+Resolving deltas:  78% (160/204)
+Resolving deltas:  79% (162/204)
+Resolving deltas:  81% (167/204)
+Resolving deltas:  82% (169/204)
+Resolving deltas:  83% (170/204)
+Resolving deltas:  84% (173/204)
+Resolving deltas:  86% (177/204)
+Resolving deltas:  87% (178/204)
+Resolving deltas:  88% (180/204)
+Resolving deltas:  89% (182/204)
+Resolving deltas:  90% (185/204)
+Resolving deltas:  91% (186/204)
+Resolving deltas:  93% (190/204)
+Resolving deltas:  95% (194/204)
+Resolving deltas: 100% (204/204)
+Resolving deltas: 100% (204/204), done.
+Checking connectivity... done.
+
+travis_time:end:146b23ae:start=1475857901052810586,finish=1475857901877694306,duration=824883720
+[0K$ cd MagicStack/uvloop
+$ git checkout -qf ecaea4fe52215230ff47af785a0c7bf8b62a85f3
+travis_fold:end:git.checkout
+[0Ktravis_fold:start:git.submodule
+[0Ktravis_time:start:00c4eef6
+[0K$ git submodule update --init --recursive
+Submodule 'vendor/libuv' (https://github.com/libuv/libuv.git) registered for path 'vendor/libuv'
+Cloning into 'vendor/libuv'...
+remote: Counting objects: 24351, done.[K
+Receiving objects:   0% (1/24351)
+Receiving objects:   1% (244/24351)
+Receiving objects:   2% (488/24351)
+Receiving objects:   3% (731/24351)
+Receiving objects:   4% (975/24351)
+Receiving objects:   5% (1218/24351)
+Receiving objects:   6% (1462/24351)
+Receiving objects:   7% (1705/24351)
+Receiving objects:   8% (1949/24351)
+Receiving objects:   9% (2192/24351)
+Receiving objects:  10% (2436/24351)
+Receiving objects:  11% (2679/24351)
+Receiving objects:  12% (2923/24351)
+Receiving objects:  13% (3166/24351)
+Receiving objects:  14% (3410/24351)
+Receiving objects:  15% (3653/24351)
+Receiving objects:  16% (3897/24351)
+Receiving objects:  17% (4140/24351)
+Receiving objects:  18% (4384/24351)
+Receiving objects:  19% (4627/24351)
+Receiving objects:  20% (4871/24351)
+Receiving objects:  21% (5114/24351)
+Receiving objects:  22% (5358/24351)
+Receiving objects:  23% (5601/24351)
+Receiving objects:  24% (5845/24351)
+Receiving objects:  25% (6088/24351)
+Receiving objects:  26% (6332/24351)
+Receiving objects:  27% (6575/24351)
+Receiving objects:  28% (6819/24351)
+Receiving objects:  29% (7062/24351)
+Receiving objects:  30% (7306/24351)
+Receiving objects:  31% (7549/24351)
+Receiving objects:  32% (7793/24351)
+Receiving objects:  33% (8036/24351)
+Receiving objects:  34% (8280/24351)
+Receiving objects:  35% (8523/24351)
+Receiving objects:  36% (8767/24351)
+Receiving objects:  37% (9010/24351)
+Receiving objects:  38% (9254/24351)
+Receiving objects:  39% (9497/24351)
+Receiving objects:  40% (9741/24351)
+Receiving objects:  41% (9984/24351)
+Receiving objects:  42% (10228/24351)
+Receiving objects:  43% (10471/24351)
+Receiving objects:  44% (10715/24351)
+Receiving objects:  45% (10958/24351)
+Receiving objects:  46% (11202/24351)
+Receiving objects:  47% (11445/24351)
+Receiving objects:  48% (11689/24351)
+Receiving objects:  49% (11932/24351)
+Receiving objects:  50% (12176/24351)
+Receiving objects:  51% (12420/24351)
+Receiving objects:  52% (12663/24351)
+Receiving objects:  53% (12907/24351)
+Receiving objects:  54% (13150/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  55% (13394/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  56% (13637/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  57% (13881/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  58% (14124/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  59% (14368/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  60% (14611/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  61% (14855/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  62% (15098/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  63% (15342/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  64% (15585/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  65% (15829/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  66% (16072/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  67% (16316/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  68% (16559/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  69% (16803/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  70% (17046/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  71% (17290/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  72% (17533/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  73% (17777/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  74% (18020/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  75% (18264/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  76% (18507/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  77% (18751/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  78% (18994/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  79% (19238/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  80% (19481/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  81% (19725/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  82% (19968/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  83% (20212/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  84% (20455/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  85% (20699/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  86% (20942/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  87% (21186/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  88% (21429/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  89% (21673/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  90% (21916/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  91% (22160/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  92% (22403/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  93% (22647/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  94% (22890/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  95% (23134/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  96% (23377/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  97% (23621/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  98% (23864/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects:  99% (24108/24351), 7.21 MiB | 14.39 MiB/s
+remote: Total 24351 (delta 0), reused 0 (delta 0), pack-reused 24351[K
+Receiving objects: 100% (24351/24351), 7.21 MiB | 14.39 MiB/s
+Receiving objects: 100% (24351/24351), 10.92 MiB | 14.39 MiB/s, done.
+Resolving deltas:   0% (0/17209)
+Resolving deltas:   1% (251/17209)
+Resolving deltas:   2% (359/17209)
+Resolving deltas:   3% (630/17209)
+Resolving deltas:   5% (904/17209)
+Resolving deltas:   6% (1057/17209)
+Resolving deltas:   7% (1243/17209)
+Resolving deltas:   8% (1441/17209)
+Resolving deltas:   9% (1660/17209)
+Resolving deltas:  10% (1723/17209)
+Resolving deltas:  11% (1893/17209)
+Resolving deltas:  13% (2396/17209)
+Resolving deltas:  14% (2427/17209)
+Resolving deltas:  15% (2593/17209)
+Resolving deltas:  16% (2785/17209)
+Resolving deltas:  17% (2942/17209)
+Resolving deltas:  18% (3171/17209)
+Resolving deltas:  19% (3275/17209)
+Resolving deltas:  20% (3488/17209)
+Resolving deltas:  21% (3651/17209)
+Resolving deltas:  22% (3799/17209)
+Resolving deltas:  23% (3989/17209)
+Resolving deltas:  24% (4153/17209)
+Resolving deltas:  25% (4321/17209)
+Resolving deltas:  26% (4482/17209)
+Resolving deltas:  27% (4663/17209)
+Resolving deltas:  28% (4881/17209)
+Resolving deltas:  29% (5042/17209)
+Resolving deltas:  30% (5196/17209)
+Resolving deltas:  31% (5365/17209)
+Resolving deltas:  32% (5600/17209)
+Resolving deltas:  33% (5697/17209)
+Resolving deltas:  34% (5917/17209)
+Resolving deltas:  35% (6041/17209)
+Resolving deltas:  36% (6201/17209)
+Resolving deltas:  37% (6416/17209)
+Resolving deltas:  38% (6583/17209)
+Resolving deltas:  39% (6837/17209)
+Resolving deltas:  40% (6919/17209)
+Resolving deltas:  41% (7068/17209)
+Resolving deltas:  42% (7247/17209)
+Resolving deltas:  43% (7461/17209)
+Resolving deltas:  44% (7574/17209)
+Resolving deltas:  45% (7793/17209)
+Resolving deltas:  46% (7955/17209)
+Resolving deltas:  47% (8099/17209)
+Resolving deltas:  48% (8277/17209)
+Resolving deltas:  49% (8433/17209)
+Resolving deltas:  50% (8606/17209)
+Resolving deltas:  51% (8784/17209)
+Resolving deltas:  52% (8960/17209)
+Resolving deltas:  53% (9156/17209)
+Resolving deltas:  54% (9317/17209)
+Resolving deltas:  55% (9465/17209)
+Resolving deltas:  56% (9639/17209)
+Resolving deltas:  57% (9850/17209)
+Resolving deltas:  58% (9982/17209)
+Resolving deltas:  59% (10159/17209)
+Resolving deltas:  60% (10327/17209)
+Resolving deltas:  61% (10500/17209)
+Resolving deltas:  62% (10687/17209)
+Resolving deltas:  63% (10855/17209)
+Resolving deltas:  64% (11019/17209)
+Resolving deltas:  65% (11192/17209)
+Resolving deltas:  66% (11404/17209)
+Resolving deltas:  67% (11548/17209)
+Resolving deltas:  68% (11703/17209)
+Resolving deltas:  69% (11913/17209)
+Resolving deltas:  70% (12057/17209)
+Resolving deltas:  71% (12221/17209)
+Resolving deltas:  72% (12396/17209)
+Resolving deltas:  73% (12569/17209)
+Resolving deltas:  74% (12788/17209)
+Resolving deltas:  75% (12909/17209)
+Resolving deltas:  76% (13087/17209)
+Resolving deltas:  77% (13257/17209)
+Resolving deltas:  78% (13430/17209)
+Resolving deltas:  79% (13619/17209)
+Resolving deltas:  80% (13831/17209)
+Resolving deltas:  81% (13942/17209)
+Resolving deltas:  82% (14157/17209)
+Resolving deltas:  83% (14288/17209)
+Resolving deltas:  84% (14469/17209)
+Resolving deltas:  85% (14632/17209)
+Resolving deltas:  86% (14814/17209)
+Resolving deltas:  87% (14980/17209)
+Resolving deltas:  88% (15149/17209)
+Resolving deltas:  89% (15317/17209)
+Resolving deltas:  90% (15497/17209)
+Resolving deltas:  91% (15661/17209)
+Resolving deltas:  92% (15837/17209)
+Resolving deltas:  93% (16007/17209)
+Resolving deltas:  94% (16179/17209)
+Resolving deltas:  95% (16349/17209)
+Resolving deltas:  96% (16525/17209)
+Resolving deltas:  97% (16699/17209)
+Resolving deltas:  98% (16870/17209)
+Resolving deltas:  99% (17037/17209)
+Resolving deltas: 100% (17209/17209)
+Resolving deltas: 100% (17209/17209), done.
+Checking connectivity... done.
+Submodule path 'vendor/libuv': checked out 'd989902ac658b4323a4f4020446e6f4dc449e25c'
+
+travis_time:end:00c4eef6:start=1475857901890372906,finish=1475857904241289542,duration=2350916636
+[0Ktravis_fold:end:git.submodule
+[0Ktravis_fold:start:services
+[0Ktravis_time:start:0e79a45c
+[0K$ sudo service docker start
+start: Job is already running: docker
+
+travis_time:end:0e79a45c:start=1475857904247226223,finish=1475857904263803720,duration=16577497
+[0Ktravis_fold:end:services
+[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export PYMODULE=uvloop
+$ export PYPI_USER=magicstack-ci
+$ export PYPI_PASSWD=[secure]
+
+travis_time:start:143a0d3c
+[0K$ source ~/virtualenv/python3.5/bin/activate
+
+travis_time:end:143a0d3c:start=1475857907271647201,finish=1475857907276480252,duration=4833051
+[0Ktravis_fold:start:cache.1
+[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:094ed758
+[0K$ Installing caching utilities
+
+travis_time:end:094ed758:start=1475857907881172420,finish=1475857907971596805,duration=90424385
+[0Ktravis_time:start:25c60b53
+[0K
+travis_time:end:25c60b53:start=1475857907977261396,finish=1475857907981401581,duration=4140185
+[0Ktravis_time:start:038b7b7d
+[0K[32;1mattempting to download cache archive[0m
+[32;1mfetching master/cache-linux-trusty-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855--python-3.5.tgz[0m
+[32;1mfound cache[0m
+
+travis_time:end:038b7b7d:start=1475857907986023107,finish=1475857908976055681,duration=990032574
+[0Ktravis_fold:end:cache.1
+[0Ktravis_fold:start:cache.pip
+[0K
+travis_time:start:2c484479
+[0K
+travis_time:end:2c484479:start=1475857908980997448,finish=1475857908985363985,duration=4366537
+[0Ktravis_time:start:04c515cc
+[0K[32;1madding /home/travis/.cache/pip to cache[0m
+
+travis_time:end:04c515cc:start=1475857908989953721,finish=1475857910393272697,duration=1403318976
+[0Ktravis_fold:end:cache.pip
+[0K$ python --version
+Python 3.5.0
+$ pip --version
+pip 8.1.2 from /home/travis/virtualenv/python3.5.0/lib/python3.5/site-packages (python 3.5)
+travis_fold:start:install
+[0Ktravis_time:start:22e31c6c
+[0K$ .ci/travis-install.sh
++'[' linux == osx ']'
++pip install --upgrade pip wheel
+Collecting pip
+  Using cached pip-8.1.2-py2.py3-none-any.whl
+Requirement already up-to-date: wheel in /home/travis/virtualenv/python3.5.0/lib/python3.5/site-packages
+Installing collected packages: pip
+  Found existing installation: pip 7.1.0
+    Uninstalling pip-7.1.0:
+      Successfully uninstalled pip-7.1.0
+Successfully installed pip-8.1.2
++pip install --upgrade setuptools
+Collecting setuptools
+  Downloading setuptools-28.3.0-py2.py3-none-any.whl (467kB)
+[?25l
+[K    2% |â–Š                               | 10kB 41.9MB/s eta 0:00:01
+[K    4% |â–ˆâ–                              | 20kB 6.7MB/s eta 0:00:01
+[K    6% |â–ˆâ–ˆ                              | 30kB 9.2MB/s eta 0:00:01
+[K    8% |â–ˆâ–ˆâ–‰                             | 40kB 5.7MB/s eta 0:00:01
+[K    10% |â–ˆâ–ˆâ–ˆâ–Œ                            | 51kB 4.7MB/s eta 0:00:01
+[K    13% |â–ˆâ–ˆâ–ˆâ–ˆâ–                           | 61kB 5.5MB/s eta 0:00:01
+[K    15% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆ                           | 71kB 4.8MB/s eta 0:00:01
+[K    17% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹                          | 81kB 4.4MB/s eta 0:00:01
+[K    19% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Ž                         | 92kB 4.9MB/s eta 0:00:01
+[K    21% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ                         | 102kB 4.6MB/s eta 0:00:01
+[K    24% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Š                        | 112kB 4.6MB/s eta 0:00:01
+[K    26% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–                       | 122kB 4.5MB/s eta 0:00:01
+[K    28% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–                      | 133kB 4.0MB/s eta 0:00:01
+[K    30% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‰                      | 143kB 4.6MB/s eta 0:00:01
+[K    32% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ                     | 153kB 4.7MB/s eta 0:00:01
+[K    35% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–                    | 163kB 4.1MB/s eta 0:00:01
+[K    37% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ                    | 174kB 4.7MB/s eta 0:00:01
+[K    39% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹                   | 184kB 4.9MB/s eta 0:00:01
+[K    41% |â–ˆâ–ˆâ–ˆï¿½ï¿½ï¿½â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Ž                  | 194kB 4.9MB/s eta 0:00:01
+[K    43% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ                  | 204kB 4.9MB/s eta 0:00:01
+[K    46% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Š                 | 215kB 4.3MB/s eta 0:00:01
+[K    48% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–                | 225kB 4.9MB/s eta 0:00:01
+[K    50% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–               | 235kB 4.9MB/s eta 0:00:01
+[K    52% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‰               | 245kB 4.3MB/s eta 0:00:01
+[K    54% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ              | 256kB 4.9MB/s eta 0:00:01
+[K    56% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Ž             | 266kB 4.9MB/s eta 0:00:01
+[K    59% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ             | 276kB 4.9MB/s eta 0:00:01
+[K    61% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹            | 286kB 5.2MB/s eta 0:00:01
+[K    63% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–           | 296kB 4.6MB/s eta 0:00:01
+[K    65% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ           | 307kB 5.3MB/s eta 0:00:01
+[K    67% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Š          | 317kB 5.3MB/s eta 0:00:01
+[K    70% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–         | 327kB 4.7MB/s eta 0:00:01
+[K    72% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–        | 337kB 5.4MB/s eta 0:00:01
+[K    74% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‰        | 348kB 5.6MB/s eta 0:00:01
+[K    76% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ       | 358kB 5.6MB/s eta 0:00:01
+[K    78% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Ž      | 368kB 5.7MB/s eta 0:00:01
+[K    81% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ      | 378kB 5.1MB/s eta 0:00:01
+[K    83% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹     | 389kB 5.6MB/s eta 0:00:01
+[K    85% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–    | 399kB 5.7MB/s eta 0:00:01
+[K    87% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ    | 409kB 5.0MB/s eta 0:00:01
+[K    89% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Š   | 419kB 5.9MB/s eta 0:00:01
+[K    92% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ  | 430kB 6.0MB/s eta 0:00:01
+[K    94% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ– | 440kB 6.0MB/s eta 0:00:01
+[K    96% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‰ | 450kB 6.0MB/s eta 0:00:01
+[K    98% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹| 460kB 5.5MB/s eta 0:00:01
+[K    100% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 471kB 2.0MB/s
+[?25hInstalling collected packages: setuptools
+  Found existing installation: setuptools 18.0.1
+    Uninstalling setuptools-18.0.1:
+      Successfully uninstalled setuptools-18.0.1
+Successfully installed setuptools-28.3.0
++pip install -r .ci/requirements.txt
+Collecting cython>=0.24 (from -r .ci/requirements.txt (line 1))
+  Using cached Cython-0.24.1-cp35-cp35m-manylinux1_x86_64.whl
+Collecting aiohttp (from -r .ci/requirements.txt (line 2))
+  Using cached aiohttp-1.0.3-cp35-cp35m-manylinux1_x86_64.whl
+Collecting twine (from -r .ci/requirements.txt (line 3))
+  Using cached twine-1.8.1-py2.py3-none-any.whl
+Collecting multidict>=2.0 (from aiohttp->-r .ci/requirements.txt (line 2))
+  Using cached multidict-2.1.2-cp35-cp35m-manylinux1_x86_64.whl
+Collecting async-timeout (from aiohttp->-r .ci/requirements.txt (line 2))
+  Using cached async_timeout-1.0.0-py3-none-any.whl
+Collecting chardet (from aiohttp->-r .ci/requirements.txt (line 2))
+Requirement already satisfied (use --upgrade to upgrade): setuptools>=0.7.0 in /home/travis/virtualenv/python3.5.0/lib/python3.5/site-packages (from twine->-r .ci/requirements.txt (line 3))
+Collecting requests-toolbelt>=0.5.1 (from twine->-r .ci/requirements.txt (line 3))
+  Using cached requests_toolbelt-0.7.0-py2.py3-none-any.whl
+Collecting clint (from twine->-r .ci/requirements.txt (line 3))
+Collecting pkginfo>=1.0 (from twine->-r .ci/requirements.txt (line 3))
+  Using cached pkginfo-1.3.2-py2.py3-none-any.whl
+Collecting requests>=2.5.0 (from twine->-r .ci/requirements.txt (line 3))
+  Using cached requests-2.11.1-py2.py3-none-any.whl
+Collecting args (from clint->twine->-r .ci/requirements.txt (line 3))
+Installing collected packages: cython, multidict, async-timeout, chardet, aiohttp, requests, requests-toolbelt, args, clint, pkginfo, twine
+Successfully installed aiohttp-1.0.3 args-0.1.0 async-timeout-1.0.0 chardet-2.3.0 clint-0.5.1 cython-0.24.1 multidict-2.1.2 pkginfo-1.3.2 requests-2.11.1 requests-toolbelt-0.7.0 twine-1.8.1
+
+travis_time:end:22e31c6c:start=1475857911201719901,finish=1475857916892879912,duration=5691160011
+[0Ktravis_fold:end:install
+[0Ktravis_time:start:19a279b5
+[0K$ if [ "$TRAVIS_OS_NAME" == "osx" ]; then eval "$(pyenv init -)"; fi
+
+travis_time:end:19a279b5:start=1475857916897790639,finish=1475857916901676219,duration=3885580
+[0K
+[32;1mThe command "if [ "$TRAVIS_OS_NAME" == "osx" ]; then eval "$(pyenv init -)"; fi" exited with 0.[0m
+travis_time:start:360c89d0
+[0K$ make distclean && make && make test
+rm -fr dist/ doc/_build/
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so build *.egg-info
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+find . -name '__pycache__' | xargs rm -rf
+(cd vendor/libuv; git clean -dfX)
+python -c "import cython; (cython.__version__ < '0.24') and exit(1)"
+rm -fr dist/ doc/_build/
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so build *.egg-info
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+find . -name '__pycache__' | xargs rm -rf
+echo "DEF DEBUG = 0" > uvloop/__debug.pxi
+python -m cython -3 uvloop/loop.pyx; rm uvloop/__debug.*
+python setup.py build_ext --inplace
+running build_ext
++libtoolize --copy
+libtoolize: putting auxiliary files in `.'.
+libtoolize: copying file `./ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIR, `m4'.
+libtoolize: copying file `m4/libtool.m4'
+libtoolize: copying file `m4/ltoptions.m4'
+libtoolize: copying file `m4/ltsugar.m4'
+libtoolize: copying file `m4/ltversion.m4'
+libtoolize: copying file `m4/lt~obsolete.m4'
++aclocal -I m4
++autoconf
++automake --add-missing --copy
+configure.ac:35: installing './ar-lib'
+configure.ac:25: installing './compile'
+configure.ac:22: installing './config.guess'
+configure.ac:22: installing './config.sub'
+configure.ac:21: installing './install-sh'
+configure.ac:21: installing './missing'
+Makefile.am: installing './depcomp'
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking if gcc supports -fvisibility=hidden flag... yes
+checking if gcc supports -g flag... yes
+checking if gcc supports -std=gnu89 flag... yes
+checking if gcc supports -pedantic flag... yes
+checking if gcc supports -Wall flag... yes
+checking if gcc supports -Wextra flag... yes
+checking if gcc supports -Wno-unused-parameter flag... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3458764513820540925
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether make supports nested variables... (cached) yes
+checking for dlopen in -ldl... yes
+checking for kstat_lookup in -lkstat... no
+checking for kvm_open in -lkvm... no
+checking for gethostbyname in -lnsl... yes
+checking for perfstat_cpu in -lperfstat... no
+checking for pthread_mutex_init in -lpthread... yes
+checking for clock_gettime in -lrt... yes
+checking for sendfile in -lsendfile... no
+checking for socket in -lsocket... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking sys/ahafs_evProds.h usability... no
+checking sys/ahafs_evProds.h presence... no
+checking for sys/ahafs_evProds.h... no
+checking for pkg-config... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating libuv.pc
+config.status: creating Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Entering directory `/home/travis/build/MagicStack/uvloop/vendor/libuv'
+  CC       src/libuv_la-fs-poll.lo
+  CC       src/libuv_la-inet.lo
+  CC       src/libuv_la-threadpool.lo
+  CC       src/libuv_la-uv-common.lo
+  CC       src/libuv_la-version.lo
+  CC       src/unix/libuv_la-async.lo
+  CC       src/unix/libuv_la-core.lo
+  CC       src/unix/libuv_la-dl.lo
+  CC       src/unix/libuv_la-fs.lo
+  CC       src/unix/libuv_la-getaddrinfo.lo
+  CC       src/unix/libuv_la-getnameinfo.lo
+  CC       src/unix/libuv_la-loop-watcher.lo
+  CC       src/unix/libuv_la-loop.lo
+  CC       src/unix/libuv_la-pipe.lo
+  CC       src/unix/libuv_la-poll.lo
+  CC       src/unix/libuv_la-process.lo
+  CC       src/unix/libuv_la-signal.lo
+  CC       src/unix/libuv_la-stream.lo
+  CC       src/unix/libuv_la-tcp.lo
+  CC       src/unix/libuv_la-thread.lo
+  CC       src/unix/libuv_la-timer.lo
+  CC       src/unix/libuv_la-tty.lo
+  CC       src/unix/libuv_la-udp.lo
+  CC       src/unix/libuv_la-linux-core.lo
+  CC       src/unix/libuv_la-linux-inotify.lo
+  CC       src/unix/libuv_la-linux-syscalls.lo
+  CC       src/unix/libuv_la-proctitle.lo
+  CCLD     libuv.la
+make[1]: Leaving directory `/home/travis/build/MagicStack/uvloop/vendor/libuv'
+building 'uvloop.loop' extension
+creating build
+creating build/temp.linux-x86_64-3.5
+creating build/temp.linux-x86_64-3.5/uvloop
+gcc -pthread -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/opt/python/3.5.0/include/python3.5m -Ivendor/libuv/include -c uvloop/loop.c -o build/temp.linux-x86_64-3.5/uvloop/loop.o -O2
+creating build/lib.linux-x86_64-3.5
+creating build/lib.linux-x86_64-3.5/uvloop
+gcc -pthread -shared -L/opt/python/3.5.0/lib -Wl,-rpath=/opt/python/3.5.0/lib build/temp.linux-x86_64-3.5/uvloop/loop.o vendor/libuv/.libs/libuv.a -L/opt/python/3.5.0/lib -lpython3.5m -lrt -o build/lib.linux-x86_64-3.5/uvloop/loop.cpython-35m-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-3.5/uvloop/loop.cpython-35m-x86_64-linux-gnu.so -> uvloop
+PYTHONASYNCIODEBUG=1 python -m unittest discover -s tests
+/home/travis/virtualenv/python3.5.0/lib/python3.5/site-packages/aiohttp/client.py:494: DeprecationWarning: Use async with instead
+  warnings.warn("Use async with instead", DeprecationWarning)
+............................................................................................................s.....................s.....................s.....................s...............................................................Executing <Handle Task._step created at /opt/python/3.5.0/lib/python3.5/asyncio/tasks.py:526> took 1.005 seconds
+Executing <Handle Task._step created at /opt/python/3.5.0/lib/python3.5/asyncio/tasks.py:526> took 1.004 seconds
+.........................................................................................................s...............s........./opt/python/3.5.0/lib/python3.5/asyncio/sslproto.py:323: ResourceWarning: unclosed transport <asyncio.sslproto._SSLProtocolTransport object at 0x2aedb956e1d0>
+  warnings.warn("unclosed transport %r" % self, ResourceWarning)
+...................E/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=14, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=37, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=65, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=29, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=34, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+Exception in thread test-server:
+Traceback (most recent call last):
+  File "/opt/python/3.5.0/lib/python3.5/threading.py", line 923, in _bootstrap_inner
+    self.run()
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 345, in run
+    self._handle_client(conn)
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 352, in _handle_client
+    self._iterate(prog, sock)
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 279, in _iterate
+    command_res = command._run(sock)
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 406, in _run
+    raise ConnectionAbortedError
+ConnectionAbortedError
+
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=61, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=54, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=20, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=26, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=39, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=57, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=32, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=75, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=23, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=35, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=18, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=52, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=76, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=43, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=72, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=99, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=82, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=92, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=114, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=110, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=106, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=91, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=113, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=97, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=95, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=108, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=79, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=84, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=96, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=81, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=102, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=87, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=98, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=93, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=107, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=94, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=88, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=90, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=80, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=101, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=111, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=104, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=112, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=85, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=109, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=100, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=103, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=105, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=83, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=89, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=86, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=67, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=64, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=71, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=69, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=77, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=62, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=74, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=28, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=51, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=30, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=42, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=24, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=70, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=41, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=46, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=22, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=36, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=17, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=40, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=48, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=38, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=19, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=58, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=31, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=59, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=68, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=49, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=44, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=25, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=63, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=27, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=33, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=50, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=56, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=21, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=47, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=45, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=78, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=66, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=16, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=60, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=55, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=73, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=53, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4of3kt7y>
+  gc.collect()
+..EE/opt/python/3.5.0/lib/python3.5/unittest/case.py:625: ResourceWarning: unclosed <socket.socket fd=12, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0>
+  outcome.errors.clear()
+/opt/python/3.5.0/lib/python3.5/unittest/case.py:625: ResourceWarning: unclosed <socket.socket fd=13, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0>
+  outcome.errors.clear()
+..EE..
+======================================================================
+ERROR: test_create_unix_connection_1 (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 209, in test_create_unix_connection_1
+    run(client_2)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 204, in run
+    asyncio.gather(*tasks, loop=self.loop))
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:20268)
+    return future.result()
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/futures.py", line 274, in result
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:98891)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 176, in client_2
+    loop=self.loop)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/coroutines.py", line 105, in __next__
+    return self.gen.send(None)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/streams.py", line 117, in open_unix_connection
+    lambda: protocol, path, **kwds)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:27194)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_create_unix_connection_4 (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 287, in test_create_unix_connection_4
+    self.loop.run_until_complete(runner())
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:20271)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:93608)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:93147)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:98891)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 285, in runner
+    await client()
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/coroutines.py", line 105, in __next__
+    return self.gen.send(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 281, in client
+    loop=self.loop)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/coroutines.py", line 105, in __next__
+    return self.gen.send(None)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/streams.py", line 117, in open_unix_connection
+    lambda: protocol, path, **kwds)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:27194)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_create_unix_connection_5 (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 311, in test_create_unix_connection_5
+    self.loop.run_until_complete(client())
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:20271)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:93608)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:93147)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:98891)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 304, in client
+    sock=s2)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:27194)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_transport_fromsock_get_extra_info (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 337, in test_transport_fromsock_get_extra_info
+    self.loop.run_until_complete(test(s1))
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:20271)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:93608)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:93147)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:98891)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 322, in test
+    sock=sock)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:27194)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_transport_unclosed_warning (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 349, in test_transport_unclosed_warning
+    self.loop.run_until_complete(test(s1))
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:20271)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:93608)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:93147)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:98891)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 344, in test
+    sock=sock)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:27194)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+----------------------------------------------------------------------
+Ran 399 tests in 69.912s
+
+FAILED (errors=5, skipped=6)
+make: *** [test] Error 1
+
+travis_time:end:360c89d0:start=1475857916907111701,finish=1475858036482007794,duration=119574896093
+[0K
+[31;1mThe command "make distclean && make && make test" exited with 2.[0m
+travis_time:start:0166b326
+[0K$ make distclean && make debug && make test
+rm -fr dist/ doc/_build/
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so build *.egg-info
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+find . -name '__pycache__' | xargs rm -rf
+(cd vendor/libuv; git clean -dfX)
+Removing .libs/
+Removing Makefile
+Removing Makefile.in
+Removing aclocal.m4
+Removing ar-lib
+Removing autom4te.cache/
+Removing compile
+Removing config.guess
+Removing config.log
+Removing config.status
+Removing config.sub
+Removing configure
+Removing depcomp
+Removing install-sh
+Removing libtool
+Removing libuv.la
+Removing libuv.pc
+Removing ltmain.sh
+Removing m4/libtool.m4
+Removing m4/libuv-extra-automake-flags.m4
+Removing m4/ltoptions.m4
+Removing m4/ltsugar.m4
+Removing m4/ltversion.m4
+Removing m4/lt~obsolete.m4
+Removing missing
+Removing src/.deps/
+Removing src/.dirstamp
+Removing src/libuv_la-fs-poll.lo
+Removing src/libuv_la-fs-poll.o
+Removing src/libuv_la-inet.lo
+Removing src/libuv_la-inet.o
+Removing src/libuv_la-threadpool.lo
+Removing src/libuv_la-threadpool.o
+Removing src/libuv_la-uv-common.lo
+Removing src/libuv_la-uv-common.o
+Removing src/libuv_la-version.lo
+Removing src/libuv_la-version.o
+Removing src/unix/.deps/
+Removing src/unix/.dirstamp
+Removing src/unix/libuv_la-async.lo
+Removing src/unix/libuv_la-async.o
+Removing src/unix/libuv_la-core.lo
+Removing src/unix/libuv_la-core.o
+Removing src/unix/libuv_la-dl.lo
+Removing src/unix/libuv_la-dl.o
+Removing src/unix/libuv_la-fs.lo
+Removing src/unix/libuv_la-fs.o
+Removing src/unix/libuv_la-getaddrinfo.lo
+Removing src/unix/libuv_la-getaddrinfo.o
+Removing src/unix/libuv_la-getnameinfo.lo
+Removing src/unix/libuv_la-getnameinfo.o
+Removing src/unix/libuv_la-linux-core.lo
+Removing src/unix/libuv_la-linux-core.o
+Removing src/unix/libuv_la-linux-inotify.lo
+Removing src/unix/libuv_la-linux-inotify.o
+Removing src/unix/libuv_la-linux-syscalls.lo
+Removing src/unix/libuv_la-linux-syscalls.o
+Removing src/unix/libuv_la-loop-watcher.lo
+Removing src/unix/libuv_la-loop-watcher.o
+Removing src/unix/libuv_la-loop.lo
+Removing src/unix/libuv_la-loop.o
+Removing src/unix/libuv_la-pipe.lo
+Removing src/unix/libuv_la-pipe.o
+Removing src/unix/libuv_la-poll.lo
+Removing src/unix/libuv_la-poll.o
+Removing src/unix/libuv_la-process.lo
+Removing src/unix/libuv_la-process.o
+Removing src/unix/libuv_la-proctitle.lo
+Removing src/unix/libuv_la-proctitle.o
+Removing src/unix/libuv_la-signal.lo
+Removing src/unix/libuv_la-signal.o
+Removing src/unix/libuv_la-stream.lo
+Removing src/unix/libuv_la-stream.o
+Removing src/unix/libuv_la-tcp.lo
+Removing src/unix/libuv_la-tcp.o
+Removing src/unix/libuv_la-thread.lo
+Removing src/unix/libuv_la-thread.o
+Removing src/unix/libuv_la-timer.lo
+Removing src/unix/libuv_la-timer.o
+Removing src/unix/libuv_la-tty.lo
+Removing src/unix/libuv_la-tty.o
+Removing src/unix/libuv_la-udp.lo
+Removing src/unix/libuv_la-udp.o
+Removing src/win/.deps/
+Removing test/.deps/
+python -c "import cython; (cython.__version__ < '0.24') and exit(1)"
+rm -fr dist/ doc/_build/
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so build *.egg-info
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+find . -name '__pycache__' | xargs rm -rf
+echo "DEF DEBUG = 1" > uvloop/__debug.pxi
+python -m cython -3 -a -p uvloop/loop.pyx; rm uvloop/__debug.*
+python setup.py build_ext --inplace
+running build_ext
++libtoolize --copy
+libtoolize: putting auxiliary files in `.'.
+libtoolize: copying file `./ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIR, `m4'.
+libtoolize: copying file `m4/libtool.m4'
+libtoolize: copying file `m4/ltoptions.m4'
+libtoolize: copying file `m4/ltsugar.m4'
+libtoolize: copying file `m4/ltversion.m4'
+libtoolize: copying file `m4/lt~obsolete.m4'
++aclocal -I m4
++autoconf
++automake --add-missing --copy
+configure.ac:35: installing './ar-lib'
+configure.ac:25: installing './compile'
+configure.ac:22: installing './config.guess'
+configure.ac:22: installing './config.sub'
+configure.ac:21: installing './install-sh'
+configure.ac:21: installing './missing'
+Makefile.am: installing './depcomp'
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking if gcc supports -fvisibility=hidden flag... yes
+checking if gcc supports -g flag... yes
+checking if gcc supports -std=gnu89 flag... yes
+checking if gcc supports -pedantic flag... yes
+checking if gcc supports -Wall flag... yes
+checking if gcc supports -Wextra flag... yes
+checking if gcc supports -Wno-unused-parameter flag... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3458764513820540925
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether make supports nested variables... (cached) yes
+checking for dlopen in -ldl... yes
+checking for kstat_lookup in -lkstat... no
+checking for kvm_open in -lkvm... no
+checking for gethostbyname in -lnsl... yes
+checking for perfstat_cpu in -lperfstat... no
+checking for pthread_mutex_init in -lpthread... yes
+checking for clock_gettime in -lrt... yes
+checking for sendfile in -lsendfile... no
+checking for socket in -lsocket... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking sys/ahafs_evProds.h usability... no
+checking sys/ahafs_evProds.h presence... no
+checking for sys/ahafs_evProds.h... no
+checking for pkg-config... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating libuv.pc
+config.status: creating Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Entering directory `/home/travis/build/MagicStack/uvloop/vendor/libuv'
+  CC       src/libuv_la-fs-poll.lo
+  CC       src/libuv_la-inet.lo
+  CC       src/libuv_la-threadpool.lo
+  CC       src/libuv_la-uv-common.lo
+  CC       src/libuv_la-version.lo
+  CC       src/unix/libuv_la-async.lo
+  CC       src/unix/libuv_la-core.lo
+  CC       src/unix/libuv_la-dl.lo
+  CC       src/unix/libuv_la-fs.lo
+  CC       src/unix/libuv_la-getaddrinfo.lo
+  CC       src/unix/libuv_la-getnameinfo.lo
+  CC       src/unix/libuv_la-loop-watcher.lo
+  CC       src/unix/libuv_la-loop.lo
+  CC       src/unix/libuv_la-pipe.lo
+  CC       src/unix/libuv_la-poll.lo
+  CC       src/unix/libuv_la-process.lo
+  CC       src/unix/libuv_la-signal.lo
+  CC       src/unix/libuv_la-stream.lo
+  CC       src/unix/libuv_la-tcp.lo
+  CC       src/unix/libuv_la-thread.lo
+  CC       src/unix/libuv_la-timer.lo
+  CC       src/unix/libuv_la-tty.lo
+  CC       src/unix/libuv_la-udp.lo
+  CC       src/unix/libuv_la-linux-core.lo
+  CC       src/unix/libuv_la-linux-inotify.lo
+  CC       src/unix/libuv_la-linux-syscalls.lo
+  CC       src/unix/libuv_la-proctitle.lo
+  CCLD     libuv.la
+make[1]: Leaving directory `/home/travis/build/MagicStack/uvloop/vendor/libuv'
+building 'uvloop.loop' extension
+creating build
+creating build/temp.linux-x86_64-3.5
+creating build/temp.linux-x86_64-3.5/uvloop
+gcc -pthread -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/opt/python/3.5.0/include/python3.5m -Ivendor/libuv/include -c uvloop/loop.c -o build/temp.linux-x86_64-3.5/uvloop/loop.o -O2
+creating build/lib.linux-x86_64-3.5
+creating build/lib.linux-x86_64-3.5/uvloop
+gcc -pthread -shared -L/opt/python/3.5.0/lib -Wl,-rpath=/opt/python/3.5.0/lib build/temp.linux-x86_64-3.5/uvloop/loop.o vendor/libuv/.libs/libuv.a -L/opt/python/3.5.0/lib -lpython3.5m -lrt -o build/lib.linux-x86_64-3.5/uvloop/loop.cpython-35m-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-3.5/uvloop/loop.cpython-35m-x86_64-linux-gnu.so -> uvloop
+PYTHONASYNCIODEBUG=1 python -m unittest discover -s tests
+/home/travis/virtualenv/python3.5.0/lib/python3.5/site-packages/aiohttp/client.py:494: DeprecationWarning: Use async with instead
+  warnings.warn("Use async with instead", DeprecationWarning)
+............................................................................................................s.....................s.....................s.....................s...............................................................Executing <Handle Task._step created at /opt/python/3.5.0/lib/python3.5/asyncio/tasks.py:526> took 1.004 seconds
+Executing <Handle Task._step created at /opt/python/3.5.0/lib/python3.5/asyncio/tasks.py:526> took 1.004 seconds
+.........................................................................................................s...............s........./opt/python/3.5.0/lib/python3.5/asyncio/sslproto.py:323: ResourceWarning: unclosed transport <asyncio.sslproto._SSLProtocolTransport object at 0x2aeea6567be0>
+  warnings.warn("unclosed transport %r" % self, ResourceWarning)
+...................E/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=14, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=71, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=29, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=34, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=42, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=113, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=81, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=90, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=106, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=27, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=31, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=39, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=109, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=73, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=80, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=68, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+Exception in thread test-server:
+Traceback (most recent call last):
+  File "/opt/python/3.5.0/lib/python3.5/threading.py", line 923, in _bootstrap_inner
+    self.run()
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 345, in run
+    self._handle_client(conn)
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 352, in _handle_client
+    self._iterate(prog, sock)
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 279, in _iterate
+    command_res = command._run(sock)
+  File "/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 406, in _run
+    raise ConnectionAbortedError
+ConnectionAbortedError
+
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=54, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=52, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=88, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=87, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=26, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=85, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=76, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=19, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=21, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=23, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=22, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=16, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=18, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=24, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=63, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=100, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=102, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=86, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=77, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=67, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=47, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=114, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=30, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=49, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=25, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=84, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=44, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=112, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=75, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=72, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=38, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=28, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=96, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=110, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=79, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=94, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=33, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=61, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=98, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=59, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=108, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=56, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=41, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=66, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=70, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=92, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=60, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=51, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=58, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=64, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=43, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=35, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=40, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=105, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=62, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=107, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=36, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=20, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=91, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=74, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=103, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=46, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=83, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=45, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=69, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=37, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=50, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=101, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=95, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=57, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=48, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=78, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=104, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=111, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=82, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=97, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=99, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=89, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=93, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=32, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=53, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=55, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=65, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+/home/travis/build/MagicStack/uvloop/uvloop/_testbase.py:81: ResourceWarning: unclosed <socket.socket fd=17, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, raddr=/tmp/tmp4jog825w>
+  gc.collect()
+..EE/opt/python/3.5.0/lib/python3.5/unittest/case.py:625: ResourceWarning: unclosed <socket.socket fd=12, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0>
+  outcome.errors.clear()
+/opt/python/3.5.0/lib/python3.5/unittest/case.py:625: ResourceWarning: unclosed <socket.socket fd=13, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0>
+  outcome.errors.clear()
+..EE..
+======================================================================
+ERROR: test_create_unix_connection_1 (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 209, in test_create_unix_connection_1
+    run(client_2)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 204, in run
+    asyncio.gather(*tasks, loop=self.loop))
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:22803)
+    return future.result()
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/futures.py", line 274, in result
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:105418)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 176, in client_2
+    loop=self.loop)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/coroutines.py", line 105, in __next__
+    return self.gen.send(None)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/streams.py", line 117, in open_unix_connection
+    lambda: protocol, path, **kwds)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:29729)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_create_unix_connection_4 (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 287, in test_create_unix_connection_4
+    self.loop.run_until_complete(runner())
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:22806)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:100120)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:99659)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:105418)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 285, in runner
+    await client()
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/coroutines.py", line 105, in __next__
+    return self.gen.send(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 281, in client
+    loop=self.loop)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/coroutines.py", line 105, in __next__
+    return self.gen.send(None)
+  File "/opt/python/3.5.0/lib/python3.5/asyncio/streams.py", line 117, in open_unix_connection
+    lambda: protocol, path, **kwds)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:29729)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_create_unix_connection_5 (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 311, in test_create_unix_connection_5
+    self.loop.run_until_complete(client())
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:22806)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:100120)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:99659)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:105418)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 304, in client
+    sock=s2)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:29729)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_transport_fromsock_get_extra_info (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 337, in test_transport_fromsock_get_extra_info
+    self.loop.run_until_complete(test(s1))
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:22806)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:100120)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:99659)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:105418)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 322, in test
+    sock=sock)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:29729)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+======================================================================
+ERROR: test_transport_unclosed_warning (test_unix.Test_UV_Unix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 349, in test_transport_unclosed_warning
+    self.loop.run_until_complete(test(s1))
+  File "uvloop/loop.pyx", line 1120, in uvloop.loop.Loop.run_until_complete (uvloop/loop.c:22806)
+    return future.result()
+  File "uvloop/future.pyx", line 146, in uvloop.loop.BaseFuture.result (uvloop/loop.c:100120)
+    return self._result_impl()
+  File "uvloop/future.pyx", line 101, in uvloop.loop.BaseFuture._result_impl (uvloop/loop.c:99659)
+    raise self._exception
+  File "uvloop/task.pyx", line 126, in uvloop.loop.BaseTask._fast_step (uvloop/loop.c:105418)
+    result = meth(None)
+  File "/home/travis/build/MagicStack/uvloop/tests/test_unix.py", line 344, in test
+    sock=sock)
+  File "uvloop/loop.pyx", line 1619, in create_unix_connection (uvloop/loop.c:29729)
+    if sock.family != uv.AF_UNIX or sock.type != socket.SOCK_STREAM:
+NameError: name 'socket' is not defined
+
+----------------------------------------------------------------------
+Ran 399 tests in 73.652s
+
+FAILED (errors=5, skipped=6)
+make: *** [test] Error 1
+
+travis_time:end:0166b326:start=1475858036487197313,finish=1475858162291306989,duration=125804109676
+[0K
+[31;1mThe command "make distclean && make debug && make test" exited with 2.[0m
+travis_fold:start:cache.2
+[0Kstore build cache
+travis_time:start:02aa9887
+[0K
+travis_time:end:02aa9887:start=1475858162296936527,finish=1475858162301702776,duration=4766249
+[0Ktravis_time:start:0e1c0a00
+[0K[32;1mchange detected (content changed, file is created, or file is deleted):
+/home/travis/.cache/pip/http/2/2/8/1/d/2281ddaafdd93fe42769bedb55d3a2b9e1e6dc7ec1c52bbbd71e9bf7
+/home/travis/.cache/pip/http/3/5/2/c/5/352c567f9f815db2ac19a290c52adee836df773f43302a4f4634ae70
+/home/travis/.cache/pip/http/3/a/f/3/a/3af3addf06e983a6c02f46e7bea70c221d3ff95bf1418fa6da354e14
+/home/travis/.cache/pip/http/4/2/2/c/5/422c5e14651344d301a95c2d0dc396880063cb318cc7b3bc66f72e8a
+/home/travis/.cache/pip/http/4/7/2/3/1/472310d10a1408ab00188f6550b258fc30b406062090194293a2ded4
+/home/travis/.cache/pip/http/5/8/6/f/2/586f2df1fdaf9f4aee94e3598bca992c9a6c2a1256e28ec5825b1a4a
+/home/travis/.cache/pip/http/6/b/b/f/5/6bbf570b8035aabf14702d2b4f4b0375124c2ee4755c662046045ab1
+/home/travis/.cache/pip/http/9/e/6/1/9/9e61964f51d8a05a20ecf21eef694877f28cb654a123ce1316ff77e5
+/home/travis/.cache/pip/http/a/6/9/b/d/a69bdb984343de3b3653d7a852dbd14dd4ccdd03ced4b06d1352ba0b
+/home/travis/.cache/pip/http/a/b/3/8/8/ab38844a9e78e2f5b97021c0ed20e5059ce95a91145f793c1c06fc0b
+/home/travis/.cache/pip/http/c/c/f/d/b/cc
+[0m
+[32;1m...
+[0m
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading archive[0m
+
+travis_time:end:0e1c0a00:start=1475858162306899382,finish=1475858166541388352,duration=4234488970
+[0Ktravis_fold:end:cache.2
+[0K
+Done. Your build exited with 1.

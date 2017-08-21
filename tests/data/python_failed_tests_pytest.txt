@@ -1,0 +1,676 @@
+Using worker: worker-linux-docker-10842794.prod.travis-ci.org:travis-linux-14
+
+travis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: precise
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info
+[0K
+travis_fold:start:fix.CVE-2015-7547
+[0K$ export DEBIAN_FRONTEND=noninteractive
+W: Size of file /var/lib/apt/lists/us.archive.ubuntu.com_ubuntu_dists_precise-backports_multiverse_source_Sources.gz is not what the server reported 5886 5888
+W: Size of file /var/lib/apt/lists/ppa.launchpad.net_ubuntugis_ppa_ubuntu_dists_precise_main_binary-amd64_Packages.gz is not what the server reported 36669 36677
+W: Size of file /var/lib/apt/lists/ppa.launchpad.net_ubuntugis_ppa_ubuntu_dists_precise_main_binary-i386_Packages.gz is not what the server reported 36729 36733
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libc-bin libc-dev-bin libc6-dev
+Suggested packages:
+  glibc-doc
+The following packages will be upgraded:
+  libc-bin libc-dev-bin libc6 libc6-dev
+4 upgraded, 0 newly installed, 0 to remove and 213 not upgraded.
+Need to get 8,844 kB of archives.
+After this operation, 9,216 B disk space will be freed.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6-dev amd64 2.15-0ubuntu10.13 [2,943 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-dev-bin amd64 2.15-0ubuntu10.13 [84.7 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-bin amd64 2.15-0ubuntu10.13 [1,179 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6 amd64 2.15-0ubuntu10.13 [4,637 kB]
+Fetched 8,844 kB in 0s (28.5 MB/s)
+Preconfiguring packages ...
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 72431 files and directories currently installed.)
+Preparing to replace libc6-dev 2.15-0ubuntu10.10 (using .../libc6-dev_2.15-0ubuntu10.13_amd64.deb) ...
+Unpacking replacement libc6-dev ...
+Preparing to replace libc-dev-bin 2.15-0ubuntu10.10 (using .../libc-dev-bin_2.15-0ubuntu10.13_amd64.deb) ...
+Unpacking replacement libc-dev-bin ...
+Preparing to replace libc-bin 2.15-0ubuntu10.10 (using .../libc-bin_2.15-0ubuntu10.13_amd64.deb) ...
+Unpacking replacement libc-bin ...
+Processing triggers for man-db ...
+Setting up libc-bin (2.15-0ubuntu10.13) ...
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 72431 files and directories currently installed.)
+Preparing to replace libc6 2.15-0ubuntu10.10 (using .../libc6_2.15-0ubuntu10.13_amd64.deb) ...
+Unpacking replacement libc6 ...
+Setting up libc6 (2.15-0ubuntu10.13) ...
+Setting up libc-dev-bin (2.15-0ubuntu10.13) ...
+Setting up libc6-dev (2.15-0ubuntu10.13) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+travis_fold:end:fix.CVE-2015-7547
+[0Ktravis_fold:start:git.checkout
+[0Ktravis_time:start:01e9ff88
+[0K$ git clone --depth=50 https://github.com/mahmoud/boltons.git mahmoud/boltons
+Cloning into 'mahmoud/boltons'...
+remote: Counting objects: 322, done.[K
+remote: Compressing objects:   0% (1/186)   [K
+remote: Compressing objects:   1% (2/186)   [K
+remote: Compressing objects:   2% (4/186)   [K
+remote: Compressing objects:   3% (6/186)   [K
+remote: Compressing objects:   4% (8/186)   [K
+remote: Compressing objects:   5% (10/186)   [K
+remote: Compressing objects:   6% (12/186)   [K
+remote: Compressing objects:   7% (14/186)   [K
+remote: Compressing objects:   8% (15/186)   [K
+remote: Compressing objects:   9% (17/186)   [K
+remote: Compressing objects:  10% (19/186)   [K
+remote: Compressing objects:  11% (21/186)   [K
+remote: Compressing objects:  12% (23/186)   [K
+remote: Compressing objects:  13% (25/186)   [K
+remote: Compressing objects:  14% (27/186)   [K
+remote: Compressing objects:  15% (28/186)   [K
+remote: Compressing objects:  16% (30/186)   [K
+remote: Compressing objects:  17% (32/186)   [K
+remote: Compressing objects:  18% (34/186)   [K
+remote: Compressing objects:  19% (36/186)   [K
+remote: Compressing objects:  20% (38/186)   [K
+remote: Compressing objects:  21% (40/186)   [K
+remote: Compressing objects:  22% (41/186)   [K
+remote: Compressing objects:  23% (43/186)   [K
+remote: Compressing objects:  24% (45/186)   [K
+remote: Compressing objects:  25% (47/186)   [K
+remote: Compressing objects:  26% (49/186)   [K
+remote: Compressing objects:  27% (51/186)   [K
+remote: Compressing objects:  28% (53/186)   [K
+remote: Compressing objects:  29% (54/186)   [K
+remote: Compressing objects:  30% (56/186)   [K
+remote: Compressing objects:  31% (58/186)   [K
+remote: Compressing objects:  32% (60/186)   [K
+remote: Compressing objects:  33% (62/186)   [K
+remote: Compressing objects:  34% (64/186)   [K
+remote: Compressing objects:  35% (66/186)   [K
+remote: Compressing objects:  36% (67/186)   [K
+remote: Compressing objects:  37% (69/186)   [K
+remote: Compressing objects:  38% (71/186)   [K
+remote: Compressing objects:  39% (73/186)   [K
+remote: Compressing objects:  40% (75/186)   [K
+remote: Compressing objects:  41% (77/186)   [K
+remote: Compressing objects:  42% (79/186)   [K
+remote: Compressing objects:  43% (80/186)   [K
+remote: Compressing objects:  44% (82/186)   [K
+remote: Compressing objects:  45% (84/186)   [K
+remote: Compressing objects:  46% (86/186)   [K
+remote: Compressing objects:  47% (88/186)   [K
+remote: Compressing objects:  48% (90/186)   [K
+remote: Compressing objects:  49% (92/186)   [K
+remote: Compressing objects:  50% (93/186)   [K
+remote: Compressing objects:  51% (95/186)   [K
+remote: Compressing objects:  52% (97/186)   [K
+remote: Compressing objects:  53% (99/186)   [K
+remote: Compressing objects:  54% (101/186)   [K
+remote: Compressing objects:  55% (103/186)   [K
+remote: Compressing objects:  56% (105/186)   [K
+remote: Compressing objects:  57% (107/186)   [K
+remote: Compressing objects:  58% (108/186)   [K
+remote: Compressing objects:  59% (110/186)   [K
+remote: Compressing objects:  60% (112/186)   [K
+remote: Compressing objects:  61% (114/186)   [K
+remote: Compressing objects:  62% (116/186)   [K
+remote: Compressing objects:  63% (118/186)   [K
+remote: Compressing objects:  64% (120/186)   [K
+remote: Compressing objects:  65% (121/186)   [K
+remote: Compressing objects:  66% (123/186)   [K
+remote: Compressing objects:  67% (125/186)   [K
+remote: Compressing objects:  68% (127/186)   [K
+remote: Compressing objects:  69% (129/186)   [K
+remote: Compressing objects:  70% (131/186)   [K
+remote: Compressing objects:  71% (133/186)   [K
+remote: Compressing objects:  72% (134/186)   [K
+remote: Compressing objects:  73% (136/186)   [K
+remote: Compressing objects:  74% (138/186)   [K
+remote: Compressing objects:  75% (140/186)   [K
+remote: Compressing objects:  76% (142/186)   [K
+remote: Compressing objects:  77% (144/186)   [K
+remote: Compressing objects:  78% (146/186)   [K
+remote: Compressing objects:  79% (147/186)   [K
+remote: Compressing objects:  80% (149/186)   [K
+remote: Compressing objects:  81% (151/186)   [K
+remote: Compressing objects:  82% (153/186)   [K
+remote: Compressing objects:  83% (155/186)   [K
+remote: Compressing objects:  84% (157/186)   [K
+remote: Compressing objects:  85% (159/186)   [K
+remote: Compressing objects:  86% (160/186)   [K
+remote: Compressing objects:  87% (162/186)   [K
+remote: Compressing objects:  88% (164/186)   [K
+remote: Compressing objects:  89% (166/186)   [K
+remote: Compressing objects:  90% (168/186)   [K
+remote: Compressing objects:  91% (170/186)   [K
+remote: Compressing objects:  92% (172/186)   [K
+remote: Compressing objects:  93% (173/186)   [K
+remote: Compressing objects:  94% (175/186)   [K
+remote: Compressing objects:  95% (177/186)   [K
+remote: Compressing objects:  96% (179/186)   [K
+remote: Compressing objects:  97% (181/186)   [K
+remote: Compressing objects:  98% (183/186)   [K
+remote: Compressing objects:  99% (185/186)   [K
+remote: Compressing objects: 100% (186/186)   [K
+remote: Compressing objects: 100% (186/186), done.[K
+Receiving objects:   0% (1/322)
+Receiving objects:   1% (4/322)
+Receiving objects:   2% (7/322)
+Receiving objects:   3% (10/322)
+Receiving objects:   4% (13/322)
+Receiving objects:   5% (17/322)
+Receiving objects:   6% (20/322)
+Receiving objects:   7% (23/322)
+Receiving objects:   8% (26/322)
+Receiving objects:   9% (29/322)
+Receiving objects:  10% (33/322)
+Receiving objects:  11% (36/322)
+Receiving objects:  12% (39/322)
+Receiving objects:  13% (42/322)
+Receiving objects:  14% (46/322)
+Receiving objects:  15% (49/322)
+Receiving objects:  16% (52/322)
+Receiving objects:  17% (55/322)
+Receiving objects:  18% (58/322)
+Receiving objects:  19% (62/322)
+Receiving objects:  20% (65/322)
+Receiving objects:  21% (68/322)
+Receiving objects:  22% (71/322)
+Receiving objects:  23% (75/322)
+Receiving objects:  24% (78/322)
+Receiving objects:  25% (81/322)
+Receiving objects:  26% (84/322)
+Receiving objects:  27% (87/322)
+Receiving objects:  28% (91/322)
+Receiving objects:  29% (94/322)
+Receiving objects:  30% (97/322)
+Receiving objects:  31% (100/322)
+Receiving objects:  32% (104/322)
+Receiving objects:  33% (107/322)
+Receiving objects:  34% (110/322)
+Receiving objects:  35% (113/322)
+Receiving objects:  36% (116/322)
+Receiving objects:  37% (120/322)
+Receiving objects:  38% (123/322)
+Receiving objects:  39% (126/322)
+Receiving objects:  40% (129/322)
+Receiving objects:  41% (133/322)
+Receiving objects:  42% (136/322)
+Receiving objects:  43% (139/322)
+Receiving objects:  44% (142/322)
+Receiving objects:  45% (145/322)
+Receiving objects:  46% (149/322)
+Receiving objects:  47% (152/322)
+Receiving objects:  48% (155/322)
+Receiving objects:  49% (158/322)
+Receiving objects:  50% (161/322)
+Receiving objects:  51% (165/322)
+Receiving objects:  52% (168/322)
+Receiving objects:  53% (171/322)
+Receiving objects:  54% (174/322)
+Receiving objects:  55% (178/322)
+Receiving objects:  56% (181/322)
+Receiving objects:  57% (184/322)
+Receiving objects:  58% (187/322)
+Receiving objects:  59% (190/322)
+Receiving objects:  60% (194/322)
+remote: Total 322 (delta 162), reused 246 (delta 131), pack-reused 0[K
+Receiving objects:  61% (197/322)
+Receiving objects:  62% (200/322)
+Receiving objects:  63% (203/322)
+Receiving objects:  64% (207/322)
+Receiving objects:  65% (210/322)
+Receiving objects:  66% (213/322)
+Receiving objects:  67% (216/322)
+Receiving objects:  68% (219/322)
+Receiving objects:  69% (223/322)
+Receiving objects:  70% (226/322)
+Receiving objects:  71% (229/322)
+Receiving objects:  72% (232/322)
+Receiving objects:  73% (236/322)
+Receiving objects:  74% (239/322)
+Receiving objects:  75% (242/322)
+Receiving objects:  76% (245/322)
+Receiving objects:  77% (248/322)
+Receiving objects:  78% (252/322)
+Receiving objects:  79% (255/322)
+Receiving objects:  80% (258/322)
+Receiving objects:  81% (261/322)
+Receiving objects:  82% (265/322)
+Receiving objects:  83% (268/322)
+Receiving objects:  84% (271/322)
+Receiving objects:  85% (274/322)
+Receiving objects:  86% (277/322)
+Receiving objects:  87% (281/322)
+Receiving objects:  88% (284/322)
+Receiving objects:  89% (287/322)
+Receiving objects:  90% (290/322)
+Receiving objects:  91% (294/322)
+Receiving objects:  92% (297/322)
+Receiving objects:  93% (300/322)
+Receiving objects:  94% (303/322)
+Receiving objects:  95% (306/322)
+Receiving objects:  96% (310/322)
+Receiving objects:  97% (313/322)
+Receiving objects:  98% (316/322)
+Receiving objects:  99% (319/322)
+Receiving objects: 100% (322/322)
+Receiving objects: 100% (322/322), 168.67 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/162)
+Resolving deltas:  34% (56/162)
+Resolving deltas:  35% (57/162)
+Resolving deltas:  40% (65/162)
+Resolving deltas:  43% (71/162)
+Resolving deltas:  44% (72/162)
+Resolving deltas:  63% (103/162)
+Resolving deltas:  66% (107/162)
+Resolving deltas:  72% (118/162)
+Resolving deltas:  73% (119/162)
+Resolving deltas:  77% (125/162)
+Resolving deltas:  78% (127/162)
+Resolving deltas:  84% (137/162)
+Resolving deltas:  87% (141/162)
+Resolving deltas:  88% (143/162)
+Resolving deltas:  93% (152/162)
+Resolving deltas:  96% (157/162)
+Resolving deltas:  97% (158/162)
+Resolving deltas:  98% (160/162)
+Resolving deltas: 100% (162/162)
+Resolving deltas: 100% (162/162), done.
+Checking connectivity... done.
+
+travis_time:end:01e9ff88:start=1456915237658309893,finish=1456915238035058507,duration=376748614
+[0K$ cd mahmoud/boltons
+travis_time:start:090a1610
+[0K$ git fetch origin +refs/pull/64/merge:
+remote: Counting objects: 5, done.[K
+remote: Compressing objects:  33% (1/3)   [K
+remote: Compressing objects:  66% (2/3)   [K
+remote: Compressing objects: 100% (3/3)   [K
+remote: Compressing objects: 100% (3/3), done.[K
+remote: Total 5 (delta 2), reused 4 (delta 2), pack-reused 0[K
+Unpacking objects:  20% (1/5)
+Unpacking objects:  40% (2/5)
+Unpacking objects:  60% (3/5)
+Unpacking objects:  80% (4/5)
+Unpacking objects: 100% (5/5)
+Unpacking objects: 100% (5/5), done.
+From https://github.com/mahmoud/boltons
+ * branch            refs/pull/64/merge -> FETCH_HEAD
+
+travis_time:end:090a1610:start=1456915238039161977,finish=1456915238352188032,duration=313026055
+[0K$ git checkout -qf FETCH_HEAD
+travis_fold:end:git.checkout
+[0K
+[33;1mThis job is running on container-based infrastructure, which does not allow use of 'sudo', setuid and setguid executables.[0m
+[33;1mIf you require sudo, add 'sudo: required' to your .travis.yml[0m
+[33;1mSee https://docs.travis-ci.com/user/workers/container-based-infrastructure/ for details.[0m
+travis_time:start:22d37e1d
+[0K$ source ~/virtualenv/python2.6/bin/activate
+
+travis_time:end:22d37e1d:start=1456915243835209315,finish=1456915243838997377,duration=3788062
+[0Ktravis_fold:start:cache.1
+[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:26a867f2
+[0K$ Installing caching utilities
+
+travis_time:end:26a867f2:start=1456915243844025712,finish=1456915243893769762,duration=49744050
+[0Ktravis_time:start:054f0763
+[0K
+travis_time:end:054f0763:start=1456915243898359774,finish=1456915243901540280,duration=3180506
+[0Ktravis_time:start:0af6d6f0
+[0K[32;1mattempting to download cache archive[0m
+[32;1mfetching PR.64/cache--python-2.6.tgz[0m
+[32;1mfetching PR.64/cache--python-2.6.tbz[0m
+[32;1mfetching master/cache--python-2.6.tgz[0m
+[32;1mfound cache[0m
+
+travis_time:end:0af6d6f0:start=1456915243905283571,finish=1456915244576780924,duration=671497353
+[0Ktravis_fold:end:cache.1
+[0Ktravis_fold:start:cache.pip
+[0K
+travis_time:start:027b373c
+[0K
+travis_time:end:027b373c:start=1456915244581623666,finish=1456915244585478704,duration=3855038
+[0Ktravis_time:start:166b0d08
+[0K[32;1madding /home/travis/.cache/pip to cache[0m
+
+travis_time:end:166b0d08:start=1456915244589128270,finish=1456915245898250901,duration=1309122631
+[0Ktravis_fold:end:cache.pip
+[0K$ python --version
+Python 2.6.9
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages (python 2.6)
+travis_fold:start:install
+[0Ktravis_time:start:0a61d93d
+[0K$ pip install -r requirements-test.txt
+Collecting pytest==2.8.7 (from -r requirements-test.txt (line 1))
+  Using cached pytest-2.8.7-py2.py3-none-any.whl
+Collecting tox==1.9.2 (from -r requirements-test.txt (line 2))
+  Using cached tox-1.9.2.tar.gz
+    /tmp/pip-build-s10KZM/tox/setup.py:12: DeprecationWarning: Parameters to load are deprecated.  Call .resolve and .require separately.
+Collecting virtualenv==12.1.1 (from -r requirements-test.txt (line 3))
+  Using cached virtualenv-12.1.1-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): argparse in /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages (from pytest==2.8.7->-r requirements-test.txt (line 1))
+Collecting py>=1.4.29 (from pytest==2.8.7->-r requirements-test.txt (line 1))
+  Using cached py-1.4.31-py2.py3-none-any.whl
+Installing collected packages: py, virtualenv, tox, pytest
+  Found existing installation: py 1.4.26
+    Uninstalling py-1.4.26:
+      Successfully uninstalled py-1.4.26
+
+
+  Running setup.py install for tox
+    /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/setuptools/command/egg_info.py:171: DeprecationWarning: Parameters to load are deprecated.  Call .resolve and .require separately.
+      writer = ep.load(installer=installer)
+    Installing tox script to /home/travis/virtualenv/python2.6.9/bin
+    Installing tox-quickstart script to /home/travis/virtualenv/python2.6.9/bin
+  Found existing installation: pytest 2.6.4
+    Uninstalling pytest-2.6.4:
+      Successfully uninstalled pytest-2.6.4
+
+Successfully installed py-1.4.31 pytest-2.8.7 tox-1.9.2 virtualenv-12.1.1
+
+travis_time:end:0a61d93d:start=1456915246445481311,finish=1456915247925130085,duration=1479648774
+[0Ktravis_fold:end:install
+[0Ktravis_time:start:05a45204
+[0K$ py.test --doctest-modules boltons tests
+[1m============================= test session starts ==============================[0m
+platform linux3 -- Python 2.6.9, pytest-2.8.7, py-1.4.31, pluggy-0.3.1
+rootdir: /home/travis/build/mahmoud/boltons, inifile:
+[1m
+collecting 0 items[0m[1m
+collecting 0 items[0m[1m
+collecting 4 items[0m[1m
+collecting 4 items[0m[1m
+collecting 4 items[0m[1m
+collecting 9 items[0m[1m
+collecting 9 items[0m[1m
+collecting 9 items[0m[1m
+collecting 13 items[0m[1m
+collecting 15 items[0m[1m
+collecting 18 items[0m[1m
+collecting 20 items[0m[1m
+collecting 39 items[0m[1m
+collecting 39 items[0m[1m
+collecting 40 items[0m[1m
+collecting 42 items[0m[1m
+collecting 42 items[0m[1m
+collecting 44 items[0m[1m
+collecting 45 items[0m[1m
+collecting 46 items[0m[1m
+collecting 46 items[0m[1m
+collecting 57 items[0m[1m
+collecting 76 items[0m[1m
+collecting 76 items[0m[1m
+collecting 76 items[0m[1m
+collecting 82 items[0m[1m
+collecting 85 items[0m[1m
+collecting 85 items[0m[1m
+collecting 85 items[0m[1m
+collecting 90 items[0m[1m
+collecting 90 items[0m[1m
+collecting 107 items[0m[1m
+collecting 107 items[0m[1m
+collecting 108 items[0m[1m
+collecting 108 items[0m[1m
+collecting 112 items[0m[1m
+collecting 112 items[0m[1m
+collecting 114 items[0m[1m
+collecting 114 items[0m[1m
+collecting 116 items[0m[1m
+collecting 116 items[0m[1m
+collecting 119 items[0m[1m
+collecting 119 items[0m[1m
+collecting 137 items[0m[1m
+collecting 137 items[0m[1m
+collecting 139 items[0m[1m
+collecting 139 items[0m[1m
+collecting 144 items[0m[1m
+collecting 144 items[0m[1m
+collecting 146 items[0m[1m
+collecting 146 items[0m[1m
+collecting 148 items[0m[1m
+collecting 148 items[0m[1m
+collecting 156 items[0m[1m
+collecting 156 items[0m[1m
+collecting 159 items[0m[1m
+collecting 159 items[0m[1m
+collecting 161 items[0m[1m
+collecting 161 items[0m[1m
+collecting 163 items[0m[1m
+collecting 163 items[0m[1m
+collecting 164 items[0m[1m
+collecting 164 items[0m[1m
+collecting 165 items[0m[1m
+collecting 165 items[0m[1m
+collecting 168 items[0m[1m
+collecting 168 items[0m[1m
+collecting 171 items[0m[1m
+collecting 171 items[0m[1m
+collecting 174 items[0m[1m
+collecting 174 items[0m[1m
+collecting 175 items[0m[1m
+collected 175 items
+[0m
+boltons/cacheutils.py ....
+boltons/dictutils.py .....
+boltons/fileutils.py ....
+boltons/formatutils.py ..
+boltons/funcutils.py ...
+boltons/gcutils.py ..
+boltons/iterutils.py ...................
+boltons/listutils.py .
+boltons/mathutils.py ..
+boltons/namedutils.py ..
+boltons/queueutils.py .
+boltons/setutils.py .
+boltons/statsutils.py ...........
+boltons/strutils.py ...................
+boltons/timeutils.py ......
+boltons/typeutils.py ...
+tests/test_cacheutils.py .....
+tests/test_dictutils.py .................
+tests/test_fileutils.py .
+tests/test_formatutils.py ....
+tests/test_funcutils.py ..
+tests/test_gcutils.py ..
+tests/test_iterutils.py ............................
+tests/test_jsonutils.py ..
+tests/test_listutils.py ..
+tests/test_mathutils.py ........
+tests/test_namedutils.py ...
+tests/test_queueutils.py ..
+tests/test_setutils.py ..
+tests/test_socketutils.py .
+tests/test_statsutils.py .
+tests/test_strutils.py ..F
+tests/test_tableutils.py ...
+tests/test_tbutils.py ...
+tests/test_timeutils.py .
+
+=================================== FAILURES ===================================
+[1m[31m_________________________________ test_is_uuid _________________________________[0m
+
+[1m    def test_is_uuid():[0m
+[1m        assert strutils.is_uuid(uuid.uuid4()) == True[0m
+[1m        assert strutils.is_uuid(uuid.uuid4(), version=1) == False[0m
+[1m        assert strutils.is_uuid(str(uuid.uuid4())) == True[0m
+[1m        assert strutils.is_uuid(str(uuid.uuid4()), version=1) == False[0m
+[1m>       assert strutils.is_uuid(set('garbage')) == False[0m
+
+tests/test_strutils.py:26:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+boltons/strutils.py:702: in is_uuid
+[1m    obj = uuid.UUID(obj)[0m
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <[AttributeError("'UUID' object has no attribute 'int'") raised in repr()] SafeRepr object at 0x182bfc8>
+hex = set(['a', 'b', 'e', 'g', 'r']), bytes = None, bytes_le = None
+fields = None, int = None, version = None
+
+[1m    def __init__(self, hex=None, bytes=None, bytes_le=None, fields=None,[0m
+[1m                       int=None, version=None):[0m
+[1m        r"""Create a UUID from either a string of 32 hexadecimal digits,[0m
+[1m            a string of 16 bytes as the 'bytes' argument, a string of 16 bytes[0m
+[1m            in little-endian order as the 'bytes_le' argument, a tuple of six[0m
+[1m            integers (32-bit time_low, 16-bit time_mid, 16-bit time_hi_version,[0m
+[1m            8-bit clock_seq_hi_variant, 8-bit clock_seq_low, 48-bit node) as[0m
+[1m            the 'fields' argument, or a single 128-bit integer as the 'int'[0m
+[1m            argument.  When a string of hex digits is given, curly braces,[0m
+[1m            hyphens, and a URN prefix are all optional.  For example, these[0m
+[1m            expressions all yield the same UUID:[0m
+[1m    [0m
+[1m            UUID('{12345678-1234-5678-1234-567812345678}')[0m
+[1m            UUID('12345678123456781234567812345678')[0m
+[1m            UUID('urn:uuid:12345678-1234-5678-1234-567812345678')[0m
+[1m            UUID(bytes='\x12\x34\x56\x78'*4)[0m
+[1m            UUID(bytes_le='\x78\x56\x34\x12\x34\x12\x78\x56' +[0m
+[1m                          '\x12\x34\x56\x78\x12\x34\x56\x78')[0m
+[1m            UUID(fields=(0x12345678, 0x1234, 0x5678, 0x12, 0x34, 0x567812345678))[0m
+[1m            UUID(int=0x12345678123456781234567812345678)[0m
+[1m    [0m
+[1m            Exactly one of 'hex', 'bytes', 'bytes_le', 'fields', or 'int' must[0m
+[1m            be given.  The 'version' argument is optional; if given, the resulting[0m
+[1m            UUID will have its variant and version set according to RFC 4122,[0m
+[1m            overriding the given 'hex', 'bytes', 'bytes_le', 'fields', or 'int'.[0m
+[1m            """[0m
+[1m    [0m
+[1m        if [hex, bytes, bytes_le, fields, int].count(None) != 4:[0m
+[1m            raise TypeError('need one of hex, bytes, bytes_le, fields, or int')[0m
+[1m        if hex is not None:[0m
+[1m>           hex = hex.replace('urn:', '').replace('uuid:', '')[0m
+[1m[31mE           AttributeError: 'set' object has no attribute 'replace'[0m
+
+/opt/python/2.6.9/lib/python2.6/uuid.py:131: AttributeError
+[1m[31m===================== 1 failed, 174 passed in 3.47 seconds =====================[0m
+
+travis_time:end:05a45204:start=1456915247930189407,finish=1456915251636951461,duration=3706762054
+[0K
+[31;1mThe command "py.test --doctest-modules boltons tests" exited with 1.[0m
+travis_fold:start:cache.2
+[0Kstore build cache
+travis_time:start:009f64e0
+[0K
+travis_time:end:009f64e0:start=1456915251641682125,finish=1456915251645194985,duration=3512860
+[0Ktravis_time:start:08c279c1
+[0K[32;1mchange detected:
+/home/travis/.cache/pip/http/3/d/0/7/9/3d0790aa6d8aba43447ad4d8fdc684c544812f2cc57ad084f4b1b2db
+/home/travis/.cache/pip/http/5/2/f/0/f/52f0f61ad7788fe4ba0d60b69f9387a7286ab051169eea384b510075
+/home/travis/.cache/pip/http/a/c/1/0/1/ac101e8cf49601082604b02a8a13937b06fded9144495898d0d80359
+/home/travis/.cache/pip/http/e/4/8/2/b/e482bb47f4716e2d35342a0cb10668bc661a91614e8afefe1cdc50b3
+/home/travis/.cache/pip/log/debug.log
+
+[0m
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading archive[0m
+
+travis_time:end:08c279c1:start=1456915251649318544,finish=1456915253388717046,duration=1739398502
+[0Ktravis_fold:end:cache.2
+[0K
+Done. Your build exited with 1.

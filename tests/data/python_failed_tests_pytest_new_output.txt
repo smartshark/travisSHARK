@@ -1,0 +1,630 @@
+Using worker: worker-linux-85ee80ed-2.bb.travis-ci.org:travis-linux-11
+
+travis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: python
+[34m[1mBuild image provisioning date and time[0m
+Wed Feb  4 18:22:50 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+2.6.32-042stab090.5
+[34m[1mCookbooks Version[0m
+23bb455 https://github.com/travis-ci/travis-cookbooks/tree/23bb455
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mCassandra version[0m
+2.0.9
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "2.6.32-042stab090.5", arch: "amd64", family: "unix"
+travis_fold:end:system_info
+[0K
+travis_fold:start:git.checkout
+[0Ktravis_time:start:09fbcad8
+[0K$ git clone --depth=50 git://github.com/mahmoud/boltons.git mahmoud/boltons
+Cloning into 'mahmoud/boltons'...
+remote: Counting objects: 328, done.[K
+remote: Compressing objects:   0% (1/182)   [K
+remote: Compressing objects:   1% (2/182)   [K
+remote: Compressing objects:   2% (4/182)   [K
+remote: Compressing objects:   3% (6/182)   [K
+remote: Compressing objects:   4% (8/182)   [K
+remote: Compressing objects:   5% (10/182)   [K
+remote: Compressing objects:   6% (11/182)   [K
+remote: Compressing objects:   7% (13/182)   [K
+remote: Compressing objects:   8% (15/182)   [K
+remote: Compressing objects:   9% (17/182)   [K
+remote: Compressing objects:  10% (19/182)   [K
+remote: Compressing objects:  11% (21/182)   [K
+remote: Compressing objects:  12% (22/182)   [K
+remote: Compressing objects:  13% (24/182)   [K
+remote: Compressing objects:  14% (26/182)   [K
+remote: Compressing objects:  15% (28/182)   [K
+remote: Compressing objects:  16% (30/182)   [K
+remote: Compressing objects:  17% (31/182)   [K
+remote: Compressing objects:  18% (33/182)   [K
+remote: Compressing objects:  19% (35/182)   [K
+remote: Compressing objects:  20% (37/182)   [K
+remote: Compressing objects:  21% (39/182)   [K
+remote: Compressing objects:  22% (41/182)   [K
+remote: Compressing objects:  23% (42/182)   [K
+remote: Compressing objects:  24% (44/182)   [K
+remote: Compressing objects:  25% (46/182)   [K
+remote: Compressing objects:  26% (48/182)   [K
+remote: Compressing objects:  27% (50/182)   [K
+remote: Compressing objects:  28% (51/182)   [K
+remote: Compressing objects:  29% (53/182)   [K
+remote: Compressing objects:  30% (55/182)   [K
+remote: Compressing objects:  31% (57/182)   [K
+remote: Compressing objects:  32% (59/182)   [K
+remote: Compressing objects:  33% (61/182)   [K
+remote: Compressing objects:  34% (62/182)   [K
+remote: Compressing objects:  35% (64/182)   [K
+remote: Compressing objects:  36% (66/182)   [K
+remote: Compressing objects:  37% (68/182)   [K
+remote: Compressing objects:  38% (70/182)   [K
+remote: Compressing objects:  39% (71/182)   [K
+remote: Compressing objects:  40% (73/182)   [K
+remote: Compressing objects:  41% (75/182)   [K
+remote: Compressing objects:  42% (77/182)   [K
+remote: Compressing objects:  43% (79/182)   [K
+remote: Compressing objects:  44% (81/182)   [K
+remote: Compressing objects:  45% (82/182)   [K
+remote: Compressing objects:  46% (84/182)   [K
+remote: Compressing objects:  47% (86/182)   [K
+remote: Compressing objects:  48% (88/182)   [K
+remote: Compressing objects:  49% (90/182)   [K
+remote: Compressing objects:  50% (91/182)   [K
+remote: Compressing objects:  51% (93/182)   [K
+remote: Compressing objects:  52% (95/182)   [K
+remote: Compressing objects:  53% (97/182)   [K
+remote: Compressing objects:  54% (99/182)   [K
+remote: Compressing objects:  55% (101/182)   [K
+remote: Compressing objects:  56% (102/182)   [K
+remote: Compressing objects:  57% (104/182)   [K
+remote: Compressing objects:  58% (106/182)   [K
+remote: Compressing objects:  59% (108/182)   [K
+remote: Compressing objects:  60% (110/182)   [K
+remote: Compressing objects:  61% (112/182)   [K
+remote: Compressing objects:  62% (113/182)   [K
+remote: Compressing objects:  63% (115/182)   [K
+remote: Compressing objects:  64% (117/182)   [K
+remote: Compressing objects:  65% (119/182)   [K
+remote: Compressing objects:  66% (121/182)   [K
+remote: Compressing objects:  67% (122/182)   [K
+remote: Compressing objects:  68% (124/182)   [K
+remote: Compressing objects:  69% (126/182)   [K
+remote: Compressing objects:  70% (128/182)   [K
+remote: Compressing objects:  71% (130/182)   [K
+remote: Compressing objects:  72% (132/182)   [K
+remote: Compressing objects:  73% (133/182)   [K
+remote: Compressing objects:  74% (135/182)   [K
+remote: Compressing objects:  75% (137/182)   [K
+remote: Compressing objects:  76% (139/182)   [K
+remote: Compressing objects:  77% (141/182)   [K
+remote: Compressing objects:  78% (142/182)   [K
+remote: Compressing objects:  79% (144/182)   [K
+remote: Compressing objects:  80% (146/182)   [K
+remote: Compressing objects:  81% (148/182)   [K
+remote: Compressing objects:  82% (150/182)   [K
+remote: Compressing objects:  83% (152/182)   [K
+remote: Compressing objects:  84% (153/182)   [K
+remote: Compressing objects:  85% (155/182)   [K
+remote: Compressing objects:  86% (157/182)   [K
+remote: Compressing objects:  87% (159/182)   [K
+remote: Compressing objects:  88% (161/182)   [K
+remote: Compressing objects:  89% (162/182)   [K
+remote: Compressing objects:  90% (164/182)   [K
+remote: Compressing objects:  91% (166/182)   [K
+remote: Compressing objects:  92% (168/182)   [K
+remote: Compressing objects:  93% (170/182)   [K
+remote: Compressing objects:  94% (172/182)   [K
+remote: Compressing objects:  95% (173/182)   [K
+remote: Compressing objects:  96% (175/182)   [K
+remote: Compressing objects:  97% (177/182)   [K
+remote: Compressing objects:  98% (179/182)   [K
+remote: Compressing objects:  99% (181/182)   [K
+remote: Compressing objects: 100% (182/182)   [K
+remote: Compressing objects: 100% (182/182), done.[K
+Receiving objects:   0% (1/328)
+Receiving objects:   1% (4/328)
+Receiving objects:   2% (7/328)
+Receiving objects:   3% (10/328)
+Receiving objects:   4% (14/328)
+Receiving objects:   5% (17/328)
+Receiving objects:   6% (20/328)
+Receiving objects:   7% (23/328)
+Receiving objects:   8% (27/328)
+Receiving objects:   9% (30/328)
+Receiving objects:  10% (33/328)
+Receiving objects:  11% (37/328)
+Receiving objects:  12% (40/328)
+Receiving objects:  13% (43/328)
+Receiving objects:  14% (46/328)
+Receiving objects:  15% (50/328)
+Receiving objects:  16% (53/328)
+Receiving objects:  17% (56/328)
+Receiving objects:  18% (60/328)
+Receiving objects:  19% (63/328)
+Receiving objects:  20% (66/328)
+Receiving objects:  21% (69/328)
+Receiving objects:  22% (73/328)
+Receiving objects:  23% (76/328)
+Receiving objects:  24% (79/328)
+Receiving objects:  25% (82/328)
+Receiving objects:  26% (86/328)
+Receiving objects:  27% (89/328)
+Receiving objects:  28% (92/328)
+Receiving objects:  29% (96/328)
+Receiving objects:  30% (99/328)
+Receiving objects:  31% (102/328)
+Receiving objects:  32% (105/328)
+Receiving objects:  33% (109/328)
+Receiving objects:  34% (112/328)
+Receiving objects:  35% (115/328)
+remote: Total 328 (delta 183), reused 252 (delta 138), pack-reused 0[K
+Receiving objects:  36% (119/328)
+Receiving objects:  37% (122/328)
+Receiving objects:  38% (125/328)
+Receiving objects:  39% (128/328)
+Receiving objects:  40% (132/328)
+Receiving objects:  41% (135/328)
+Receiving objects:  42% (138/328)
+Receiving objects:  43% (142/328)
+Receiving objects:  44% (145/328)
+Receiving objects:  45% (148/328)
+Receiving objects:  46% (151/328)
+Receiving objects:  47% (155/328)
+Receiving objects:  48% (158/328)
+Receiving objects:  49% (161/328)
+Receiving objects:  50% (164/328)
+Receiving objects:  51% (168/328)
+Receiving objects:  52% (171/328)
+Receiving objects:  53% (174/328)
+Receiving objects:  54% (178/328)
+Receiving objects:  55% (181/328)
+Receiving objects:  56% (184/328)
+Receiving objects:  57% (187/328)
+Receiving objects:  58% (191/328)
+Receiving objects:  59% (194/328)
+Receiving objects:  60% (197/328)
+Receiving objects:  61% (201/328)
+Receiving objects:  62% (204/328)
+Receiving objects:  63% (207/328)
+Receiving objects:  64% (210/328)
+Receiving objects:  65% (214/328)
+Receiving objects:  66% (217/328)
+Receiving objects:  67% (220/328)
+Receiving objects:  68% (224/328)
+Receiving objects:  69% (227/328)
+Receiving objects:  70% (230/328)
+Receiving objects:  71% (233/328)
+Receiving objects:  72% (237/328)
+Receiving objects:  73% (240/328)
+Receiving objects:  74% (243/328)
+Receiving objects:  75% (246/328)
+Receiving objects:  76% (250/328)
+Receiving objects:  77% (253/328)
+Receiving objects:  78% (256/328)
+Receiving objects:  79% (260/328)
+Receiving objects:  80% (263/328)
+Receiving objects:  81% (266/328)
+Receiving objects:  82% (269/328)
+Receiving objects:  83% (273/328)
+Receiving objects:  84% (276/328)
+Receiving objects:  85% (279/328)
+Receiving objects:  86% (283/328)
+Receiving objects:  87% (286/328)
+Receiving objects:  88% (289/328)
+Receiving objects:  89% (292/328)
+Receiving objects:  90% (296/328)
+Receiving objects:  91% (299/328)
+Receiving objects:  92% (302/328)
+Receiving objects:  93% (306/328)
+Receiving objects:  94% (309/328)
+Receiving objects:  95% (312/328)
+Receiving objects:  96% (315/328)
+Receiving objects:  97% (319/328)
+Receiving objects:  98% (322/328)
+Receiving objects:  99% (325/328)
+Receiving objects: 100% (328/328)
+Receiving objects: 100% (328/328), 132.34 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/183)
+Resolving deltas:   2% (5/183)
+Resolving deltas:   3% (6/183)
+Resolving deltas:  20% (38/183)
+Resolving deltas:  34% (63/183)
+Resolving deltas:  37% (68/183)
+Resolving deltas:  46% (86/183)
+Resolving deltas:  49% (90/183)
+Resolving deltas:  53% (97/183)
+Resolving deltas:  60% (110/183)
+Resolving deltas:  61% (112/183)
+Resolving deltas:  65% (119/183)
+Resolving deltas:  66% (122/183)
+Resolving deltas:  71% (130/183)
+Resolving deltas:  72% (133/183)
+Resolving deltas:  73% (134/183)
+Resolving deltas:  77% (141/183)
+Resolving deltas:  78% (143/183)
+Resolving deltas:  82% (151/183)
+Resolving deltas:  83% (152/183)
+Resolving deltas:  84% (154/183)
+Resolving deltas:  88% (162/183)
+Resolving deltas:  89% (163/183)
+Resolving deltas:  90% (165/183)
+Resolving deltas:  93% (171/183)
+Resolving deltas:  95% (175/183)
+Resolving deltas:  98% (181/183)
+Resolving deltas: 100% (183/183)
+Resolving deltas: 100% (183/183), done.
+Checking connectivity... done.
+travis_time:end:09fbcad8:start=1429427713835595023,finish=1429427714002329979,duration=166734956
+[0K$ cd mahmoud/boltons
+travis_time:start:22f650ed
+[0K$ git fetch origin +refs/pull/31/merge:
+remote: Counting objects: 8, done.[K
+remote: Compressing objects:  12% (1/8)   [K
+remote: Compressing objects:  25% (2/8)   [K
+remote: Compressing objects:  37% (3/8)   [K
+remote: Compressing objects:  50% (4/8)   [K
+remote: Compressing objects:  62% (5/8)   [K
+remote: Compressing objects:  75% (6/8)   [K
+remote: Compressing objects:  87% (7/8)   [K
+remote: Compressing objects: 100% (8/8)   [K
+remote: Compressing objects: 100% (8/8), done.[K
+remote: Total 8 (delta 5), reused 2 (delta 0), pack-reused 0[K
+Unpacking objects:  12% (1/8)
+Unpacking objects:  25% (2/8)
+Unpacking objects:  37% (3/8)
+Unpacking objects:  50% (4/8)
+Unpacking objects:  62% (5/8)
+Unpacking objects:  75% (6/8)
+Unpacking objects:  87% (7/8)
+Unpacking objects: 100% (8/8)
+Unpacking objects: 100% (8/8), done.
+From git://github.com/mahmoud/boltons
+ * branch            refs/pull/31/merge -> FETCH_HEAD
+travis_time:end:22f650ed:start=1429427714012229841,finish=1429427714139087128,duration=126857287
+[0K$ git checkout -qf FETCH_HEAD
+travis_fold:end:git.checkout
+[0Ktravis_time:start:041e3c2e
+[0K$ source ~/virtualenv/python3.4/bin/activate
+travis_time:end:041e3c2e:start=1429427714159453417,finish=1429427714168026527,duration=8573110
+[0K$ python --version
+Python 3.4.2
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages (python 3.4)
+travis_fold:start:install
+[0Ktravis_time:start:05ee0827
+[0K$ pip install -r requirements-test.txt
+[33mYou are using pip version 6.0.7, however version 6.1.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+Requirement already satisfied (use --upgrade to upgrade): py==1.4.26 in /home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages (from -r requirements-test.txt (line 1))
+Collecting pytest==2.7.0 (from -r requirements-test.txt (line 2))
+  Downloading pytest-2.7.0.tar.gz (526kB)
+[?25l
+[K    0% |                                | 4.1kB 19.3MB/s eta 0:00:01
+[K    1% |                                | 8.2kB 17.3MB/s eta 0:00:01
+[K    2% |                                | 12kB 2.7MB/s eta 0:00:01
+[K    3% |                                | 16kB 3.4MB/s eta 0:00:01
+[K    3% |#                               | 20kB 4.0MB/s eta 0:00:01
+[K    4% |#                               | 24kB 4.6MB/s eta 0:00:01
+[K    5% |#                               | 28kB 4.5MB/s eta 0:00:01
+[K    6% |#                               | 32kB 4.9MB/s eta 0:00:01
+[K    6% |##                              | 36kB 3.4MB/s eta 0:00:01
+[K    7% |##                              | 40kB 3.6MB/s eta 0:00:01
+[K    8% |##                              | 45kB 3.6MB/s eta 0:00:01
+[K    9% |##                              | 49kB 3.6MB/s eta 0:00:01
+[K    10% |###                             | 53kB 5.0MB/s eta 0:00:01
+[K    10% |###                             | 57kB 5.0MB/s eta 0:00:01
+[K    11% |###                             | 61kB 3.4MB/s eta 0:00:01
+[K    12% |###                             | 65kB 3.3MB/s eta 0:00:01
+[K    13% |####                            | 69kB 3.5MB/s eta 0:00:01
+[K    13% |####                            | 73kB 3.6MB/s eta 0:00:01
+[K    14% |####                            | 77kB 5.6MB/s eta 0:00:01
+[K    15% |####                            | 81kB 5.7MB/s eta 0:00:01
+[K    16% |#####                           | 86kB 5.6MB/s eta 0:00:01
+[K    17% |#####                           | 90kB 3.6MB/s eta 0:00:01
+[K    17% |#####                           | 94kB 3.8MB/s eta 0:00:01
+[K    18% |#####                           | 98kB 3.8MB/s eta 0:00:01
+[K    19% |######                          | 102kB 6.2MB/s eta 0:00:01
+[K    20% |######                          | 106kB 6.2MB/s eta 0:00:01
+[K    20% |######                          | 110kB 6.2MB/s eta 0:00:01
+[K    21% |######                          | 114kB 6.2MB/s eta 0:00:01
+[K    22% |#######                         | 118kB 6.1MB/s eta 0:00:01
+[K    23% |#######                         | 122kB 6.1MB/s eta 0:00:01
+[K    24% |#######                         | 126kB 6.3MB/s eta 0:00:01
+[K    24% |#######                         | 131kB 15.6MB/s eta 0:00:01
+[K    25% |########                        | 135kB 6.4MB/s eta 0:00:01
+[K    26% |########                        | 139kB 6.4MB/s eta 0:00:01
+[K    27% |########                        | 143kB 6.4MB/s eta 0:00:01
+[K    27% |########                        | 147kB 6.5MB/s eta 0:00:01
+[K    28% |#########                       | 151kB 6.4MB/s eta 0:00:01
+[K    29% |#########                       | 155kB 6.5MB/s eta 0:00:01
+[K    30% |#########                       | 159kB 6.4MB/s eta 0:00:01
+[K    31% |#########                       | 163kB 6.4MB/s eta 0:00:01
+[K    31% |##########                      | 167kB 6.4MB/s eta 0:00:01
+[K    32% |##########                      | 172kB 6.4MB/s eta 0:00:01
+[K    33% |##########                      | 176kB 16.6MB/s eta 0:00:01
+[K    34% |##########                      | 180kB 17.6MB/s eta 0:00:01
+[K    34% |###########                     | 184kB 7.5MB/s eta 0:00:01
+[K    35% |###########                     | 188kB 7.4MB/s eta 0:00:01
+[K    36% |###########                     | 192kB 7.5MB/s eta 0:00:01
+[K    37% |###########                     | 196kB 7.5MB/s eta 0:00:01
+[K    38% |############                    | 200kB 7.4MB/s eta 0:00:01
+[K    38% |############                    | 204kB 7.4MB/s eta 0:00:01
+[K    39% |############                    | 208kB 7.3MB/s eta 0:00:01
+[K    40% |############                    | 212kB 7.3MB/s eta 0:00:01
+[K    41% |#############                   | 217kB 7.2MB/s eta 0:00:01
+[K    41% |#############                   | 221kB 7.1MB/s eta 0:00:01
+[K    42% |#############                   | 225kB 15.7MB/s eta 0:00:01
+[K    43% |#############                   | 229kB 16.6MB/s eta 0:00:01
+[K    44% |##############                  | 233kB 16.6MB/s eta 0:00:01
+[K    45% |##############                  | 237kB 16.6MB/s eta 0:00:01
+[K    45% |##############                  | 241kB 17.7MB/s eta 0:00:01
+[K    46% |##############                  | 245kB 17.9MB/s eta 0:00:01
+[K    47% |###############                 | 249kB 8.7MB/s eta 0:00:01
+[K    48% |###############                 | 253kB 8.7MB/s eta 0:00:01
+[K    48% |###############                 | 258kB 8.4MB/s eta 0:00:01
+[K    49% |###############                 | 262kB 8.4MB/s eta 0:00:01
+[K    50% |################                | 266kB 8.4MB/s eta 0:00:01
+[K    51% |################                | 270kB 8.3MB/s eta 0:00:01
+[K    52% |################                | 274kB 8.2MB/s eta 0:00:01
+[K    52% |################                | 278kB 8.1MB/s eta 0:00:01
+[K    53% |#################               | 282kB 7.9MB/s eta 0:00:01
+[K    54% |#################               | 286kB 7.9MB/s eta 0:00:01
+[K    55% |#################               | 290kB 15.3MB/s eta 0:00:01
+[K    55% |#################               | 294kB 15.6MB/s eta 0:00:01
+[K    56% |##################              | 299kB 17.1MB/s eta 0:00:01
+[K    57% |##################              | 303kB 17.3MB/s eta 0:00:01
+[K    58% |##################              | 307kB 17.5MB/s eta 0:00:01
+[K    59% |##################              | 311kB 17.5MB/s eta 0:00:01
+[K    59% |###################             | 315kB 8.7MB/s eta 0:00:01
+[K    60% |###################             | 319kB 8.5MB/s eta 0:00:01
+[K    61% |###################             | 323kB 8.6MB/s eta 0:00:01
+[K    62% |###################             | 327kB 8.5MB/s eta 0:00:01
+[K    62% |####################            | 331kB 8.5MB/s eta 0:00:01
+[K    63% |####################            | 335kB 8.4MB/s eta 0:00:01
+[K    64% |####################            | 339kB 8.3MB/s eta 0:00:01
+[K    65% |####################            | 344kB 8.3MB/s eta 0:00:01
+[K    66% |#####################           | 348kB 8.2MB/s eta 0:00:01
+[K    66% |#####################           | 352kB 8.1MB/s eta 0:00:01
+[K    67% |#####################           | 356kB 16.2MB/s eta 0:00:01
+[K    68% |#####################           | 360kB 16.9MB/s eta 0:00:01
+[K    69% |######################          | 364kB 17.4MB/s eta 0:00:01
+[K    69% |######################          | 368kB 17.5MB/s eta 0:00:01
+[K    70% |######################          | 372kB 18.0MB/s eta 0:00:01
+[K    71% |######################          | 376kB 18.3MB/s eta 0:00:01
+[K    72% |#######################         | 380kB 18.9MB/s eta 0:00:01
+[K    73% |#######################         | 385kB 19.1MB/s eta 0:00:01
+[K    73% |#######################         | 389kB 9.4MB/s eta 0:00:01
+[K    74% |#######################         | 393kB 9.3MB/s eta 0:00:01
+[K    75% |########################        | 397kB 8.7MB/s eta 0:00:01
+[K    76% |########################        | 401kB 8.7MB/s eta 0:00:01
+[K    76% |########################        | 405kB 8.4MB/s eta 0:00:01
+[K    77% |########################        | 409kB 8.4MB/s eta 0:00:01
+[K    78% |#########################       | 413kB 8.3MB/s eta 0:00:01
+[K    79% |#########################       | 417kB 8.1MB/s eta 0:00:01
+[K    80% |#########################       | 421kB 8.1MB/s eta 0:00:01
+[K    80% |#########################       | 425kB 8.1MB/s eta 0:00:01
+[K    81% |##########################      | 430kB 14.8MB/s eta 0:00:01
+[K    82% |##########################      | 434kB 15.3MB/s eta 0:00:01
+[K    83% |##########################      | 438kB 17.2MB/s eta 0:00:01
+[K    83% |##########################      | 442kB 17.5MB/s eta 0:00:01
+[K    84% |###########################     | 446kB 18.6MB/s eta 0:00:01
+[K    85% |###########################     | 450kB 18.6MB/s eta 0:00:01
+[K    86% |###########################     | 454kB 19.0MB/s eta 0:00:01
+[K    87% |###########################     | 458kB 20.2MB/s eta 0:00:01
+[K    87% |############################    | 462kB 20.3MB/s eta 0:00:01
+[K    88% |############################    | 466kB 20.2MB/s eta 0:00:01
+[K    89% |############################    | 471kB 20.0MB/s eta 0:00:01
+[K    90% |############################    | 475kB 20.4MB/s eta 0:00:01
+[K    90% |#############################   | 479kB 20.0MB/s eta 0:00:01
+[K    91% |#############################   | 483kB 20.4MB/s eta 0:00:01
+[K    92% |#############################   | 487kB 14.2MB/s eta 0:00:01
+[K    93% |#############################   | 491kB 14.0MB/s eta 0:00:01
+[K    94% |##############################  | 495kB 13.6MB/s eta 0:00:01
+[K    94% |##############################  | 499kB 13.7MB/s eta 0:00:01
+[K    95% |##############################  | 503kB 13.6MB/s eta 0:00:01
+[K    96% |##############################  | 507kB 13.7MB/s eta 0:00:01
+[K    97% |############################### | 512kB 13.7MB/s eta 0:00:01
+[K    97% |############################### | 516kB 13.7MB/s eta 0:00:01
+[K    98% |############################### | 520kB 13.7MB/s eta 0:00:01
+[K    99% |############################### | 524kB 13.8MB/s eta 0:00:01
+[K    100% |################################| 528kB 570kB/s
+[?25hInstalling collected packages: pytest
+  Found existing installation: pytest 2.6.4
+    Uninstalling pytest-2.6.4:
+      Successfully uninstalled pytest-2.6.4
+  Running setup.py install for pytest
+    Installing py.test-3.4 script to /home/travis/virtualenv/python3.4.2/bin
+    Installing py.test script to /home/travis/virtualenv/python3.4.2/bin
+Successfully installed pytest-2.7.0
+travis_time:end:05ee0827:start=1429427714697057612,finish=1429427717069696386,duration=2372638774
+[0Ktravis_fold:end:install
+[0Ktravis_time:start:0773d34c
+[0K$ py.test --doctest-modules boltons tests
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.4.2 -- py-1.4.26 -- pytest-2.7.0
+rootdir: /home/travis/build/mahmoud/boltons, inifile:
+[1m
+collecting 0 items[0m[1m
+collecting 0 items[0m[1m
+collecting 3 items[0m[1m
+collecting 3 items[0m[1m
+collecting 3 items[0m[1m
+collecting 6 items[0m[1m
+collecting 6 items[0m[1m
+collecting 6 items[0m[1m
+collecting 10 items[0m[1m
+collecting 12 items[0m[1m
+collecting 15 items[0m[1m
+collecting 17 items[0m[1m
+collecting 29 items[0m[1m
+collecting 29 items[0m[1m
+collecting 30 items[0m[1m
+collecting 30 items[0m[1m
+collecting 32 items[0m[1m
+collecting 33 items[0m[1m
+collecting 34 items[0m[1m
+collecting 45 items[0m[1m
+collecting 59 items[0m[1m
+collecting 59 items[0m[1m
+collecting 59 items[0m[1m
+collecting 63 items[0m[1m
+collecting 66 items[0m[1m
+collecting 67 items[0m[1m
+collecting 67 items[0m[1m
+collecting 67 items[0m[1m
+collecting 69 items[0m[1m
+collected 69 items
+[0m
+boltons/cacheutils.py ...
+boltons/dictutils.py ...
+boltons/fileutils.py ....
+boltons/formatutils.py ..
+boltons/funcutils.py ...
+boltons/gcutils.py ..
+boltons/iterutils.py ............
+boltons/listutils.py .
+boltons/namedutils.py ..
+boltons/queueutils.py .
+boltons/setutils.py .
+boltons/statsutils.py ...........
+boltons/strutils.py ..............
+boltons/timeutils.py ....
+boltons/typeutils.py ...
+boltons/tzutils.py .
+tests/tbutils_test.py FF
+
+=================================== FAILURES ===================================
+________________________________ test_normal_tb ________________________________
+
+[1m    def test_normal_tb():[0m
+[1m        tb = '''\[0m
+[1m    Traceback (most recent call last):[0m
+[1m      File "<string>", line 2, in _some_function[0m
+[1m        return some_other_function(1)[0m
+[1m      File "myfile.py", line 3, in some_other_function[0m
+[1m        return foo(bar, baz)[0m
+[1m    MyException: ExceptionValue[0m
+[1m    '''[0m
+[1m>       parsed = ParsedException.from_string(tb)[0m
+
+tests/tbutils_test.py:16:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+cls = <class 'boltons.tbutils.ParsedException'>
+tb_str = 'Traceback (most recent call last):\n  File "<string>", line 2, in _some_function\n    return some_other_function(1)\n  File "myfile.py", line 3, in some_other_function\n    return foo(bar, baz)\nMyException: ExceptionValue\n'
+
+[1m    @classmethod[0m
+[1m    def from_string(cls, tb_str):[0m
+[1m        """Parse a traceback and exception from the text *tb_str*. This text[0m
+[1m            is expected to have been decoded, otherwise it will be[0m
+[1m            interpreted as UTF-8.[0m
+[1m    [0m
+[1m            This method does not search a larger body of text for[0m
+[1m            tracebacks. If the first line of the text passed does not[0m
+[1m            match one of the known patterns, a :exc:`ValueError` will be[0m
+[1m            raised. This method will ignore trailing text after the end of[0m
+[1m            the first traceback.[0m
+[1m    [0m
+[1m            Args:[0m
+[1m                tb_str (str): The traceback text (:class:`unicode` or UTF-8 bytes)[0m
+[1m            """[0m
+[1m>       if not isinstance(tb_str, unicode):[0m
+[31m[1mE       NameError: name 'unicode' is not defined[0m
+
+boltons/tbutils.py:694: NameError
+_________________________________ test_eval_tb _________________________________
+
+[1m    def test_eval_tb():[0m
+[1m        tb = '''\[0m
+[1m    Traceback (most recent call last):[0m
+[1m      File "<string>", line 2, in _some_function[0m
+[1m      File "myfile.py", line 3, in some_other_function[0m
+[1m        return foo(bar, baz)[0m
+[1m    MyException: ExceptionValue[0m
+[1m    '''[0m
+[1m>       parsed = ParsedException.from_string(tb)[0m
+
+tests/tbutils_test.py:43:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+cls = <class 'boltons.tbutils.ParsedException'>
+tb_str = 'Traceback (most recent call last):\n  File "<string>", line 2, in _some_function\n  File "myfile.py", line 3, in some_other_function\n    return foo(bar, baz)\nMyException: ExceptionValue\n'
+
+[1m    @classmethod[0m
+[1m    def from_string(cls, tb_str):[0m
+[1m        """Parse a traceback and exception from the text *tb_str*. This text[0m
+[1m            is expected to have been decoded, otherwise it will be[0m
+[1m            interpreted as UTF-8.[0m
+[1m    [0m
+[1m            This method does not search a larger body of text for[0m
+[1m            tracebacks. If the first line of the text passed does not[0m
+[1m            match one of the known patterns, a :exc:`ValueError` will be[0m
+[1m            raised. This method will ignore trailing text after the end of[0m
+[1m            the first traceback.[0m
+[1m    [0m
+[1m            Args:[0m
+[1m                tb_str (str): The traceback text (:class:`unicode` or UTF-8 bytes)[0m
+[1m            """[0m
+[1m>       if not isinstance(tb_str, unicode):[0m
+[31m[1mE       NameError: name 'unicode' is not defined[0m
+
+boltons/tbutils.py:694: NameError
+[31m[1m===================== 2 failed, 67 passed in 0.72 seconds ======================[0m
+travis_time:end:0773d34c:start=1429427717080674147,finish=1429427718259250266,duration=1178576119
+[0K
+[31;1mThe command "py.test --doctest-modules boltons tests" exited with 1.[0m
+
+Done. Your build exited with 1.

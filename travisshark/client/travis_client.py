@@ -34,24 +34,29 @@ class TravisClient(object):
         return self._send_request(req_url, accept_header='', json_format=False)
 
     def _send_request(self, url, accept_header='application/vnd.travis-ci.2+json', json_format=True):
-        logger.debug("Sending request to url: %s" % url)
+        tries = 1
+        while tries <= 2:
+            logger.debug("Sending request to url: %s" % url)
 
-        # If tokens are used, set the header, if not use basic authentication
-        headers = {
-            'Authorization': 'token %s' % self.travis_token,
-            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0',
-            'Accept': accept_header
-        }
+            # If tokens are used, set the header, if not use basic authentication
+            headers = {
+                'Authorization': 'token %s' % self.travis_token,
+                'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0',
+                'Accept': accept_header
+            }
 
-        # Make the request
-        resp = requests.get(url, headers=headers, proxies=self.proxy)
+            # Make the request
+            resp = requests.get(url, headers=headers, proxies=self.proxy)
 
-        if resp.status_code != 200:
-            logger.error("Problem with getting data via url %s. Error: %s" % (url, resp.text))
-            raise RequestException("Problem with getting data via url %s. Error: %s" % (url, resp.text))
+            if resp.status_code != 200:
+                logger.error("Problem with getting data via url %s. Error: %s" % (url, resp.text))
+                tries = tries + 1
+            else:
+                if json_format:
+                    logger.debug('Got response: %s' % resp.json())
+                    return resp.json()
+                else:
+                    return resp.text
 
-        if json_format:
-            logger.debug('Got response: %s' % resp.json())
-            return resp.json()
-        else:
-            return resp.text
+        raise RequestException("Problem with getting data via url %s. Error: %s" % (url, resp.text))
+

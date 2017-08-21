@@ -7,7 +7,7 @@ from mongoengine import connect, DoesNotExist
 from pycoshark.mongomodels import TravisBuild, Commit, VCSSystem, TravisJob
 from pycoshark.utils import create_mongodb_uri_string
 from travisshark.client.travis_client import TravisClient, RequestException
-from travisshark.parsers.build_log_file_parser import BuildLogFileParser
+from travisshark.parsers.build_log_file_parser import BuildLogFileParser, JobConfigError, NoFittingParserFoundError
 
 logger = logging.getLogger("main")
 
@@ -69,8 +69,11 @@ class TravisSHARK(object):
                     try:
                         logger.debug("Looking at job config %s..." % job.config)
                         parser = BuildLogFileParser(log, self.cfg.get_debug_level()).get_correct_parser(job.config)
-                    except NotImplementedError as e:
+                    except (NotImplementedError, JobConfigError) as e:
                         logger.error("Got following error: %s" % e)
+                        continue
+                    except NoFittingParserFoundError as e:
+                        logger.error("No fitting parser was found, continue...")
                         continue
 
                     logger.info("Using %s." % parser.__class__.__name__)
@@ -99,7 +102,9 @@ class TravisSHARK(object):
         m_job.tr_id = job['id']
         m_job.state = job['state']
         m_job.allow_failure = bool(job['allow_failure'])
-        m_job.tags = job['tags']
+
+        if job['tags']:
+            m_job.tags = job['tags']
 
         if job['started_at'] is not None:
             m_job.started_at = datetime.datetime.strptime(job['started_at'], '%Y-%m-%dT%H:%M:%SZ')

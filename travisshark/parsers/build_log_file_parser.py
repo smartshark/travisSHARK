@@ -2,9 +2,19 @@ import logging
 import os
 import sys
 
+
+class JobConfigError(Exception):
+    pass
+
+
+class NoFittingParserFoundError(Exception):
+    pass
+
+
 def all_subclasses(cls):
     return cls.__subclasses__() + [g for s in cls.__subclasses__()
                                    for g in all_subclasses(s)]
+
 
 class BuildLogFileParser(object):
     def __init__(self, log, debug_level):
@@ -18,6 +28,8 @@ class BuildLogFileParser(object):
         # Sometimes, people work with two build systems besides each other (e.g., google guice in the beginning)
         # --> we only use the parser for the first reported build system (e.g., if it uses maven and ant,
         # we only use the maven parser)
+        if 'language' not in job_config:
+            raise JobConfigError("No language specified")
 
         if job_config['language'] not in ['java', 'python']:
             raise NotImplementedError("Only java and python are implemented at the moment!")
@@ -26,13 +38,14 @@ class BuildLogFileParser(object):
         list_of_parsers.reverse()
         for sc in list_of_parsers:
             parser = sc(self.log, self.debug_level)
+            print(parser.__class__.__name__)
             try:
                 if parser.detect(job_config):
                     return parser
             except AttributeError:
                 pass
 
-        raise Exception("No fitting parser found!")
+        raise NoFittingParserFoundError()
 
     @staticmethod
     def _import_parser():

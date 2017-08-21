@@ -10,10 +10,10 @@ class JavaBuildLogFileParser(BuildLogFileParser):
         super().__init__(log, debug_level)
 
     def check_if_list_is_in_job_config(self, job_config, keywords):
-        KEYS_TO_CHECK = ['env', 'install', 'script', 'after_success']
+        KEYS_TO_CHECK = ['env', 'install', 'script', 'after_success', 'before_install']
 
         for key_to_check in KEYS_TO_CHECK:
-            if key_to_check in job_config:
+            if key_to_check in job_config and job_config[key_to_check] is not None:
                 for keyword_to_check in keywords:
                     if keyword_to_check in ' '.join(job_config[key_to_check]):
                         return True
