@@ -6,8 +6,8 @@ from travisshark.parsers.java_parser.java_build_log_file_parser import JavaBuild
 class MavenBuildLogFileParser(JavaBuildLogFileParser):
 
 
-    def __init__(self, log, debug_level):
-        super().__init__(log, debug_level)
+    def __init__(self, log, debug_level, ignore_errors):
+        super().__init__(log, debug_level, ignore_errors)
         self.LETTERS = "abcdefghijklmnopqrstuvwxyz"
         self.reactor_lines = []
         self._test_lines = []
@@ -24,7 +24,7 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
         return list(self.tests_failed), list(self.tests_errored), self.test_framework, self.tests_run_completely
 
     def detect(self, job_config):
-        if self.check_if_list_is_in_job_config(job_config, ['mvn', 'maven']):
+        if self.check_if_list_is_in_job_config(job_config, ['mvn', 'maven', 'maven_opts']):
             self.logger.debug("Found Maven build file...")
             return True
 

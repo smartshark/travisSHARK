@@ -2,8 +2,8 @@ from travisshark.parsers.java_parser.java_build_log_file_parser import JavaBuild
 
 
 class GradleBuildLogFileParser(JavaBuildLogFileParser):
-    def __init__(self, log, debug_level):
-        super().__init__(log, debug_level)
+    def __init__(self, log, debug_level, ignore_errors):
+        super().__init__(log, debug_level, ignore_errors)
 
     def parse(self):
         pass

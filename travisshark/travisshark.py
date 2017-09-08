@@ -68,7 +68,8 @@ class TravisSHARK(object):
 
                     try:
                         logger.debug("Looking at job config %s..." % job.config)
-                        parser = BuildLogFileParser(log, self.cfg.get_debug_level()).get_correct_parser(job.config)
+                        parser = BuildLogFileParser(log, self.cfg.get_debug_level(), self.cfg.ignore_errors)\
+                            .get_correct_parser(job.config)
                     except (NotImplementedError, JobConfigError) as e:
                         logger.error("Got following error: %s" % e)
                         continue

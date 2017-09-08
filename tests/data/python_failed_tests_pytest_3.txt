@@ -1,0 +1,1229 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: travis-worker-gce-org-prod-3:2c0a7912-163f-4e59-8885-fda40fcc0ecd
+version: v2.6.2 https://github.com/travis-ci/worker/tree/fdccca4efd347ebc889baae641ccbf55bb871d19
+instance: testing-gce-d09755cb-fb1a-48b5-87c9-9124244fb873:travis-ci-python-precise-1480652621
+startup: 21.142475659s
+travis_fold:end:worker_info
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: precise
+Build id: 204061746
+Job id: 204061747
+travis-build version: 2b04abe3b
+[34m[1mBuild image provisioning date and time[0m
+Fri Dec  2 04:44:14 UTC 2016
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-103-generic
+[34m[1mCookbooks Version[0m
+9c6cd11 https://github.com/travis-ci/travis-cookbooks/tree/9c6cd11
+[34m[1mGit version[0m
+git version 1.8.5.6
+[34m[1mbash version[0m
+GNU bash, version 4.2.25(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2011 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.2.5
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.2
+[34m[1mmysql --version[0m
+mysql  Ver 14.14 Distrib 5.5.53, for debian-linux-gnu (x86_64) using readline 6.2
+[34m[1mPre-installed PostgreSQL versions[0m
+9.1.24
+9.2.19
+9.3.15
+9.4.10
+9.5.5
+[34m[1mRedis version[0m
+redis-server 3.0.6
+[34m[1mriak version[0m
+2.0.2
+[34m[1mmemcached version[0m
+1.4.13
+[34m[1mMongoDB version[0m
+MongoDB 2.4.14
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mCassandra version[0m
+2.0.9
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 38.4.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_80, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "3.13.0-103-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info
+[0K
+travis_fold:start:fix.CVE-2015-7547
+[0K$ export DEBIAN_FRONTEND=noninteractive
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libc6 is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 86 not upgraded.
+travis_fold:end:fix.CVE-2015-7547
+[0Ktravis_fold:start:git.checkout
+[0Ktravis_time:start:1f1399fa
+[0K$ git clone --depth=50 https://github.com/pallets/click.git pallets/click
+Cloning into 'pallets/click'...
+remote: Counting objects: 684, done.[K
+remote: Compressing objects:   0% (1/356)   [K
+remote: Compressing objects:   1% (4/356)   [K
+remote: Compressing objects:   2% (8/356)   [K
+remote: Compressing objects:   3% (11/356)   [K
+remote: Compressing objects:   4% (15/356)   [K
+remote: Compressing objects:   5% (18/356)   [K
+remote: Compressing objects:   6% (22/356)   [K
+remote: Compressing objects:   7% (25/356)   [K
+remote: Compressing objects:   8% (29/356)   [K
+remote: Compressing objects:   9% (33/356)   [K
+remote: Compressing objects:  10% (36/356)   [K
+remote: Compressing objects:  11% (40/356)   [K
+remote: Compressing objects:  12% (43/356)   [K
+remote: Compressing objects:  13% (47/356)   [K
+remote: Compressing objects:  14% (50/356)   [K
+remote: Compressing objects:  15% (54/356)   [K
+remote: Compressing objects:  16% (57/356)   [K
+remote: Compressing objects:  17% (61/356)   [K
+remote: Compressing objects:  18% (65/356)   [K
+remote: Compressing objects:  19% (68/356)   [K
+remote: Compressing objects:  20% (72/356)   [K
+remote: Compressing objects:  21% (75/356)   [K
+remote: Compressing objects:  22% (79/356)   [K
+remote: Compressing objects:  23% (82/356)   [K
+remote: Compressing objects:  24% (86/356)   [K
+remote: Compressing objects:  25% (89/356)   [K
+remote: Compressing objects:  26% (93/356)   [K
+remote: Compressing objects:  27% (97/356)   [K
+remote: Compressing objects:  28% (100/356)   [K
+remote: Compressing objects:  29% (104/356)   [K
+remote: Compressing objects:  30% (107/356)   [K
+remote: Compressing objects:  31% (111/356)   [K
+remote: Compressing objects:  32% (114/356)   [K
+remote: Compressing objects:  33% (118/356)   [K
+remote: Compressing objects:  34% (122/356)   [K
+remote: Compressing objects:  35% (125/356)   [K
+remote: Compressing objects:  36% (129/356)   [K
+remote: Compressing objects:  37% (132/356)   [K
+remote: Compressing objects:  38% (136/356)   [K
+remote: Compressing objects:  39% (139/356)   [K
+remote: Compressing objects:  40% (143/356)   [K
+remote: Compressing objects:  41% (146/356)   [K
+remote: Compressing objects:  42% (150/356)   [K
+remote: Compressing objects:  43% (154/356)   [K
+remote: Compressing objects:  44% (157/356)   [K
+remote: Compressing objects:  45% (161/356)   [K
+remote: Compressing objects:  46% (164/356)   [K
+remote: Compressing objects:  47% (168/356)   [K
+remote: Compressing objects:  48% (171/356)   [K
+remote: Compressing objects:  49% (175/356)   [K
+remote: Compressing objects:  50% (178/356)   [K
+remote: Compressing objects:  51% (182/356)   [K
+remote: Compressing objects:  52% (186/356)   [K
+remote: Compressing objects:  53% (189/356)   [K
+remote: Compressing objects:  54% (193/356)   [K
+remote: Compressing objects:  55% (196/356)   [K
+remote: Compressing objects:  56% (200/356)   [K
+remote: Compressing objects:  57% (203/356)   [K
+remote: Compressing objects:  58% (207/356)   [K
+remote: Compressing objects:  59% (211/356)   [K
+remote: Compressing objects:  60% (214/356)   [K
+remote: Compressing objects:  61% (218/356)   [K
+remote: Compressing objects:  62% (221/356)   [K
+remote: Compressing objects:  63% (225/356)   [K
+remote: Compressing objects:  64% (228/356)   [K
+remote: Compressing objects:  65% (232/356)   [K
+remote: Compressing objects:  66% (235/356)   [K
+remote: Compressing objects:  67% (239/356)   [K
+remote: Compressing objects:  68% (243/356)   [K
+remote: Compressing objects:  69% (246/356)   [K
+remote: Compressing objects:  70% (250/356)   [K
+remote: Compressing objects:  71% (253/356)   [K
+remote: Compressing objects:  72% (257/356)   [K
+remote: Compressing objects:  73% (260/356)   [K
+remote: Compressing objects:  74% (264/356)   [K
+remote: Compressing objects:  75% (267/356)   [K
+remote: Compressing objects:  76% (271/356)   [K
+remote: Compressing objects:  77% (275/356)   [K
+remote: Compressing objects:  78% (278/356)   [K
+remote: Compressing objects:  79% (282/356)   [K
+remote: Compressing objects:  80% (285/356)   [K
+remote: Compressing objects:  81% (289/356)   [K
+remote: Compressing objects:  82% (292/356)   [K
+remote: Compressing objects:  83% (296/356)   [K
+remote: Compressing objects:  84% (300/356)   [K
+remote: Compressing objects:  85% (303/356)   [K
+remote: Compressing objects:  86% (307/356)   [K
+remote: Compressing objects:  87% (310/356)   [K
+remote: Compressing objects:  88% (314/356)   [K
+remote: Compressing objects:  89% (317/356)   [K
+remote: Compressing objects:  90% (321/356)   [K
+remote: Compressing objects:  91% (324/356)   [K
+remote: Compressing objects:  92% (328/356)   [K
+remote: Compressing objects:  93% (332/356)   [K
+remote: Compressing objects:  94% (335/356)   [K
+remote: Compressing objects:  95% (339/356)   [K
+remote: Compressing objects:  96% (342/356)   [K
+remote: Compressing objects:  97% (346/356)   [K
+remote: Compressing objects:  98% (349/356)   [K
+remote: Compressing objects:  99% (353/356)   [K
+remote: Compressing objects: 100% (356/356)   [K
+remote: Compressing objects: 100% (356/356), done.[K
+Receiving objects:   0% (1/684)
+Receiving objects:   1% (7/684)
+Receiving objects:   2% (14/684)
+Receiving objects:   3% (21/684)
+Receiving objects:   4% (28/684)
+Receiving objects:   5% (35/684)
+Receiving objects:   6% (42/684)
+Receiving objects:   7% (48/684)
+Receiving objects:   8% (55/684)
+Receiving objects:   9% (62/684)
+Receiving objects:  10% (69/684)
+Receiving objects:  11% (76/684)
+Receiving objects:  12% (83/684)
+Receiving objects:  13% (89/684)
+Receiving objects:  14% (96/684)
+Receiving objects:  15% (103/684)
+Receiving objects:  16% (110/684)
+Receiving objects:  17% (117/684)
+Receiving objects:  18% (124/684)
+Receiving objects:  19% (130/684)
+Receiving objects:  20% (137/684)
+Receiving objects:  21% (144/684)
+Receiving objects:  22% (151/684)
+Receiving objects:  23% (158/684)
+Receiving objects:  24% (165/684)
+Receiving objects:  25% (171/684)
+Receiving objects:  26% (178/684)
+Receiving objects:  27% (185/684)
+Receiving objects:  28% (192/684)
+Receiving objects:  29% (199/684)
+Receiving objects:  30% (206/684)
+Receiving objects:  31% (213/684)
+Receiving objects:  32% (219/684)
+Receiving objects:  33% (226/684)
+Receiving objects:  34% (233/684)
+Receiving objects:  35% (240/684)
+Receiving objects:  36% (247/684)
+Receiving objects:  37% (254/684)
+Receiving objects:  38% (260/684)
+Receiving objects:  39% (267/684)
+Receiving objects:  40% (274/684)
+Receiving objects:  41% (281/684)
+Receiving objects:  42% (288/684)
+Receiving objects:  43% (295/684)
+Receiving objects:  44% (301/684)
+Receiving objects:  45% (308/684)
+Receiving objects:  46% (315/684)
+Receiving objects:  47% (322/684)
+Receiving objects:  48% (329/684)
+Receiving objects:  49% (336/684)
+Receiving objects:  50% (342/684)
+Receiving objects:  51% (349/684)
+Receiving objects:  52% (356/684)
+Receiving objects:  53% (363/684)
+Receiving objects:  54% (370/684)
+Receiving objects:  55% (377/684)
+Receiving objects:  56% (384/684)
+Receiving objects:  57% (390/684)
+Receiving objects:  58% (397/684)
+Receiving objects:  59% (404/684)
+Receiving objects:  60% (411/684)
+Receiving objects:  61% (418/684)
+Receiving objects:  62% (425/684)
+Receiving objects:  63% (431/684)
+Receiving objects:  64% (438/684)
+Receiving objects:  65% (445/684)
+Receiving objects:  66% (452/684)
+Receiving objects:  67% (459/684)
+Receiving objects:  68% (466/684)
+Receiving objects:  69% (472/684)
+Receiving objects:  70% (479/684)
+Receiving objects:  71% (486/684)
+Receiving objects:  72% (493/684)
+Receiving objects:  73% (500/684)
+Receiving objects:  74% (507/684)
+Receiving objects:  75% (513/684)
+Receiving objects:  76% (520/684)
+Receiving objects:  77% (527/684)
+Receiving objects:  78% (534/684)
+Receiving objects:  79% (541/684)
+Receiving objects:  80% (548/684)
+Receiving objects:  81% (555/684)
+Receiving objects:  82% (561/684)
+Receiving objects:  83% (568/684)
+remote: Total 684 (delta 402), reused 530 (delta 322), pack-reused 0[K
+Receiving objects:  84% (575/684)
+Receiving objects:  85% (582/684)
+Receiving objects:  86% (589/684)
+Receiving objects:  87% (596/684)
+Receiving objects:  88% (602/684)
+Receiving objects:  89% (609/684)
+Receiving objects:  90% (616/684)
+Receiving objects:  91% (623/684)
+Receiving objects:  92% (630/684)
+Receiving objects:  93% (637/684)
+Receiving objects:  94% (643/684)
+Receiving objects:  95% (650/684)
+Receiving objects:  96% (657/684)
+Receiving objects:  97% (664/684)
+Receiving objects:  98% (671/684)
+Receiving objects:  99% (678/684)
+Receiving objects: 100% (684/684)
+Receiving objects: 100% (684/684), 381.14 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/402)
+Resolving deltas:   1% (6/402)
+Resolving deltas:   4% (17/402)
+Resolving deltas:   5% (22/402)
+Resolving deltas:  12% (52/402)
+Resolving deltas:  16% (67/402)
+Resolving deltas:  18% (76/402)
+Resolving deltas:  19% (77/402)
+Resolving deltas:  24% (100/402)
+Resolving deltas:  31% (127/402)
+Resolving deltas:  44% (177/402)
+Resolving deltas:  48% (193/402)
+Resolving deltas:  58% (236/402)
+Resolving deltas:  59% (240/402)
+Resolving deltas:  63% (254/402)
+Resolving deltas:  64% (258/402)
+Resolving deltas:  68% (274/402)
+Resolving deltas:  72% (293/402)
+Resolving deltas:  74% (299/402)
+Resolving deltas:  76% (306/402)
+Resolving deltas:  80% (323/402)
+Resolving deltas:  82% (332/402)
+Resolving deltas:  83% (336/402)
+Resolving deltas:  84% (339/402)
+Resolving deltas:  85% (342/402)
+Resolving deltas:  86% (348/402)
+Resolving deltas:  87% (352/402)
+Resolving deltas:  88% (354/402)
+Resolving deltas:  89% (358/402)
+Resolving deltas:  90% (363/402)
+Resolving deltas:  91% (369/402)
+Resolving deltas:  92% (370/402)
+Resolving deltas:  93% (374/402)
+Resolving deltas:  94% (378/402)
+Resolving deltas:  95% (383/402)
+Resolving deltas:  96% (386/402)
+Resolving deltas:  97% (391/402)
+Resolving deltas:  98% (395/402)
+Resolving deltas: 100% (402/402)
+Resolving deltas: 100% (402/402), done.
+Checking connectivity... done.
+
+travis_time:end:1f1399fa:start=1487735277887063882,finish=1487735278788312228,duration=901248346
+[0K$ cd pallets/click
+travis_time:start:028aef9b
+[0K$ git fetch origin +refs/pull/739/merge:
+remote: Counting objects: 5, done.[K
+remote: Compressing objects:  50% (1/2)   [K
+remote: Compressing objects: 100% (2/2)   [K
+remote: Compressing objects: 100% (2/2), done.[K
+remote: Total 5 (delta 4), reused 3 (delta 3), pack-reused 0[K
+Unpacking objects:  20% (1/5)
+Unpacking objects:  40% (2/5)
+Unpacking objects:  60% (3/5)
+Unpacking objects:  80% (4/5)
+Unpacking objects: 100% (5/5)
+Unpacking objects: 100% (5/5), done.
+From https://github.com/pallets/click
+ * branch            refs/pull/739/merge -> FETCH_HEAD
+
+travis_time:end:028aef9b:start=1487735278793669302,finish=1487735279414567765,duration=620898463
+[0K$ git checkout -qf FETCH_HEAD
+travis_fold:end:git.checkout
+[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export REQUIREMENTS=colorama
+
+travis_time:start:0059021f
+[0K$ source ~/virtualenv/python2.6/bin/activate
+
+travis_time:end:0059021f:start=1487735279431108661,finish=1487735279435807613,duration=4698952
+[0K$ python --version
+Python 2.6.9
+$ pip --version
+pip 9.0.1 from /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages (python 2.6)
+travis_fold:start:install.1
+[0Ktravis_time:start:03e71028
+[0K$ pip install -r .travis-$REQUIREMENTS-requirements.txt
+[31mDEPRECATION: Python 2.6 is no longer supported by the Python core team, please upgrade your Python. A future version of pip will drop support for Python 2.6[0m
+Collecting colorama (from -r .travis-colorama-requirements.txt (line 1))
+/home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
+  SNIMissingWarning
+/home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+  Downloading colorama-0.3.7-py2.py3-none-any.whl
+Installing collected packages: colorama
+Successfully installed colorama-0.3.7
+
+travis_time:end:03e71028:start=1487735280228972788,finish=1487735280944058641,duration=715085853
+[0Ktravis_fold:end:install.1
+[0Ktravis_fold:start:install.2
+[0Ktravis_time:start:2659f1ac
+[0K$ pip install --editable .
+[31mDEPRECATION: Python 2.6 is no longer supported by the Python core team, please upgrade your Python. A future version of pip will drop support for Python 2.6[0m
+Obtaining file:///home/travis/build/pallets/click
+Installing collected packages: click
+  Running setup.py develop for click
+Successfully installed click
+
+travis_time:end:2659f1ac:start=1487735280948326628,finish=1487735282308552353,duration=1360225725
+[0Ktravis_fold:end:install.2
+[0Ktravis_time:start:095b5d76
+[0K$ make test
+[1m============================= test session starts ==============================[0m
+platform linux3 -- Python 2.6.9, pytest-3.0.4, py-1.4.31, pluggy-0.4.0
+rootdir: /home/travis/build/pallets/click, inifile:
+[1m
+collecting 0 items[0m[1m
+collecting 17 items[0m[1m
+collecting 20 items[0m[1m
+collecting 39 items[0m[1m
+collecting 47 items[0m[1m
+collecting 57 items[0m[1m
+collecting 59 items[0m[1m
+collecting 69 items[0m[1m
+collecting 72 items[0m[1m
+collecting 80 items[0m[1m
+collecting 81 items[0m[1m
+collecting 84 items[0m[1m
+collecting 104 items[0m[1m
+collecting 108 items[0m[1m
+collecting 122 items[0m[1m
+collecting 136 items[0m[1m
+collected 136 items
+[0m
+test_arguments.py F.FFFFFFFFF.FFFFF
+test_bashcomplete.py ...
+test_basic.py .......FF..FFF.....
+test_chain.py F.FFFFFx
+test_commands.py FF.FFFFFFF
+test_compat.py ..
+test_context.py FFF.....FF
+test_defaults.py .FF
+test_formatting.py FFFFFFFF
+test_imports.py .
+test_normalization.py FFF
+test_options.py F..FF..FF..FFFF....F
+test_termui.py ....
+test_testing.py FFFF.FFFFFFFFF
+test_utils.py F...F......F..
+
+=================================== FAILURES ===================================
+[1m[31m_______________________________ test_nargs_star ________________________________[0m
+[1m[31mtest_arguments.py[0m:16: in test_nargs_star
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['src=foo.txt....exit()', ...] == ['src=foo.txt|...t', 'dst=dir'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m________________________________ test_nargs_tup ________________________________[0m
+[1m[31mtest_arguments.py[0m:44: in test_nargs_tup
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['name=peter'....exit()', ...] == ['name=peter', 'point=1/2'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m___________________________ test_nargs_tup_composite ___________________________[0m
+[1m[31mtest_arguments.py[0m:66: in test_nargs_tup_composite
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['name=peter ...in exit', ...] == ['name=peter id=1'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m________________________________ test_nargs_err ________________________________[0m
+[1m[31mtest_arguments.py[0m:79: in test_nargs_err
+[1m    assert result.output == 'foo\n'[0m
+[1m[31mE   assert 'foo\n  File "...s.exit(code)\n' == 'foo\n'[0m
+[1m[31mE       foo[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m________________________________ test_file_args ________________________________[0m
+[1m[31mtest_arguments.py[0m:99: in test_file_args
+[1m    assert result.output == ''[0m
+[1m[31mE   assert '  File "/hom...s.exit(code)\n' == ''[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m________________________________ test_path_args ________________________________[0m
+[1m[31mtest_arguments.py[0m:116: in test_path_args
+[1m    assert result.output == '-\n'[0m
+[1m[31mE   assert '-\n  File "/h...s.exit(code)\n' == '-\n'[0m
+[1m[31mE       -[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m______________________________ test_file_atomics _______________________________[0m
+[1m[31mtest_arguments.py[0m:135: in test_file_atomics
+[1m    assert result.output == ''[0m
+[1m[31mE   assert '  File "/hom...s.exit(code)\n' == ''[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________________ test_stdout_default ______________________________[0m
+[1m[31mtest_arguments.py[0m:150: in test_stdout_default
+[1m    assert result.output == 'Foo bar baz\n'[0m
+[1m[31mE   assert 'Foo bar baz\n...s.exit(code)\n' == 'Foo bar baz\n'[0m
+[1m[31mE       Foo bar baz[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m______________________________ test_nargs_envvar _______________________________[0m
+[1m[31mtest_arguments.py[0m:162: in test_nargs_envvar
+[1m    assert result.output == 'foo|bar\n'[0m
+[1m[31mE   assert 'foo|bar\n  Fi...s.exit(code)\n' == 'foo|bar\n'[0m
+[1m[31mE       foo|bar[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_______________________________ test_empty_nargs _______________________________[0m
+[1m[31mtest_arguments.py[0m:182: in test_empty_nargs
+[1m    assert result.output == 'arg:\n'[0m
+[1m[31mE   assert 'arg:\n  File ...s.exit(code)\n' == 'arg:\n'[0m
+[1m[31mE       arg:[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m__________________________ test_implicit_non_required __________________________[0m
+[1m[31mtest_arguments.py[0m:213: in test_implicit_non_required
+[1m    assert result.output == 'test\n'[0m
+[1m[31mE   assert 'test\n  File ...s.exit(code)\n' == 'test\n'[0m
+[1m[31mE       test[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_______________________________ test_eat_options _______________________________[0m
+[1m[31mtest_arguments.py[0m:226: in test_eat_options
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['-foo', 'bar...in main', ...] == ['-foo', 'bar', ''][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m___________________________ test_nargs_star_ordering ___________________________[0m
+[1m[31mtest_arguments.py[0m:250: in test_nargs_star_ordering
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ["(u'a',)", '...in main', ...] == ["(u'a',)", 'b', 'c'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m___________________ test_nargs_specified_plus_star_ordering ____________________[0m
+[1m[31mtest_arguments.py[0m:267: in test_nargs_specified_plus_star_ordering
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ["(u'a', u'b'...in main', ...] == ["(u'a', u'b',...(u'e', u'f')"][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m___________________________ test_defaults_for_nargs ____________________________[0m
+[1m[31mtest_arguments.py[0m:282: in test_defaults_for_nargs
+[1m    assert result.output.strip() == '3'[0m
+[1m[31mE   assert '3\n  File "/h...ys.exit(code)' == '3'[0m
+[1m[31mE     + 3[0m
+[1m[31mE     - 3[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________________ test_boolean_option ______________________________[0m
+[1m[31mtest_basic.py[0m:161: in test_boolean_option
+[1m    assert result.output == 'True\n'[0m
+[1m[31mE   assert 'True\n  File ...s.exit(code)\n' == 'True\n'[0m
+[1m[31mE       True[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_______________________________ test_file_option _______________________________[0m
+[1m[31mtest_basic.py[0m:199: in test_file_option
+[1m    assert result_in.output == ''[0m
+[1m[31mE   assert '  File "/hom...s.exit(code)\n' == ''[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m______________________________ test_choice_option ______________________________[0m
+[1m[31mtest_basic.py[0m:302: in test_choice_option
+[1m    assert result.output == 'foo\n'[0m
+[1m[31mE   assert 'foo\n  File "...s.exit(code)\n' == 'foo\n'[0m
+[1m[31mE       foo[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_int_range_option _____________________________[0m
+[1m[31mtest_basic.py[0m:321: in test_int_range_option
+[1m    assert result.output == '5\n'[0m
+[1m[31mE   assert '5\n  File "/h...s.exit(code)\n' == '5\n'[0m
+[1m[31mE       5[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m___________________________ test_float_range_option ____________________________[0m
+[1m[31mtest_basic.py[0m:354: in test_float_range_option
+[1m    assert result.output == '5.0\n'[0m
+[1m[31mE   assert '5.0\n  File "...s.exit(code)\n' == '5.0\n'[0m
+[1m[31mE       5.0[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________________ test_basic_chaining ______________________________[0m
+[1m[31mtest_chain.py[0m:28: in test_basic_chaining
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['bdist calle...in main', ...] == ['bdist called...bdist called'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m__________________________ test_chaining_with_options __________________________[0m
+[1m[31mtest_chain.py[0m:86: in test_chaining_with_options
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['bdist calle....exit()', ...] == ['bdist called...ist called 2'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m_________________________ test_chaining_with_arguments _________________________[0m
+[1m[31mtest_chain.py[0m:109: in test_chaining_with_arguments
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['bdist calle....exit()', ...] == ['bdist called...ist called 2'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m________________________________ test_pipeline _________________________________[0m
+[1m[31mtest_chain.py[0m:145: in test_pipeline
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['foo', 'bar'....exit()', ...] == ['foo', 'bar'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m_____________________________ test_args_and_chain ______________________________[0m
+[1m[31mtest_chain.py[0m:185: in test_args_and_chain
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['cli=', 'a='...*extra)', ...] == ['cli=', 'a=', 'b=', 'c='][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m________________________ test_multicommand_arg_behavior ________________________[0m
+[1m[31mtest_chain.py[0m:217: in test_multicommand_arg_behavior
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['cli:foo', '....exit()', ...] == ['cli:foo', 'a'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m__________________________ test_other_command_invoke ___________________________[0m
+[1m[31mtest_commands.py[0m:19: in test_other_command_invoke
+[1m    assert result.output == '42\n'[0m
+[1m[31mE   assert '42\n  File "/...s.exit(code)\n' == '42\n'[0m
+[1m[31mE       42[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m__________________________ test_other_command_forward __________________________[0m
+[1m[31mtest_commands.py[0m:39: in test_other_command_forward
+[1m    assert result.output == 'Count: 1\nCount: 42\n'[0m
+[1m[31mE   assert 'Count: 1\nCou...s.exit(code)\n' == 'Count: 1\nCount: 42\n'[0m
+[1m[31mE       Count: 1[0m
+[1m[31mE       Count: 42[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m______________________________ test_default_maps _______________________________[0m
+[1m[31mtest_commands.py[0m:84: in test_default_maps
+[1m    assert result.output == 'changed\n'[0m
+[1m[31mE   assert 'changed\n  Fi...s.exit(code)\n' == 'changed\n'[0m
+[1m[31mE       changed[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________________ test_group_with_args _____________________________[0m
+[1m[31mtest_commands.py[0m:111: in test_group_with_args
+[1m    assert result.output == 'obj=obj1\nmove\n'[0m
+[1m[31mE   assert 'obj=obj1\nmov...s.exit(code)\n' == 'obj=obj1\nmove\n'[0m
+[1m[31mE       obj=obj1[0m
+[1m[31mE       move[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m______________________________ test_base_command _______________________________[0m
+[1m[31mtest_commands.py[0m:161: in test_base_command
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['whatever.tx...in main', ...] == ['whatever.txt...txt', 'False'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m___________________________ test_object_propagation ____________________________[0m
+[1m[31mtest_commands.py[0m:196: in test_object_propagation
+[1m    assert result.output == 'Debug is off\n'[0m
+[1m[31mE   assert 'Debug is off...s.exit(code)\n' == 'Debug is off\n'[0m
+[1m[31mE       Debug is off[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m___________________ test_other_command_invoke_with_defaults ____________________[0m
+[1m[31mtest_commands.py[0m:214: in test_other_command_invoke_with_defaults
+[1m    assert result.output == '42\n'[0m
+[1m[31mE   assert '42\n  File "/...s.exit(code)\n' == '42\n'[0m
+[1m[31mE       42[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m___________________________ test_invoked_subcommand ____________________________[0m
+[1m[31mtest_commands.py[0m:233: in test_invoked_subcommand
+[1m    assert result.output == 'invoke subcommand\nin subcommand\n'[0m
+[1m[31mE   assert 'invoke subco...s.exit(code)\n' == 'invoke subcom... subcommand\n'[0m
+[1m[31mE       invoke subcommand[0m
+[1m[31mE       in subcommand[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m___________________________ test_unprocessed_options ___________________________[0m
+[1m[31mtest_commands.py[0m:252: in test_unprocessed_options
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Verbosity: ....exit()', ...] == ['Verbosity: 4...uhaha|x|y|-x'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m_________________________ test_ensure_context_objects __________________________[0m
+[1m[31mtest_context.py[0m:24: in test_ensure_context_objects
+[1m    assert result.output == 'default\n'[0m
+[1m[31mE   assert 'default\n  Fi...s.exit(code)\n' == 'default\n'[0m
+[1m[31mE       default[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m___________________________ test_get_context_objects ___________________________[0m
+[1m[31mtest_context.py[0m:47: in test_get_context_objects
+[1m    assert result.output == 'test\n'[0m
+[1m[31mE   assert 'test\n  File ...s.exit(code)\n' == 'test\n'[0m
+[1m[31mE       test[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________ test_get_context_objects_no_ensuring _____________________[0m
+[1m[31mtest_context.py[0m:70: in test_get_context_objects_no_ensuring
+[1m    assert result.output == 'test\n'[0m
+[1m[31mE   assert 'test\n  File ...s.exit(code)\n' == 'test\n'[0m
+[1m[31mE       test[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m________________________________ test_pass_obj _________________________________[0m
+[1m[31mtest_context.py[0m:186: in test_pass_obj
+[1m    assert result.output == 'test\n'[0m
+[1m[31mE   assert 'test\n  File ...s.exit(code)\n' == 'test\n'[0m
+[1m[31mE       test[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_close_before_pop _____________________________[0m
+[1m[31mtest_context.py[0m:204: in test_close_before_pop
+[1m    assert result.output == 'aha!\n'[0m
+[1m[31mE   assert 'aha!\n  File ...s.exit(code)\n' == 'aha!\n'[0m
+[1m[31mE       aha![0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_multiple_defaults ____________________________[0m
+[1m[31mtest_defaults.py[0m:27: in test_multiple_defaults
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['23.0', '42.....exit()', ...] == ['23.0', '42.0'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m___________________________ test_nargs_plus_multiple ___________________________[0m
+[1m[31mtest_defaults.py[0m:43: in test_nargs_plus_multiple
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['<1|2>', '<3....exit()', ...] == ['<1|2>', '<3|4>'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m___________________________ test_basic_functionality ___________________________[0m
+[1m[31mtest_formatting.py[0m:30: in test_basic_functionality
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cli ...rapped.', ...] == ['Usage: cli [...rapped.', ...][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m______________________ test_wrapping_long_options_strings ______________________[0m
+[1m[31mtest_formatting.py[0m:80: in test_wrapping_long_options_strings
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cli ...nd.', '', ...] == ['Usage: cli a...nd.', '', ...][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m_______________________ test_wrapping_long_command_name ________________________[0m
+[1m[31mtest_formatting.py[0m:117: in test_wrapping_long_command_name
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cli ...nd.', '', ...] == ['Usage: cli a...nd.', '', ...][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m_______________________ test_formatting_empty_help_lines _______________________[0m
+[1m[31mtest_formatting.py[0m:138: in test_formatting_empty_help_lines
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cli ..., '', '', ...] == ['Usage: cli [..., '', '', ...][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m_________________________ test_formatting_usage_error __________________________[0m
+[1m[31mtest_formatting.py[0m:158: in test_formatting_usage_error
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cmd ...*extra)', ...] == ['Usage: cmd [...ument "arg".'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m______________________ test_formatting_usage_error_nested ______________________[0m
+[1m[31mtest_formatting.py[0m:178: in test_formatting_usage_error_nested
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cmd ...*extra)', ...] == ['Usage: cmd f...ument "bar".'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m_____________________ test_formatting_usage_error_no_help ______________________[0m
+[1m[31mtest_formatting.py[0m:194: in test_formatting_usage_error_no_help
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cmd ...in main', ...] == ['Usage: cmd [...ument "arg".'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m______________________ test_formatting_usage_custom_help _______________________[0m
+[1m[31mtest_formatting.py[0m:209: in test_formatting_usage_custom_help
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['Usage: cmd ...*extra)', ...] == ['Usage: cmd [...ument "arg".'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m__________________________ test_option_normalization ___________________________[0m
+[1m[31mtest_normalization.py[0m:16: in test_option_normalization
+[1m    assert result.output == '42\n23\n'[0m
+[1m[31mE   assert '42\n23\n  File...s.exit(code)\n' == '42\n23\n'[0m
+[1m[31mE       42[0m
+[1m[31mE       23[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m__________________________ test_choice_normalization ___________________________[0m
+[1m[31mtest_normalization.py[0m:26: in test_choice_normalization
+[1m    assert result.output == 'Foo\n'[0m
+[1m[31mE   assert 'Foo\n  File "...s.exit(code)\n' == 'Foo\n'[0m
+[1m[31mE       Foo[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m__________________________ test_command_normalization __________________________[0m
+[1m[31mtest_normalization.py[0m:39: in test_command_normalization
+[1m    assert result.output == 'here!\n'[0m
+[1m[31mE   assert 'here!\n  File...s.exit(code)\n' == 'here!\n'[0m
+[1m[31mE       here![0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m________________________________ test_prefixes _________________________________[0m
+[1m[31mtest_options.py[0m:19: in test_prefixes
+[1m    assert result.output == 'foo=True bar=True\n'[0m
+[1m[31mE   assert 'foo=True bar...s.exit(code)\n' == 'foo=True bar=True\n'[0m
+[1m[31mE       foo=True bar=True[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m________________________ test_nargs_tup_composite_mult _________________________[0m
+[1m[31mtest_options.py[0m:60: in test_nargs_tup_composite_mult
+[1m    assert result.output.splitlines() == [[0m
+[1m[31mE   assert ['name=peter ....exit()', ...] == ['name=peter i...ame=max id=2'][0m
+[1m[31mE     Left contains more items, first extra item: '  File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke'[0m
+[1m[31mE     Use -v to get the full diff[0m
+[1m[31m________________________________ test_counting _________________________________[0m
+[1m[31mtest_options.py[0m:75: in test_counting
+[1m    assert result.output == 'verbosity=3\n'[0m
+[1m[31mE   assert 'verbosity=3\n...s.exit(code)\n' == 'verbosity=3\n'[0m
+[1m[31mE       verbosity=3[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_multiple_required ____________________________[0m
+[1m[31mtest_options.py[0m:109: in test_multiple_required
+[1m    assert result.output == 'foo\nbar\n'[0m
+[1m[31mE   assert 'foo\nbar\n  Fi...s.exit(code)\n' == 'foo\nbar\n'[0m
+[1m[31mE       foo[0m
+[1m[31mE       bar[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________________ test_multiple_envvar _____________________________[0m
+[1m[31mtest_options.py[0m:125: in test_multiple_envvar
+[1m    assert result.output == 'foo|bar|baz\n'[0m
+[1m[31mE   assert 'foo|bar|baz\n...s.exit(code)\n' == 'foo|bar|baz\n'[0m
+[1m[31mE       foo|bar|baz[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m______________________________ test_nargs_envvar _______________________________[0m
+[1m[31mtest_options.py[0m:187: in test_nargs_envvar
+[1m    assert result.output == 'foo|bar\n'[0m
+[1m[31mE   assert 'foo|bar\n  Fi...s.exit(code)\n' == 'foo|bar\n'[0m
+[1m[31mE       foo|bar[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_custom_validation ____________________________[0m
+[1m[31mtest_options.py[0m:217: in test_custom_validation
+[1m    assert result.output == '42\n'[0m
+[1m[31mE   assert '42\n  File "/...s.exit(code)\n' == '42\n'[0m
+[1m[31mE       42[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_winstyle_options _____________________________[0m
+[1m[31mtest_options.py[0m:227: in test_winstyle_options
+[1m    assert result.output == 'True\n'[0m
+[1m[31mE   assert 'True\n  File ...s.exit(code)\n' == 'True\n'[0m
+[1m[31mE       True[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________________ test_legacy_options ______________________________[0m
+[1m[31mtest_options.py[0m:244: in test_legacy_options
+[1m    assert result.output == '42\n'[0m
+[1m[31mE   assert '42\n  File "/...s.exit(code)\n' == '42\n'[0m
+[1m[31mE       42[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_aliases_for_flags ____________________________[0m
+[1m[31mtest_options.py[0m:321: in test_aliases_for_flags
+[1m    assert result.output == 'True\n'[0m
+[1m[31mE   assert 'True\n  File ...s.exit(code)\n' == 'True\n'[0m
+[1m[31mE       True[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_________________________________ test_runner __________________________________[0m
+[1m[31mtest_testing.py[0m:33: in test_runner
+[1m    assert result.output == 'Hello World!\n'[0m
+[1m[31mE   assert 'Hello World!...s.exit(code)\n' == 'Hello World!\n'[0m
+[1m[31mE       Hello World![0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m___________________________ test_runner_with_stream ____________________________[0m
+[1m[31mtest_testing.py[0m:56: in test_runner_with_stream
+[1m    assert result.output == 'Hello World!\n'[0m
+[1m[31mE   assert 'Hello World!...s.exit(code)\n' == 'Hello World!\n'[0m
+[1m[31mE       Hello World![0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_________________________________ test_prompts _________________________________[0m
+[1m[31mtest_testing.py[0m:73: in test_prompts
+[1m    assert result.output == 'Foo: wau wau\nfoo=wau wau\n'[0m
+[1m[31mE   assert 'Foo: wau wau...s.exit(code)\n' == 'Foo: wau wau\nfoo=wau wau\n'[0m
+[1m[31mE       Foo: wau wau[0m
+[1m[31mE       foo=wau wau[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_________________________________ test_getchar _________________________________[0m
+[1m[31mtest_testing.py[0m:94: in test_getchar
+[1m    assert result.output == 'y\n'[0m
+[1m[31mE   assert 'y\n  File "/h...s.exit(code)\n' == 'y\n'[0m
+[1m[31mE       y[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_______________________________ test_with_color ________________________________[0m
+[1m[31mtest_testing.py[0m:130: in test_with_color
+[1m    assert result.output == 'hello world\n'[0m
+[1m[31mE   assert 'hello world\n...s.exit(code)\n' == 'hello world\n'[0m
+[1m[31mE       hello world[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________ test_with_color_but_pause_not_blocking ____________________[0m
+[1m[31mtest_testing.py[0m:146: in test_with_color_but_pause_not_blocking
+[1m    assert result.output == ''[0m
+[1m[31mE   assert '  File "/hom...s.exit(code)\n' == ''[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m___________________ test_exit_code_and_output_from_sys_exit ____________________[0m
+[1m[31mtest_testing.py[0m:174: in test_exit_code_and_output_from_sys_exit
+[1m    assert result.output == 'hello world\nerror\n'[0m
+[1m[31mE   assert "hello world\n...xit('error')\n" == 'hello world\nerror\n'[0m
+[1m[31mE       hello world[0m
+[1m[31mE     + error[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 697, in main[0m
+[1m[31mE     -     rv = self.invoke(ctx)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 898, in invoke[0m
+[1m[31mE     -     return ctx.invoke(self.callback, **ctx.params)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 535, in invoke[0m
+[1m[31mE     -     return callback(*args, **kwargs)[0m
+[1m[31mE     -   File "/opt/python/2.6.9/lib/python2.6/contextlib.py", line 34, in __exit__[0m
+[1m[31mE     -     self.gen.throw(type, value, traceback)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 87, in augment_usage_errors[0m
+[1m[31mE     -     yield[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 535, in invoke[0m
+[1m[31mE     -     return callback(*args, **kwargs)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/tests/test_testing.py", line 154, in cli_string[0m
+[1m[31mE     -     sys.exit('error')[0m
+[1m[31m___________________________________ test_env ___________________________________[0m
+[1m[31mtest_testing.py[0m:202: in test_env
+[1m    assert result.output == 'ENV=some_value\n'[0m
+[1m[31mE   assert 'ENV=some_val...s.exit(code)\n' == 'ENV=some_value\n'[0m
+[1m[31mE       ENV=some_value[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________________ test_args[None-bar
+] _____________________________[0m
+[1m[31mtest_testing.py[0m:224: in test_args
+[1m    assert result.output == expected_output[0m
+[1m[31mE   assert 'bar\n  File "...s.exit(code)\n' == 'bar\n'[0m
+[1m[31mE       bar[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m____________________________ test_args[args1-bar
+] _____________________________[0m
+[1m[31mtest_testing.py[0m:224: in test_args
+[1m    assert result.output == expected_output[0m
+[1m[31mE   assert 'bar\n  File "...s.exit(code)\n' == 'bar\n'[0m
+[1m[31mE       bar[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_______________________________ test_args[-bar
+] _______________________________[0m
+[1m[31mtest_testing.py[0m:224: in test_args
+[1m    assert result.output == expected_output[0m
+[1m[31mE   assert 'bar\n  File "...s.exit(code)\n' == 'bar\n'[0m
+[1m[31mE       bar[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m__________________________ test_args[args3-one two
+] ___________________________[0m
+[1m[31mtest_testing.py[0m:224: in test_args
+[1m    assert result.output == expected_output[0m
+[1m[31mE   assert 'one two\n  Fi...s.exit(code)\n' == 'one two\n'[0m
+[1m[31mE       one two[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_____________________ test_args[--foo "one two"-one two
+] ______________________[0m
+[1m[31mtest_testing.py[0m:224: in test_args
+[1m    assert result.output == expected_output[0m
+[1m[31mE   assert 'one two\n  Fi...s.exit(code)\n' == 'one two\n'[0m
+[1m[31mE       one two[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m__________________________________ test_echo ___________________________________[0m
+[1m[31mtest_utils.py[0m:38: in test_echo
+[1m    assert result.output_bytes == b'\xf6\n'[0m
+[1m[31mE   assert '\xf6\n  File....exit(code)\n' == '\xf6\n'[0m
+[1m[31mE       \xf6[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m_________________________________ test_prompts _________________________________[0m
+[1m[31mtest_utils.py[0m:103: in test_prompts
+[1m    assert result.output == 'Foo [y/N]: y\nyes!\n'[0m
+[1m[31mE   assert 'Foo [y/N]: y...s.exit(code)\n' == 'Foo [y/N]: y\nyes!\n'[0m
+[1m[31mE       Foo [y/N]: y[0m
+[1m[31mE       yes![0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m________________________________ test_open_file ________________________________[0m
+[1m[31mtest_utils.py[0m:259: in test_open_file
+[1m    assert result.output == 'Cool stuff\nmeep\n'[0m
+[1m[31mE   assert 'Cool stuff\nm...s.exit(code)\n' == 'Cool stuff\nmeep\n'[0m
+[1m[31mE       Cool stuff[0m
+[1m[31mE       meep[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/testing.py", line 288, in invoke[0m
+[1m[31mE     -     prog_name=self.get_default_prog_name(cli), **extra)[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 700, in main[0m
+[1m[31mE     -     ctx.exit()[0m
+[1m[31mE     -   File "/home/travis/build/pallets/click/click/core.py", line 484, in exit[0m
+[1m[31mE     -     sys.exit(code)[0m
+[1m[31m=============== 79 failed, 56 passed, 1 xfailed in 1.64 seconds ================[0m
+make: *** [test] Error 1
+
+travis_time:end:095b5d76:start=1487735282312885704,finish=1487735284349010735,duration=2036125031
+[0K
+[31;1mThe command "make test" exited with 2.[0m
+
+Done. Your build exited with 1.

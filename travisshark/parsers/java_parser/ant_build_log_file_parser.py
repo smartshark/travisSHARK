@@ -1,8 +1,8 @@
 from travisshark.parsers.java_parser.java_build_log_file_parser import JavaBuildLogFileParser
 
 class AntBuildLogFileParser(JavaBuildLogFileParser):
-    def __init__(self, log, debug_level):
-        super().__init__(log, debug_level)
+    def __init__(self, log, debug_level, ignore_errors):
+        super().__init__(log, debug_level, ignore_errors)
         self.reactor_lines = []
         self._test_lines = []
         self._errored_tests_lines = []

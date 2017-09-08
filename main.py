@@ -14,6 +14,8 @@ def start():
     parser.add_argument('--debug', help='Sets the debug level.', default='DEBUG',
                         choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'])
     parser.add_argument('-t', '--token', help='Token for accessing travis.', required=True)
+    parser.add_argument('--ignore-errors', help='Switch on, if errors should be ignored.', default=False,
+                        action='store_true')
     parser.add_argument('--only-failed', help='Switch on, if you only want to mine failed jobs', default=False,
                         action='store_true')
 

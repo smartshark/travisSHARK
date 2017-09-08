@@ -1,0 +1,2533 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: i-0c98a12-production-2-worker-org-ec2.travisci.net:fe53ebc7-7aec-4656-a1b6-c98f2943bde5
+version: v2.9.3 https://github.com/travis-ci/worker/tree/a41c772c638071fbbdbc106f31a664c0532e0c36
+instance: 28e2a70:travis:python (via amqp)
+startup: 654.033802ms
+travis_fold:end:worker_info
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: trusty
+Build id: 256103724
+Job id: 256103742
+travis-build version: c0e532c7a
+[34m[1mBuild image provisioning date and time[0m
+Fri Jul  7 18:52:25 UTC 2017
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.5 LTS
+Release:	14.04
+Codename:	trusty
+[34m[1mLinux Version[0m
+4.4.0-83-generic
+[34m[1mCookbooks Version[0m
+15a6f94 https://github.com/travis-ci/travis-cookbooks/tree/15a6f94
+[34m[1mgit version[0m
+git version 2.13.0
+[34m[1mbash version[0m
+GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
+[34m[1mgcc version[0m
+gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mdocker version[0m
+Client:
+ Version:      17.03.1-ce
+ API version:  1.27
+ Go version:   go1.7.5
+ Git commit:   c6d412e
+ Built:        Mon Mar 27 16:58:30 2017
+ OS/Arch:      linux/amd64
+[34m[1mclang version[0m
+clang version 3.5.0 (tags/RELEASE_350/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mshellcheck version[0m
+0.4.5
+[34m[1mshfmt version[0m
+v1.0.0
+[34m[1mccache version[0m
+ccache version 3.1.9
+
+Copyright (C) 2002-2007 Andrew Tridgell
+Copyright (C) 2009-2011 Joel Rosdahl
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 3 of the License, or (at your option) any later
+version.
+[34m[1mcmake version[0m
+cmake version 3.2.2
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+[34m[1mheroku version[0m
+heroku-cli/6.12.5-17216bc (linux-x64) node-v8.1.3
+[34m[1mimagemagick version[0m
+Version: ImageMagick 6.7.7-10 2017-05-26 Q16 http://www.imagemagick.org
+[34m[1mmd5deep version[0m
+4.2
+[34m[1mmercurial version[0m
+Mercurial Distributed SCM (version 4.2.2)
+(see https://mercurial-scm.org for more information)
+
+Copyright (C) 2005-2017 Matt Mackall and others
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.6.33, for debian-linux-gnu (x86_64) using  EditLine wrapper
+[34m[1mopenssl version[0m
+OpenSSL 1.0.2j  26 Sep 2016
+[34m[1mpacker version[0m
+Packer v0.10.1
+
+Your version of Packer is out of date! The latest version
+is 1.0.2. You can update by downloading from www.packer.io
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 9.6.3
+[34m[1mragel version[0m
+Ragel State Machine Compiler version 6.8 Feb 2013
+Copyright (c) 2001-2009 by Adrian Thurston
+[34m[1msubversion version[0m
+svn, version 1.8.8 (r1568071)
+   compiled Aug 20 2015, 12:51:30 on x86_64-pc-linux-gnu
+
+Copyright (C) 2013 The Apache Software Foundation.
+This software consists of contributions made by many people;
+see the NOTICE file for more inages
+Require fully-qualified hostnames in the sudoers file
+Visudo will honor the EDITOR environment variable
+Set the LOGNAME and USER environment variables
+Length at which to wrap log file lines (0 for no wrap): 80
+Authentication timestamp timeout: 15.0 minutes
+Password prompt timeout: 0.0 minutes
+Number of tries to enter a password: 3
+Umask to use or 0777 to use user's: 022
+Path to mail program: /usr/sbin/sendmail
+Flags for mail program: -t
+Address to send mail to: root
+Subject line for mail messages: *** SECURITY information for %h ***
+Incorrect password message: Sorry, try again.
+Path to authentication timestamp dir: /var/lib/sudo
+Default password prompt: [sudo] password for %p:
+Default user to run commands as: root
+Value to override user's $PATH with: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+Path to the editor for use by visudo: /usr/bin/editor
+When to require a password for 'list' pseudocommand: any
+When to require a password for 'verify' pseudocommand: all
+File descriptors >= 3 will be closed before executing a command
+Environment variables to check for sanity:
+	TZ
+	TERM
+	LINGUAS
+	LC_*
+	LANGUAGE
+	LANG
+	COLORTERM
+Environment variables to remove:
+	RUBYOPT
+	RUBYLIB
+	PYTHONUSERBASE
+	PYTHONINSPECT
+	PYTHONPATH
+	PYTHONHOME
+	TMPPREFIX
+	ZDOTDIR
+	READNULLCMD
+	NULLCMD
+	FPATH
+	PERL5DB
+	PERL5OPT
+	PERL5LIB
+	PERLLIB
+	PERLIO_DEBUG
+	JAVA_TOOL_OPTIONS
+	SHELLOPTS
+	GLOBIGNORE
+	PS4
+	BASH_ENV
+	ENV
+	TERMCAP
+	TERMPATH
+	TERMINFO_DIRS
+	TERMINFO
+	_RLD*
+	LD_*
+	PATH_LOCALE
+	NLSPATH
+	HOSTALIASES
+	RES_OPTIONS
+	LOCALDOMAIN
+	CDPATH
+	IFS
+Environment variables to preserve:
+	JAVA_HOME
+	TRAVIS
+	CI
+	DEBIAN_FRONTEND
+	XAUTHORIZATION
+	XAUTHORITY
+	PS2
+	PS1
+	PATH
+	LS_COLORS
+	KRB5CCNAME
+	HOSTNAME
+	HOME
+	DISPLAY
+	COLORS
+Locale to use while parsing sudoers: C
+Directory in which to store input/output logs: /var/log/sudo-io
+File in which to store the input/output log: %{seq}
+Add an entry to the utmp/utmpx file when allocating a pty
+PAM service name to use
+PAM service name to use for login shells
+Create a new PAM session for the command to run in
+Maximum I/O log sequence number: 0
+
+Local IP address and netmask pairs:
+	172.17.0.2/255.255.0.0
+
+Sudoers I/O plugin version 1.8.9p5
+[34m[1mgzip version[0m
+gzip 1.6
+Copyright (C) 2007, 2010, 2011 Free Software Foundation, Inc.
+Copyright (C) 1993 Jean-loup Gailly.
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jean-loup Gailly.
+[34m[1mzip version[0m
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+This is Zip 3.0 (July 5th 2008), by Info-ZIP.
+Currently maintained by E. Gordon.  Please send bug reports to
+the authors using the web page at www.info-zip.org; see README for details.
+
+Latest sources and executables are at ftp://ftp.info-zip.org/pub/infozip,
+as of above date; see http://www.info-zip.org/ for other sites.
+
+Compiled with gcc 4.8.2 for Unix (Linux ELF) on Oct 21 2013.
+
+Zip special compilation options:
+	USE_EF_UT_TIME       (store Universal Time)
+	BZIP2_SUPPORT        (bzip2 library version 1.0.6, 6-Sept-2010)
+	    bzip2 code and library copyright (c) Julian R Seward
+	    (See the bzip2 license for terms of use)
+	SYMLINK_SUPPORT      (symbolic links supported)
+	LARGE_FILE_SUPPORT   (can read and write large files on file system)
+	ZIP64_SUPPORT        (use Zip64 to store large files in archives)
+	UNICODE_SUPPORT      (store and read UTF-8 Unicode paths)
+	STORE_UNIX_UIDs_GIDs (store UID/GID sizes/values using new extra field)
+	UIDGID_NOT_16BIT     (old Unix 16-bit UID/GID extra field not used)
+	[encryption, version 2.91 of 05 Jan 2007] (modified for Zip 3)
+
+Encryption notice:
+	The encryption code of this program is not copyrighted and is
+	put in the public domain.  It was originally written in Europe
+	and, to the best of our knowledge, can be freely distributed
+	in both source and object forms from any country, including
+	the USA under License Exception TSU of the U.S. Export
+	Administration Regulations (section 740.13(e)) of 6 June 2002.
+
+Zip environment options:
+             ZIP:  [none]
+          ZIPOPT:  [none]
+[34m[1mvim version[0m
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Nov 24 2016 16:43:18)
+Included patches: 1-52
+Extra patches: 8.0.0056
+Modified by pkg-vim-maintainers@lists.alioth.debian.org
+Compiled by buildd@
+Huge version without GUI.  Features included (+) or not (-):
++acl             +farsi           +mouse_netterm   +syntax
++arabic          +file_in_path    +mouse_sgr       +tag_binary
++autocmd         +find_in_path    -mouse_sysmouse  +tag_old_static
+-balloon_eval    +float           +mouse_urxvt     -tag_any_white
+-browse          +folding         +mouse_xterm     -tcl
+++builtin_terms  -footer          +multi_byte      +terminfo
++byte_offset     +fork()          +multi_lang      +termresponse
++cindent         +gettext         -mzscheme        +textobjects
+-clientserver    -hangul_input    +netbeans_intg   +title
+-clipboard       +iconv           +path_extra      -toolbar
++cmdline_compl   +insert_expand   -perl            +user_commands
++cmdline_hist    +jumplist        +persistent_undo +vertsplit
++cmdline_info    +keymap          +postscript      +virtualedit
++comments        +langmap         +printer         +visual
++conceal         +libcall         +profile         +visualextra
++cryptv          +linebreak       +python          +viminfo
++cscope          +lispindent      -python3         +vreplace
++cursorbind      +listcmds        +quickfix        +wildignore
++cursorshape     +localmap        +reltime         +wildmenu
++dialog_con      -lua             +rightleft       +windows
++diff            +menu            -ruby            +writebackup
++digraphs        +mksession       +scrollbind      -X11
+-dnd             +modify_fname    +signs           -xfontset
+-ebcdic          +mouse           +smartindent     -xim
++emacs_tags      -mouseshape      -sniff           -xsmp
++eval            +mouse_dec       +startuptime     -xterm_clipboard
++ex_extra        +mouse_gpm       +statusline      -xterm_save
++extra_search    -mouse_jsbterm   -sun_workshop    -xpm
+   system vimrc file: "$VIM/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+  fall-back for $VIM: "/usr/share/vim"
+Compilation: gcc -c -I. -Iproto (TM) version 1.9.3 compiled on April 8 2014
+[34m[1mmvn version[0m
+Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:47+00:00)
+Maven home: /usr/local/maven-3.3.9
+Java version: 1.8.0_131, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.4.0-83-generic", arch: "amd64", family: "unix"
+[34m[1mgradle version[0m
+
+------------------------------------------------------------
+Gradle 3.2.1
+------------------------------------------------------------
+
+Build time:   2016-11-22 15:19:54 UTC
+Revision:     83b485b914fd4f335ad0e66af9d14aad458d2cc5
+
+Groovy:       2.4.7
+Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+JVM:          1.8.0_131 (Oracle Corporation 25.131-b11)
+OS:           Linux 4.4.0-83-generic amd64
+
+[34m[1mlein version[0m
+WARNING: You're currently running as root; probably by accident.
+Press control-C to abort or Enter to continue as root.
+Set LEIN_ROOT to disable this warning.
+Leiningen 2.7.1 on Java 1.8.0_131 Java HotSpot(TM) 64-Bit Server VM
+[34m[1mPre-installed Node.js versions[0m
+v4.8.3
+v6.11.0
+v6.9.4
+v7.4
+v7.4.0
+[34m[1mphpenv versions[0m
+  system
+  5.6
+* 5.6.24 (set by /home/travis/.phpenv/version)
+  7.0
+  7.0.7
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.2.0 2016-07-19 01:28:52
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.2.7
+ruby-2.3.4
+ruby-2.4.1
+travis_fold:end:system_info
+[0K
+W: http://dl.hhvm.com/ubuntu/dists/trusty/InRelease: Signature by key 36AEF64D0207E7EEE352D4875A16E7281BE7A449 uses weak digest algorithm (SHA1)
+W: http://ppa.launchpad.net/couchdb/stable/ubuntu/dists/trusty/Release.gpg: Signature by key 15866BAFD9BCC4F3C1E0DFC7D69548E1C17EAB57 uses weak digest algorithm (SHA1)
+[33;1mPatching redis-server init script[0m
+travis_fold:start:git.checkout
+[0Ktravis_time:start:2f5218d0
+[0K$ git clone --depth=50 https://github.com/python-telegram-bot/python-telegram-bot.git python-telegram-bot/python-telegram-bot
+Cloning into 'python-telegram-bot/python-telegram-bot'...
+remote: Counting objects: 1614, done.[K
+remote: Compressing objects:   0% (1/628)   [K
+remote: Compressing objects:   1% (7/628)   [K
+remote: Compressing objects:   2% (13/628)   [K
+remote: Compressing objects:   3% (19/628)   [K
+remote: Compressing objects:   4% (26/628)   [K
+remote: Compressing objects:   5% (32/628)   [K
+remote: Compressing objects:   6% (38/628)   [K
+remote: Compressing objects:   7% (44/628)   [K
+remote: Compressing objects:   8% (51/628)   [K
+remote: Compressing objects:   9% (57/628)   [K
+remote: Compressing objects:  10% (63/628)   [K
+remote: Compressing objects:  11% (70/628)   [K
+remote: Compressing objects:  12% (76/628)   [K
+remote: Compressing objects:  13% (82/628)   [K
+remote: Compressing objects:  14% (88/628)   [K
+remote: Compressing objects:  15% (95/628)   [K
+remote: Compressing objects:  16% (101/628)   [K
+remote: Compressing objects:  17% (107/628)   [K
+remote: Compressing objects:  18% (114/628)   [K
+remote: Compressing objects:  19% (120/628)   [K
+remote: Compressing objects:  20% (126/628)   [K
+remote: Compressing objects:  21% (132/628)   [K
+remote: Compressing objects:  22% (139/628)   [K
+remote: Compressing objects:  23% (145/628)   [K
+remote: Compressing objects:  24% (151/628)   [K
+remote: Compressing objects:  25% (157/628)   [K
+remote: Compressing objects:  26% (164/628)   [K
+remote: Compressing objects:  27% (170/628)   [K
+remote: Compressing objects:  28% (176/628)   [K
+remote: Compressing objects:  29% (183/628)   [K
+remote: Compressing objects:  30% (189/628)   [K
+remote: Compressing objects:  31% (195/628)   [K
+remote: Compressing objects:  32% (201/628)   [K
+remote: Compressing objects:  33% (208/628)   [K
+remote: Compressing objects:  34% (214/628)   [K
+remote: Compressing objects:  35% (220/628)   [K
+remote: Compressing objects:  36% (227/628)   [K
+remote: Compressing objects:  37% (233/628)   [K
+remote: Compressing objects:  38% (239/628)   [K
+remote: Compressing objects:  39% (245/628)   [K
+remote: Compressing objects:  40% (252/628)   [K
+remote: Compressing objects:  41% (258/628)   [K
+remote: Compressing objects:  42% (264/628)   [K
+remote: Compressing objects:  43% (271/628)   [K
+remote: Compressing objects:  44% (277/628)   [K
+remote: Compressing objects:  45% (283/628)   [K
+remote: Compressing objects:  46% (289/628)   [K
+remote: Compressing objects:  47% (296/628)   [K
+remote: Compressing objects:  48% (302/628)   [K
+remote: Compressing objects:  49% (308/628)   [K
+remote: Compressing objects:  50% (314/628)   [K
+remote: Compressing objects:  51% (321/628)   [K
+remote: Compressing objects:  52% (327/628)   [K
+remote: Compressing objects:  53% (333/628)   [K
+remote: Compressing objects:  54% (340/628)   [K
+remote: Compressing objects:  55% (346/628)   [K
+remote: Compressing objects:  56% (352/628)   [K
+remote: Compressing objects:  57% (358/628)   [K
+remote: Compressing objects:  58% (365/628)   [K
+remote: Compressing objects:  59% (371/628)   [K
+remote: Compressing objects:  60% (377/628)   [K
+remote: Compressing objects:  61% (384/628)   [K
+remote: Compressing objects:  62% (390/628)   [K
+remote: Compressing objects:  63% (396/628)   [K
+remote: Compressing objects:  64% (402/628)   [K
+remote: Compressing objects:  65% (409/628)   [K
+remote: Compressing objects:  66% (415/628)   [K
+remote: Compressing objects:  67% (421/628)   [K
+remote: Compressing objects:  68% (428/628)   [K
+remote: Compressing objects:  69% (434/628)   [K
+remote: Compressing objects:  70% (440/628)   [K
+remote: Compressing objects:  71% (446/628)   [K
+remote: Compressing objects:  72% (453/628)   [K
+remote: Compressing objects:  73% (459/628)   [K
+remote: Compressing objects:  74% (465/628)   [K
+remote: Compressing objects:  75% (471/628)   [K
+remote: Compressing objects:  76% (478/628)   [K
+remote: Compressing objects:  77% (484/628)   [K
+remote: Compressing objects:  78% (490/628)   [K
+remote: Compressing objects:  79% (497/628)   [K
+remote: Compressing objects:  80% (503/628)   [K
+remote: Compressing objects:  81% (509/628)   [K
+remote: Compressing objects:  82% (515/628)   [K
+remote: Compressing objects:  83% (522/628)   [K
+remote: Compressing objects:  84% (528/628)   [K
+remote: Compressing objects:  85% (534/628)   [K
+remote: Compressing objects:  86% (541/628)   [K
+remote: Compressing objects:  87% (547/628)   [K
+remote: Compressing objects:  88% (553/628)   [K
+remote: Compressing objects:  89% (559/628)   [K
+remote: Compressing objects:  90% (566/628)   [K
+remote: Compressing objects:  91% (572/628)   [K
+remote: Compressing objects:  92% (578/628)   [K
+remote: Compressing objects:  93% (585/628)   [K
+remote: Compressing objects:  94% (591/628)   [K
+remote: Compressing objects:  95% (597/628)   [K
+remote: Compressing objects:  96% (603/628)   [K
+remote: Compressing objects:  97% (610/628)   [K
+remote: Compressing objects:  98% (616/628)   [K
+remote: Compressing objects:  99% (622/628)   [K
+remote: Compressing objects: 100% (628/628)   [K
+remote: Compressing objects: 100% (628/628), done.[K
+Receiving objects:   0% (1/1614)
+Receiving objects:   1% (17/1614)
+Receiving objects:   2% (33/1614)
+Receiving objects:   3% (49/1614)
+Receiving objects:   4% (65/1614)
+Receiving objects:   5% (81/1614)
+Receiving objects:   6% (97/1614)
+Receiving objects:   7% (113/1614)
+Receiving objects:   8% (130/1614)
+Receiving objects:   9% (146/1614)
+Receiving objects:  10% (162/1614)
+Receiving objects:  11% (178/1614)
+Receiving objects:  12% (194/1614)
+Receiving objects:  13% (210/1614)
+Receiving objects:  14% (226/1614)
+Receiving objects:  15% (243/1614)
+Receiving objects:  16% (259/1614)
+Receiving objects:  17% (275/1614)
+Receiving objects:  18% (291/1614)
+Receiving objects:  19% (307/1614)
+Receiving objects:  20% (323/1614)
+Receiving objects:  21% (339/1614)
+Receiving objects:  22% (356/1614)
+Receiving objects:  23% (372/1614)
+Receiving objects:  24% (388/1614)
+Receiving objects:  25% (404/1614)
+Receiving objects:  26% (420/1614)
+Receiving objects:  27% (436/1614)
+Receiving objects:  28% (452/1614)
+Receiving objects:  29% (469/1614)
+Receiving objects:  30% (485/1614)
+Receiving objects:  31% (501/1614)
+Receiving objects:  32% (517/1614)
+Receiving objects:  33% (533/1614)
+Receiving objects:  34% (549/1614)
+Receiving objects:  35% (565/1614)
+Receiving objects:  36% (582/1614)
+Receiving objects:  37% (598/1614)
+Receiving objects:  38% (614/1614)
+Receiving objects:  39% (630/1614)
+Receiving objects:  40% (646/1614)
+Receiving objects:  41% (662/1614)
+Receiving objects:  42% (678/1614)
+Receiving objects:  43% (695/1614)
+Receiving objects:  44% (711/1614)
+Receiving objects:  45% (727/1614)
+Receiving objects:  46% (743/1614)
+Receiving objects:  47% (759/1614)
+Receiving objects:  48% (775/1614)
+Receiving objects:  49% (791/1614)
+Receiving objects:  50% (807/1614)
+Receiving objects:  51% (824/1614)
+Receiving objects:  52% (840/1614)
+Receiving objects:  53% (856/1614)
+Receiving objects:  54% (872/1614)
+Receiving objects:  55% (888/1614)
+Receiving objects:  56% (904/1614)
+Receiving objects:  57% (920/1614)
+Receiving objects:  58% (937/1614)
+Receiving objects:  59% (953/1614)
+Receiving objects:  60% (969/1614)
+Receiving objects:  61% (985/1614)
+Receiving objects:  62% (1001/1614)
+Receiving objects:  63% (1017/1614)
+Receiving objects:  64% (1033/1614)
+Receiving objects:  65% (1050/1614)
+Receiving objects:  66% (1066/1614)
+Receiving objects:  67% (1082/1614)
+Receiving objects:  68% (1098/1614)
+Receiving objects:  69% (1114/1614)
+Receiving objects:  70% (1130/1614)
+Receiving objects:  71% (1146/1614)
+Receiving objects:  72% (1163/1614)
+Receiving objects:  73% (1179/1614)
+Receiving objects:  74% (1195/1614)
+Receiving objects:  75% (1211/1614)
+Receiving objects:  76% (1227/1614)
+Receiving objects:  77% (1243/1614)
+Receiving objects:  78% (1259/1614)
+Receiving objects:  79% (1276/1614)
+Receiving objects:  80% (1292/1614)
+Receiving objects:  81% (1308/1614)
+Receiving objects:  82% (1324/1614)
+Receiving objects:  83% (1340/1614)
+Receiving objects:  84% (1356/1614)
+Receiving objects:  85% (1372/1614)
+Receiving objects:  86% (1389/1614)
+Receiving objects:  87% (1405/1614)
+Receiving objects:  88% (1421/1614)
+Receiving objects:  89% (1437/1614)
+Receiving objects:  90% (1453/1614)
+Receiving objects:  91% (1469/1614)
+Receiving objects:  92% (1485/1614)
+Receiving objects:  93% (1502/1614)
+Receiving objects:  94% (1518/1614)
+Receiving objects:  95% (1534/1614)
+Receiving objects:  96% (1550/1614)
+Receiving objects:  97% (1566/1614)
+remote: Total 1614 (delta 1209), reused 1294 (delta 979), pack-reused 0[K
+Receiving objects:  98% (1582/1614)
+Receiving objects:  99% (1598/1614)
+Receiving objects: 100% (1614/1614)
+Receiving objects: 100% (1614/1614), 1.47 MiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/1209)
+Resolving deltas:   1% (13/1209)
+Resolving deltas:   2% (28/1209)
+Resolving deltas:   3% (48/1209)
+Resolving deltas:   9% (113/1209)
+Resolving deltas:  10% (121/1209)
+Resolving deltas:  14% (176/1209)
+Resolving deltas:  23% (285/1209)
+Resolving deltas:  26% (322/1209)
+Resolving deltas:  29% (353/1209)
+Resolving deltas:  30% (370/1209)
+Resolving deltas:  31% (379/1209)
+Resolving deltas:  32% (398/1209)
+Resolving deltas:  33% (408/1209)
+Resolving deltas:  34% (423/1209)
+Resolving deltas:  35% (425/1209)
+Resolving deltas:  37% (452/1209)
+Resolving deltas:  39% (481/1209)
+Resolving deltas:  40% (485/1209)
+Resolving deltas:  41% (500/1209)
+Resolving deltas:  44% (540/1209)
+Resolving deltas:  45% (545/1209)
+Resolving deltas:  46% (558/1209)
+Resolving deltas:  47% (573/1209)
+Resolving deltas:  48% (582/1209)
+Resolving deltas:  49% (594/1209)
+Resolving deltas:  50% (609/1209)
+Resolving deltas:  51% (623/1209)
+Resolving deltas:  53% (641/1209)
+Resolving deltas:  56% (683/1209)
+Resolving deltas:  57% (699/1209)
+Resolving deltas:  59% (714/1209)
+Resolving deltas:  60% (727/1209)
+Resolving deltas:  61% (743/1209)
+Resolving deltas:  62% (754/1209)
+Resolving deltas:  64% (776/1209)
+Resolving deltas:  65% (786/1209)
+Resolving deltas:  66% (800/1209)
+Resolving deltas:  67% (811/1209)
+Resolving deltas:  68% (830/1209)
+Resolving deltas:  69% (839/1209)
+Resolving deltas:  70% (857/1209)
+Resolving deltas:  71% (861/1209)
+Resolving deltas:  72% (876/1209)
+Resolving deltas:  73% (892/1209)
+Resolving deltas:  74% (896/1209)
+Resolving deltas:  75% (912/1209)
+Resolving deltas:  77% (931/1209)
+Resolving deltas:  78% (946/1209)
+Resolving deltas:  80% (968/1209)
+Resolving deltas:  82% (993/1209)
+Resolving deltas:  86% (1045/1209)
+Resolving deltas:  87% (1063/1209)
+Resolving deltas:  88% (1072/1209)
+Resolving deltas:  91% (1107/1209)
+Resolving deltas:  92% (1115/1209)
+Resolving deltas:  93% (1132/1209)
+Resolving deltas:  95% (1151/1209)
+Resolving deltas:  96% (1161/1209)
+Resolving deltas:  97% (1174/1209)
+Resolving deltas:  98% (1188/1209)
+Resolving deltas:  99% (1204/1209)
+Resolving deltas: 100% (1209/1209)
+Resolving deltas: 100% (1209/1209), done.
+
+travis_time:end:2f5218d0:start=1500653497565647069,finish=1500653498236825579,duration=671178510
+[0K$ cd python-telegram-bot/python-telegram-bot
+travis_time:start:07b567c7
+[0K$ git fetch origin +refs/pull/728/merge:
+remote: Counting objects: 293, done.[K
+remote: Compressing objects:   1% (1/60)   [K
+remote: Compressing objects:   3% (2/60)   [K
+remote: Compressing objects:   5% (3/60)   [K
+remote: Compressing objects:   6% (4/60)   [K
+remote: Compressing objects:   8% (5/60)   [K
+remote: Compressing objects:  10% (6/60)   [K
+remote: Compressing objects:  11% (7/60)   [K
+remote: Compressing objects:  13% (8/60)   [K
+remote: Compressing objects:  15% (9/60)   [K
+remote: Compressing objects:  16% (10/60)   [K
+remote: Compressing objects:  18% (11/60)   [K
+remote: Compressing objects:  20% (12/60)   [K
+remote: Compressing objects:  21% (13/60)   [K
+remote: Compressing objects:  23% (14/60)   [K
+remote: Compressing objects:  25% (15/60)   [K
+remote: Compressing objects:  26% (16/60)   [K
+remote: Compressing objects:  28% (17/60)   [K
+remote: Compressing objects:  30% (18/60)   [K
+remote: Compressing objects:  31% (19/60)   [K
+remote: Compressing objects:  33% (20/60)   [K
+remote: Compressing objects:  35% (21/60)   [K
+remote: Compressing objects:  36% (22/60)   [K
+remote: Compressing objects:  38% (23/60)   [K
+remote: Compressing objects:  40% (24/60)   [K
+remote: Compressing objects:  41% (25/60)   [K
+remote: Compressing objects:  43% (26/60)   [K
+remote: Compressing objects:  45% (27/60)   [K
+remote: Compressing objects:  46% (28/60)   [K
+remote: Compressing objects:  48% (29/60)   [K
+remote: Compressing objects:  50% (30/60)   [K
+remote: Compressing objects:  51% (31/60)   [K
+remote: Compressing objects:  53% (32/60)   [K
+remote: Compressing objects:  55% (33/60)   [K
+remote: Compressing objects:  56% (34/60)   [K
+remote: Compressing objects:  58% (35/60)   [K
+remote: Compressing objects:  60% (36/60)   [K
+remote: Compressing objects:  61% (37/60)   [K
+remote: Compressing objects:  63% (38/60)   [K
+remote: Compressing objects:  65% (39/60)   [K
+remote: Compressing objects:  66% (40/60)   [K
+remote: Compressing objects:  68% (41/60)   [K
+remote: Compressing objects:  70% (42/60)   [K
+remote: Compressing objects:  71% (43/60)   [K
+remote: Compressing objects:  73% (44/60)   [K
+remote: Compressing objects:  75% (45/60)   [K
+remote: Compressing objects:  76% (46/60)   [K
+remote: Compressing objects:  78% (47/60)   [K
+remote: Compressing objects:  80% (48/60)   [K
+remote: Compressing objects:  81% (49/60)   [K
+remote: Compressing objects:  83% (50/60)   [K
+remote: Compressing objects:  85% (51/60)   [K
+remote: Compressing objects:  86% (52/60)   [K
+remote: Compressing objects:  88% (53/60)   [K
+remote: Compressing objects:  90% (54/60)   [K
+remote: Compressing objects:  91% (55/60)   [K
+remote: Compressing objects:  93% (56/60)   [K
+remote: Compressing objects:  95% (57/60)   [K
+remote: Compressing objects:  96% (58/60)   [K
+remote: Compressing objects:  98% (59/60)   [K
+remote: Compressing objects: 100% (60/60)   [K
+remote: Compressing objects: 100% (60/60), done.[K
+Receiving objects:   0% (1/293)
+Receiving objects:   1% (3/293)
+Receiving objects:   2% (6/293)
+Receiving objects:   3% (9/293)
+Receiving objects:   4% (12/293)
+Receiving objects:   5% (15/293)
+Receiving objects:   6% (18/293)
+Receiving objects:   7% (21/293)
+Receiving objects:   8% (24/293)
+Receiving objects:   9% (27/293)
+Receiving objects:  10% (30/293)
+Receiving objects:  11% (33/293)
+Receiving objects:  12% (36/293)
+Receiving objects:  13% (39/293)
+Receiving objects:  14% (42/293)
+Receiving objects:  15% (44/293)
+Receiving objects:  16% (47/293)
+Receiving objects:  17% (50/293)
+Receiving objects:  18% (53/293)
+Receiving objects:  19% (56/293)
+Receiving objects:  20% (59/293)
+Receiving objects:  21% (62/293)
+Receiving objects:  22% (65/293)
+Receiving objects:  23% (68/293)
+Receiving objects:  24% (71/293)
+Receiving objects:  25% (74/293)
+Receiving objects:  26% (77/293)
+Receiving objects:  27% (80/293)
+Receiving objects:  28% (83/293)
+Receiving objects:  29% (85/293)
+Receiving objects:  30% (88/293)
+Receiving objects:  31% (91/293)
+Receiving objects:  32% (94/293)
+Receiving objects:  33% (97/293)
+Receiving objects:  34% (100/293)
+Receiving objects:  35% (103/293)
+Receiving objects:  36% (106/293)
+Receiving objects:  37% (109/293)
+Receiving objects:  38% (112/293)
+Receiving objects:  39% (115/293)
+Receiving objects:  40% (118/293)
+Receiving objects:  41% (121/293)
+Receiving objects:  42% (124/293)
+Receiving objects:  43% (126/293)
+Receiving objects:  44% (129/293)
+Receiving objects:  45% (132/293)
+Receiving objects:  46% (135/293)
+Receiving objects:  47% (138/293)
+Receiving objects:  48% (141/293)
+Receiving objects:  49% (144/293)
+Receiving objects:  50% (147/293)
+Receiving objects:  51% (150/293)
+Receiving objects:  52% (153/293)
+Receiving objects:  53% (156/293)
+Receiving objects:  54% (159/293)
+Receiving objects:  55% (162/293)
+Receiving objects:  56% (165/293)
+Receiving objects:  57% (168/293)
+remote: Total 293 (delta 253), reused 270 (delta 233), pack-reused 0[K
+Receiving objects:  58% (170/293)
+Receiving objects:  59% (173/293)
+Receiving objects:  60% (176/293)
+Receiving objects:  61% (179/293)
+Receiving objects:  62% (182/293)
+Receiving objects:  63% (185/293)
+Receiving objects:  64% (188/293)
+Receiving objects:  65% (191/293)
+Receiving objects:  66% (194/293)
+Receiving objects:  67% (197/293)
+Receiving objects:  68% (200/293)
+Receiving objects:  69% (203/293)
+Receiving objects:  70% (206/293)
+Receiving objects:  71% (209/293)
+Receiving objects:  72% (211/293)
+Receiving objects:  73% (214/293)
+Receiving objects:  74% (217/293)
+Receiving objects:  75% (220/293)
+Receiving objects:  76% (223/293)
+Receiving objects:  77% (226/293)
+Receiving objects:  78% (229/293)
+Receiving objects:  79% (232/293)
+Receiving objects:  80% (235/293)
+Receiving objects:  81% (238/293)
+Receiving objects:  82% (241/293)
+Receiving objects:  83% (244/293)
+Receiving objects:  84% (247/293)
+Receiving objects:  85% (250/293)
+Receiving objects:  86% (252/293)
+Receiving objects:  87% (255/293)
+Receiving objects:  88% (258/293)
+Receiving objects:  89% (261/293)
+Receiving objects:  90% (264/293)
+Receiving objects:  91% (267/293)
+Receiving objects:  92% (270/293)
+Receiving objects:  93% (273/293)
+Receiving objects:  94% (276/293)
+Receiving objects:  95% (279/293)
+Receiving objects:  96% (282/293)
+Receiving objects:  97% (285/293)
+Receiving objects:  98% (288/293)
+Receiving objects:  99% (291/293)
+Receiving objects: 100% (293/293)
+Receiving objects: 100% (293/293), 91.15 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/253)
+Resolving deltas:   1% (3/253)
+Resolving deltas:   2% (6/253)
+Resolving deltas:   3% (8/253)
+Resolving deltas:   5% (13/253)
+Resolving deltas:   7% (18/253)
+Resolving deltas:   9% (23/253)
+Resolving deltas:  11% (28/253)
+Resolving deltas:  12% (32/253)
+Resolving deltas:  15% (38/253)
+Resolving deltas:  18% (48/253)
+Resolving deltas:  22% (58/253)
+Resolving deltas:  23% (59/253)
+Resolving deltas:  24% (61/253)
+Resolving deltas:  25% (64/253)
+Resolving deltas:  26% (66/253)
+Resolving deltas:  27% (69/253)
+Resolving deltas:  28% (71/253)
+Resolving deltas:  29% (74/253)
+Resolving deltas:  30% (76/253)
+Resolving deltas:  32% (81/253)
+Resolving deltas:  38% (98/253)
+Resolving deltas:  40% (102/253)
+Resolving deltas:  42% (107/253)
+Resolving deltas:  43% (109/253)
+Resolving deltas:  44% (112/253)
+Resolving deltas:  45% (114/253)
+Resolving deltas:  46% (118/253)
+Resolving deltas:  47% (119/253)
+Resolving deltas:  49% (126/253)
+Resolving deltas:  52% (133/253)
+Resolving deltas:  55% (140/253)
+Resolving deltas:  56% (142/253)
+Resolving deltas:  57% (146/253)
+Resolving deltas:  58% (148/253)
+Resolving deltas:  59% (151/253)
+Resolving deltas:  61% (156/253)
+Resolving deltas:  63% (161/253)
+Resolving deltas:  64% (162/253)
+Resolving deltas:  65% (165/253)
+Resolving deltas:  66% (168/253)
+Resolving deltas:  67% (170/253)
+Resolving deltas:  69% (176/253)
+Resolving deltas:  70% (179/253)
+Resolving deltas:  71% (180/253)
+Resolving deltas:  72% (184/253)
+Resolving deltas:  73% (185/253)
+Resolving deltas:  74% (188/253)
+Resolving deltas:  75% (190/253)
+Resolving deltas:  76% (194/253)
+Resolving deltas:  77% (195/253)
+Resolving deltas:  80% (203/253)
+Resolving deltas:  81% (205/253)
+Resolving deltas:  85% (216/253)
+Resolving deltas:  88% (225/253)
+Resolving deltas:  90% (230/253)
+Resolving deltas:  92% (234/253)
+Resolving deltas:  93% (236/253)
+Resolving deltas:  94% (239/253)
+Resolving deltas:  95% (241/253)
+Resolving deltas:  96% (243/253)
+Resolving deltas:  99% (252/253)
+Resolving deltas: 100% (253/253)
+Resolving deltas: 100% (253/253), completed with 84 local objects.
+From https://github.com/python-telegram-bot/python-telegram-bot
+ * branch            refs/pull/728/merge -> FETCH_HEAD
+
+travis_time:end:07b567c7:start=1500653498246248224,finish=1500653498587540789,duration=341292565
+[0K$ git checkout -qf FETCH_HEAD
+travis_fold:end:git.checkout
+[0Ktravis_fold:start:git.submodule
+[0Ktravis_time:start:0fd76830
+[0K$ git submodule update --init --recursive
+Submodule 'telegram/vendor/urllib3' (https://github.com/python-telegram-bot/urllib3.git) registered for path 'telegram/vendor/ptb_urllib3'
+Cloning into '/home/travis/build/python-telegram-bot/python-telegram-bot/telegram/vendor/ptb_urllib3'...
+Submodule path 'telegram/vendor/ptb_urllib3': checked out 'ddb495340152a4e51800226dc68a479e48c055ff'
+
+travis_time:end:0fd76830:start=1500653498631303531,finish=1500653499431078044,duration=799774513
+[0Ktravis_fold:end:git.submodule
+[0K
+[33;1mSetting environment variables from repository settings[0m
+$ export CHAT_ID=12173560
+$ export TOKEN=133505823:AAHZFMHno3mzVLErU5b5jJvaeG--qUyLyG0
+$ export BOTAN_TOKEN=26c6df87-56ea-4764-a588-0e25de3a64a9
+
+travis_time:start:0064a90e
+[0K$ source ~/virtualenv/python3.5/bin/activate
+
+travis_time:end:0064a90e:start=1500653506375189630,finish=1500653506389069880,duration=13880250
+[0Ktravis_fold:start:cache.1
+[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:1bcd06a2
+[0K$ Installing caching utilities
+
+travis_time:end:1bcd06a2:start=1500653507219942396,finish=1500653507300195318,duration=80252922
+[0Ktravis_time:start:0789542c
+[0K
+travis_time:end:0789542c:start=1500653507310425937,finish=1500653507322351921,duration=11925984
+[0Ktravis_time:start:030baec0
+[0K[32;1mattempting to download cache archive[0m
+[32;1mfetching PR.728/cache-linux-trusty-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855--python-3.5.tgz[0m
+[32;1mfound cache[0m
+
+travis_time:end:030baec0:start=1500653507330353652,finish=1500653508725342921,duration=1394989269
+[0Ktravis_time:start:0577fd85
+[0K
+travis_time:end:0577fd85:start=1500653508732444917,finish=1500653508737776625,duration=5331708
+[0Ktravis_time:start:185b6095
+[0K[32;1madding /home/travis/.cache/pip to cache[0m
+
+travis_time:end:185b6095:start=1500653508748923255,finish=1500653510788054191,duration=2039130936
+[0Ktravis_fold:end:cache.1
+[0K$ python --version
+Python 3.5.3
+$ pip --version
+pip 9.0.1 from /home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages (python 3.5)
+travis_fold:start:install.1
+[0Ktravis_time:start:0f8ce074
+[0K$ pip install coveralls
+Collecting coveralls
+  Using cached coveralls-1.1-py2.py3-none-any.whl
+Collecting docopt>=0.6.1 (from coveralls)
+Collecting requests>=1.0.0 (from coveralls)
+  Using cached requests-2.18.1-py2.py3-none-any.whl
+Collecting coverage>=3.6 (from coveralls)
+  Using cached coverage-4.4.1-cp35-cp35m-manylinux1_x86_64.whl
+Collecting idna<2.6,>=2.5 (from requests>=1.0.0->coveralls)
+  Using cached idna-2.5-py2.py3-none-any.whl
+Collecting chardet<3.1.0,>=3.0.2 (from requests>=1.0.0->coveralls)
+  Using cached chardet-3.0.4-py2.py3-none-any.whl
+Successfully installed certifi-2017.4.17 chardet-3.0.4 coverage-4.4.1 coveralls-1.1 docopt-0.6.2 idna-2.5 requests-2.18.1 urllib3-1.21.1
+
+travis_time:end:0f8ce074:start=1500653511790256544,finish=1500653515021650414,duration=3231393870
+[0Ktravis_fold:end:install.1
+[0Ktravis_fold:start:install.2
+[0Ktravis_time:start:10ee0100
+[0K$ pip install -U wheel
+Requirement already up-to-date: wheel in /home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages
+
+travis_time:end:10ee0100:start=1500653515029343714,finish=1500653515764088995,duration=734745281
+[0Ktravis_fold:end:install.2
+[0Ktravis_fold:start:install.3
+[0Ktravis_time:start:111f8a45
+[0K$ pip install -r requirements.txt
+Collecting future>=0.16.0 (from -r requirements.txt (line 1))
+Requirement already satisfied: certifi in /home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages (from -r requirements.txt (line 2))
+Installing collected packages: future
+Collecting flake8 (from -r requirements-dev.txt (line 1))
+  Using cached flake8-3.3.0-py2.py3-none-any.whl
+Requirement already satisfied: nose in /home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages (from -r requirements-dev.txt (line 2))
+Collecting pep257 (from -r requirements-dev.txt (line 3))
+  Using cached pep257-0.7.0-py2.py3-none-any.whl
+Collecting pylint (from -r requirements-dev.txt (line 4))
+  Using cached pylint-1.7.2-py2.py3-none-any.whl
+Collecting flaky (from -r requirements-dev.txt (line 5))
+  Using cached flaky-3.4.0-py2.py3-none-any.whl
+Collecting yapf (from -r requirements-dev.txt (line 6))
+  Using cached yapf-0.16.3-py2.py3-none-any.whl
+Collecting pre-commit (from -r requirements-dev.txt (line 7))
+  Downloading pre_commit-0.15.3-py2.py3-none-any.whl (138kB)
+[?25l
+[K    7% |â–ˆâ–ˆâ–                             | 10kB 19.3MB/s eta 0:00:01
+[K    14% |â–ˆâ–ˆâ–ˆâ–ˆâ–Š                           | 20kB 19.8MB/s eta 0:00:01
+[K    22% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ                         | 30kB 22.7MB/s eta 0:00:01
+[K    29% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ                      | 40kB 13.0MB/s eta 0:00:01
+[K    36% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‰                    | 51kB 11.4MB/s eta 0:00:01
+[K    44% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–                 | 61kB 12.3MB/s eta 0:00:01
+[K    51% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹               | 71kB 11.9MB/s eta 0:00:01
+[K    59% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ             | 81kB 10.9MB/s eta 0:00:01
+[K    66% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Ž          | 92kB 11.7MB/s eta 0:00:01
+[K    73% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹        | 102kB 12.1MB/s eta 0:00:01
+[K    81% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ      | 112kB 12.3MB/s eta 0:00:01
+[K    88% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–   | 122kB 11.0MB/s eta 0:00:01
+[K    96% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Š | 133kB 11.0MB/s eta 0:00:01
+[K    100% |â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 143kB 4.6MB/s
+[?25hCollecting pre-commit-hooks (from -r requirements-dev.txt (line 8))
+  Using cached pre_commit_hooks-0.9.1-py2.py3-none-any.whl
+Collecting beautifulsoup4 (from -r requirements-dev.txt (line 9))
+  Using cached beautifulsoup4-4.6.0-py3-none-any.whl
+Collecting rednose (from -r requirements-dev.txt (line 10))
+Collecting pyflakes<1.6.0,>=1.5.0 (from flake8->-r requirements-dev.txt (line 1))
+  Using cached pyflakes-1.5.0-py2.py3-none-any.whl
+Collecting pycodestyle<2.4.0,>=2.0.0 (from flake8->-r requirements-dev.txt (line 1))
+  Using cached pycodestyle-2.3.1-py2.py3-none-any.whl
+Collecting mccabe<0.7.0,>=0.6.0 (from flake8->-r requirements-dev.txt (line 1))
+  Using cached mccabe-0.6.1-py2.py3-none-any.whl
+Requirement already satisfied: six in /home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages (from pylint->-r requirements-dev.txt (line 4))
+Collecting astroid>=1.5.1 (from pylint->-r requirements-dev.txt (line 4))
+  Using cached astroid-1.5.3-py2.py3-none-any.whl
+Collecting isort>=4.2.5 (from pylint->-r requirements-dev.txt (line 4))
+  Using cached isort-4.2.15-py2.py3-none-any.whl
+Collecting pyyaml (from pre-commit->-r requirements-dev.txt (line 7))
+Collecting aspy.yaml (from pre-commit->-r requirements-dev.txt (line 7))
+  Using cached aspy.yaml-0.3.0-py2.py3-none-any.whl
+Collecting nodeenv>=0.11.1 (from pre-commit->-r requirements-dev.txt (line 7))
+Collecting virtualenv (from pre-commit->-r requirements-dev.txt (line 7))
+  Using cached virtualenv-15.1.0-py2.py3-none-any.whl
+Collecting cached-property (from pre-commit->-r requirements-dev.txt (line 7))
+  Using cached cached_property-1.3.0-py2.py3-none-any.whl
+Collecting identify>=1.0.0 (from pre-commit->-r requirements-dev.txt (line 7))
+  Using cached identify-1.0.3-py2.py3-none-any.whl
+Collecting simplejson (from pre-commit-hooks->-r requirements-dev.txt (line 8))
+Collecting autopep8>=1.1 (from pre-commit-hooks->-r requirements-dev.txt (line 8))
+  Using cached autopep8-1.3.2-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in /home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages (from rednose->-r requirements-dev.txt (line 10))
+Collecting termstyle>=0.1.7 (from rednose->-r requirements-dev.txt (line 10))
+Collecting colorama (from rednose->-r requirements-dev.txt (line 10))
+  Using cached colorama-0.3.9-py2.py3-none-any.whl
+Collecting wrapt (from astroid>=1.5.1->pylint->-r requirements-dev.txt (line 4))
+Collecting lazy-object-proxy (from astroid>=1.5.1->pylint->-r requirements-dev.txt (line 4))
+  Using cached lazy_object_proxy-1.3.1-cp35-cp35m-manylinux1_x86_64.whl
+Installing collected packages: pyflakes, pycodestyle, mccabe, flake8, pep257, wrapt, lazy-object-proxy, astroid, isort, pylint, flaky, yapf, pyyaml, aspy.yaml, nodeenv, virtualenv, cached-property, identify, pre-commit, simplejson, autopep8, pre-commit-hooks, beautifulsoup4, termstyle, colorama, rednose
+Successfully installed aspy.yaml-0.3.0 astroid-1.5.3 autopep8-1.3.2 beautifulsoup4-4.6.0 cached-property-1.3.0 colorama-0.3.9 flake8-3.3.0 flaky-3.4.0 identify-1.0.3 isort-4.2.15 lazy-object-proxy-1.3.1 mccabe-0.6.1 nodeenv-1.1.4 pep257-0.7.0 pre-commit-0.15.3 pre-commit-hooks-0.9.1 pycodestyle-2.3.1 pyflakes-1.5.0 pylint-1.7.2 pyyaml-3.12 rednose-1.2.2 simplejson-3.11.1 termstyle-0.1.11 virtualenv-15.1.0 wrapt-1.10.10 yapf-0.16.3
+
+travis_time:end:07d77de0:start=1500653517684108894,finish=1500653526106297407,duration=8422188513
+[0Ktravis_fold:end:install.4
+[0Ktravis_fold:start:install.5
+[0Ktravis_time:start:1c3959a7
+[0K$ if [[ $TRAVIS_PYTHON_VERSION != 'pypy'* ]]; then pip install ujson; fi
+Collecting ujson
+Installing collected packages: ujson
+Successfully installed ujson-1.35
+
+travis_time:end:1c3959a7:start=1500653526113455333,finish=1500653526788967153,duration=675511820
+[0Ktravis_fold:end:install.5
+[0Ktravis_time:start:0badd010
+[0K$ python travis.py
+Starting...
+travis_fold:start:tests
+Running tests...
+travis_fold:start:tests.test_animation
+tests.test_animation
+test_animation_de_json (tests.test_animation.AnimationTest) ... [32mpassed[0m
+test_animation_to_dict (tests.test_animation.AnimationTest) ... [32mpassed[0m
+test_animation_to_json (tests.test_animation.AnimationTest) ... [32mpassed[0m
+test_equality (tests.test_animation.AnimationTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_animation
+travis_fold:start:tests.test_audio
+tests.test_audio
+[32mpassed[0m
+Test for Message.reply_audio ... [32mpassed[0m
+test_send_audio_all_args (tests.test_audio.AudioTest) ... [32mpassed[0m
+test_send_audio_mp3_url_file_with_caption (tests.test_audio.AudioTest) ... [32mpassed[0m
+test_send_audio_resend (tests.test_audio.AudioTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_audio
+travis_fold:start:tests.test_bot
+tests.test_bot
+testForwardMessage (tests.test_bot.BotTest) ... [32mpassed[0m
+testGetChat (tests.test_bot.BotTest) ... [32mpassed[0m
+testGetChatAdministrators (tests.test_bot.BotTest) ... [32mpassed[0m
+testGetChatMember (tests.test_bot.BotTest) ... [32mpassed[0m
+testGetChatMembersCount (tests.test_bot.BotTest) ... [32mpassed[0m
+testGetMe (tests.test_bot.BotTest) ... [32mpassed[0m
+testGetUpdates (tests.test_bot.BotTest) ... [32mpassed[0m
+testGetUserProfilePhotos (tests.test_bot.BotTest) ... [32mpassed[0m
+testInvalidSrvResp (tests.test_bot.BotTest) ... [32mpassed[0m
+testInvalidToken1 (tests.test_bot.BotTest) ... [32mpassed[0m
+testInvalidToken2 (tests.test_bot.BotTest) ... [32mpassed[0m
+testInvalidToken3 (tests.test_bot.BotTest) ... [32mpassed[0m
+testInvalidToken4 (tests.test_bot.BotTest) ... [32mpassed[0m
+testLeaveChat (tests.test_bot.BotTest) ... [32mpassed[0m
+testSendChatAction (tests.test_bot.BotTest) ... [32mpassed[0m
+testSendGame (tests.test_bot.BotTest) ... [32mpassed[0m
+testSilentSendMessage (tests.test_bot.BotTest) ... [32mpassed[0m
+testUnauthToken (tests.test_bot.BotTest) ... [32mpassed[0m
+test_deleteMessage (tests.test_bot.BotTest) ... [32mpassed[0m
+test_deleteMessage_old_message (tests.test_bot.BotTest) ... [32mpassed[0m
+test_delete_webhook (tests.test_bot.BotTest) ... [32mpassed[0m
+test_forward_channel_message (tests.test_bot.BotTest) ... [32mpassed[0m
+test_info (tests.test_bot.BotTest) ... [32mpassed[0m
+test_sendMessage_no_web_page_preview (tests.test_bot.BotTest) ... [32mpassed[0m
+test_send_contact (tests.test_bot.BotTest) ... [32mpassed[0m
+test_set_game_score1 (tests.test_bot.BotTest) ... [32mpassed[0m
+test_set_game_score2 (tests.test_bot.BotTest) ... [32mpassed[0m
+test_set_game_score3 (tests.test_bot.BotTest) ... [32mpassed[0m
+test_set_game_score_too_low_score (tests.test_bot.BotTest) ... [32mpassed[0m
+test_set_webhook_get_webhook_info (tests.test_bot.BotTest) ... [32mpassed[0m
+test_timeout_propagation (tests.test_bot.BotTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_bot
+travis_fold:start:tests.test_botan
+tests.test_botan
+test_track (tests.test_botan.BotanTest) ... [32mpassed[0m
+test_track_fail (tests.test_botan.BotanTest) ... [32mpassed[0m
+test_wrong_endpoint (tests.test_botan.BotanTest) ... [32mpassed[0m
+test_wrong_message (tests.test_botan.BotanTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_botan
+travis_fold:start:tests.test_chat
+tests.test_chat
+test_equality (tests.test_chat.ChatTest) ... [32mpassed[0m
+test_group_chat_de_json (tests.test_chat.ChatTest) ... [32mpassed[0m
+test_group_chat_de_json_empty_json (tests.test_chat.ChatTest) ... [32mpassed[0m
+test_group_chat_to_dict (tests.test_chat.ChatTest) ... [32mpassed[0m
+test_group_chat_to_json (tests.test_chat.ChatTest) ... [32mpassed[0m
+Test for Chat.send_action ... [32mpassed[0m
+
+travis_fold:end:tests.test_chat
+travis_fold:start:tests.test_chatmember
+tests.test_chatmember
+test_chatmember_de_json (tests.test_chatmember.ChatMemberTest) ... [32mpassed[0m
+test_chatmember_to_dict (tests.test_chatmember.ChatMemberTest) ... [32mpassed[0m
+test_chatmember_to_json (tests.test_chatmember.ChatMemberTest) ... [32mpassed[0m
+test_equality (tests.test_chatmember.ChatMemberTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_chatmember
+travis_fold:start:tests.test_choseninlineresult
+tests.test_choseninlineresult
+test_choseninlineresult_de_json (tests.test_choseninlineresult.ChosenInlineResultTest) ... [32mpassed[0m
+test_choseninlineresult_to_dict (tests.test_choseninlineresult.ChosenInlineResultTest) ... [32mpassed[0m
+test_choseninlineresult_to_json (tests.test_choseninlineresult.ChosenInlineResultTest) ... [32mpassed[0m
+test_equality (tests.test_choseninlineresult.ChosenInlineResultTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_choseninlineresult
+travis_fold:start:tests.test_constants
+tests.test_constants
+testMaxCaptionLength (tests.test_constants.ConstantsTest) ... [32mpassed[0m
+testMaxMessageLength (tests.test_constants.ConstantsTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_constants
+travis_fold:start:tests.test_contact
+tests.test_contact
+test_contact_de_json (tests.test_contact.ContactTest) ... [32mpassed[0m
+test_contact_to_dict (tests.test_contact.ContactTest) ... [32mpassed[0m
+test_contact_to_json (tests.test_contact.ContactTest) ... [32mpassed[0m
+test_equality (tests.test_contact.ContactTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_contact
+travis_fold:start:tests.test_conversationhandler
+tests.test_conversationhandler
+test_addConversationHandler (tests.test_conversationhandler.ConversationHandlerTest) ... [32mpassed[0m
+test_addConversationHandlerPerChat (tests.test_conversationhandler.ConversationHandlerTest) ... [32mpassed[0m
+test_addConversationHandlerPerMessage (tests.test_conversationhandler.ConversationHandlerTest) ... [32mpassed[0m
+test_addConversationHandlerPerUser (tests.test_conversationhandler.ConversationHandlerTest) ... [32mpassed[0m
+test_endOnFirstMessage (tests.test_conversationhandler.ConversationHandlerTest) ... [32mpassed[0m
+test_endOnFirstMessageAsync (tests.test_conversationhandler.ConversationHandlerTest) ... [32mpassed[0m
+test_perChatMessageWithoutChat (tests.test_conversationhandler.ConversationHandlerTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_conversationhandler
+travis_fold:start:tests.test_document
+tests.test_document
+test_document_de_json (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_document_to_dict (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_document_to_json (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_equality (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_error_document_without_required_args (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_error_send_document_empty_file (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_error_send_document_empty_file_id (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_expected_values (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_get_and_download_document (tests.test_document.DocumentTest) ... [32mpassed[0m
+Test for Message.reply_document ... [32mpassed[0m
+test_send_document_all_args (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_send_document_png_file_with_custom_file_name (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_send_document_resend (tests.test_document.DocumentTest) ... [32mpassed[0m
+test_send_document_url_gif_file (tests.test_document.DocumentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_document
+travis_fold:start:tests.test_file
+tests.test_file
+test_equality (tests.test_file.FileTest) ... [32mpassed[0m
+test_error_file_without_required_args (tests.test_file.FileTest) ... [32mpassed[0m
+test_error_get_empty_file_id (tests.test_file.FileTest) ... [32mpassed[0m
+test_file_de_json (tests.test_file.FileTest) ... [32mpassed[0m
+test_file_to_dict (tests.test_file.FileTest) ... [32mpassed[0m
+test_file_to_json (tests.test_file.FileTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_file
+travis_fold:start:tests.test_filters
+tests.test_filters
+test_and_filters (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_and_or_filters (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_custom_unnamed_filter (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_entities_filter (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_faulty_custom_filter (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_audio (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_chat (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_chat_id (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_chat_username (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_command (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_contact (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_document (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_game (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_invoice (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_location (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_photo (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_reply (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_status_update (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_sticker (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_successful_payment (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_text (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_user (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_user_id (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_username (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_venue (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_video (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_filters_voice (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_group_fileter (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_inverted_and_filters (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_inverted_filters (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_language_filter_multiple (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_language_filter_single (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_or_filters (tests.test_filters.FiltersTest) ... [32mpassed[0m
+test_private_filter (tests.test_filters.FiltersTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_filters
+travis_fold:start:tests.test_forcereply
+tests.test_forcereply
+test_force_reply_de_json (tests.test_forcereply.ForceReplyTest) ... [32mpassed[0m
+test_force_reply_de_json_empty (tests.test_forcereply.ForceReplyTest) ... [32mpassed[0m
+test_force_reply_to_dict (tests.test_forcereply.ForceReplyTest) ... [32mpassed[0m
+test_force_reply_to_json (tests.test_forcereply.ForceReplyTest) ... [32mpassed[0m
+test_send_message_with_force_reply (tests.test_forcereply.ForceReplyTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_forcereply
+travis_fold:start:tests.test_game
+tests.test_game
+test_game_all_args (tests.test_game.GameTest) ... [32mpassed[0m
+test_game_de_json (tests.test_game.GameTest) ... [32mpassed[0m
+test_game_to_json (tests.test_game.GameTest) ... [32mpassed[0m
+test_parse_entities (tests.test_game.GameTest) ... [32mpassed[0m
+test_parse_entity (tests.test_game.GameTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_game
+travis_fold:start:tests.test_helpers
+tests.test_helpers
+test_escape_markdown (tests.test_helpers.HelpersTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_helpers
+travis_fold:start:tests.test_inlinekeyboardbutton
+tests.test_inlinekeyboardbutton
+test_inline_keyboard_button_de_json (tests.test_inlinekeyboardbutton.InlineKeyboardButtonTest) ... [32mpassed[0m
+test_inline_keyboard_button_de_json_empty (tests.test_inlinekeyboardbutton.InlineKeyboardButtonTest) ... [32mpassed[0m
+test_inline_keyboard_button_de_list_empty (tests.test_inlinekeyboardbutton.InlineKeyboardButtonTest) ... [32mpassed[0m
+test_inline_keyboard_button_to_dict (tests.test_inlinekeyboardbutton.InlineKeyboardButtonTest) ... [32mpassed[0m
+test_inline_keyboard_button_to_json (tests.test_inlinekeyboardbutton.InlineKeyboardButtonTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinekeyboardbutton
+travis_fold:start:tests.test_inlinekeyboardmarkup
+tests.test_inlinekeyboardmarkup
+test_inline_keyboard_markup_de_json (tests.test_inlinekeyboardmarkup.InlineKeyboardMarkupTest) ... [32mpassed[0m
+test_inline_keyboard_markup_de_json_empty (tests.test_inlinekeyboardmarkup.InlineKeyboardMarkupTest) ... [32mpassed[0m
+test_inline_keyboard_markup_to_dict (tests.test_inlinekeyboardmarkup.InlineKeyboardMarkupTest) ... [32mpassed[0m
+test_inline_keyboard_markup_to_json (tests.test_inlinekeyboardmarkup.InlineKeyboardMarkupTest) ... [32mpassed[0m
+test_send_message_with_inline_keyboard_markup (tests.test_inlinekeyboardmarkup.InlineKeyboardMarkupTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinekeyboardmarkup
+travis_fold:start:tests.test_inlinequery
+tests.test_inlinequery
+test_equality (tests.test_inlinequery.InlineQueryTest) ... [32mpassed[0m
+test_inlinequery_de_json (tests.test_inlinequery.InlineQueryTest) ... [32mpassed[0m
+test_inlinequery_to_dict (tests.test_inlinequery.InlineQueryTest) ... [32mpassed[0m
+test_inlinequery_to_json (tests.test_inlinequery.InlineQueryTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequery
+travis_fold:start:tests.test_inlinequeryresultarticle
+tests.test_inlinequeryresultarticle
+test_article_de_json (tests.test_inlinequeryresultarticle.InlineQueryResultArticleTest) ... [32mpassed[0m
+test_article_to_dict (tests.test_inlinequeryresultarticle.InlineQueryResultArticleTest) ... [32mpassed[0m
+test_article_to_json (tests.test_inlinequeryresultarticle.InlineQueryResultArticleTest) ... [32mpassed[0m
+test_equality (tests.test_inlinequeryresultarticle.InlineQueryResultArticleTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultarticle
+travis_fold:start:tests.test_inlinequeryresultaudio
+tests.test_inlinequeryresultaudio
+test_audio_de_json (tests.test_inlinequeryresultaudio.InlineQueryResultAudioTest) ... [32mpassed[0m
+test_audio_to_dict (tests.test_inlinequeryresultaudio.InlineQueryResultAudioTest) ... [32mpassed[0m
+test_audio_to_json (tests.test_inlinequeryresultaudio.InlineQueryResultAudioTest) ... [32mpassed[0m
+test_equality (tests.test_inlinequeryresultaudio.InlineQueryResultAudioTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultaudio
+travis_fold:start:tests.test_inlinequeryresultcachedaudio
+tests.test_inlinequeryresultcachedaudio
+test_audio_de_json (tests.test_inlinequeryresultcachedaudio.InlineQueryResultCachedAudioTest) ... [32mpassed[0m
+test_audio_to_dict (tests.test_inlinequeryresultcachedaudio.InlineQueryResultCachedAudioTest) ... [32mpassed[0m
+test_audio_to_json (tests.test_inlinequeryresultcachedaudio.InlineQueryResultCachedAudioTest) ... [32mpassed[0m
+test_equality (tests.test_inlinequeryresultcachedaudio.InlineQueryResultCachedAudioTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcachedaudio
+travis_fold:start:tests.test_inlinequeryresultcacheddocument
+tests.test_inlinequeryresultcacheddocument
+test_document_de_json (tests.test_inlinequeryresultcacheddocument.InlineQueryResultCachedDocumentTest) ... [32mpassed[0m
+test_document_to_dict (tests.test_inlinequeryresultcacheddocument.InlineQueryResultCachedDocumentTest) ... [32mpassed[0m
+test_document_to_json (tests.test_inlinequeryresultcacheddocument.InlineQueryResultCachedDocumentTest) ... [32mpassed[0m
+test_equality (tests.test_inlinequeryresultcacheddocument.InlineQueryResultCachedDocumentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcacheddocument
+travis_fold:start:tests.test_inlinequeryresultcachedgif
+tests.test_inlinequeryresultcachedgif
+test_equality (tests.test_inlinequeryresultcachedgif.InlineQueryResultCachedGifTest) ... [32mpassed[0m
+test_gif_de_json (tests.test_inlinequeryresultcachedgif.InlineQueryResultCachedGifTest) ... [32mpassed[0m
+test_gif_to_dict (tests.test_inlinequeryresultcachedgif.InlineQueryResultCachedGifTest) ... [32mpassed[0m
+test_gif_to_json (tests.test_inlinequeryresultcachedgif.InlineQueryResultCachedGifTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcachedgif
+travis_fold:start:tests.test_inlinequeryresultcachedmpeg4gif
+tests.test_inlinequeryresultcachedmpeg4gif
+test_equality (tests.test_inlinequeryresultcachedmpeg4gif.InlineQueryResultCachedMpeg4GifTest) ... [32mpassed[0m
+test_mpeg4_de_json (tests.test_inlinequeryresultcachedmpeg4gif.InlineQueryResultCachedMpeg4GifTest) ... [32mpassed[0m
+test_mpeg4_to_dict (tests.test_inlinequeryresultcachedmpeg4gif.InlineQueryResultCachedMpeg4GifTest) ... [32mpassed[0m
+test_mpeg4_to_json (tests.test_inlinequeryresultcachedmpeg4gif.InlineQueryResultCachedMpeg4GifTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcachedmpeg4gif
+travis_fold:start:tests.test_inlinequeryresultcachedphoto
+tests.test_inlinequeryresultcachedphoto
+test_equality (tests.test_inlinequeryresultcachedphoto.InlineQueryResultCachedPhotoTest) ... [32mpassed[0m
+test_photo_de_json (tests.test_inlinequeryresultcachedphoto.InlineQueryResultCachedPhotoTest) ... [32mpassed[0m
+test_photo_to_dict (tests.test_inlinequeryresultcachedphoto.InlineQueryResultCachedPhotoTest) ... [32mpassed[0m
+test_photo_to_json (tests.test_inlinequeryresultcachedphoto.InlineQueryResultCachedPhotoTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcachedphoto
+travis_fold:start:tests.test_inlinequeryresultcachedsticker
+tests.test_inlinequeryresultcachedsticker
+test_equality (tests.test_inlinequeryresultcachedsticker.InlineQueryResultCachedStickerTest) ... [32mpassed[0m
+test_sticker_de_json (tests.test_inlinequeryresultcachedsticker.InlineQueryResultCachedStickerTest) ... [32mpassed[0m
+test_sticker_to_dict (tests.test_inlinequeryresultcachedsticker.InlineQueryResultCachedStickerTest) ... [32mpassed[0m
+test_sticker_to_json (tests.test_inlinequeryresultcachedsticker.InlineQueryResultCachedStickerTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcachedsticker
+travis_fold:start:tests.test_inlinequeryresultcachedvideo
+tests.test_inlinequeryresultcachedvideo
+test_equality (tests.test_inlinequeryresultcachedvideo.InlineQueryResultCachedVideoTest) ... [32mpassed[0m
+test_video_de_json (tests.test_inlinequeryresultcachedvideo.InlineQueryResultCachedVideoTest) ... [32mpassed[0m
+test_video_to_dict (tests.test_inlinequeryresultcachedvideo.InlineQueryResultCachedVideoTest) ... [32mpassed[0m
+test_video_to_json (tests.test_inlinequeryresultcachedvideo.InlineQueryResultCachedVideoTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcachedvideo
+travis_fold:start:tests.test_inlinequeryresultcachedvoice
+tests.test_inlinequeryresultcachedvoice
+test_equality (tests.test_inlinequeryresultcachedvoice.InlineQueryResultCachedVoiceTest) ... [32mpassed[0m
+test_voice_de_json (tests.test_inlinequeryresultcachedvoice.InlineQueryResultCachedVoiceTest) ... [32mpassed[0m
+test_voice_to_dict (tests.test_inlinequeryresultcachedvoice.InlineQueryResultCachedVoiceTest) ... [32mpassed[0m
+test_voice_to_json (tests.test_inlinequeryresultcachedvoice.InlineQueryResultCachedVoiceTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultcis_fold:end:tests.test_inlinequeryresultgif
+travis_fold:start:tests.test_inlinequeryresultlocation
+tests.test_inlinequeryresultlocation
+test_equality (tests.test_inlinequeryresultlocation.InlineQueryResultLocationTest) ... [32mpassed[0m
+test_location_de_json (tests.test_inlinequeryresultlocation.InlineQueryResultLocationTest) ... [32mpassed[0m
+test_location_to_dict (tests.test_inlinequeryresultlocation.InlineQueryResultLocationTest) ... [32mpassed[0m
+test_location_to_json (tests.test_inlinequeryresultlocation.InlineQueryResultLocationTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultlocation
+travis_fold:start:tests.test_inlinequeryresultmpeg4gif
+tests.test_inlinequeryresultmpeg4gif
+test_equality (tests.test_inlinequeryresultmpeg4gif.InlineQueryResultMpeg4GifTest) ... [32mpassed[0m
+test_mpeg4_de_json (tests.test_inlinequeryresultmpeg4gif.InlineQueryResultMpeg4GifTest) ... [32mpassed[0m
+test_mpeg4_to_dict (tests.test_inlinequeryresultmpeg4gif.InlineQueryResultMpeg4GifTest) ... [32mpassed[0m
+test_mpeg4_to_json (tests.test_inlinequeryresultmpeg4gif.InlineQueryResultMpeg4GifTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultmpeg4gif
+travis_fold:start:tests.test_inlinequeryresultphoto
+tests.test_inlinequeryresultphoto
+test_equality (tests.test_inlinequeryresultphoto.InlineQueryResultPhotoTest) ... [32mpassed[0m
+test_photo_de_json (tests.test_inlinequeryresultphoto.InlineQueryResultPhotoTest) ... [32mpassed[0m
+test_photo_to_dict (tests.test_inlinequeryresultphoto.InlineQueryResultPhotoTest) ... [32mpassed[0m
+test_photo_to_json (tests.test_inlinequeryresultphoto.InlineQueryResultPhotoTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultphoto
+travis_fold:start:tests.test_inlinequeryresultvenue
+tests.test_inlinequeryresultvenue
+test_equality (tests.test_inlinequeryresultvenue.InlineQueryResultVenueTest) ... [32mpassed[0m
+test_venue_de_json (tests.test_inlinequeryresultvenue.InlineQueryResultVenueTest) ... [32mpassed[0m
+test_venue_to_dict (tests.test_inlinequeryresultvenue.InlineQueryResultVenueTest) ... [32mpassed[0m
+test_venue_to_json (tests.test_inlinequeryresultvenue.InlineQueryResultVenueTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultvenue
+travis_fold:start:tests.test_inlinequeryresultvideo
+tests.test_inlinequeryresultvideo
+test_equality (tests.test_inlinequeryresultvideo.InlineQueryResultVideoTest) ... [32mpassed[0m
+test_video_de_json (tests.test_inlinequeryresultvideo.InlineQueryResultVideoTest) ... [32mpassed[0m
+test_video_to_dict (tests.test_inlinequeryresultvideo.InlineQueryResultVideoTest) ... [32mpassed[0m
+test_video_to_json (tests.test_inlinequeryresultvideo.InlineQueryResultVideoTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultvideo
+travis_fold:start:tests.test_inlinequeryresultvoice
+tests.test_inlinequeryresultvoice
+test_equality (tests.test_inlinequeryresultvoice.InlineQueryResultVoiceTest) ... [32mpassed[0m
+test_voice_de_json (tests.test_inlinequeryresultvoice.InlineQueryResultVoiceTest) ... [32mpassed[0m
+test_voice_to_dict (tests.test_inlinequeryresultvoice.InlineQueryResultVoiceTest) ... [32mpassed[0m
+test_voice_to_json (tests.test_inlinequeryresultvoice.InlineQueryResultVoiceTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inlinequeryresultvoice
+travis_fold:start:tests.test_inputcontactmessagecontent
+tests.test_inputcontactmessagecontent
+test_icmc_de_json (tests.test_inputcontactmessagecontent.InputContactMessageContentTest) ... [32mpassed[0m
+test_icmc_de_json_factory (tests.test_inputcontactmessagecontent.InputContactMessageContentTest) ... [32mpassed[0m
+test_icmc_de_json_factory_without_required_args (tests.test_inputcontactmessagecontent.InputContactMessageContentTest) ... [32mpassed[0m
+test_icmc_to_dict (tests.test_inputcontactmessagecontent.InputContactMessageContentTest) ... [32mpassed[0m
+test_icmc_to_json (tests.test_inputcontactmessagecontent.InputContactMessageContentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inputcontactmessagecontent
+travis_fold:start:tests.test_inputlocationmessagecontent
+tests.test_inputlocationmessagecontent
+test_ilmc_de_json (tests.test_inputlocationmessagecontent.InputLocationMessageContentTest) ... [32mpassed[0m
+test_ilmc_de_json_factory (tests.test_inputlocationmessagecontent.InputLocationMessageContentTest) ... [32mpassed[0m
+test_ilmc_de_json_factory_without_required_args (tests.test_inputlocationmessagecontent.InputLocationMessageContentTest) ... [32mpassed[0m
+test_ilmc_to_dict (tests.test_inputlocationmessagecontent.InputLocationMessageContentTest) ... [32mpassed[0m
+test_ilmc_to_json (tests.test_inputlocationmessagecontent.InputLocationMessageContentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inputlocationmessagecontent
+travis_fold:start:tests.test_inputmessagecontent
+tests.test_inputmessagecontent
+test_imc_de_json (tests.test_inputmessagecontent.InputMessageContentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inputmessagecontent
+travis_fold:start:tests.test_inputtextmessagecontent
+tests.test_inputtextmessagecontent
+test_itmc_de_json (tests.test_inputtextmessagecontent.InputTextMessageContentTest) ... [32mpassed[0m
+test_itmc_de_json_factory (tests.test_inputtextmessagecontent.InputTextMessageContentTest) ... [32mpassed[0m
+test_itmc_de_json_factory_without_required_args (tests.test_inputtextmessagecontent.InputTextMessageContentTest) ... [32mpassed[0m
+test_itmc_to_dict (tests.test_inputtextmessagecontent.InputTextMessageContentTest) ... [32mpassed[0m
+test_itmc_to_json (tests.test_inputtextmessagecontent.InputTextMessageContentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inputtextmessagecontent
+travis_fold:start:tests.test_inputvenuemessagecontent
+tests.test_inputvenuemessagecontent
+test_ivmc_de_json (tests.test_inputvenuemessagecontent.InputVenueMessageContentTest) ... [32mpassed[0m
+test_ivmc_de_json_factory (tests.test_inputvenuemessagecontent.InputVenueMessageContentTest) ... [32mpassed[0m
+test_ivmc_de_json_factory_without_required_args (tests.test_inputvenuemessagecontent.InputVenueMessageContentTest) ... [32mpassed[0m
+test_ivmc_to_dict (tests.test_inputvenuemessagecontent.InputVenueMessageContentTest) ... [32mpassed[0m
+test_ivmc_to_json (tests.test_inputvenuemessagecontent.InputVenueMessageContentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_inputvenuemessagecontent
+travis_fold:start:tests.test_invoice
+tests.test_invoice
+test_invoice_de_json (tests.test_invoice.InvoiceTest) ... [32mpassed[0m
+test_invoice_to_dict (tests.test_invoice.InvoiceTest) ... [32mpassed[0m
+test_invoice_to_json (tests.test_invoice.InvoiceTest) ... [32mpassed[0m
+test_send_invoice_all_args (tests.test_invoice.InvoiceTest) ... [32mpassed[0m
+test_send_invoice_required_args_only (tests.test_invoice.InvoiceTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_invoice
+travis_fold:start:tests.test_jobqueue
+tests.test_jobqueue
+test_basic (tests.test_jobqueue.JobQueueTest) ... /home/travis/build/python-telegram-bot/python-telegram-bot/telegram/ext/jobqueue.py:90: UserWarning: 'JobQueue.put' is being deprecated, use 'JobQueue.run_once', 'JobQueue.run_daily' or 'JobQueue.run_repeating' instead
+  warnings.warn("'JobQueue.put' is being deprecated, use 'JobQueue.run_once', "
+[32mpassed[0m
+test_disabled (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_error (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_inUpdater (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_jobs_tuple (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_longer_first (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_multiple (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_noRepeat (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_run_repeating (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_schedule_removal (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_schedule_removal_from_within (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_time_unit_dt_datetime (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_time_unit_dt_time_today (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_time_unit_dt_time_tomorrow (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+test_time_unit_dt_timedelta (tests.test_jobqueue.JobQueueTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_jobqueue
+travis_fold:start:tests.test_keyboardbutton
+tests.test_keyboardbutton
+test_keyboard_button_de_json (tests.test_keyboardbutton.KeyboardButtonTest) ... [32mpassed[0m
+test_keyboard_button_de_json_empty (tests.test_keyboardbutton.KeyboardButtonTest) ... [32mpassed[0m
+test_keyboard_button_de_list_empty (tests.test_keyboardbutton.KeyboardButtonTest) ... [32mpassed[0m
+test_keyboard_button_to_dict (tests.test_keyboardbutton.KeyboardButtonTest) ... [32mpassed[0m
+test_keyboard_button_to_json (tests.test_keyboardbutton.KeyboardButtonTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_keyboardbutton
+travis_fold:start:tests.test_labeledprice
+tests.test_labeledprice
+test_labeledprice_de_json (tests.test_labeledprice.LabeledPriceTest) ... [32mpassed[0m
+test_labeledprice_to_dict (tests.test_labeledprice.LabeledPriceTest) ... [32mpassed[0m
+test_labeledprice_to_json (tests.test_labeledprice.LabeledPriceTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_labeledprice
+travis_fold:start:tests.test_location
+tests.test_location
+test_equality (tests.test_location.LocationTest) ... [32mpassed[0m
+test_error_location_without_required_args (tests.test_location.LocationTest) ... [32mpassed[0m
+test_error_send_location_empty_args (tests.test_location.LocationTest) ... [32mpassed[0m
+test_location_de_json (tests.test_location.LocationTest) ... [32mpassed[0m
+test_location_to_dict (tests.test_location.LocationTest) ... [32mpassed[0m
+test_location_to_json (tests.test_location.LocationTest) ... [32mpassed[0m
+Test for Message.reply_location ... [32mpassed[0m
+test_send_location_explicit_args (tests.test_location.LocationTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_location
+travis_fold:start:tests.test_message
+tests.test_message
+Test for Message.delete ... [32mpassed[0m
+Test for Message.edit_text ... [32mpassed[0m
+test_equality (tests.test_message.MessageTest) ... [32mpassed[0m
+Test for Message.forward ... [32mpassed[0m
+test_parse_entities (tests.test_message.MessageTest) ... [32mpassed[0m
+test_parse_entities_url_emoji (tests.test_message.MessageTest) ... [32mpassed[0m
+test_parse_entity (tests.test_message.MessageTest) ... [32mpassed[0m
+Test for Message.reply_text ... [32mpassed[0m
+test_text_html_emoji (tests.test_message.MessageTest) ... [32mpassed[0m
+test_text_html_simple (tests.test_message.MessageTest) ... [32mpassed[0m
+test_text_markdown_emoji (tests.test_message.MessageTest) ... [32mpassed[0m
+test_text_markdown_simple (tests.test_message.MessageTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_message
+travis_fold:start:tests.test_messageentity
+tests.test_messageentity
+test_messageentity_de_json (tests.test_messageentity.MessageEntityTest) ... [32mpassed[0m
+test_messageentity_to_dict (tests.test_messageentity.MessageEntityTest) ... [32mpassed[0m
+test_messageentity_to_json (tests.test_messageentity.MessageEntityTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_messageentity
+travis_fold:start:tests.test_messagequeue
+tests.test_messagequeue
+Test that DelayQueue dispatched calls don't hit time-window limit ... [32mpassed[0m
+
+travis_fold:end:tests.test_messagequeue
+travis_fold:start:tests.test_official
+tests.test_official
+(tests.test_official) ... [32mpassed[0m
+check_object(InlineKeyboardButton) (tests.test_official) ... [32mpassed[0m
+check_object(CallbackQuery) (tests.test_official) ... [32mpassed[0m
+check_object(ForceReply) (tests.test_official) ... [32mpassed[0m
+check_object(ChatPhoto) (tests.test_official) ... [32mpassed[0m
+check_object(ChatMember) (tests.test_official) ... [32mpassed[0m
+check_object(InputFile) (tests.test_official) ... [32mpassed[0m
+check_method(getMe) (tests.test_official) ... [32mpassed[0m
+check_method(sendMessage) (tests.test_official) ... [32mpassed[0m
+check_method(forwardMessage) (tests.test_official) ... [32mpassed[0m
+check_method(sendPhoto) (tests.test_official) ... [32mpassed[0m
+check_method(sendAudio) (tests.test_official) ... [32mpassed[0m
+check_method(sendDocument) (tests.test_official) ... [32mpassed[0m
+check_method(sendVideo) (tests.test_official) ... [32mpassed[0m
+check_method(sendVoice) (tests.test_official) ... [32mpassed[0m
+check_method(sendVideoNote) (tests.test_official) ... [32mpassed[0m
+check_method(sendLocation) (tests.test_official) ... [32mpassed[0m
+check_method(sendVenue) (tests.test_official) ... [32mpassed[0m
+check_method(sendContact) (tests.test_official) ... [32mpassed[0m
+check_method(sendChatAction) (tests.test_official) ... [32mpassed[0m
+check_method(getUserProfilePhotos) (tests.test_official) ... [32mpassed[0m
+check_method(getFile) (tests.test_official) ... [32mpassed[0m
+check_method(kickChatMember) (tests.test_official) ... [32mpassed[0m
+check_method(unbanChatMember) (tests.test_official) ... [32mpassed[0m
+check_method(restrictChatMember) (tests.test_official) ... [32mpassed[0m
+check_method(promoteChatMember) (tests.test_official) ... [32mpassed[0m
+check_method(exportChatInviteLink) (tests.test_official) ... [32mpassed[0m
+check_method(setChatPhoto) (tests.test_official) ... [32mpassed[0m
+check_method(deleteChatPhoto) (tests.test_official) ... [32mpassed[0m
+check_method(setChatTitle) (tests.test_official) ... [32mpassed[0m
+check_method(setChatDescription) (tests.test_official) ... [32mpassed[0m
+check_method(pinChatMessage) (tests.test_official) ... [32mpassed[0m
+check_method(unpinChatMessage) (tests.test_official) ... [32mpassed[0m
+check_method(leaveChat) (tests.test_official) ... [32mpassed[0m
+check_method(getChat) (tests.test_official) ... [32mpassed[0m
+check_method(getChatAdministrators) (tests.test_official) ... [32mpassed[0m
+check_method(getChatMembersCount) (tests.test_official) ... [32mpassed[0m
+check_method(getChatMember) (tests.test_official) ... [32mpassed[0m
+check_method(answerCallbackQuery) (tests.test_official) ... [32mpassed[0m
+check_method(editMessageText) (tests.test_official) ... [32mpassed[0m
+check_method(editMessageCaption) (tests.test_official) ... [32mpassed[0m
+check_method(editMessageReplyMarkup) (tests.test_official) ... [32mpassed[0m
+check_method(deleteMessage) (tests.test_official) ... [32mpassed[0m
+check_object(Sticker) (tests.test_official) ... [31mFAILED[0m
+check_object(StickerSet) (tests.test_official) ... [33mERROR[0m
+check_object(MaskPosition) (tests.test_official) ... [33mERROR[0m
+check_method(sendSticker) (tests.test_official) ... [32mpassed[0m
+check_method(getStickerSet) (tests.test_official) ... [33mERROR[0m
+check_method(uploadStickerFile) (tests.test_official) ... [33mERROR[0m
+check_method(createNewStickerSet) (tests.test_official) ... [33mERROR[0m
+check_method(addStickerToSet) (tests.test_official) ... [33mERROR[0m
+check_method(setStickerPositionInSet) (tests.test_official) ... [33mERROR[0m
+check_method(deleteStickerFromSet) (tests.test_official) ... [33mERROR[0m
+check_object(InlineQuery) (tests.test_official) ... [32mpassed[0m
+check_method(answerInlineQuery) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResult) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultArticle) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultPhoto) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultGif) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultMpeg4Gif) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultVideo) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultAudio) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultVoice) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultDocument) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultLocation) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultVenue) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultContact) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultGame) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedPhoto) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedGif) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedMpeg4Gif) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedSticker) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedDocument) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedVideo) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedVoice) (tests.test_official) ... [32mpassed[0m
+check_object(InlineQueryResultCachedAudio) (tests.test_official) ... [32mpassed[0m
+check_object(InputMessageContent) (tests.test_official) ... [32mpassed[0m
+check_object(InputTextMessageContent) (tests.test_official) ... [32mpassed[0m
+check_object(InputLocationMessageContent) (tests.test_official) ... [32mpassed[0m
+check_object(InputVenueMessageContent) (tests.test_official) ... [32mpassed[0m
+check_object(InputContactMessageContent) (tests.test_official) ... [32mpassed[0m
+check_object(ChosenInlineResult) (tests.test_official) ... [32mpassed[0m
+check_method(sendInvoice) (tests.test_official) ... [32mpassed[0m
+check_method(answerShippingQuery) (tests.test_official) ... [32mpassed[0m
+check_method(answerPreCheckoutQuery) (tests.test_official) ... [32mpassed[0m
+check_object(LabeledPrice) (tests.test_official) ... [32mpassed[0m
+
+travis_fold:end:tests.test_parsemode
+travis_fold:start:tests.test_photo
+tests.test_photo
+test_equality (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_error_photo_without_required_args (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_error_send_photo_empty_file (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_error_send_photo_empty_file_id (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_expected_values (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_get_and_download_photo (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_photo_de_json (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_photo_to_dict (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_photo_to_json (tests.test_photo.PhotoTest) ... [32mpassed[0m
+Test for Message.reply_photo ... [32mpassed[0m
+test_send_photo_bytesio_jpg_file (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_send_photo_resend (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_send_photo_url_gif_file (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_send_photo_url_png_file (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_sendphoto_all_args (tests.test_photo.PhotoTest) ... [32mpassed[0m
+test_silent_send_photo (tests.test_photo.PhotoTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_photo
+travis_fold:start:tests.test_precheckoutquery
+tests.test_precheckoutquery
+test_equality (tests.test_precheckoutquery.PreCheckoutQueryTest) ... [32mpassed[0m
+test_precheckoutquery_de_json (tests.test_precheckoutquery.PreCheckoutQueryTest) ... [32mpassed[0m
+test_precheckoutquery_to_dict (tests.test_precheckoutquery.PreCheckoutQueryTest) ... [32mpassed[0m
+test_precheckoutquery_to_json (tests.test_precheckoutquery.PreCheckoutQueryTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_precheckoutquery
+travis_fold:start:tests.test_replykeyboardmarkup
+tests.test_replykeyboardmarkup
+test_reply_keyboard_markup_de_json (tests.test_replykeyboardmarkup.ReplyKeyboardMarkupTest) ... [32mpassed[0m
+test_reply_keyboard_markup_to_dict (tests.test_replykeyboardmarkup.ReplyKeyboardMarkupTest) ... [32mpassed[0m
+test_reply_keyboard_markup_to_json (tests.test_replykeyboardmarkup.ReplyKeyboardMarkupTest) ... [32mpassed[0m
+test_reply_markup_empty_de_json_empty (tests.test_replykeyboardmarkup.ReplyKeyboardMarkupTest) ... [32mpassed[0m
+test_send_message_with_reply_keyboard_markup (tests.test_replykeyboardmarkup.ReplyKeyboardMarkupTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_replykeyboardmarkup
+travis_fold:start:tests.test_replykeyboardremove
+tests.test_replykeyboardremove
+test_reply_keyboard_remove_de_json (tests.test_replykeyboardremove.ReplyKeyboardRemoveTest) ... [32mpassed[0m
+test_reply_keyboard_remove_de_json_empty (tests.test_replykeyboardremove.ReplyKeyboardRemoveTest) ... [32mpassed[0m
+test_reply_keyboard_remove_to_dict (tests.test_replykeyboardremove.ReplyKeyboardRemoveTest) ... [32mpassed[0m
+test_reply_keyboard_remove_to_json (tests.test_replykeyboardremove.ReplyKeyboardRemoveTest) ... [32mpassed[0m
+test_send_message_with_reply_keyboard_remove (tests.test_replykeyboardremove.ReplyKeyboardRemoveTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_replykeyboardremove
+travis_fold:start:tests.test_replymarkup
+tests.test_replymarkup
+test_reply_markup_de_json_empty (tests.test_replymarkup.ReplyMarkupTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_replymarkup
+travis_fold:start:tests.test_shippingaddress
+tests.test_shippingaddress
+test_equality (tests.test_shippingaddress.ShippingAddressTest) ... [32mpassed[0m
+test_shippingaddress_de_json (tests.test_shippingaddress.ShippingAddressTest) ... [32mpassed[0m
+test_shippingaddress_to_dict (tests.test_shippingaddress.ShippingAddressTest) ... [32mpassed[0m
+test_shippingaddress_to_json (tests.test_shippingaddress.ShippingAddressTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_shippingaddress
+travis_fold:start:tests.test_shippingoption
+tests.test_shippingoption
+test_equality (tests.test_shippingoption.ShippingOptionTest) ... [32mpassed[0m
+test_shippingoption_de_json (tests.test_shippingoption.ShippingOptionTest) ... [32mpassed[0m
+test_shippingoption_to_dict (tests.test_shippingoption.ShippingOptionTest) ... [32mpassed[0m
+test_shippingoption_to_json (tests.test_shippingoption.ShippingOptionTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_shippingoption
+travis_fold:start:tests.test_shippingquery
+tests.test_shippingquery
+test_equality (tests.test_shippingquery.ShippingQueryTest) ... [32mpassed[0m
+test_shippingquery_de_json (tests.test_shippingquery.ShippingQueryTest) ... [32mpassed[0m
+test_shippingquery_to_dict (tests.test_shippingquery.ShippingQueryTest) ... [32mpassed[0m
+test_shippingquery_to_json (tests.test_shippingquery.ShippingQueryTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_shippingquery
+travis_fold:start:tests.test_sticker
+tests.test_sticker
+/home/travis/build/python-telegram-bot/python-telegram-bot/telegram/emoji.py:37: UserWarning: telegram.Emoji is being deprecated, please see https://git.io/v6DeB
+  warnings.warn("telegram.Emoji is being deprecated, please see https://git.io/v6DeB")
+test_equality (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_error_send_sticker_empty_file (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_error_send_sticker_empty_file_id (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_error_sticker_without_required_args (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_expected_values (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_get_and_download_sticker (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_send_sticker_all_args (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_send_sticker_from_url (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_send_sticker_resend (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_sticker_de_json (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_sticker_on_server_emoji (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_sticker_to_dict (tests.test_sticker.StickerTest) ... [32mpassed[0m
+test_sticker_to_json (tests.test_sticker.StickerTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_sticker
+travis_fold:start:tests.test_successfulpayment
+tests.test_successfulpayment
+test_equality (tests.test_successfulpayment.SuccessfulPaymentTest) ... [32mpassed[0m
+test_successfulpayment_de_json (tests.test_successfulpayment.SuccessfulPaymentTest) ... [32mpassed[0m
+test_successfulpayment_to_dict (tests.test_successfulpayment.SuccessfulPaymentTest) ... [32mpassed[0m
+test_successfulpayment_to_json (tests.test_successfulpayment.SuccessfulPaymentTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_successfulpayment
+travis_fold:start:tests.test_update
+tests.test_update
+test_effective_chat (tests.test_update.UpdateTest) ... [32mpassed[0m
+test_effective_message (tests.test_update.UpdateTest) ... [32mpassed[0m
+test_effective_user (tests.test_update.UpdateTest) ... [32mpassed[0m
+test_equality (tests.test_update.UpdateTest) ... [32mpassed[0m
+test_update_de_json (tests.test_update.UpdateTest) ... [32mpassed[0m
+test_update_de_json_empty (tests.test_update.UpdateTest) ... [32mpassed[0m
+test_update_to_dict (tests.test_update.UpdateTest) ... [32mpassed[0m
+test_update_to_json (tests.test_update.UpdateTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_update
+travis_fold:start:tests.test_updater
+tests.test_updater
+test_CommandHandler_commandList (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveCallbackQueryHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveErrorHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveInlineQueryHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemovePreCheckoutQueryHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveStringCommandHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveStringRegexHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveTelegramCommandHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveTelegramMessageHandler (tests.test_updater.UpdaterTest) ... /home/travis/build/python-telegram-bot/python-telegram-bot/telegram/ext/messagehandler.py:123: UserWarning: Using a list of filters in MessageHandler is getting deprecated, please use bitwise operators (& and |) instead. More info: https://git.io/vPTbc.
+  warnings.warn('Using a list of filters in MessageHandler is getting '
+[32mpassed[0m
+test_addRemoveTelegramRegexHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addRemoveTypeHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_addTelegramMessageHandlerMultipleMessages (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_additionalArgs (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_bootstrap_retries_fail (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_bootstrap_retries_invalid_token (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_bootstrap_retries_success (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_bootstrap_retries_unauth (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_cleanBeforeStart (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_createBot (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_editedMessageHandler (tests.test_updater.UpdaterTest) ... /home/travis/build/python-telegram-bot/python-telegram-bot/telegram/ext/messagehandler.py:106: UserWarning: allow_edited is getting deprecated, please use edited_updates instead
+  warnings.warn('allow_edited is getting deprecated, please use edited_updates instead')
+[32mpassed[0m
+test_errorInHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_filterNotPassTelegramCommandHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_filterPassTelegramCommandHandler (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_idle (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_multiple_dispatcers_no_decorator (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_multiple_dispatchers (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_regexGroupHandlerCallbackQuery (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_regexGroupHandlerInlineQuery (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_runAsync (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_runAsyncWithAdditionalArgs (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_start_dispatcher_twice (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_user_and_chat_data (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_webhook (tests.test_updater.UpdaterTest) ... Exception in thread updater:
+Traceback (most recent call last):
+  File "/opt/python/3.5.3/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/opt/python/3.5.3/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/travis/build/python-telegram-bot/python-telegram-bot/telegram/ext/updater.py", line 140, in _thread_wrapper
+    target(*args, **kwargs)
+  File "/home/travis/build/python-telegram-bot/python-telegram-bot/telegram/ext/updater.py", line 322, in _start_webhook
+    self._check_ssl_cert(cert, key)
+  File "/home/travis/build/python-telegram-bot/python-telegram-bot/telegram/ext/updater.py", line 357, in _check_ssl_cert
+    raise TelegramError('SSL Certificate invalid')
+telegram.error.TelegramError: SSL Certificate invalid
+
+[32mpassed[0m
+test_webhook_invalid_posts (tests.test_updater.UpdaterTest) ... [32mpassed[0m
+test_webhook_no_ssl (tests.test_updater.UpdaterTest) ... /home/travis/build/python-telegram-bot/python-telegram-bot/telegram/ext/messagehandler.py:123: UserWarning: Using a list of filters in MessageHandler is getting deprecated, please use bitwise operators (& and |) instead. More info: https://git.io/vPTbc.
+  warnings.warn('Using a list of filters in MessageHandler is getting '
+[32mpassed[0m
+
+travis_fold:end:tests.test_updater
+travis_fold:start:tests.test_user
+tests.test_user
+test_equality (tests.test_user.UserTest) ... [32mpassed[0m
+Test for User.get_profile_photos ... [32mpassed[0m
+test_user_de_json (tests.test_user.UserTest) ... [32mpassed[0m
+test_user_de_json_without_username (tests.test_user.UserTest) ... [32mpassed[0m
+test_user_de_json_without_username_and_lastname (tests.test_user.UserTest) ... [32mpassed[0m
+test_user_to_dict (tests.test_user.UserTest) ... [32mpassed[0m
+test_user_to_json (tests.test_user.UserTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_user
+travis_fold:start:tests.test_venue
+tests.test_venue
+test_equality (tests.test_venue.VenueTest) ... [32mpassed[0m
+Test for Message.reply_venue ... [32mpassed[0m
+test_sticker_to_dict (tests.test_venue.VenueTest) ... [32mpassed[0m
+test_venue_de_json (tests.test_venue.VenueTest) ... [32mpassed[0m
+test_venue_to_json (tests.test_venue.VenueTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_venue
+travis_fold:start:tests.test_video
+tests.test_video
+test_equality (tests.test_video.VideoTest) ... [32mpassed[0m
+test_error_send_video_empty_file (tests.test_video.VideoTest) ... [32mpassed[0m
+test_error_send_video_empty_file_id (tests.test_video.VideoTest) ... [32mpassed[0m
+test_error_video_without_required_args (tests.test_video.VideoTest) ... [32mpassed[0m
+test_expected_values (tests.test_video.VideoTest) ... [32mpassed[0m
+test_get_and_download_video (tests.test_video.VideoTest) ... [32mpassed[0m
+Test for Message.reply_video ... [32mpassed[0m
+test_send_video_all_args (tests.test_video.VideoTest) ... [32mpassed[0m
+test_send_video_mp4_file_url (tests.test_video.VideoTest) ... [32mpassed[0m
+test_send_video_resend (tests.test_video.VideoTest) ... [32mpassed[0m
+test_video_de_json (tests.test_video.VideoTest) ... [32mpassed[0m
+test_video_to_dict (tests.test_video.VideoTest) ... [32mpassed[0m
+test_video_to_json (tests.test_video.VideoTest) ... [32mpassed[0m
+
+travis_fold:end:tests.test_video
+travis_fold:start:tests.test_videonote
+tests.test_videonote
+test_equality (tests.test_videonote.VideoNoteTest) ... [32mpassed[0m
+test_error_send_videonote_empty_file (tests.test_videonote.VideoNoteTest) ... [32mpassed[0m
+test_error_send_videonote_empty_file_id (tests.test_videonote.VideoNoteTest) ... [32mpassed[0m
+test_expected_values (tests.test_videonote.VideoNoteTest) ... [32mpassed[0m
+test_get_and_download_videonote (tests.test_videonote.VideoNoteTest) ... [32mpassed[0m
+Test for Message.reply_videonote ... [32mpassed[0m
+test_send_videonote_all_args (tests.test_videonote.VideoNoteTest) ... test_equality (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_error_send_voice_empty_file (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_error_send_voice_empty_file_id (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_error_voice_without_required_args (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_expected_values (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_get_and_download_voice (tests.test_voice.VoiceTest) ... [32mpassed[0m
+Test for Message.reply_voice ... [32mpassed[0m
+test_send_voice_all_args (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_send_voice_ogg_url_file (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_send_voice_ogg_url_file_with_caption (tests.test_voice.VoiceTest) ... [32mpassed[0m
+test_send_voice_resend (tests.test_voice.VoiceTest) ... ield='emoji', Type='String', Description='Optional. Emoji associated with the sticker')[0m
+[31m   tests.test_official: DEBUG: StickerTableRow(Field='set_name', Type='String', Description='Optional. Name of the sticker set to which the sticker belongs')[0m
+[31m   --------------------- >> end captured logging << ---------------------[0m
+[33m======================================================================[0m
+[33m2) ERROR: check_object(StickerSet) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m74[0m[0m in [36mcheck_object[0m
+      obj = getattr(telegram, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mmodule 'telegram' has no attribute 'StickerSet'[0m
+[33m======================================================================[0m
+[33m3) ERROR: check_object(MaskPosition) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m74[0m[0m in [36mcheck_object[0m
+      obj = getattr(telegram, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mmodule 'telegram' has no attribute 'MaskPosition'[0m
+[33m======================================================================[0m
+[33m4) ERROR: check_method(getStickerSet) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m44[0m[0m in [36mcheck_method[0m
+      method = getattr(telegram.Bot, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mtype object 'Bot' has no attribute 'getStickerSet'[0m
+[33m======================================================================[0m
+[33m5) ERROR: check_method(uploadStickerFile) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m44[0m[0m in [36mcheck_method[0m
+      method = getattr(telegram.Bot, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mtype object 'Bot' has no attribute 'uploadStickerFile'[0m
+[33m======================================================================[0m
+[33m6) ERROR: check_method(createNewStickerSet) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m44[0m[0m in [36mcheck_method[0m
+      method = getattr(telegram.Bot, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mtype object 'Bot' has no attribute 'createNewStickerSet'[0m
+[33m======================================================================[0m
+[33m7) ERROR: check_method(addStickerToSet) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m44[0m[0m in [36mcheck_method[0m
+      method = getattr(telegram.Bot, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mtype object 'Bot' has no attribute 'addStickerToSet'[0m
+[33m======================================================================[0m
+[33m8) ERROR: check_method(setStickerPositionInSet) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m44[0m[0m in [36mcheck_method[0m
+      method = getattr(telegram.Bot, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mtype object 'Bot' has no attribute 'setStickerPositionInSet'[0m
+[33m======================================================================[0m
+[33m9) ERROR: check_method(deleteStickerFromSet) (tests.test_official)[0m
+[33m----------------------------------------------------------------------[0m
+[0m   Traceback (most recent call last):[0m
+    [34m/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/nose/case.py[0m line [1m[36m198[0m[0m in [36mrunTest[0m
+      self.test(*self.arg)
+    [34mtests/test_official.py[0m line [1m[36m142[0m[0m in [36mfn[0m
+      return test(h4)
+    [34mtests/test_official.py[0m line [1m[36m44[0m[0m in [36mcheck_method[0m
+      method = getattr(telegram.Bot, name)
+[33m   [33m[1m[33mAttributeError[0m[0m[33m: [0m[33mtype object 'Bot' has no attribute 'deleteStickerFromSet'[0m
+
+travis_fold:start:coverage
+Coverage report
+Name                                                 Stmts   Miss  Cover
+------------------------------------------------------------------------
+telegram/__init__.py                                    79      0   100%
+telegram/__main__.py                                    15     15     0%
+telegram/base.py                                        39      2    95%
+telegram/bot.py                                        635    198    69%
+telegram/callbackquery.py                               37     14    62%
+telegram/chat.py                                        39      6    85%
+telegram/chataction.py                                  13      0   100%
+telegram/chatmember.py                                  38      1    97%
+telegram/choseninlineresult.py                          21      0   100%
+telegram/constants.py                                   11      0   100%
+telegram/contrib/__init__.py                             0      0   100%
+telegram/contrib/botan.py                               29      0   100%
+telegram/emoji.py                                      852      0   100%
+telegram/error.py                                       37      5    86%
+telegram/ext/__init__.py                                19      0   100%
+telegram/ext/callbackqueryhandler.py                    29      0   100%
+telegram/ext/choseninlineresulthandler.py               15      0   100%
+telegram/ext/commandhandler.py                          36      4    89%
+telegram/ext/conversationhandler.py                    111     18    84%
+telegram/ext/dispatcher.py                             156     10    94%
+telegram/ext/filters.py                                225      1    99%
+telegram/ext/handler.py                                 26      2    92%
+telegram/ext/inlinequeryhandler.py                      33      0   100%
+telegram/ext/jobqueue.py                               185     15    92%
+telegram/ext/messagehandler.py                          33      1    97%
+telegram/ext/messagequeue.py                            83     24    71%
+telegram/ext/precheckoutqueryhandler.py                 11      0   100%
+telegram/ext/regexhandler.py                            30      4    87%
+telegram/ext/shippingqueryhandler.py                    11      0   100%
+telegram/ext/stringcommandhandler.py                    15      0   100%
+telegram/ext/stringregexhandler.py                      22      0   100%
+telegram/ext/typehandler.py                             14      1    93%
+telegram/ext/updater.py                                201     26    87%
+telegram/files/__init__.py                               0      0   100%
+telegram/files/audio.py                                 15      0   100%
+telegram/files/chatphoto.py                             10      0   100%
+telegram/files/contact.py                               13      0   100%
+telegram/files/document.py                              17      0   100%
+telegram/files/file.py                                  27      5    81%
+telegram/files/inputfile.py                             74      5    93%
+telegram/files/location.py                              11      0   100%
+telegram/files/photosize.py                             20      0   100%
+telegram/files/sticker.py                               17      0   100%
+telegram/files/venue.py                                 15      0   100%
+telegram/files/video.py                                 18      0   100%
+telegram/files/videonote.py                             16      0   100%
+telegram/files/voice.py                                 14      0   100%
+telegram/forcereply.py                                  10      0   100%
+telegram/games/__init__.py                               0      0   100%
+telegram/games/animation.py                             17      1    94%
+telegram/games/callbackgame.py                           3      3     0%
+telegram/games/game.py                                  34      1    97%
+telegram/games/gamehighscore.py                         13      8    38%
+telegram/inline/__init__.py                              0      0   100%
+telegram/inline/inlinekeyboardbutton.py                 23      0   100%
+telegram/inline/inlinekeyboardmarkup.py                 17      0   100%
+telegram/inline/inlinequery.py                          24      1    96%
+telegram/inline/inlinequeryresult.py                     9      0   100%
+telegram/inline/inlinequeryresultarticle.py             26      0   100%
+telegram/inline/inlinequeryresultaudio.py               22      0   100%
+telegram/inline/inlinequeryresultcachedaudio.py         17      0   100%
+telegram/inline/inlinequeryresultcacheddocument.py      20      0   100%
+telegram/inline/inlinequeryresultcachedgif.py           19      0   100%
+telegram/inline/inlinequeryresultcachedmpeg4gif.py      19      0   100%
+telegram/inline/inlinequeryresultcachedphoto.py         21      0   100%
+telegram/inline/inlinequeryresultcachedsticker.py       15      0   100%
+telegram/inline/inlinequeryresultcachedvideo.py         20      0   100%
+telegram/inline/inlinequeryresultcachedvoice.py         18      0   100%
+telegram/inline/inlinequeryresultcontact.py             24      0   100%
+telegram/inline/inlinequeryresultdocument.py            27      0   100%
+telegram/inline/inlinequeryresultgame.py                13      8    38%
+telegram/inline/inlinequeryresultgif.py                 26      0   100%
+telegram/inline/inlinequeryresultlocation.py            23      0   100%
+telegram/inline/inlinequeryresultmpeg4gif.py            26      0   100%
+telegram/inline/inlinequeryresultphoto.py               26      0   100%
+telegram/inline/inlinequeryresultvenue.py               26      0   100%
+telegram/inline/inlinequeryresultvideo.py               28      0   100%
+telegram/inline/inlinequeryresultvoice.py               20      0   100%
+telegram/inline/inputcontactmessagecontent.py            9      0   100%
+telegram/inline/inputlocationmessagecontent.py           8      0   100%
+telegram/inline/inputmessagecontent.py                  28      0   100%
+telegram/inline/inputtextmessagecontent.py               9      0   100%
+telegram/inline/inputvenuemessagecontent.py             11      0   100%
+telegram/keyboardbutton.py                              18      0   100%
+telegram/message.py                                    230     28    88%
+telegram/messageentity.py                               33      0   100%
+telegram/parsemode.py                                    5      0   100%
+telegram/payment/__init__.py                             0      0   100%
+telegram/payment/invoice.py                             13      0   100%
+telegram/payment/labeledprice.py                        17      2    88%
+telegram/payment/orderinfo.py                           14      0   100%
+telegram/payment/precheckoutquery.py                    26      1    96%
+telegram/payment/shippingaddress.py                     15      1    93%
+telegram/payment/shippingoption.py                      18      1    94%
+telegram/payment/shippingquery.py                       23      1    96%
+telegram/payment/successfulpayment.py                   18      0   100%
+telegram/replykeyboardmarkup.py                         25      1    96%
+telegram/replykeyboardremove.py                         17      4    76%
+telegram/replymarkup.py                                  8      0   100%
+telegram/update.py                                      84     20    76%
+telegram/user.py                                        31      4    87%
+telegram/userprofilephotos.py                           18      1    94%
+telegram/utils/__init__.py                               0      0   100%
+telegram/utils/botan.py                                  3      3     0%
+telegram/utils/deprecate.py                             11      3    73%
+telegram/utils/helpers.py                               24      5    79%
+telegram/utils/promise.py                               27      5    81%
+telegram/utils/request.py                              118     39    67%
+telegram/utils/webhookhandler.py                        83      3    96%
+telegram/version.py                                      1      0   100%
+telegram/webhookinfo.py                                 15      1    93%
+------------------------------------------------------------------------
+TOTAL                                                 4913    502    90%
+
+travis_fold:end:coverage
+[30m-----------------------------------------------------------------------------[0m
+607 tests run in 164.632 seconds.
+[31m1 FAILED[0m, [33m8 errors[0m[32m (598 tests passed)[0m
+
+
+
+travis_fold:start:bdist_dumb
+Testing build...
+running bdist_dumb
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/telegram
+copying telegram/__init__.py -> build/lib/telegram
+copying telegram/__main__.py -> build/lib/telegram
+copying telegram/emoji.py -> build/lib/telegram
+copying telegram/version.py -> build/lib/telegram
+copying telegram/base.py -> build/lib/telegram
+copying telegram/bot.py -> build/lib/telegram
+copying telegram/callbackquery.py -> build/lib/telegram
+copying telegram/chat.py -> build/lib/telegram
+copying telegram/chataction.py -> build/lib/telegram
+copying telegram/chatmember.py -> build/lib/telegram
+copying telegram/choseninlineresult.py -> build/lib/telegram
+copying telegram/constants.py -> build/lib/telegram
+copying telegram/error.py -> build/lib/telegram
+copying telegram/forcereply.py -> build/lib/telegram
+copying telegram/keyboardbutton.py -> build/lib/telegram
+copying telegram/message.py -> build/lib/telegram
+copying telegram/messageentity.py -> build/lib/telegram
+copying telegram/parsemode.py -> build/lib/telegram
+copying telegram/replykeyboardmarkup.py -> build/lib/telegram
+copying telegram/replykeyboardremove.py -> build/lib/telegram
+copying telegram/replymarkup.py -> build/lib/telegram
+copying telegram/update.py -> build/lib/telegram
+copying telegram/user.py -> build/lib/telegram
+copying telegram/userprofilephotos.py -> build/lib/telegram
+copying telegram/webhookinfo.py -> build/lib/telegram
+creating build/lib/telegram/contrib
+copying telegram/contrib/__init__.py -> build/lib/telegram/contrib
+copying telegram/contrib/botan.py -> build/lib/telegram/contrib
+creating build/lib/telegram/ext
+copying telegram/ext/__init__.py -> build/lib/telegram/ext
+copying telegram/ext/callbackqueryhandler.py -> build/lib/telegram/ext
+copying telegram/ext/choseninlineresulthandler.py -> build/lib/telegram/ext
+copying telegram/ext/commandhandler.py -> build/lib/telegram/ext
+copying telegram/ext/conversationhandler.py -> build/lib/telegram/ext
+copying telegram/ext/dispatcher.py -> build/lib/telegram/ext
+copying telegram/ext/filters.py -> build/lib/telegram/ext
+copying telegram/ext/handler.py -> build/lib/telegram/ext
+copying telegram/ext/inlinequeryhandler.py -> build/lib/telegram/ext
+copying telegram/ext/jobqueue.py -> build/lib/telegram/ext
+copying telegram/ext/messagehandler.py -> build/lib/telegram/ext
+copying telegram/ext/messagequeue.py -> build/lib/telegram/ext
+copying telegram/ext/precheckoutqueryhandler.py -> build/lib/telegram/ext
+copying telegram/ext/regexhandler.py -> build/lib/telegram/ext
+copying telegram/ext/shippingqueryhandler.py -> build/lib/telegram/ext
+copying telegram/ext/stringcommandhandler.py -> build/lib/telegram/ext
+copying telegram/ext/stringregexhandler.py -> build/lib/telegram/ext
+copying telegram/ext/typehandler.py -> build/lib/telegram/ext
+copying telegram/ext/updater.py -> build/lib/telegram/ext
+creating build/lib/telegram/files
+copying telegram/files/__init__.py -> build/lib/telegram/files
+copying telegram/files/audio.py -> build/lib/telegram/files
+copying telegram/files/chatphoto.py -> build/lib/telegram/files
+copying telegram/files/contact.py -> build/lib/telegram/files
+copying telegram/files/document.py -> build/lib/telegram/files
+copying telegram/files/file.py -> build/lib/telegram/files
+copying telegram/files/inputfile.py -> build/lib/telegram/files
+copying telegram/files/location.py -> build/lib/telegram/files
+copying telegram/files/photosize.py -> build/lib/telegram/files
+copying telegram/files/sticker.py -> build/lib/telegram/files
+copying telegram/files/venue.py -> build/lib/telegram/files
+copying telegram/files/video.py -> build/lib/telegram/files
+copying telegram/files/videonote.py -> build/lib/telegram/files
+copying telegram/files/voice.py -> build/lib/telegram/files
+creating build/lib/telegram/games
+copying telegram/games/__init__.py -> build/lib/telegram/games
+copying telegram/games/callbackgame.py -> build/lib/telegram/games
+copying telegram/games/animation.py -> build/lib/telegram/games
+copying telegram/games/game.py -> build/lib/telegram/games
+copying telegram/games/gamehighscore.py -> build/lib/telegram/games
+creating build/lib/telegram/inline
+copying telegram/inline/__init__.py -> build/lib/telegram/inline
+copying telegram/inline/inputmessagecontent.py -> build/lib/telegram/inline
+copying telegram/inline/inlinekeyboardbutton.py -> build/lib/telegram/inline
+copying telegram/inline/inlinekeyboardmarkup.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequery.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresult.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultarticle.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultaudio.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcachedaudio.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcacheddocument.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcachedgif.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcachedmpeg4gif.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcachedphoto.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcachedsticker.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcachedvideo.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcachedvoice.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultcontact.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultdocument.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultgame.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultgif.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultlocation.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultmpeg4gif.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultphoto.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultvenue.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultvideo.py -> build/lib/telegram/inline
+copying telegram/inline/inlinequeryresultvoice.py -> build/lib/telegram/inline
+copying telegram/inline/inputcontactmessagecontent.py -> build/lib/telegram/inline
+copying telegram/inline/inputlocationmessagecontent.py -> build/lib/telegram/inline
+copying telegram/inline/inputtextmessagecontent.py -> build/lib/telegram/inline
+copying telegragram/vendor/ptb_urllib3/urllib3/_collections.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/connection.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/connectionpool.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/exceptions.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/fields.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/filepost.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/poolmanager.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/request.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+copying telegram/vendor/ptb_urllib3/urllib3/response.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3
+creating build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying telegram/vendor/ptb_urllib3/urllib3/contrib/__init__.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying telegram/vendor/ptb_urllib3/urllib3/contrib/appengine.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying telegram/vendor/ptb_urllib3/urllib3/contrib/ntlmpool.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying telegram/vendor/ptb_urllib3/urllib3/contrib/pyopenssl.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying telegram/vendor/ptb_urllib3/urllib3/contrib/socks.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib
+creating build/lib/telegram/vendor/ptb_urllib3/urllib3/packages
+copying telegram/vendor/ptb_urllib3/urllib3/packages/__init__.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/packages
+copying telegram/vendor/ptb_urllib3/urllib3/packages/ordered_dict.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/packages
+copying telegram/vendor/ptb_urllib3/urllib3/packages/six.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/packages
+creating build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/__init__.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/connection.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/request.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/response.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/retry.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/selectors.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/ssl_.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/timeout.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/url.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+copying telegram/vendor/ptb_urllib3/urllib3/util/wait.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/util
+creating build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/backports
+copying telegram/vendor/ptb_urllib3/urllib3/packages/backports/__init__.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/backports
+copying telegram/vendor/ptb_urllib3/urllib3/packages/backports/makefile.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/backports
+creating build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname
+copying telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname/__init__.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname
+copying telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname/_implementation.py -> build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname
+running egg_info
+creating python_telegram_bot.egg-info
+writing dependency_links to python_telegram_bot.egg-info/dependency_links.txt
+writing top-level names to python_telegram_bot.egg-info/top_level.txt
+writing requirements to python_telegram_bot.egg-info/requires.txt
+writing python_telegram_bot.egg-info/PKG-INFO
+writing manifest file 'python_telegram_bot.egg-info/SOURCES.txt'
+reading manifest file 'python_telegram_bot.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'python_telegram_bot.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/dumb
+running install
+running install_lib
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/dumb
+creating build/bdist.linux-x86_64/dumb/home
+creating build/bdist.linux-x86_64/dumb/home/travis
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/__main__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/emoji.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/version.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/base.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/bot.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/callbackquery.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/chat.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/chataction.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/chatmember.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/choseninlineresult.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/constants.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/error.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/forcereply.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/keyboardbutton.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/message.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/messageentity.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/parsemode.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/replykeyboardmarkup.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/replykeyboardremove.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/replymarkup.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/update.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/user.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/userprofilephotos.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+copying build/lib/telegram/webhookinfo.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/contrib
+copying build/lib/telegram/contrib/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/contrib
+copying build/lib/telegram/contrib/botan.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/contrib
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/callbackqueryhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/choseninlineresulthandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/commandhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/conversationhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/dispatcher.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/filters.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/handler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/inlinequeryhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/jobqueue.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/messagehandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/messagequeue.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/precheckoutqueryhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/regexhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/shippingqueryhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/stringcommandhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/stringregexhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/typehandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+copying build/lib/telegram/ext/updater.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/audio.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/chatphoto.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/contact.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/document.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/file.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/inputfile.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/location.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/photosize.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/sticker.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/venue.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/video.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/videonote.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+copying build/lib/telegram/files/voice.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games
+copying build/lib/telegram/games/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games
+copying build/lib/telegram/games/callbackgame.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games
+copying build/lib/telegram/games/animation.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games
+copying build/lib/telegram/games/game.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games
+copying build/lib/telegram/games/gamehighscore.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inputmessagecontent.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinekeyboardbutton.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinekeyboardmarkup.py -> bu/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultcachedsticker.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultcachedvideo.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultcachedvoice.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultcontact.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultdocument.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultgame.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultgif.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultlocation.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultmpeg4gif.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultphoto.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultvenue.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultvideo.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inlinequeryresultvoice.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inputcontactmessagecontent.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inputlocationmessagecontent.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inputtextmessagecontent.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+copying build/lib/telegram/inline/inputvenuemessagecontent.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/invoice.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/labeledprice.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/orderinfo.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/precheckoutquery.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/shippingaddress.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/shippingoption.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/shippingquery.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+copying build/lib/telegram/payment/successfulpayment.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+copying build/lib/telegram/utils/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+copying build/lib/telegram/utils/botan.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+copying build/lib/telegram/utils/deprecate.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+copying build/lib/telegram/utils/helpers.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+copying build/lib/telegram/utils/promise.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+copying build/lib/telegram/utils/request.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+copying build/lib/telegram/utils/webhookhandler.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor
+copying build/lib/telegram/vendor/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/_collections.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/connection.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/exceptions.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/fields.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/filepost.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/poolmanager.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/request.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/response.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib/appengine.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib/ntlmpool.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib/pyopenssl.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/contrib/socks.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/ordered_dict.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/six.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/backports
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/backports/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/backports
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/backports/makefile.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/backports
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname/_implementation.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname
+creating build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/__init__.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/connection.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/request.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/response.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/retry.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/selectors.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/ssl_.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/timeout.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/url.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+copying build/lib/telegram/vendor/ptb_urllib3/urllib3/util/wait.py -> build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/__main__.py to __main__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/emoji.py to emoji.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/version.py to version.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/base.py to base.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/bot.py to bot.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/callbackquery.py to callbackquery.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/chat.py to chat.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/chataction.py to chataction.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/chatmember.py to chatmember.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/choseninlineresult.py to choseninlineresult.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/constants.py to constants.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/error.py to error.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/forcereply.py to forcereply.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/keyboardbutton.py to keyboardbutton.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/message.py to message.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/messageentity.py to messageentity.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/parsemode.py to parsemode.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/replykeyboardmarkup.py to replykeyboardmarkup.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/replykeyboardremove.py to replykeyboardremove.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/replymarkup.py to replymarkup.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/update.py to update.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/user.py to user.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/userprofilephotos.py to userprofilephotos.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/webhookinfo.py to webhookinfo.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/contrib/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/contrib/botan.py to botan.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/callbackqueryhandler.py to callbackqueryhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/choseninlineresulthandler.py to choseninlineresulthandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/commandhandler.py to commandhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/conversationhandler.py to conversationhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/dispatcher.py to dispatcher.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/filters.py to filters.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/handler.py to handler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/inlinequeryhandler.py to inlinequeryhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/jobqueue.py to jobqueue.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/messagehandler.py to messagehandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/messagequeue.py to messagequeue.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/precheckoutqueryhandler.py to precheckoutqueryhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/regexhandler.py to regexhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/shippingqueryhandler.py to shippingqueryhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/stringcommandhandler.py to stringcommandhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/stringregexhandler.py to stringregexhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/typehandler.py to typehandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/ext/updater.py to updater.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/audio.py to audio.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/chatphoto.py to chatphoto.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/contact.py to contact.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/document.py to document.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/file.py to file.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/inputfile.py to inputfile.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/location.py to location.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/photosize.py to photosize.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/sticker.py to sticker.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/venue.py to venue.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/video.py to video.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/videonote.py to videonote.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/files/voice.py to voice.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games/callbackgame.py to callbackgame.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games/animation.py to animation.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games/game.py to game.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/games/gamehighscore.py to gamehighscore.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inputmessagecontent.py to inputmessagecontent.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinekeyboardbutton.py to inlinekeyboardbutton.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinekeyboardmarkup.py to inlinekeyboardmarkup.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequery.py to inlinequery.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresult.py to inlinequeryresult.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultarticle.py to inlinequeryresultarticle.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultaudio.py to inlinequeryresultaudio.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcachedaudio.py to inlinequeryresultcachedaudio.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcacheddocument.py to inlinequeryresultcacheddocument.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcachedgif.py to inlinequeryresultcachedgif.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcachedmpeg4gif.py to inlinequeryresultcachedmpeg4gif.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcachedphoto.py to inlinequeryresultcachedphoto.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcachedsticker.py to inlinequeryresultcachedsticker.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcachedvideo.py to inlinequeryresultcachedvideo.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcachedvoice.py to inlinequeryresultcachedvoice.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultcontact.py to inlinequeryresultcontact.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultdocument.py to inlinequeryresultdocument.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultgame.py to inlinequeryresultgame.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultgif.py to inlinequeryresultgif.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultlocation.py to inlinequeryresultlocation.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultmpeg4gif.py to inlinequeryresultmpeg4gif.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultphoto.py to inlinequeryresultphoto.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultvenue.py to inlinequeryresultvenue.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultvideo.py to inlinequeryresultvideo.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inlinequeryresultvoice.py to inlinequeryresultvoice.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inputcontactmessagecontent.py to inputcontactmessagecontent.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inputlocationmessagecontent.py to inputlocationmessagecontent.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inputtextmessagecontent.py to inputtextmessagecontent.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/inline/inputvenuemessagecontent.py to inputvenuemessagecontent.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/invoice.py to invoice.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/labeledprice.py to labeledprice.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/orderinfo.py to orderinfo.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/precheckoutquery.py to precheckoutquery.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/shippingaddress.py to shippingaddress.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/shippingoption.py to shippingoption.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/shippingquery.py to shippingquery.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/payment/successfulpayment.py to successfulpayment.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils/botan.py to botan.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils/deprecate.py to deprecate.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils/helpers.py to helpers.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils/promise.py to promise.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils/request.py to request.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/utils/webhookhandler.py to webhookhandler.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/_collections.py to _collections.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connection.py to connection.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py to connectionpool.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/exceptions.py to exceptions.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/fields.py to fields.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/filepost.py to filepost.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/poolmanager.py to poolmanager.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/request.py to request.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/response.py to response.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib/appengine.py to appengine.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib/ntlmpool.py to ntlmpool.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib/pyopenssl.py to pyopenssl.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/contrib/socks.py to socks.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/ordered_dict.py to ordered_dict.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/six.py to six.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/backports/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/backports/makefile.py to makefile.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/ssl_match_hostname/_implementation.py to _implementation.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/connection.py to connection.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/request.py to request.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/response.py to response.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/retry.py to retry.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/selectors.py to selectors.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/ssl_.py to ssl_.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/timeout.py to timeout.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/url.py to url.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/wait.py to wait.cpython-35.pyc
+running install_egg_info
+Copying python_telegram_bot.egg-info to build/bdist.linux-x86_64/dumb/home/travis/virtualenv/python3.5.3/lib/python3.5/site-packages/python_telegram_bot-6.1.0-py3.5.egg-info
+running install_scripts
+creating /home/travis/build/python-telegram-bot/python-telegram-bot/dist
+Creating tar archive
+removing 'build/bdist.linux-x86_64/dumb' (and everything under it)
+
+travis_fold:end:bdist_dumb
+
+travis_time:end:0badd010:start=1500653526795873955,finish=1500653695206202512,duration=168410328557
+[0K
+[31;1mThe command "python travis.py" exited with 1.[0m
+travis_fold:start:before_cache
+[0Ktravis_time:start:00881118
+[0K$ rm -f $HOME/.cache/pip/log/debug.log
+
+travis_time:end:00881118:start=1500653695213845643,finish=1500653695220455442,duration=6609799
+[0Ktravis_fold:end:before_cache
+[0Ktravis_fold:start:cache.2
+[0Kstore build cache
+travis_time:start:24d74060
+[0K
+travis_time:end:24d74060:start=1500653695227192367,finish=1500653695232496289,duration=5303922
+[0Ktravis_time:start:05492307
+[0K[32;1mchange detected (content changed, file is created, or file is deleted):
+/home/travis/.cache/pip/http/0/5/1/d/d/051ddbcfada687fb27df4b43966167a67f6706da37bcbb89d2838836
+/home/travis/.cache/pip/http/0/9/1/a/c/091ac34f280c88653609dccebd2d7ab9e459bd9d68e51e05cfecb4f7
+/home/travis/.cache/pip/http/0/c/7/8/c/0c78cc5ddccddcf3238359feeac7e1cddd59216d6ded4659cf5965cd
+/home/travis/.cache/pip/http/0/e/7/b/9/0e7b99547a0247a24df2175f35e166cf96f0194417e99b4851dbf306
+/home/travis/.cache/pip/http/1/1/0/2/b/1102bed37a4d2775e39ef945780f2a6b72411e96192001fd4c3c2a86
+/home/travis/.cache/pip/http/2/6/4/0/2/26402399129bdeedb120783e3776f76dad8ce21d7b28b839c27d0413
+/home/travis/.cache/pip/http/2/7/b/0/1/27b0179c0da897387dfc3bddcb657107b50273249f66301c5b64c7c9
+/home/travis/.cache/pip/http/2/8/1/a/e/281ae28d987b1c7fc2d93673f09b218428d025641a6cf09d87d54a95
+/home/travis/.cache/pip/http/2/c/2/5/c/2c25c2076445f71d6ac4b2e94f078f4d6bd70b534235801dd004a155
+/home/travis/.cache/pip/http/3/c/7/8/a/3c78a779d50853fc4b579ccd23be4ad6fa8df81a6a295d5c0b225f09
+/home/travis/.cache/pip/http/3/e/9/7/1/3e
+[0m
+[32;1m...
+[0m
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading archive[0m
+
+travis_time:end:05492307:start=1500653695239017703,finish=1500653698487819681,duration=3248801978
+[0Ktravis_fold:end:cache.2
+[0K
+Done. Your build exited with 1.

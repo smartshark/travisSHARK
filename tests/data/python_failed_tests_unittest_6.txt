@@ -1,0 +1,3305 @@
+Using worker: worker-linux-4-1.bb.travis-ci.org:travis-linux-3
+
+travis_fold:start:git.1
+$ git clone --depth=50 git://github.com/networkx/networkx.git networkx/networkx
+Cloning into 'networkx/networkx'...
+remote: Counting objects: 3213, done.[K
+remote: Compressing objects:   0% (1/1594)   [K
+remote: Compressing objects:   1% (16/1594)   [K
+remote: Compressing objects:   2% (32/1594)   [K
+remote: Compressing objects:   3% (48/1594)   [K
+remote: Compressing objects:   4% (64/1594)   [K
+remote: Compressing objects:   5% (80/1594)   [K
+remote: Compressing objects:   6% (96/1594)   [K
+remote: Compressing objects:   7% (112/1594)   [K
+remote: Compressing objects:   8% (128/1594)   [K
+remote: Compressing objects:   9% (144/1594)   [K
+remote: Compressing objects:  10% (160/1594)   [K
+remote: Compressing objects:  11% (176/1594)   [K
+remote: Compressing objects:  12% (192/1594)   [K
+remote: Compressing objects:  13% (208/1594)   [K
+remote: Compressing objects:  14% (224/1594)   [K
+remote: Compressing objects:  15% (240/1594)   [K
+remote: Compressing objects:  16% (256/1594)   [K
+remote: Compressing objects:  17% (271/1594)   [K
+remote: Compressing objects:  18% (287/1594)   [K
+remote: Compressing objects:  19% (303/1594)   [K
+remote: Compressing objects:  20% (319/1594)   [K
+remote: Compressing objects:  21% (335/1594)   [K
+remote: Compressing objects:  22% (351/1594)   [K
+remote: Compressing objects:  23% (367/1594)   [K
+remote: Compressing objects:  24% (383/1594)   [K
+remote: Compressing objects:  25% (399/1594)   [K
+remote: Compressing objects:  26% (415/1594)   [K
+remote: Compressing objects:  27% (431/1594)   [K
+remote: Compressing objects:  28% (447/1594)   [K
+remote: Compressing objects:  29% (463/1594)   [K
+remote: Compressing objects:  30% (479/1594)   [K
+remote: Compressing objects:  31% (495/1594)   [K
+remote: Compressing objects:  32% (511/1594)   [K
+remote: Compressing objects:  33% (527/1594)   [K
+remote: Compressing objects:  34% (542/1594)   [K
+remote: Compressing objects:  35% (558/1594)   [K
+remote: Compressing objects:  36% (574/1594)   [K
+remote: Compressing objects:  37% (590/1594)   [K
+remote: Compressing objects:  38% (606/1594)   [K
+remote: Compressing objects:  39% (622/1594)   [K
+remote: Compressing objects:  40% (638/1594)   [K
+remote: Compressing objects:  41% (654/1594)   [K
+remote: Compressing objects:  42% (670/1594)   [K
+remote: Compressing objects:  43% (686/1594)   [K
+remote: Compressing objects:  44% (702/1594)   [K
+remote: Compressing objects:  45% (718/1594)   [K
+remote: Compressing objects:  46% (734/1594)   [K
+remote: Compressing objects:  47% (750/1594)   [K
+remote: Compressing objects:  48% (766/1594)   [K
+remote: Compressing objects:  49% (782/1594)   [K
+remote: Compressing objects:  50% (797/1594)   [K
+remote: Compressing objects:  51% (813/1594)   [K
+remote: Compressing objects:  52% (829/1594)   [K
+remote: Compressing objects:  53% (845/1594)   [K
+remote: Compressing objects:  54% (861/1594)   [K
+remote: Compressing objects:  55% (877/1594)   [K
+remote: Compressing objects:  56% (893/1594)   [K
+remote: Compressing objects:  57% (909/1594)   [K
+remote: Compressing objects:  58% (925/1594)   [K
+remote: Compressing objects:  59% (941/1594)   [K
+remote: Compressing objects:  60% (957/1594)   [K
+remote: Compressing objects:  61% (973/1594)   [K
+remote: Compressing objects:  62% (989/1594)   [K
+remote: Compressing objects:  63% (1005/1594)   [K
+remote: Compressing objects:  64% (1021/1594)   [K
+remote: Compressing objects:  65% (1037/1594)   [K
+remote: Compressing objects:  66% (1053/1594)   [K
+remote: Compressing objects:  67% (1068/1594)   [K
+remote: Compressing objects:  68% (1084/1594)   [K
+remote: Compressing objects:  69% (1100/1594)   [K
+remote: Compressing objects:  70% (1116/1594)   [K
+remote: Compressing objects:  71% (1132/1594)   [K
+remote: Compressing objects:  72% (1148/1594)   [K
+remote: Compressing objects:  73% (1164/1594)   [K
+remote: Compressing objects:  74% (1180/1594)   [K
+remote: Compressing objects:  75% (1196/1594)   [K
+remote: Compressing objects:  76% (1212/1594)   [K
+remote: Compressing objects:  77% (1228/1594)   [K
+remote: Compressing objects:  78% (1244/1594)   [K
+remote: Compressing objects:  79% (1260/1594)   [K
+remote: Compressing objects:  80% (1276/1594)   [K
+remote: Compressing objects:  81% (1292/1594)   [K
+remote: Compressing objects:  82% (1308/1594)   [K
+remote: Compressing objects:  83% (1324/1594)   [K
+remote: Compressing objects:  84% (1339/1594)   [K
+remote: Compressing objects:  85% (1355/1594)   [K
+remote: Compressing objects:  86% (1371/1594)   [K
+remote: Compressing objects:  87% (1387/1594)   [K
+remote: Compressing objects:  88% (1403/1594)   [K
+remote: Compressing objects:  89% (1419/1594)   [K
+remote: Compressing objects:  90% (1435/1594)   [K
+remote: Compressing objects:  91% (1451/1594)   [K
+remote: Compressing objects:  92% (1467/1594)   [K
+remote: Compressing objects:  93% (1483/1594)   [K
+remote: Compressing objects:  94% (1499/1594)   [K
+remote: Compressing objects:  95% (1515/1594)   [K
+remote: Compressing objects:  96% (1531/1594)   [K
+remote: Compressing objects:  97% (1547/1594)   [K
+remote: Compressing objects:  98% (1563/1594)   [K
+remote: Compressing objects:  99% (1579/1594)   [K
+remote: Compressing objects: 100% (1594/1594)   [K
+remote: Compressing objects: 100% (1594/1594), done.[K
+Receiving objects:   0% (1/3213)
+Receiving objects:   1% (33/3213)
+Receiving objects:   2% (65/3213)
+Receiving objects:   3% (97/3213)
+Receiving objects:   4% (129/3213)
+Receiving objects:   5% (161/3213)
+Receiving objects:   6% (193/3213)
+Receiving objects:   7% (225/3213)
+Receiving objects:   8% (258/3213)
+Receiving objects:   9% (290/3213)
+Receiving objects:  10% (322/3213)
+Receiving objects:  11% (354/3213)
+Receiving objects:  12% (386/3213)
+Receiving objects:  13% (418/3213)
+Receiving objects:  14% (450/3213)
+Receiving objects:  15% (482/3213)
+Receiving objects:  16% (515/3213)
+Receiving objects:  17% (547/3213)
+Receiving objects:  18% (579/3213)
+Receiving objects:  19% (611/3213)
+Receiving objects:  20% (643/3213)
+Receiving objects:  21% (675/3213)
+Receiving objects:  22% (707/3213)
+Receiving objects:  23% (739/3213)
+Receiving objects:  24% (772/3213)
+Receiving objects:  25% (804/3213)
+Receiving objects:  26% (836/3213)
+Receiving objects:  27% (868/3213)
+Receiving objects:  28% (900/3213)
+Receiving objects:  29% (932/3213)
+Receiving objects:  30% (964/3213)
+Receiving objects:  31% (997/3213)
+Receiving objects:  32% (1029/3213)
+Receiving objects:  33% (1061/3213)
+Receiving objects:  34% (1093/3213)
+Receiving objects:  35% (1125/3213)
+Receiving objects:  36% (1157/3213)
+Receiving objects:  37% (1189/3213)
+Receiving objects:  38% (1221/3213)
+Receiving objects:  39% (1254/3213)
+Receiving objects:  40% (1286/3213)
+Receiving objects:  41% (1318/3213)
+Receiving objects:  42% (1350/3213)
+Receiving objects:  43% (1382/3213)
+Receiving objects:  44% (1414/3213)
+Receiving objects:  45% (1446/3213)
+Receiving objects:  46% (1478/3213)
+Receiving objects:  47% (1511/3213)
+Receiving objects:  48% (1543/3213)
+Receiving objects:  49% (1575/3213)
+Receiving objects:  50% (1607/3213)
+Receiving objects:  51% (1639/3213)
+Receiving objects:  52% (1671/3213)
+Receiving objects:  53% (1703/3213)
+Receiving objects:  54% (1736/3213)
+Receiving objects:  55% (1768/3213)
+Receiving objects:  56% (1800/3213)
+Receiving objects:  57% (1832/3213)
+Receiving objects:  58% (1864/3213)
+Receiving objects:  59% (1896/3213)
+Receiving objects:  60% (1928/3213)
+Receiving objects:  61% (1960/3213)
+Receiving objects:  62% (1993/3213)
+Receiving objects:  63% (2025/3213)
+Receiving objects:  64% (2057/3213)
+Receiving objects:  65% (2089/3213)
+Receiving objects:  66% (2121/3213)
+Receiving objects:  67% (2153/3213)
+Receiving objects:  68% (2185/3213)
+Receiving objects:  69% (2217/3213)
+Receiving objects:  70% (2250/3213)
+Receiving objects:  71% (2282/3213)
+Receiving objects:  72% (2314/3213)
+Receiving objects:  73% (2346/3213)
+Receiving objects:  74% (2378/3213)
+Receiving objects:  75% (2410/3213)
+Receiving objects:  76% (2442/3213)
+Receiving objects:  77% (2475/3213)
+Receiving objects:  78% (2507/3213)
+Receiving objects:  79% (2539/3213)
+Receiving objects:  80% (2571/3213)
+Receiving objects:  81% (2603/3213)
+Receiving objects:  82% (2635/3213)
+Receiving objects:  83% (2667/3213)
+remote: Total 3213 (delta 2026), reused 2613 (delta 1602)[K
+Receiving objects:  84% (2699/3213)
+Receiving objects:  85% (2732/3213)
+Receiving objects:  86% (2764/3213)
+Receiving objects:  87% (2796/3213)
+Receiving objects:  88% (2828/3213)
+Receiving objects:  89% (2860/3213)
+Receiving objects:  90% (2892/3213)
+Receiving objects:  91% (2924/3213)
+Receiving objects:  92% (2956/3213)
+Receiving objects:  93% (2989/3213)
+Receiving objects:  94% (3021/3213)
+Receiving objects:  95% (3053/3213)
+Receiving objects:  96% (3085/3213)
+Receiving objects:  97% (3117/3213)
+Receiving objects:  98% (3149/3213)
+Receiving objects:  99% (3181/3213)
+Receiving objects: 100% (3213/3213)
+Receiving objects: 100% (3213/3213), 1.24 MiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/2026)
+Resolving deltas:   5% (113/2026)
+Resolving deltas:   8% (169/2026)
+Resolving deltas:   9% (183/2026)
+Resolving deltas:  13% (274/2026)
+Resolving deltas:  14% (289/2026)
+Resolving deltas:  15% (306/2026)
+Resolving deltas:  18% (370/2026)
+Resolving deltas:  21% (444/2026)
+Resolving deltas:  24% (500/2026)
+Resolving deltas:  25% (519/2026)
+Resolving deltas:  26% (528/2026)
+Resolving deltas:  27% (552/2026)
+Resolving deltas:  28% (585/2026)
+Resolving deltas:  29% (590/2026)
+Resolving deltas:  30% (613/2026)
+Resolving deltas:  37% (758/2026)
+Resolving deltas:  39% (797/2026)
+Resolving deltas:  50% (1013/2026)
+Resolving deltas:  51% (1044/2026)
+Resolving deltas:  53% (1075/2026)
+Resolving deltas:  56% (1135/2026)
+Resolving deltas:  59% (1197/2026)
+Resolving deltas:  61% (1244/2026)
+Resolving deltas:  62% (1261/2026)
+Resolving deltas:  63% (1288/2026)
+Resolving deltas:  64% (1297/2026)
+Resolving deltas:  65% (1322/2026)
+Resolving deltas:  67% (1359/2026)
+Resolving deltas:  68% (1381/2026)
+Resolving deltas:  69% (1402/2026)
+Resolving deltas:  70% (1426/2026)
+Resolving deltas:  71% (1440/2026)
+Resolving deltas:  72% (1461/2026)
+Resolving deltas:  73% (1480/2026)
+Resolving deltas:  74% (1501/2026)
+Resolving deltas:  75% (1523/2026)
+Resolving deltas:  76% (1542/2026)
+Resolving deltas:  77% (1562/2026)
+Resolving deltas:  78% (1581/2026)
+Resolving deltas:  79% (1601/2026)
+Resolving deltas:  80% (1624/2026)
+Resolving deltas:  81% (1647/2026)
+Resolving deltas:  82% (1662/2026)
+Resolving deltas:  83% (1683/2026)
+Resolving deltas:  84% (1705/2026)
+Resolving deltas:  85% (1724/2026)
+Resolving deltas:  86% (1743/2026)
+Resolving deltas:  87% (1767/2026)
+Resolving deltas:  88% (1784/2026)
+Resolving deltas:  89% (1805/2026)
+Resolving deltas:  90% (1828/2026)
+Resolving deltas:  91% (1844/2026)
+Resolving deltas:  92% (1870/2026)
+Resolving deltas:  94% (1907/2026)
+Resolving deltas:  95% (1931/2026)
+Resolving deltas:  96% (1945/2026)
+Resolving deltas:  97% (1970/2026)
+Resolving deltas:  98% (1990/2026)
+Resolving deltas:  99% (2006/2026)
+Resolving deltas: 100% (2026/2026)
+Resolving deltas: 100% (2026/2026), done.
+travis_fold:end:git.1
+$ cd networkx/networkx
+travis_fold:start:git.2
+$ git fetch origin +refs/pull/961/merge:
+remote: Counting objects: 12, done.[K
+remote: Compressing objects:  50% (1/2)   [K
+remote: Compressing objects: 100% (2/2)   [K
+remote: Compressing objects: 100% (2/2), done.[K
+remote: Total 7 (delta 6), reused 6 (delta 5)[K
+Unpacking objects:  14% (1/7)
+Unpacking objects:  28% (2/7)
+Unpacking objects:  42% (3/7)
+Unpacking objects:  57% (4/7)
+Unpacking objects:  71% (5/7)
+Unpacking objects:  85% (6/7)
+Unpacking objects: 100% (7/7)
+Unpacking objects: 100% (7/7), done.
+From git://github.com/networkx/networkx
+ * branch            refs/pull/961/merge -> FETCH_HEAD
+travis_fold:end:git.2
+travis_fold:start:git.3
+$ git checkout -qf FETCH_HEAD
+travis_fold:end:git.3
+$ source ~/virtualenv/pypy_with_system_site_packages/bin/activate
+$ python --version
+Python 2.7.2 (341e1e3821ff, Jun 07 2012, 15:38:48)
+[PyPy 1.9.0 with GCC 4.4.3]
+$ pip --version
+pip 1.3.1 from /home/travis/virtualenv/pypy_with_system_site_packages/site-packages/pip-1.3.1-py2.7.egg (python 2.7)
+travis_fold:start:before_install.1
+$ sudo apt-get install -qq python-numpy python-scipy
+Preconfiguring packages ...
+Selecting previously unselected package libgfortran3.
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 62342 files and directories currently installed.)
+Unpacking libgfortran3 (from .../libgfortran3_4.6.3-1ubuntu5_amd64.deb) ...
+Selecting previously unselected package libamd2.2.0.
+Unpacking libamd2.2.0 (from .../libamd2.2.0_1%3a3.4.0-2ubuntu3_amd64.deb) ...
+Selecting previously unselected package libblas3gf.
+Unpacking libblas3gf (from .../libblas3gf_1.2.20110419-2ubuntu1_amd64.deb) ...
+Selecting previously unselected package liblapack3gf.
+Unpacking liblapack3gf (from .../liblapack3gf_3.3.1-1_amd64.deb) ...
+Selecting previously unselected package libumfpack5.4.0.
+Unpacking libumfpack5.4.0 (from .../libumfpack5.4.0_1%3a3.4.0-2ubuntu3_amd64.deb) ...
+Selecting previously unselected package python-imaging.
+Unpacking python-imaging (from .../python-imaging_1.1.7-4_amd64.deb) ...
+Selecting previously unselected package python-numpy.
+Unpacking python-numpy (from .../python-numpy_1%3a1.6.1-6ubuntu1_amd64.deb) ...
+Selecting previously unselected package python-scipy.
+Unpacking python-scipy (from .../python-scipy_0.9.0+dfsg1-1ubuntu2_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up libgfortran3 (4.6.3-1ubuntu5) ...
+Setting up libamd2.2.0 (1:3.4.0-2ubuntu3) ...
+Setting up libblas3gf (1.2.20110419-2ubuntu1) ...
+update-alternatives: using /usr/lib/libblas/libblas.so.3gf to provide /usr/lib/libblas.so.3gf (libblas.so.3gf) in auto mode.
+Setting up liblapack3gf (3.3.1-1) ...
+update-alternatives: using /usr/lib/lapack/liblapack.so.3gf to provide /usr/lib/liblapack.so.3gf (liblapack.so.3gf) in auto mode.
+Setting up libumfpack5.4.0 (1:3.4.0-2ubuntu3) ...
+Setting up python-imaging (1.1.7-4) ...
+Setting up python-numpy (1:1.6.1-6ubuntu1) ...
+Setting up python-scipy (0.9.0+dfsg1-1ubuntu2) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+travis_fold:end:before_install.1
+travis_fold:start:before_install.2
+$ sudo apt-get install -qq python3-numpy python3-scipy
+Selecting previously unselected package python3-minimal.
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 65471 files and directories currently installed.)
+Unpacking python3-minimal (from .../python3-minimal_3.2.3-0ubuntu1.2_amd64.deb) ...
+Selecting previously unselected package python3.
+Unpacking python3 (from .../python3_3.2.3-0ubuntu1.2_amd64.deb) ...
+Selecting previously unselected package python3-numpy.
+Unpacking python3-numpy (from .../python3-numpy_1%3a1.6.1-6ubuntu1_amd64.deb) ...
+Selecting previously unselected package python3-scipy.
+Unpacking python3-scipy (from .../python3-scipy_0.9.0+dfsg1-1ubuntu2_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up python3-minimal (3.2.3-0ubuntu1.2) ...
+Setting up python3 (3.2.3-0ubuntu1.2) ...
+Setting up python3-numpy (1:1.6.1-6ubuntu1) ...
+Setting up python3-scipy (0.9.0+dfsg1-1ubuntu2) ...
+travis_fold:end:before_install.2
+travis_fold:start:before_install.3
+$ sudo apt-get install -qq python-pygraphviz
+Selecting previously unselected package fonts-liberation.
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 66690 files and directories currently installed.)
+Unpacking fonts-liberation (from .../fonts-liberation_1.07.0-2ubuntu0.1_all.deb) ...
+Selecting previously unselected package graphviz.
+Unpacking graphviz (from .../graphviz_2.26.3-10ubuntu1_amd64.deb) ...
+Selecting previously unselected package python-support.
+Unpacking python-support (from .../python-support_1.0.14ubuntu2_all.deb) ...
+Selecting previously unselected package python-pygraphviz.
+Unpacking python-pygraphviz (from .../python-pygraphviz_1.1-1_amd64.deb) ...
+Selecting previously unselected package ttf-liberation.
+Unpacking ttf-liberation (from .../ttf-liberation_1.07.0-2ubuntu0.1_all.deb) ...
+Processing triggers for fontconfig ...
+Processing triggers for man-db ...
+Setting up fonts-liberation (1.07.0-2ubuntu0.1) ...
+Setting up graphviz (2.26.3-10ubuntu1) ...
+Setting up python-support (1.0.14ubuntu2) ...
+Setting up python-pygraphviz (1.1-1) ...
+Setting up ttf-liberation (1.07.0-2ubuntu0.1) ...
+Processing triggers for python-support ...
+travis_fold:end:before_install.3
+travis_fold:start:before_install.4
+$ sudo apt-get install python-matplotlib
+
+Reading package lists... 0%
+
+Reading package lists... 100%
+
+Reading package lists... Done
+
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+
+Building dependency tree
+
+
+Reading state information... 0%
+
+Reading state information... 0%
+
+Reading state information... Done
+
+The following extra packages will be installed:
+  blt libglade2-0 libutempter0 python-cairo python-dateutil python-gi
+  python-glade2 python-gobject python-gobject-2 python-gtk2
+  python-matplotlib-data python-pyparsing python-tk python-tz tcl8.5 tk8.5
+  ttf-lyx xbitmaps xterm
+Suggested packages:
+  blt-demo python-gi-cairo python-gtk2-doc python-gobject-2-dbg dvipng ipython
+  python-excelerator python-matplotlib-doc python-qt3 python-qt4 python-traits
+  python-wxgtk2.8 texlive-extra-utils texlive-latex-extra tix python-tk-dbg
+  tclreadline xfonts-cyrillic
+The following NEW packages will be installed:
+  blt libglade2-0 libutempter0 python-cairo python-dateutil python-gi
+  python-glade2 python-gobject python-gobject-2 python-gtk2 python-matplotlib
+  python-matplotlib-data python-pyparsing python-tk python-tz tcl8.5 tk8.5
+  ttf-lyx xbitmaps xterm
+0 upgraded, 20 newly installed, 0 to remove and 0 not upgraded.
+Need to get 10.5 MB of archives.
+After this operation, 35.5 MB of additional disk space will be used.
+
+
+0% [Working]
+
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libglade2-0 amd64 1:2.6.4-1ubuntu1.1 [53.0 kB]
+
+
+0% [1 libglade2-0 14.0 kB/53.0 kB 26%]
+
+1% [Working]
+
+Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/universe ttf-lyx all 2.0.2-1ubuntu2 [151 kB]
+
+
+1% [2 ttf-lyx 11.9 kB/151 kB 8%]
+
+Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python-gi amd64 3.2.2-1~precise [222 kB]
+
+
+2% [3 python-gi 16.7 kB/222 kB 8%]
+
+4% [Working]
+
+Get:4 http://us.archive.ubuntu.com/ubuntu/ precise/main tcl8.5 amd64 8.5.11-1ubuntu1 [1,098 kB]
+
+
+4% [4 tcl8.5 16.4 kB/1,098 kB 1%]
+
+15% [Working]
+
+Get:5 http://us.archive.ubuntu.com/ubuntu/ precise/main tk8.5 amd64 8.5.11-1 [1,003 kB]
+
+
+15% [5 tk8.5 4,096 B/1,003 kB 0%]
+
+24% [Working]
+
+Get:6 http://us.archive.ubuntu.com/ubuntu/ precise/main blt amd64 2.4z-4.2ubuntu1 [1,717 kB]
+
+
+24% [6 blt 28.2 kB/1,717 kB 2%]
+
+40% [Working]
+
+Get:7 http://us.archive.ubuntu.com/ubuntu/ precise/main libutempter0 amd64 1.1.5-4 [8,060 B]
+
+
+41% [7 libutempter0 8,060 B/8,060 B 100%]
+
+41% [Working]
+
+Get:8 http://us.archive.ubuntu.com/ubuntu/ precise/main python-cairo amd64 1.8.8-1ubuntu3 [50.7 kB]
+
+
+41% [8 python-cairo 0 B/50.7 kB 0%]
+
+41% [Working]
+
+Get:9 http://us.archive.ubuntu.com/ubuntu/ precise/main python-dateutil all 1.5-1 [54.2 kB]
+
+
+41% [9 python-dateutil 0 B/54.2 kB 0%]
+
+42% [Working]
+
+Get:10 http://us.archive.ubuntu.com/ubuntu/ precise/main python-gobject-2 amd64 2.28.6-10ubuntu1 [240 kB]
+
+
+42% [10 python-gobject-2 0 B/240 kB 0%]
+
+44% [Working]
+
+Get:11 http://us.archive.ubuntu.com/ubuntu/ precise/main python-gtk2 amd64 2.24.0-3 [894 kB]
+
+
+44% [11 python-gtk2 0 B/894 kB 0%]
+
+52% [Working]
+
+Get:12 http://us.archive.ubuntu.com/ubuntu/ precise/main python-glade2 amd64 2.24.0-3 [10.3 kB]
+
+
+52% [12 python-glade2 0 B/10.3 kB 0%]
+
+52% [Working]
+
+Get:13 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python-gobject all 3.2.2-1~precise [2,468 B]
+
+
+52% [13 python-gobject 0 B/2,468 B 0%]
+
+52% [Working]
+
+Get:14 http://us.archive.ubuntu.com/ubuntu/ precise/universe python-matplotlib-data all 1.1.1~rc1+git20120423-0ubuntu1 [1,945 kB]
+
+
+52% [14 python-matplotlib-data 0 B/1,945 kB 0%]
+
+71% [Working]
+
+Get:15 http://us.archive.ubuntu.com/ubuntu/ precise/universe python-pyparsing all 1.5.2-2ubuntu1 [586 kB]
+
+
+71% [15 python-pyparsing 13.3 kB/586 kB 2%]
+
+77% [Working]
+
+Get:16 http://us.archive.ubuntu.com/ubuntu/ precise/main python-tz all 2011k-0ubuntu5 [44.9 kB]
+
+
+77% [16 python-tz 0 B/44.9 kB 0%]
+
+77% [Working]
+
+Get:17 http://us.archive.ubuntu.com/ubuntu/ precise/universe python-matplotlib amd64 1.1.1~rc1+git20120423-0ubuntu1 [1,787 kB]
+
+
+77% [17 python-matplotlib 0 B/1,787 kB 0%]
+
+94% [Working]
+
+Get:18 http://us.archive.ubuntu.com/ubuntu/ precise/main python-tk amd64 2.7.3-1ubuntu1 [28.3 kB]
+
+
+94% [18 python-tk 4,096 B/28.3 kB 14%]
+
+94% [Working]
+
+Get:19 http://us.archive.ubuntu.com/ubuntu/ precise/main xbitmaps all 1.1.1-1 [27.5 kB]
+
+
+94% [19 xbitmaps 12.3 kB/27.5 kB 45%]
+
+95% [Working]
+
+Get:20 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main xterm amd64 271-1ubuntu2.1 [565 kB]
+
+
+95% [20 xterm 0 B/565 kB 0%]
+
+100% [Working]
+
+Fetched 10.5 MB in 0s (14.8 MB/s)
+Selecting previously unselected package libglade2-0.
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 66861 files and directories currently installed.)
+Unpacking libglade2-0 (from .../libglade2-0_1%3a2.6.4-1ubuntu1.1_amd64.deb) ...
+Selecting previously unselected package ttf-lyx.
+Unpacking ttf-lyx (from .../ttf-lyx_2.0.2-1ubuntu2_all.deb) ...
+Selecting previously unselected package python-gi.
+Unpacking python-gi (from .../python-gi_3.2.2-1~precise_amd64.deb) ...
+Selecting previously unselected package tcl8.5.
+Unpacking tcl8.5 (from .../tcl8.5_8.5.11-1ubuntu1_amd64.deb) ...
+Selecting previously unselected package tk8.5.
+Unpacking tk8.5 (from .../tk8.5_8.5.11-1_amd64.deb) ...
+Selecting previously unselected package blt.
+Unpacking blt (from .../blt_2.4z-4.2ubuntu1_amd64.deb) ...
+Selecting previously unselected package libutempter0.
+Unpacking libutempter0 (from .../libutempter0_1.1.5-4_amd64.deb) ...
+Selecting previously unselected package python-cairo.
+Unpacking python-cairo (from .../python-cairo_1.8.8-1ubuntu3_amd64.deb) ...
+Selecting previously unselected package python-dateutil.
+Unpacking python-dateutil (from .../python-dateutil_1.5-1_all.deb) ...
+Selecting previously unselected package python-gobject-2.
+Unpacking python-gobject-2 (from .../python-gobject-2_2.28.6-10ubuntu1_amd64.deb) ...
+Selecting previously unselected package python-gtk2.
+Unpacking python-gtk2 (from .../python-gtk2_2.24.0-3_amd64.deb) ...
+Selecting previously unselected package python-glade2.
+Unpacking python-glade2 (from .../python-glade2_2.24.0-3_amd64.deb) ...
+Selecting previously unselected package python-gobject.
+Unpacking python-gobject (from .../python-gobject_3.2.2-1~precise_all.deb) ...
+Selecting previously unselected package python-matplotlib-data.
+Unpacking python-matplotlib-data (from .../python-matplotlib-data_1.1.1~rc1+git20120423-0ubuntu1_all.deb) ...
+Selecting previously unselected package python-pyparsing.
+Unpacking python-pyparsing (from .../python-pyparsing_1.5.2-2ubuntu1_all.deb) ...
+Selecting previously unselected package python-tz.
+Unpacking python-tz (from .../python-tz_2011k-0ubuntu5_all.deb) ...
+Selecting previously unselected package python-matplotlib.
+Unpacking python-matplotlib (from .../python-matplotlib_1.1.1~rc1+git20120423-0ubuntu1_amd64.deb) ...
+Selecting previously unselected package python-tk.
+Unpacking python-tk (from .../python-tk_2.7.3-1ubuntu1_amd64.deb) ...
+Selecting previously unselected package xbitmaps.
+Unpacking xbitmaps (from .../xbitmaps_1.1.1-1_all.deb) ...
+Selecting previously unselected package xterm.
+Unpacking xterm (from .../xterm_271-1ubuntu2.1_amd64.deb) ...
+Processing triggers for fontconfig ...
+Processing triggers for man-db ...
+Setting up libglade2-0 (1:2.6.4-1ubuntu1.1) ...
+Setting up ttf-lyx (2.0.2-1ubuntu2) ...
+Setting up python-gi (3.2.2-1~precise) ...
+Setting up tcl8.5 (8.5.11-1ubuntu1) ...
+update-alternatives: using /usr/bin/tclsh8.5 to provide /usr/bin/tclsh (tclsh) in auto mode.
+Setting up tk8.5 (8.5.11-1) ...
+update-alternatives: using /usr/bin/wish8.5 to provide /usr/bin/wish (wish) in auto mode.
+Setting up blt (2.4z-4.2ubuntu1) ...
+Setting up libutempter0 (1.1.5-4) ...
+Creating utempter group...
+Setting up python-cairo (1.8.8-1ubuntu3) ...
+Setting up python-dateutil (1.5-1) ...
+Setting up python-gobject-2 (2.28.6-10ubuntu1) ...
+Setting up python-gtk2 (2.24.0-3) ...
+Setting up python-glade2 (2.24.0-3) ...
+Setting up python-gobject (3.2.2-1~precise) ...
+Setting up python-matplotlib-data (1.1.1~rc1+git20120423-0ubuntu1) ...
+Setting up python-pyparsing (1.5.2-2ubuntu1) ...
+Setting up python-tz (2011k-0ubuntu5) ...
+Setting up python-matplotlib (1.1.1~rc1+git20120423-0ubuntu1) ...
+Setting up python-tk (2.7.3-1ubuntu1) ...
+Setting up xbitmaps (1.1.1-1) ...
+Setting up xterm (271-1ubuntu2.1) ...
+update-alternatives: using /usr/bin/xterm to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode.
+update-alternatives: using /usr/bin/uxterm to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode.
+update-alternatives: using /usr/bin/lxterm to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode.
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+Processing triggers for python-support ...
+travis_fold:end:before_install.4
+travis_fold:start:before_install.5
+$ sudo apt-get install python-pydot
+
+Reading package lists... 0%
+
+Reading package lists... 100%
+
+Reading package lists... Done
+
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+
+Building dependency tree
+
+
+Reading state information... 0%
+
+Reading state information... 0%
+
+Reading state information... 0%
+
+Reading state information... Done
+
+The following NEW packages will be installed:
+  python-pydot
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 19.4 kB of archives.
+After this operation, 135 kB of additional disk space will be used.
+
+
+0% [Working]
+
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/universe python-pydot all 1.0.2-1 [19.4 kB]
+
+
+72% [1 python-pydot 14.0 kB/19.4 kB 72%]
+
+100% [Working]
+
+Fetched 19.4 kB in 0s (382 kB/s)
+Selecting previously unselected package python-pydot.
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 68323 files and directories currently installed.)
+Unpacking python-pydot (from .../python-pydot_1.0.2-1_all.deb) ...
+Setting up python-pydot (1.0.2-1) ...
+Processing triggers for python-support ...
+travis_fold:end:before_install.5
+travis_fold:start:before_install.6
+$ sudo apt-get install python-gdal
+
+Reading package lists... 0%
+
+Reading package lists... 100%
+
+Reading package lists... Done
+
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+
+Building dependency tree
+
+
+Reading state information... 0%
+
+Reading state information... 0%
+
+Reading state information... Done
+
+The following extra packages will be installed:
+  libdap11 libdapclient3 libepsilon0 libfreexl1 libgdal1-1.7.0 libgeos-3.2.2
+  libgeos-c1 libgif4 libhdf4-0-alt libhdf5-serial-1.8.4 libnetcdf6 libogdi3.2
+  libproj0 libspatialite3 libxerces-c28 odbcinst odbcinst1debian2 proj-bin
+  proj-data python-central
+Suggested packages:
+  libhdf4-doc libhdf4-alt-dev hdf4-tools libnetcdf4 ogdi-bin
+The following NEW packages will be installed:
+  libdap11 libdapclient3 libepsilon0 libfreexl1 libgdal1-1.7.0 libgeos-3.2.2
+  libgeos-c1 libgif4 libhdf4-0-alt libhdf5-serial-1.8.4 libnetcdf6 libogdi3.2
+  libproj0 libspatialite3 libxerces-c28 odbcinst odbcinst1debian2 proj-bin
+  proj-data python-central python-gdal
+0 upgraded, 21 newly installed, 0 to remove and 0 not upgraded.
+Need to get 12.6 MB of archives.
+After this operation, 36.4 MB of additional disk space will be used.
+
+
+0% [Working]
+
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/universe libdap11 amd64 3.11.1-10 [359 kB]
+
+
+0% [1 libdap11 14.0 kB/359 kB 4%]
+
+3% [Working]
+
+Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/universe libdapclient3 amd64 3.11.1-10 [93.0 kB]
+
+
+3% [2 libdapclient3 33.6 kB/93.0 kB 36%]
+
+4% [Working]
+
+Get:3 http://us.archive.ubuntu.com/ubuntu/ precise/main libgif4 amd64 4.1.6-9ubuntu1 [31.0 kB]
+
+
+4% [3 libgif4 0 B/31.0 kB 0%]
+
+4% [Working]
+
+Get:4 http://us.archive.ubuntu.com/ubuntu/ precise/main odbcinst amd64 2.2.14p2-5ubuntu3 [13.7 kB]
+
+
+4% [4 odbcinst 13.7 kB/13.7 kB 100%]
+
+4% [Working]
+
+Get:5 http://us.archive.ubuntu.com/ubuntu/ precise/main odbcinst1debian2 amd64 2.2.14p2-5ubuntu3 [49.5 kB]
+
+
+4% [5 odbcinst1debian2 26.0 kB/49.5 kB 52%]
+
+4% [Working]
+
+Get:6 http://us.archive.ubuntu.com/ubuntu/ precise/universe libfreexl1 amd64 0.0.2~beta20110817-1 [18.3 kB]
+
+
+4% [6 libfreexl1 0 B/18.3 kB 0%]
+
+4% [Working]
+
+Get:7 http://us.archive.ubuntu.com/ubuntu/ precise/universe libgeos-3.2.2 amd64 3.2.2-3ubuntu1 [474 kB]
+
+
+5% [7 libgeos-3.2.2 23.1 kB/474 kB 5%]
+
+8% [Working]
+
+Get:8 http://us.archive.ubuntu.com/ubuntu/ precise/universe libgeos-c1 amd64 3.2.2-3ubuntu1 [41.6 kB]
+
+
+8% [8 libgeos-c1 6,098 B/41.6 kB 15%]
+
+9% [Working]
+
+Get:9 http://us.archive.ubuntu.com/ubuntu/ precise/universe libhdf5-serial-1.8.4 amd64 1.8.4-patch1-3ubuntu2 [1,408 kB]
+
+
+9% [9 libhdf5-serial-1.8.4 31.6 kB/1,408 kB 2%]
+
+20% [Working]
+
+Get:10 http://us.archive.ubuntu.com/ubuntu/ precise/universe libnetcdf6 amd64 1:4.1.1-6 [481 kB]
+
+
+20% [10 libnetcdf6 9,300 B/481 kB 2%]
+
+24% [Working]
+
+Get:11 http://us.archive.ubuntu.com/ubuntu/ precise-updates/universe python-central all 0.6.17ubuntu2 [41.4 kB]
+
+
+24% [11 python-central 32.8 kB/41.4 kB 79%]
+
+24% [Working]
+
+Get:12 http://us.archive.ubuntu.com/ubuntu/ precise/universe libepsilon0 amd64 0.9.1-2build1 [45.6 kB]
+
+
+24% [12 libepsilon0 564 B/45.6 kB 1%]
+
+24% [Working]
+
+Get:13 http://us.archive.ubuntu.com/ubuntu/ precise/universe libhdf4-0-alt amd64 4.2r4-12build1 [300 kB]
+
+
+24% [13 libhdf4-0-alt 0 B/300 kB 0%]
+
+27% [Working]
+
+Get:14 http://us.archive.ubuntu.com/ubuntu/ precise/universe proj-data amd64 4.7.0-1 [2,932 kB]
+
+
+27% [14 proj-data 28.7 kB/2,932 kB 1%]
+
+50% [Working]
+
+Get:15 http://us.archive.ubuntu.com/ubuntu/ precise/universe libproj0 amd64 4.7.0-1 [137 kB]
+
+
+50% [15 libproj0 20.5 kB/137 kB 15%]
+
+51% [Working]
+
+Get:16 http://us.archive.ubuntu.com/ubuntu/ precise/universe libogdi3.2 amd64 3.2.0~beta2-7build1 [262 kB]
+
+
+51% [16 libogdi3.2 0 B/262 kB 0%]
+
+53% [Working]
+
+Get:17 http://us.archive.ubuntu.com/ubuntu/ precise/universe libspatialite3 amd64 3.0.0~beta20110817-3 [879 kB]
+
+
+53% [17 libspatialite3 12.3 kB/879 kB 1%]
+
+60% [Working]
+
+Get:18 http://us.archive.ubuntu.com/ubuntu/ precise/universe libxerces-c28 amd64 2.8.0+deb1-2build3 [1,290 kB]
+
+
+60% [18 libxerces-c28 0 B/1,290 kB 0%]
+
+71% [Working]
+
+Get:19 http://us.archive.ubuntu.com/ubuntu/ precise/universe libgdal1-1.7.0 amd64 1.7.3-6ubuntu3 [3,304 kB]
+
+
+71% [19 libgdal1-1.7.0 0 B/3,304 kB 0%]
+
+97% [Working]
+
+Get:20 http://us.archive.ubuntu.com/ubuntu/ precise/universe python-gdal amd64 1.7.3-6ubuntu3 [332 kB]
+
+
+97% [20 python-gdal 0 B/332 kB 0%]
+
+100% [Working]
+
+Get:21 http://us.archive.ubuntu.com/ubuntu/ precise/universe proj-bin amd64 4.7.0-1 [60.3 kB]
+
+
+100% [21 proj-bin 16.4 kB/60.3 kB 27%]
+
+100% [Working]
+
+Fetched 12.6 MB in 0s (15.3 MB/s)
+Selecting previously unselected package libdap11.
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 68332 files and directories currently installed.)
+Unpacking libdap11 (from .../libdap11_3.11.1-10_amd64.deb) ...
+Selecting previously unselected package libdapclient3.
+Unpacking libdapclient3 (from .../libdapclient3_3.11.1-10_amd64.deb) ...
+Selecting previously unselected package libgif4.
+Unpacking libgif4 (from .../libgif4_4.1.6-9ubuntu1_amd64.deb) ...
+Selecting previously unselected package odbcinst.
+Unpacking odbcinst (from .../odbcinst_2.2.14p2-5ubuntu3_amd64.deb) ...
+Selecting previously unselected package odbcinst1debian2.
+Unpacking odbcinst1debian2 (from .../odbcinst1debian2_2.2.14p2-5ubuntu3_amd64.deb) ...
+Selecting previously unselected package libfreexl1.
+Unpacking libfreexl1 (from .../libfreexl1_0.0.2~beta20110817-1_amd64.deb) ...
+Selecting previously unselected package libgeos-3.2.2.
+Unpacking libgeos-3.2.2 (from .../libgeos-3.2.2_3.2.2-3ubuntu1_amd64.deb) ...
+Selecting previously unselected package libgeos-c1.
+Unpacking libgeos-c1 (from .../libgeos-c1_3.2.2-3ubuntu1_amd64.deb) ...
+Selecting previously unselected package libhdf5-serial-1.8.4.
+Unpacking libhdf5-serial-1.8.4 (from .../libhdf5-serial-1.8.4_1.8.4-patch1-3ubuntu2_amd64.deb) ...
+Selecting previously unselected package libnetcdf6.
+Unpacking libnetcdf6 (from .../libnetcdf6_1%3a4.1.1-6_amd64.deb) ...
+Selecting previously unselected package python-central.
+Unpacking python-central (from .../python-central_0.6.17ubuntu2_all.deb) ...
+Selecting previously unselected package libepsilon0.
+Unpacking libepsilon0 (from .../libepsilon0_0.9.1-2build1_amd64.deb) ...
+Selecting previously unselected package libhdf4-0-alt.
+Unpacking libhdf4-0-alt (from .../libhdf4-0-alt_4.2r4-12build1_amd64.deb) ...
+Selecting previously unselected package proj-data.
+Unpacking proj-data (from .../proj-data_4.7.0-1_amd64.deb) ...
+Selecting previously unselected package libproj0.
+Unpacking libproj0 (from .../libproj0_4.7.0-1_amd64.deb) ...
+Selecting previously unselected package libogdi3.2.
+Unpacking libogdi3.2 (from .../libogdi3.2_3.2.0~beta2-7build1_amd64.deb) ...
+Selecting previously unselected package libspatialite3.
+Unpacking libspatialite3 (from .../libspatialite3_3.0.0~beta20110817-3_amd64.deb) ...
+Selecting previously unselected package libxerces-c28.
+Unpacking libxerces-c28 (from .../libxerces-c28_2.8.0+deb1-2build3_amd64.deb) ...
+Selecting previously unselected package libgdal1-1.7.0.
+Unpacking libgdal1-1.7.0 (from .../libgdal1-1.7.0_1.7.3-6ubuntu3_amd64.deb) ...
+Selecting previously unselected package python-gdal.
+Unpacking python-gdal (from .../python-gdal_1.7.3-6ubuntu3_amd64.deb) ...
+Selecting previously unselected package proj-bin.
+Unpacking proj-bin (from .../proj-bin_4.7.0-1_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up libdap11 (3.11.1-10) ...
+Setting up libdapclient3 (3.11.1-10) ...
+Setting up libgif4 (4.1.6-9ubuntu1) ...
+Setting up libfreexl1 (0.0.2~beta20110817-1) ...
+Setting up libgeos-3.2.2 (3.2.2-3ubuntu1) ...
+Setting up libgeos-c1 (3.2.2-3ubuntu1) ...
+Setting up libhdf5-serial-1.8.4 (1.8.4-patch1-3ubuntu2) ...
+Setting up libnetcdf6 (1:4.1.1-6) ...
+Setting up python-central (0.6.17ubuntu2) ...
+Setting up libepsilon0 (0.9.1-2build1) ...
+Setting up libhdf4-0-alt (4.2r4-12build1) ...
+Setting up proj-data (4.7.0-1) ...
+Setting up libproj0 (4.7.0-1) ...
+Setting up libogdi3.2 (3.2.0~beta2-7build1) ...
+Setting up libspatialite3 (3.0.0~beta20110817-3) ...
+Setting up libxerces-c28 (2.8.0+deb1-2build3) ...
+Setting up proj-bin (4.7.0-1) ...
+Setting up odbcinst1debian2 (2.2.14p2-5ubuntu3) ...
+Setting up libgdal1-1.7.0 (1.7.3-6ubuntu3) ...
+Setting up python-gdal (1.7.3-6ubuntu3) ...
+Setting up odbcinst (2.2.14p2-5ubuntu3) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+Processing triggers for python-central ...
+travis_fold:end:before_install.6
+travis_fold:start:before_install.7
+$ pip install pyyaml --use-mirrors
+Downloading/unpacking pyyaml
+  Downloading PyYAML-3.10.tar.gz (241kB):
+  Downloading PyYAML-3.10.tar.gz (241kB):   1%  4.1kB
+  Downloading PyYAML-3.10.tar.gz (241kB):   3%  8.2kB
+  Downloading PyYAML-3.10.tar.gz (241kB):   5%  12kB
+  Downloading PyYAML-3.10.tar.gz (241kB):   6%  16kB
+  Downloading PyYAML-3.10.tar.gz (241kB):   8%  20kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  10%  24kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  11%  28kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  13%  32kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  15%  36kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  16%  40kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  18%  45kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  20%  49kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  22%  53kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  23%  57kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  25%  61kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  27%  65kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  28%  69kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  30%  73kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  32%  77kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  33%  81kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  35%  86kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  37%  90kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  39%  94kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  40%  98kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  42%  102kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  44%  106kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  45%  110kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  47%  114kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  49%  118kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  50%  122kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  52%  126kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  54%  131kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  55%  135kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  57%  139kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  59%  143kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  61%  147kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  62%  151kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  64%  155kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  66%  159kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  67%  163kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  69%  167kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  71%  172kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  72%  176kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  74%  180kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  76%  184kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  78%  188kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  79%  192kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  81%  196kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  83%  200kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  84%  204kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  86%  208kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  88%  212kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  89%  217kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  91%  221kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  93%  225kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  94%  229kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  96%  233kB
+  Downloading PyYAML-3.10.tar.gz (241kB):  98%  237kB
+  Downloading PyYAML-3.10.tar.gz (241kB): 100%  241kB
+  Downloading PyYAML-3.10.tar.gz (241kB):
+  Downloading PyYAML-3.10.tar.gz (241kB): 241kB downloaded
+  Running setup.py egg_info for package pyyaml
+
+Installing collected packages: pyyaml
+  Running setup.py install for pyyaml
+
+Successfully installed pyyaml
+Cleaning up...
+travis_fold:end:before_install.7
+travis_fold:start:before_install.8
+$ pip install pyparsing --use-mirrors
+Downloading/unpacking pyparsing
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   0%  4.1kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   0%  8.2kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   1%  12kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   1%  16kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   1%  20kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   2%  24kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   2%  28kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   2%  32kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   3%  36kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   3%  40kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   3%  45kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   4%  49kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   4%  53kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   5%  57kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   5%  61kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   5%  65kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   6%  69kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   6%  73kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   6%  77kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   7%  81kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   7%  86kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   7%  90kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   8%  94kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   8%  98kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   9%  102kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   9%  106kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):   9%  110kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  10%  114kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  10%  118kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  10%  122kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  11%  126kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  11%  131kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  11%  135kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  12%  139kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  12%  143kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  13%  147kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  13%  151kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  13%  155kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  14%  159kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  14%  163kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  14%  167kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  15%  172kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  15%  176kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  15%  180kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  16%  184kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  16%  188kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  17%  192kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  17%  196kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  17%  200kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  18%  204kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  18%  208kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  18%  212kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  19%  217kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  19%  221kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  19%  225kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  20%  229kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  20%  233kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  21%  237kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  21%  241kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  21%  245kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  22%  249kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  22%  253kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  22%  258kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  23%  262kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  23%  266kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  23%  270kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  24%  274kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  24%  278kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  25%  282kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  25%  286kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  25%  290kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  26%  294kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  26%  299kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  26%  303kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  27%  307kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  27%  311kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  27%  315kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  28%  319kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  28%  323kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  29%  327kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  29%  331kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  29%  335kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  30%  339kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  30%  344kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  30%  348kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  31%  352kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  31%  356kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  31%  360kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  32%  364kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  32%  368kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  32%  372kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  33%  376kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  33%  380kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  34%  385kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  34%  389kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  34%  393kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  35%  397kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  35%  401kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  35%  405kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  36%  409kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  36%  413kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  36%  417kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  37%  421kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  37%  425kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  38%  430kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  38%  434kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  38%  438kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  39%  442kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  39%  446kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  39%  450kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  40%  454kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  40%  458kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  40%  462kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  41%  466kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  41%  471kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  42%  475kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  42%  479kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  42%  483kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  43%  487kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  43%  491kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  43%  495kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  44%  499kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  44%  503kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  44%  507kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  45%  512kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  45%  516kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  46%  520kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  46%  524kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  46%  528kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  47%  532kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  47%  536kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  47%  540kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  48%  544kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  48%  548kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  48%  552kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  49%  557kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  49%  561kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  50%  565kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  50%  569kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  50%  573kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  51%  577kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  51%  581kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  51%  585kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  52%  589kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  52%  593kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  52%  598kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  53%  602kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  53%  606kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  54%  610kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  54%  614kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  54%  618kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  55%  622kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  55%  626kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  55%  630kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  56%  634kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  56%  638kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  56%  643kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  57%  647kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  57%  651kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  58%  655kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  58%  659kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  58%  663kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  59%  667kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  59%  671kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  59%  675kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  60%  679kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  60%  684kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  60%  688kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  61%  692kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  61%  696kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  62%  700kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  62%  704kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  62%  708kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  63%  712kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  63%  716kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  63%  720kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  64%  724kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  64%  729kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  64%  733kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  65%  737kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  65%  741kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  65%  745kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  66%  749kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  66%  753kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  67%  757kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  67%  761kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  67%  765kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  68%  770kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  68%  774kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  68%  778kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  69%  782kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  69%  786kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  69%  790kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  70%  794kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  70%  798kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  71%  802kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  71%  806kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  71%  811kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  72%  815kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  72%  819kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  72%  823kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  73%  827kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  73%  831kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  73%  835kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  74%  839kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  74%  843kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  75%  847kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  75%  851kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  75%  856kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  76%  860kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  76%  864kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  76%  868kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  77%  872kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  77%  876kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  77%  880kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  78%  884kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  78%  888kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  79%  892kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  79%  897kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  79%  901kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  80%  905kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  80%  909kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  80%  913kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  81%  917kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  81%  921kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  81%  925kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  82%  929kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  82%  933kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  83%  937kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  83%  942kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  83%  946kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  84%  950kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  84%  954kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  84%  958kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  85%  962kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  85%  966kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  85%  970kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  86%  974kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  86%  978kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  87%  983kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  87%  987kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  87%  991kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  88%  995kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  88%  999kB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  88%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  89%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  89%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  89%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  90%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  90%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  91%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  91%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  91%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  92%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  92%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  92%  1.0MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  93%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  93%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  93%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  94%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  94%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  95%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  95%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  95%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  96%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  96%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  96%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  97%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  97%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  97%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  98%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  98%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  98%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  99%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):  99%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB): 100%  1.1MB
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB):
+  Downloading pyparsing-2.0.1.tar.gz (1.1MB): 1.1MB downloaded
+  Running setup.py egg_info for package pyparsing
+
+Installing collected packages: pyparsing
+  Running setup.py install for pyparsing
+
+Successfully installed pyparsing
+Cleaning up...
+travis_fold:end:before_install.8
+travis_fold:start:before_install.9
+$ pip install coveralls --use-mirrors
+Downloading/unpacking coveralls
+  Downloading coveralls-0.2.zip
+  Running setup.py egg_info for package coveralls
+
+Requirement already satisfied (use --upgrade to upgrade): PyYAML>=3.10 in /home/travis/virtualenv/pypy_with_system_site_packages/site-packages (from coveralls)
+Downloading/unpacking docopt>=0.6.1 (from coveralls)
+  Downloading docopt-0.6.1.tar.gz
+  Running setup.py egg_info for package docopt
+
+Downloading/unpacking coverage>=3.6 (from coveralls)
+  Downloading coverage-3.6.tar.gz (232kB):
+  Downloading coverage-3.6.tar.gz (232kB):   1%  4.1kB
+  Downloading coverage-3.6.tar.gz (232kB):   3%  8.2kB
+  Downloading coverage-3.6.tar.gz (232kB):   5%  12kB
+  Downloading coverage-3.6.tar.gz (232kB):   7%  16kB
+  Downloading coverage-3.6.tar.gz (232kB):   8%  20kB
+  Downloading coverage-3.6.tar.gz (232kB):  10%  24kB
+  Downloading coverage-3.6.tar.gz (232kB):  12%  28kB
+  Downloading coverage-3.6.tar.gz (232kB):  14%  32kB
+  Downloading coverage-3.6.tar.gz (232kB):  15%  36kB
+  Downloading coverage-3.6.tar.gz (232kB):  17%  40kB
+  Downloading coverage-3.6.tar.gz (232kB):  19%  45kB
+  Downloading coverage-3.6.tar.gz (232kB):  21%  49kB
+  Downloading coverage-3.6.tar.gz (232kB):  22%  53kB
+  Downloading coverage-3.6.tar.gz (232kB):  24%  57kB
+  Downloading coverage-3.6.tar.gz (232kB):  26%  61kB
+  Downloading coverage-3.6.tar.gz (232kB):  28%  65kB
+  Downloading coverage-3.6.tar.gz (232kB):  30%  69kB
+  Downloading coverage-3.6.tar.gz (232kB):  31%  73kB
+  Downloading coverage-3.6.tar.gz (232kB):  33%  77kB
+  Downloading coverage-3.6.tar.gz (232kB):  35%  81kB
+  Downloading coverage-3.6.tar.gz (232kB):  37%  86kB
+  Downloading coverage-3.6.tar.gz (232kB):  38%  90kB
+  Downloading coverage-3.6.tar.gz (232kB):  40%  94kB
+  Downloading coverage-3.6.tar.gz (232kB):  42%  98kB
+  Downloading coverage-3.6.tar.gz (232kB):  44%  102kB
+  Downloading coverage-3.6.tar.gz (232kB):  45%  106kB
+  Downloading coverage-3.6.tar.gz (232kB):  47%  110kB
+  Downloading coverage-3.6.tar.gz (232kB):  49%  114kB
+  Downloading coverage-3.6.tar.gz (232kB):  51%  118kB
+  Downloading coverage-3.6.tar.gz (232kB):  52%  122kB
+  Downloading coverage-3.6.tar.gz (232kB):  54%  126kB
+  Downloading coverage-3.6.tar.gz (232kB):  56%  131kB
+  Downloading coverage-3.6.tar.gz (232kB):  58%  135kB
+  Downloading coverage-3.6.tar.gz (232kB):  60%  139kB
+  Downloading coverage-3.6.tar.gz (232kB):  61%  143kB
+  Downloading coverage-3.6.tar.gz (232kB):  63%  147kB
+  Downloading coverage-3.6.tar.gz (232kB):  65%  151kB
+  Downloading coverage-3.6.tar.gz (232kB):  67%  155kB
+  Downloading coverage-3.6.tar.gz (232kB):  68%  159kB
+  Downloading coverage-3.6.tar.gz (232kB):  70%  163kB
+  Downloading coverage-3.6.tar.gz (232kB):  72%  167kB
+  Downloading coverage-3.6.tar.gz (232kB):  74%  172kB
+  Downloading coverage-3.6.tar.gz (232kB):  75%  176kB
+  Downloading coverage-3.6.tar.gz (232kB):  77%  180kB
+  Downloading coverage-3.6.tar.gz (232kB):  79%  184kB
+  Downloading coverage-3.6.tar.gz (232kB):  81%  188kB
+  Downloading coverage-3.6.tar.gz (232kB):  82%  192kB
+  Downloading coverage-3.6.tar.gz (232kB):  84%  196kB
+  Downloading coverage-3.6.tar.gz (232kB):  86%  200kB
+  Downloading coverage-3.6.tar.gz (232kB):  88%  204kB
+  Downloading coverage-3.6.tar.gz (232kB):  90%  208kB
+  Downloading coverage-3.6.tar.gz (232kB):  91%  212kB
+  Downloading coverage-3.6.tar.gz (232kB):  93%  217kB
+  Downloading coverage-3.6.tar.gz (232kB):  95%  221kB
+  Downloading coverage-3.6.tar.gz (232kB):  97%  225kB
+  Downloading coverage-3.6.tar.gz (232kB):  98%  229kB
+  Downloading coverage-3.6.tar.gz (232kB): 100%  232kB
+  Downloading coverage-3.6.tar.gz (232kB):
+  Downloading coverage-3.6.tar.gz (232kB): 232kB downloaded
+  Running setup.py egg_info for package coverage
+
+    warning: no previously-included files matching '*.pyc' found anywhere in distribution
+Downloading/unpacking requests>=1.0.0 (from coveralls)
+  Downloading requests-2.0.0.tar.gz (362kB):
+  Downloading requests-2.0.0.tar.gz (362kB):   1%  4.1kB
+  Downloading requests-2.0.0.tar.gz (362kB):   2%  8.2kB
+  Downloading requests-2.0.0.tar.gz (362kB):   3%  12kB
+  Downloading requests-2.0.0.tar.gz (362kB):   4%  16kB
+  Downloading requests-2.0.0.tar.gz (362kB):   5%  20kB
+  Downloading requests-2.0.0.tar.gz (362kB):   6%  24kB
+  Downloading requests-2.0.0.tar.gz (362kB):   7%  28kB
+  Downloading requests-2.0.0.tar.gz (362kB):   9%  32kB
+  Downloading requests-2.0.0.tar.gz (362kB):  10%  36kB
+  Downloading requests-2.0.0.tar.gz (362kB):  11%  40kB
+  Downloading requests-2.0.0.tar.gz (362kB):  12%  45kB
+  Downloading requests-2.0.0.tar.gz (362kB):  13%  49kB
+  Downloading requests-2.0.0.tar.gz (362kB):  14%  53kB
+  Downloading requests-2.0.0.tar.gz (362kB):  15%  57kB
+  Downloading requests-2.0.0.tar.gz (362kB):  16%  61kB
+  Downloading requests-2.0.0.tar.gz (362kB):  18%  65kB
+  Downloading requests-2.0.0.tar.gz (362kB):  19%  69kB
+  Downloading requests-2.0.0.tar.gz (362kB):  20%  73kB
+  Downloading requests-2.0.0.tar.gz (362kB):  21%  77kB
+  Downloading requests-2.0.0.tar.gz (362kB):  22%  81kB
+  Downloading requests-2.0.0.tar.gz (362kB):  23%  86kB
+  Downloading requests-2.0.0.tar.gz (362kB):  24%  90kB
+  Downloading requests-2.0.0.tar.gz (362kB):  25%  94kB
+  Downloading requests-2.0.0.tar.gz (362kB):  27%  98kB
+  Downloading requests-2.0.0.tar.gz (362kB):  28%  102kB
+  Downloading requests-2.0.0.tar.gz (362kB):  29%  106kB
+  Downloading requests-2.0.0.tar.gz (362kB):  30%  110kB
+  Downloading requests-2.0.0.tar.gz (362kB):  31%  114kB
+  Downloading requests-2.0.0.tar.gz (362kB):  32%  118kB
+  Downloading requests-2.0.0.tar.gz (362kB):  33%  122kB
+  Downloading requests-2.0.0.tar.gz (362kB):  34%  126kB
+  Downloading requests-2.0.0.tar.gz (362kB):  36%  131kB
+  Downloading requests-2.0.0.tar.gz (362kB):  37%  135kB
+  Downloading requests-2.0.0.tar.gz (362kB):  38%  139kB
+  Downloading requests-2.0.0.tar.gz (362kB):  39%  143kB
+  Downloading requests-2.0.0.tar.gz (362kB):  40%  147kB
+  Downloading requests-2.0.0.tar.gz (362kB):  41%  151kB
+  Downloading requests-2.0.0.tar.gz (362kB):  42%  155kB
+  Downloading requests-2.0.0.tar.gz (362kB):  44%  159kB
+  Downloading requests-2.0.0.tar.gz (362kB):  45%  163kB
+  Downloading requests-2.0.0.tar.gz (362kB):  46%  167kB
+  Downloading requests-2.0.0.tar.gz (362kB):  47%  172kB
+  Downloading requests-2.0.0.tar.gz (362kB):  48%  176kB
+  Downloading requests-2.0.0.tar.gz (362kB):  49%  180kB
+  Downloading requests-2.0.0.tar.gz (362kB):  50%  184kB
+  Downloading requests-2.0.0.tar.gz (362kB):  51%  188kB
+  Downloading requests-2.0.0.tar.gz (362kB):  53%  192kB
+  Downloading requests-2.0.0.tar.gz (362kB):  54%  196kB
+  Downloading requests-2.0.0.tar.gz (362kB):  55%  200kB
+  Downloading requests-2.0.0.tar.gz (362kB):  56%  204kB
+  Downloading requests-2.0.0.tar.gz (362kB):  57%  208kB
+  Downloading requests-2.0.0.tar.gz (362kB):  58%  212kB
+  Downloading requests-2.0.0.tar.gz (362kB):  59%  217kB
+  Downloading requests-2.0.0.tar.gz (362kB):  60%  221kB
+  Downloading requests-2.0.0.tar.gz (362kB):  62%  225kB
+  Downloading requests-2.0.0.tar.gz (362kB):  63%  229kB
+  Downloading requests-2.0.0.tar.gz (362kB):  64%  233kB
+  Downloading requests-2.0.0.tar.gz (362kB):  65%  237kB
+  Downloading requests-2.0.0.tar.gz (362kB):  66%  241kB
+  Downloading requests-2.0.0.tar.gz (362kB):  67%  245kB
+  Downloading requests-2.0.0.tar.gz (362kB):  68%  249kB
+  Downloading requests-2.0.0.tar.gz (362kB):  69%  253kB
+  Downloading requests-2.0.0.tar.gz (362kB):  71%  258kB
+  Downloading requests-2.0.0.tar.gz (362kB):  72%  262kB
+  Downloading requests-2.0.0.tar.gz (362kB):  73%  266kB
+  Downloading requests-2.0.0.tar.gz (362kB):  74%  270kB
+  Downloading requests-2.0.0.tar.gz (362kB):  75%  274kB
+  Downloading requests-2.0.0.tar.gz (362kB):  76%  278kB
+  Downloading requests-2.0.0.tar.gz (362kB):  77%  282kB
+  Downloading requests-2.0.0.tar.gz (362kB):  78%  286kB
+  Downloading requests-2.0.0.tar.gz (362kB):  80%  290kB
+  Downloading requests-2.0.0.tar.gz (362kB):  81%  294kB
+  Downloading requests-2.0.0.tar.gz (362kB):  82%  299kB
+  Downloading requests-2.0.0.tar.gz (362kB):  83%  303kB
+  Downloading requests-2.0.0.tar.gz (362kB):  84%  307kB
+  Downloading requests-2.0.0.tar.gz (362kB):  85%  311kB
+  Downloading requests-2.0.0.tar.gz (362kB):  86%  315kB
+  Downloading requests-2.0.0.tar.gz (362kB):  88%  319kB
+  Downloading requests-2.0.0.tar.gz (362kB):  89%  323kB
+  Downloading requests-2.0.0.tar.gz (362kB):  90%  327kB
+  Downloading requests-2.0.0.tar.gz (362kB):  91%  331kB
+  Downloading requests-2.0.0.tar.gz (362kB):  92%  335kB
+  Downloading requests-2.0.0.tar.gz (362kB):  93%  339kB
+  Downloading requests-2.0.0.tar.gz (362kB):  94%  344kB
+  Downloading requests-2.0.0.tar.gz (362kB):  95%  348kB
+  Downloading requests-2.0.0.tar.gz (362kB):  97%  352kB
+  Downloading requests-2.0.0.tar.gz (362kB):  98%  356kB
+  Downloading requests-2.0.0.tar.gz (362kB):  99%  360kB
+  Downloading requests-2.0.0.tar.gz (362kB): 100%  362kB
+  Downloading requests-2.0.0.tar.gz (362kB):
+  Downloading requests-2.0.0.tar.gz (362kB): 362kB downloaded
+  Running setup.py egg_info for package requests
+
+Downloading/unpacking sh>=1.08 (from coveralls)
+  Downloading sh-1.09.tar.gz
+  Running setup.py egg_info for package sh
+
+Installing collected packages: coveralls, docopt, coverage, requests, sh
+  Running setup.py install for coveralls
+
+    Installing coveralls script to /home/travis/virtualenv/pypy_with_system_site_packages/bin
+  Running setup.py install for docopt
+
+  Running setup.py install for coverage
+
+    warning: no previously-included files matching '*.pyc' found anywhere in distribution
+    Installing coverage2 script to /home/travis/virtualenv/pypy_with_system_site_packages/bin
+    Installing coverage-2.7 script to /home/travis/virtualenv/pypy_with_system_site_packages/bin
+    Installing coverage script to /home/travis/virtualenv/pypy_with_system_site_packages/bin
+  Running setup.py install for requests
+
+  Running setup.py install for sh
+
+Successfully installed coveralls docopt coverage requests sh
+Cleaning up...
+travis_fold:end:before_install.9
+Could not locate requirements.txt. Override the install: key in your .travis.yml to install dependencies.
+$ pip install .
+Unpacking /home/travis/build/networkx/networkx
+  Running setup.py egg_info for package from file:///home/travis/build/networkx/networkx
+
+    warning: no files found matching 'scripts/*'
+    warning: no files found matching 'networkx/tests/*.txt'
+    warning: no files found matching 'networkx/*/*/tests/*.txt'
+    warning: no previously-included files matching '*~' found anywhere in distribution
+    warning: no previously-included files matching '*.pyc' found anywhere in distribution
+    warning: no previously-included files matching '.svn' found anywhere in distribution
+    no previously-included directories found matching 'doc/build'
+    no previously-included directories found matching 'doc/source/reference/generated'
+    no previously-included directories found matching 'doc/source/examples'
+    no previously-included directories found matching 'doc/source/static/examples'
+    no previously-included directories found matching 'doc/source/templates/gallery.html'
+Installing collected packages: networkx
+  Running setup.py install for networkx
+
+    warning: no files found matching 'scripts/*'
+    warning: no files found matching 'networkx/tests/*.txt'
+    warning: no files found matching 'networkx/*/*/tests/*.txt'
+    warning: no previously-included files matching '*~' found anywhere in distribution
+    warning: no previously-included files matching '*.pyc' found anywhere in distribution
+    warning: no previously-included files matching '.svn' found anywhere in distribution
+    no previously-included directories found matching 'doc/build'
+    no previously-included directories found matching 'doc/source/reference/generated'
+    no previously-included directories found matching 'doc/source/examples'
+    no previously-included directories found matching 'doc/source/static/examples'
+    no previously-included directories found matching 'doc/source/templates/gallery.html'
+Successfully installed networkx
+Cleaning up...
+
+The command "pip install ." exited with 0.
+$ cd
+
+The command "cd" exited with 0.
+$ cd `python -c "from __future__ import print_function;import networkx;import os;print(os.path.split(networkx.__file__)[0])"`
+
+The command "cd `python -c "from __future__ import print_function;import networkx;import os;print(os.path.split(networkx.__file__)[0])"`" exited with 0.
+$ printenv PWD
+/home/travis/virtualenv/pypy_with_system_site_packages/site-packages/networkx
+
+The command "printenv PWD" exited with 0.
+$ nosetests -v --with-coverage --cover-erase --cover-package=networkx
+test_approx_clust_coeff.test_petersen ... ok
+test_approx_clust_coeff.test_tetrahedral ... ok
+test_approx_clust_coeff.test_dodecahedral ... ok
+test_approx_clust_coeff.test_empty ... ok
+test_approx_clust_coeff.test_complete ... ok
+test_clique.test_clique_removal ... ok
+test_clique.test_max_clique_smoke ... ok
+test_clique.test_max_clique ... ok
+test_dominating_set.TestMinWeightDominatingSet.test_min_edge_dominating_set ... ok
+test_dominating_set.TestMinWeightDominatingSet.test_min_weighted_dominating_set ... ok
+test_independent_set.test_independent_set ... ok
+test_matching.test_min_maximal_matching ... ok
+test_ramsey.test_ramsey ... ok
+test_vertex_cover.TestMWVC.test_min_vertex_cover ... ok
+test_connectivity.TestNeighborConnectivity.test_degree_barrat ... ok
+test_connectivity.TestNeighborConnectivity.test_degree_p4 ... ok
+test_connectivity.TestNeighborConnectivity.test_degree_p4_weighted ... ok
+test_connectivity.TestNeighborConnectivity.test_in_out_weight ... ok
+test_connectivity.TestNeighborConnectivity.test_weight_keyword ... ok
+test_connectivity.TestNeighborConnectivity.test_zero_deg ... ok
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+test_mixing.TestAttributeMixingDict.test_attribute_mixing_dict_directed ... ok
+test_mixing.TestAttributeMixingDict.test_attribute_mixing_dict_multigraph ... ok
+test_mixing.TestAttributeMixingDict.test_attribute_mixing_dict_undirected ... ok
+SKIP: NumPy not available.
+test_mixing.TestDegreeMixingDict.test_degree_mixing_dict_directed ... ok
+test_mixing.TestDegreeMixingDict.test_degree_mixing_dict_multigraph ... ok
+test_mixing.TestDegreeMixingDict.test_degree_mixing_dict_undirected ... ok
+test_mixing.TestDegreeMixingDict.test_degree_mixing_dict_undirected_normalized ... ok
+SKIP: NumPy not available.
+test_neighbor_degree.TestAverageNeighbor.test_degree_barrat ... ok
+test_neighbor_degree.TestAverageNeighbor.test_degree_k4 ... ok
+test_neighbor_degree.TestAverageNeighbor.test_degree_k4_nodes ... ok
+test_neighbor_degree.TestAverageNeighbor.test_degree_p4 ... ok
+test_neighbor_degree.TestAverageNeighbor.test_degree_p4_weighted ... ok
+test_pairs.TestAttributeMixingXY.test_node_attribute_xy_directed ... ok
+test_pairs.TestAttributeMixingXY.test_node_attribute_xy_multigraph ... ok
+test_pairs.TestAttributeMixingXY.test_node_attribute_xy_selfloop ... ok
+test_pairs.TestAttributeMixingXY.test_node_attribute_xy_undirected ... ok
+test_pairs.TestAttributeMixingXY.test_node_attribute_xy_undirected_nodes ... ok
+test_pairs.TestDegreeMixingXY.test_node_degree_xy_directed ... ok
+test_pairs.TestDegreeMixingXY.test_node_degree_xy_multigraph ... ok
+test_pairs.TestDegreeMixingXY.test_node_degree_xy_selfloop ... ok
+test_pairs.TestDegreeMixingXY.test_node_degree_xy_undirected ... ok
+test_pairs.TestDegreeMixingXY.test_node_degree_xy_undirected_nodes ... ok
+test_pairs.TestDegreeMixingXY.test_node_degree_xy_weighted ... ok
+test_basic.TestBipartiteBasic.test_biadjacency_matrix ... SKIP: numpy not available.
+test_basic.TestBipartiteBasic.test_biadjacency_matrix_order ... SKIP: numpy not available.
+test_basic.TestBipartiteBasic.test_biadjacency_matrix_weight ... SKIP: numpy not available.
+test_basic.TestBipartiteBasic.test_bipartite_color ... ok
+test_basic.TestBipartiteBasic.test_bipartite_degrees ... ok
+test_basic.TestBipartiteBasic.test_bipartite_density ... ok
+test_basic.TestBipartiteBasic.test_bipartite_directed ... ok
+test_basic.TestBipartiteBasic.test_bipartite_sets ... ok
+test_basic.TestBipartiteBasic.test_bipartite_weighted_degrees ... ok
+test_basic.TestBipartiteBasic.test_is_bipartite ... ok
+test_basic.TestBipartiteBasic.test_is_bipartite_node_set ... ok
+test_basic.TestBipartiteBasic.test_not_bipartite_color ... ok
+test_centrality.TestBipartiteCentrality.test_betweenness_centrality ... ok
+test_centrality.TestBipartiteCentrality.test_closeness_centrality ... ok
+test_centrality.TestBipartiteCentrality.test_davis_betweenness_centrality ... ok
+test_centrality.TestBipartiteCentrality.test_davis_closeness_centrality ... ok
+test_centrality.TestBipartiteCentrality.test_davis_degree_centrality ... ok
+test_centrality.TestBipartiteCentrality.test_degree_centrality ... ok
+test_cluster.test_pairwise_bipartite_cc_functions ... ok
+test_cluster.test_star_graph ... ok
+test_cluster.test_not_bipartite ... ok
+test_cluster.test_bad_mode ... ok
+test_cluster.test_path_graph ... ok
+test_cluster.test_average_path_graph ... ok
+test_cluster.test_ra_clustering_davis ... ok
+test_cluster.test_ra_clustering_square ... ok
+test_cluster.test_ra_clustering_zero ... ok
+test_project.TestBipartiteProject.test_directed_path_collaboration_projected_graph ... ok
+test_project.TestBipartiteProject.test_directed_projection ... ok
+test_project.TestBipartiteProject.test_path_collaboration_projected_graph ... ok
+test_project.TestBipartiteProject.test_path_projected_graph ... ok
+test_project.TestBipartiteProject.test_path_projected_properties_graph ... ok
+test_project.TestBipartiteProject.test_path_weighted_projected_directed_graph ... ok
+test_project.TestBipartiteProject.test_path_weighted_projected_graph ... ok
+test_project.TestBipartiteProject.test_project_collaboration ... ok
+test_project.TestBipartiteProject.test_project_multigraph ... ok
+test_project.TestBipartiteProject.test_star_projected_graph ... ok
+test_project.TestBipartiteWeightedProjection.test_generic_weighted_projected_graph_custom ... ok
+test_project.TestBipartiteWeightedProjection.test_generic_weighted_projected_graph_simple ... ok
+test_project.TestBipartiteWeightedProjection.test_project_weighted_jaccard ... ok
+test_project.TestBipartiteWeightedProjection.test_project_weighted_newman ... ok
+test_project.TestBipartiteWeightedProjection.test_project_weighted_overlap ... ok
+test_project.TestBipartiteWeightedProjection.test_project_weighted_ratio ... ok
+test_project.TestBipartiteWeightedProjection.test_project_weighted_shared ... ok
+SKIP: SciPy not available.
+Betweenness centrality: K5 ... ok
+Betweenness centrality: K5 endpoints ... ok
+Betweenness centrality: P3 ... ok
+Betweenness centrality: P3 endpoints ... ok
+Betweenness centrality: P3 normalized ... ok
+Betweenness centrality: directed path ... ok
+Betweenness centrality: directed path normalized ... ok
+Betweenness centrality: disconnected path ... ok
+Betweenness centrality: disconnected path endpoints ... ok
+Betweenness centrality: Florentine families graph ... ok
+Betweenness centrality: Krackhardt kite graph ... ok
+Betweenness centrality: Krackhardt kite graph normalized ... ok
+Betweenness centrality: Ladder graph ... ok
+Edge betweenness centrality: C4 ... ok
+Edge betweenness centrality: K5 ... ok
+Edge betweenness centrality: P4 ... ok
+Edge betweenness centrality: balanced tree ... ok
+Edge betweenness centrality: K5 ... ok
+Edge betweenness centrality: P4 ... ok
+Weighted betweenness centrality: G ... ok
+Weighted betweenness centrality: G2 ... ok
+Weighted betweenness centrality: K5 ... ok
+Weighted betweenness centrality: P3 ... ok
+Weighted betweenness centrality: P3 normalized ... ok
+Weighted betweenness centrality: ... ok
+Weighted betweenness centrality: Krackhardt kite graph ... ok
+Weighted betweenness centrality: ... ok
+Weighted betweenness centrality: Ladder graph ... ok
+Edge betweenness centrality: C4 ... ok
+Edge betweenness centrality: K5 ... ok
+Edge betweenness centrality: P4 ... ok
+Edge betweenness centrality: balanced tree ... ok
+test_betweenness_centrality.TestWeightedEdgeBetweennessCentrality.test_normalized_weighted_graph ... ok
+test_betweenness_centrality.TestWeightedEdgeBetweennessCentrality.test_weighted_graph ... ok
+Betweenness centrality: K5 ... ok
+Betweenness centrality: P3 ... ok
+Edge betweenness centrality: K5 ... ok
+Edge betweenness centrality: P5 ... ok
+Edge betweenness centrality: P5 directed ... ok
+Edge betweenness centrality: P5 multiple target ... ok
+Edge etweenness centrality: box ... ok
+Edge etweenness centrality: box and path ... ok
+Edge betweenness centrality: box and path multiple target ... ok
+Betweenness centrality: K5 ... ok
+Betweenness centrality: P5 ... ok
+Betweenness centrality: P5 directed ... ok
+Betweenness centrality: P5 multiple target ... ok
+Betweenness centrality: box ... ok
+Betweenness centrality: box and path ... ok
+Betweenness centrality: box and path multiple target ... ok
+test_closeness_centrality.TestClosenessCentrality.test_florentine_families_closeness ... ok
+test_closeness_centrality.TestClosenessCentrality.test_k5_closeness ... ok
+test_closeness_centrality.TestClosenessCentrality.test_krackhardt_closeness ... ok
+test_closeness_centrality.TestClosenessCentrality.test_p3_closeness ... ok
+test_closeness_centrality.TestClosenessCentrality.test_weighted_closeness ... ok
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+test_degree_centrality.TestDegreeCentrality.test_degree_centrality_1 ... ok
+test_degree_centrality.TestDegreeCentrality.test_degree_centrality_2 ... ok
+test_degree_centrality.TestDegreeCentrality.test_degree_centrality_3 ... ok
+test_degree_centrality.TestDegreeCentrality.test_degree_centrality_4 ... ok
+test_degree_centrality.TestDegreeCentrality.test_indegree_centrality ... ok
+test_degree_centrality.TestDegreeCentrality.test_outdegree_centrality ... ok
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+Katz centrality: K5 ... ok
+Katz centrality: P3 ... ok
+test_katz_centrality.TestKatzCentrality.test_bad_beta ... ok
+test_katz_centrality.TestKatzCentrality.test_bad_beta_numbe ... ok
+test_katz_centrality.TestKatzCentrality.test_beta_as_dict ... ok
+test_katz_centrality.TestKatzCentrality.test_beta_as_scalar ... ok
+test_katz_centrality.TestKatzCentrality.test_empty ... ok
+test_katz_centrality.TestKatzCentrality.test_maxiter ... ok
+test_katz_centrality.TestKatzCentrality.test_multigraph ... ok
+test_katz_centrality.TestKatzCentrality.test_multiple_alpha ... ok
+test_katz_centrality.TestKatzCentralityDirected.test_eigenvector_centrality_unweighted ... ok
+test_katz_centrality.TestKatzCentralityDirected.test_eigenvector_centrality_weighted ... ok
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+test_load_centrality.TestLoadCentrality.test_c4_edge_load ... ok
+test_load_centrality.TestLoadCentrality.test_florentine_families_load ... ok
+test_load_centrality.TestLoadCentrality.test_k5_edge_load ... ok
+test_load_centrality.TestLoadCentrality.test_k5_load ... ok
+test_load_centrality.TestLoadCentrality.test_krackhardt_load ... ok
+test_load_centrality.TestLoadCentrality.test_load_betweenness_difference ... ok
+test_load_centrality.TestLoadCentrality.test_not_strongly_connected ... ok
+test_load_centrality.TestLoadCentrality.test_p2_load ... ok
+test_load_centrality.TestLoadCentrality.test_p3_load ... ok
+test_load_centrality.TestLoadCentrality.test_p4_edge_load ... ok
+test_load_centrality.TestLoadCentrality.test_tree_edge_load ... ok
+test_load_centrality.TestLoadCentrality.test_unnormalized_florentine_families_load ... ok
+test_load_centrality.TestLoadCentrality.test_unnormalized_k5_load ... ok
+test_load_centrality.TestLoadCentrality.test_unnormalized_krackhardt_load ... ok
+test_load_centrality.TestLoadCentrality.test_unnormalized_p3_load ... ok
+test_load_centrality.TestLoadCentrality.test_weighted_load ... ok
+test_chordal.TestMCS.test_chordal_find_cliques ... ok
+test_chordal.TestMCS.test_chordal_find_cliquesCC ... ok
+test_chordal.TestMCS.test_chordal_find_cliques_path ... ok
+test_chordal.TestMCS.test_induced_nodes ... ok
+test_chordal.TestMCS.test_is_chordal ... ok
+test_kclique.test_overlaping_K5 ... ok
+test_kclique.test_isolated_K5 ... ok
+test_kclique.test_zachary ... ok
+test_kclique.test_bad_k ... ok
+test_attracting.TestAttractingComponents.test_attracting_component_subgraphs ... ok
+test_attracting.TestAttractingComponents.test_attracting_components ... ok
+test_attracting.TestAttractingComponents.test_is_attracting_component ... ok
+test_attracting.TestAttractingComponents.test_number_attacting_components ... ok
+test_biconnected.test_barbell ... ok
+test_biconnected.test_articulation_points_cycle ... ok
+test_biconnected.test_is_biconnected ... ok
+test_biconnected.test_empty_is_biconnected ... ok
+test_biconnected.test_biconnected_components_cycle ... ok
+test_biconnected.test_biconnected_component_subgraphs_cycle ... ok
+test_biconnected.test_biconnected_components1 ... ok
+test_biconnected.test_biconnected_components2 ... ok
+test_biconnected.test_biconnected_davis ... ok
+test_biconnected.test_biconnected_karate ... ok
+test_biconnected.test_biconnected_eppstein ... ok
+test_connected.TestConnected.test_connected_component_subgraphs ... ok
+test_connected.TestConnected.test_connected_components ... ok
+test_connected.TestConnected.test_connected_components2 ... ok
+test_connected.TestConnected.test_connected_raise ... ok
+test_connected.TestConnected.test_is_connected ... ok
+test_connected.TestConnected.test_node_connected_components ... ok
+test_connected.TestConnected.test_number_connected_components ... ok
+test_connected.TestConnected.test_number_connected_components2 ... ok
+test_strongly_connected.TestStronglyConnected.test_connected_raise ... ok
+test_strongly_connected.TestStronglyConnected.test_contract_scc1 ... ok
+test_strongly_connected.TestStronglyConnected.test_contract_scc_edge ... ok
+test_strongly_connected.TestStronglyConnected.test_contract_scc_isolate ... ok
+test_strongly_connected.TestStronglyConnected.test_is_strongly_connected ... ok
+test_strongly_connected.TestStronglyConnected.test_kosaraju ... ok
+test_strongly_connected.TestStronglyConnected.test_number_strongly_connected_components ... ok
+test_strongly_connected.TestStronglyConnected.test_strongly_connected_component_subgraphs ... ok
+test_strongly_connected.TestStronglyConnected.test_tarjan ... ok
+test_strongly_connected.TestStronglyConnected.test_tarjan_recursive ... ok
+test_weakly_connected.TestWeaklyConnected.test_connected_raise ... ok
+test_weakly_connected.TestWeaklyConnected.test_is_weakly_connected ... ok
+test_weakly_connected.TestWeaklyConnected.test_number_weakly_connected_components ... ok
+test_weakly_connected.TestWeaklyConnected.test_weakly_connected_component_subgraphs ... ok
+test_weakly_connected.TestWeaklyConnected.test_weakly_connected_components ... ok
+SKIP: NumPy not available.
+test_connectivity.test_average_connectivity ... ok
+test_connectivity.test_average_connectivity_directed ... ok
+test_connectivity.test_articulation_points ... ok
+test_connectivity.test_brandes_erlebach ... ok
+test_connectivity.test_white_harary_1 ... ok
+test_connectivity.test_white_harary_2 ... ok
+test_connectivity.test_complete_graphs ... ok
+test_connectivity.test_empty_graphs ... ok
+test_connectivity.test_petersen ... ok
+test_connectivity.test_tutte ... ok
+test_connectivity.test_dodecahedral ... ok
+test_connectivity.test_octahedral ... ok
+test_connectivity.test_icosahedral ... ok
+test_connectivity.test_missing_source ... ok
+test_connectivity.test_missing_target ... ok
+test_connectivity.test_edge_missing_source ... ok
+test_connectivity.test_edge_missing_target ... ok
+test_connectivity.test_not_weakly_connected ... ok
+test_connectivity.test_directed_edge_connectivity ... ok
+test_cuts.test_articulation_points ... ok
+test_cuts.test_brandes_erlebach_book ... ok
+test_cuts.test_white_harary_paper ... ok
+test_cuts.test_petersen_cutset ... ok
+test_cuts.test_octahedral_cutset ... ok
+test_cuts.test_icosahedral_cutset ... ok
+test_cuts.test_node_cutset_exception ... ok
+test_cuts.test_node_cutset_random_graphs ... ok
+test_cuts.test_edge_cutset_random_graphs ... ok
+test_cuts.test_empty_graphs ... ok
+test_maxflow.TestMaxflow.test_digraph1 ... ok
+test_maxflow.TestMaxflow.test_digraph2 ... ok
+test_maxflow.TestMaxflow.test_digraph3 ... ok
+test_maxflow.TestMaxflow.test_digraph4 ... ok
+test_maxflow.TestMaxflow.test_digraph_infcap_edges ... ok
+test_maxflow.TestMaxflow.test_digraph_infcap_path ... ok
+test_maxflow.TestMaxflow.test_disconnected ... ok
+test_maxflow.TestMaxflow.test_graph1 ... ok
+test_maxflow.TestMaxflow.test_graph2 ... ok
+test_maxflow.TestMaxflow.test_graph_infcap_edges ... ok
+test_maxflow.TestMaxflow.test_optional_capacity ... ok
+test_maxflow.TestMaxflow.test_source_target_not_in_graph ... ok
+test_maxflow_large_graph.TestMaxflowLargeGraph.test_complete_graph ... ok
+test_maxflow_large_graph.TestMaxflowLargeGraph.test_pyramid ... ok
+Check if digons are handled properly. Taken from ticket ... ok
+test_mincost.TestNetworkSimplex.test_digraph1 ... ok
+test_mincost.TestNetworkSimplex.test_digraph2 ... ok
+Combinatorial Optimization: Algorithms and Complexity, ... ok
+The digon should receive the maximum amount of flow it can handle. ... ok
+An infinite capacity negative cost digon results in an unbounded ... ok
+test_mincost.TestNetworkSimplex.test_max_flow_min_cost ... ok
+Raise an exception for multidigraph. ... ok
+test_mincost.TestNetworkSimplex.test_negcycle_infcap ... ok
+test_mincost.TestNetworkSimplex.test_no_flow_satisfying_demands ... ok
+test_mincost.TestNetworkSimplex.test_simple_digraph ... ok
+test_mincost.TestNetworkSimplex.test_sum_demands_not_zero ... ok
+test_mincost.TestNetworkSimplex.test_transshipment ... ok
+Address issue raised in ticket #617 by arv. ... ok
+test_isomorphism.TestIsomorph.test_could_be_isomorphic ... ok
+test_isomorphism.TestIsomorph.test_fast_could_be_isomorphic ... ok
+test_isomorphism.TestIsomorph.test_faster_could_be_isomorphic ... ok
+test_isomorphism.TestIsomorph.test_is_isomorphic ... ok
+test_isomorphvf2.TestVF2GraphDB.test_graph ... ok
+test_isomorphvf2.TestVF2GraphDB.test_subgraph ... ok
+test_isomorphvf2.TestWikipediaExample.test_graph ... ok
+test_isomorphvf2.TestWikipediaExample.test_subgraph ... ok
+test_isomorphvf2.test_graph_atlas ... ok
+test_isomorphvf2.test_multiedge ... ok
+test_isomorphvf2.test_selfloop ... ok
+test_isomorphvf2.test_isomorphism_iter1 ... ok
+test_isomorphvf2.test_isomorphism_iter2 ... ok
+test_isomorphvf2.test_multiple ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_color1 ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_color2 ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_colorsandweights1 ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_colorsandweights2 ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_colorsandweights3 ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_noweight_nocolor ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_weight1 ... ok
+test_vf2userfunc.TestEdgeMatch_DiGraph.test_weight2 ... ok
+test_vf2userfunc.TestEdgeMatch_MultiDiGraph.test_colors_only ... ok
+test_vf2userfunc.TestEdgeMatch_MultiDiGraph.test_colorsandweights ... ok
+test_vf2userfunc.TestEdgeMatch_MultiDiGraph.test_generic1 ... ok
+test_vf2userfunc.TestEdgeMatch_MultiDiGraph.test_generic2 ... ok
+test_vf2userfunc.TestEdgeMatch_MultiDiGraph.test_weights_only ... ok
+test_vf2userfunc.TestEdgeMatch_MultiGraph.test_colors_only ... ok
+test_vf2userfunc.TestEdgeMatch_MultiGraph.test_colorsandweights ... ok
+test_vf2userfunc.TestEdgeMatch_MultiGraph.test_generic1 ... ok
+test_vf2userfunc.TestEdgeMatch_MultiGraph.test_generic2 ... ok
+test_vf2userfunc.TestEdgeMatch_MultiGraph.test_weights_only ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_color1 ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_color2 ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_colorsandweights1 ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_colorsandweights2 ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_colorsandweights3 ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_noweight_nocolor ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_weight1 ... ok
+test_vf2userfunc.TestNodeMatch_Graph.test_weight2 ... ok
+test_vf2userfunc.test_simple ... ok
+test_vf2userfunc.test_weightkey ... ok
+test_hits.TestHITS.test_empty ... SKIP: numpy not available.
+test_hits.TestHITS.test_empty_scipy ... SKIP: scipy not available.
+test_hits.TestHITS.test_hits ... ok
+test_hits.TestHITS.test_hits_nstart ... ok
+test_hits.TestHITS.test_hits_numpy ... SKIP: NumPy not available.
+test_hits.TestHITS.test_hits_scipy ... SKIP: SciPy not available.
+test_pagerank.TestPageRank.test_empty ... SKIP: numpy not available.
+test_pagerank.TestPageRank.test_empty_scipy ... SKIP: scipy not available.
+test_pagerank.TestPageRank.test_google_matrix ... SKIP: numpy not available.
+test_pagerank.TestPageRank.test_numpy_pagerank ... SKIP: numpy not available.
+test_pagerank.TestPageRank.test_pagerank ... ok
+test_pagerank.TestPageRank.test_personalization ... ok
+test_pagerank.TestPageRank.test_scipy_pagerank ... SKIP: scipy not available.
+test_all.test_union_all_attributes ... ok
+test_all.test_intersection_all ... ok
+test_all.test_intersection_all_attributes ... ok
+test_all.test_intersection_all_multigraph_attributes ... ok
+test_all.test_union_all_and_compose_all ... ok
+test_all.test_union_all_multigraph ... ok
+test_all.test_input_output ... ok
+test_all.test_mixed_type_union ... ok
+test_all.test_mixed_type_disjoint_union ... ok
+test_all.test_mixed_type_intersection ... ok
+test_all.test_mixed_type_compose ... ok
+test_binary.test_union_attributes ... ok
+test_binary.test_intersection ... ok
+test_binary.test_intersection_attributes ... ok
+test_binary.test_intersection_multigraph_attributes ... ok
+test_binary.test_difference ... ok
+test_binary.test_difference2 ... ok
+test_binary.test_difference_attributes ... ok
+test_binary.test_difference_multigraph_attributes ... ok
+test_binary.test_difference_raise ... ok
+test_binary.test_symmetric_difference_multigraph ... ok
+test_binary.test_symmetric_difference_raise ... ok
+test_binary.test_union_and_compose ... ok
+test_binary.test_union_multigraph ... ok
+test_binary.test_disjoint_union_multigraph ... ok
+test_binary.test_compose_multigraph ... ok
+test_binary.test_mixed_type_union ... ok
+test_binary.test_mixed_type_disjoint_union ... ok
+test_binary.test_mixed_type_intersection ... ok
+test_binary.test_mixed_type_difference ... ok
+test_binary.test_mixed_type_symmetric_difference ... ok
+test_binary.test_mixed_type_compose ... ok
+test_product.test_tensor_product_raises ... ok
+test_product.test_tensor_product_null ... ok
+test_product.test_tensor_product_size ... ok
+test_product.test_tensor_product_combinations ... ok
+test_product.test_tensor_product_classic_result ... ok
+test_product.test_tensor_product_random ... ok
+test_product.test_cartesian_product_multigraph ... ok
+test_product.test_cartesian_product_raises ... ok
+test_product.test_cartesian_product_null ... ok
+test_product.test_cartesian_product_size ... ok
+test_product.test_cartesian_product_classic ... ok
+test_product.test_cartesian_product_random ... ok
+test_product.test_lexicographic_product_raises ... ok
+test_product.test_lexicographic_product_null ... ok
+test_product.test_lexicographic_product_size ... ok
+test_product.test_lexicographic_product_combinations ... ok
+test_product.test_lexicographic_product_random ... ok
+test_product.test_strong_product_raises ... ok
+test_product.test_strong_product_null ... ok
+test_product.test_strong_product_size ... ok
+test_product.test_strong_product_combinations ... ok
+test_product.test_strong_product_random ... ok
+test_unary.test_complement ... ok
+test_unary.test_complement_2 ... ok
+test_unary.test_reverse1 ... ok
+test_astar.TestAStar.test_astar_directed ... ok
+test_astar.TestAStar.test_astar_directed2 ... ok
+test_astar.TestAStar.test_astar_multigraph ... ok
+test_astar.TestAStar.test_astar_nopath ... ok
+test_astar.TestAStar.test_astar_undirected ... ok
+test_astar.TestAStar.test_astar_undirected2 ... ok
+test_astar.TestAStar.test_astar_undirected3 ... ok
+test_astar.TestAStar.test_astar_w1 ... ok
+test_astar.TestAStar.test_cycle ... ok
+test_astar.TestAStar.test_orderable ... ok
+test_astar.TestAStar.test_random_graph ... ok
+test_dense.TestFloyd.test_cycle ... ok
+test_dense.TestFloyd.test_floyd_warshall_predecessor_and_distance ... ok
+test_dense.TestFloyd.test_weight_parameter ... ok
+test_dense.TestFloyd.test_weighted ... ok
+test_dense.TestFloyd.test_weighted2 ... ok
+test_dense.TestFloyd.test_zero_distance ... ok
+SKIP: NumPy not available.
+test_generic.TestGenericPath.test_all_pairs_shortest_path ... ok
+test_generic.TestGenericPath.test_all_pairs_shortest_path_length ... ok
+test_generic.TestGenericPath.test_all_shortest_paths ... ok
+test_generic.TestGenericPath.test_all_shortest_paths_raise ... ok
+test_generic.TestGenericPath.test_average_shortest_disconnected ... ok
+test_generic.TestGenericPath.test_average_shortest_path ... ok
+test_generic.TestGenericPath.test_has_path ... ok
+test_generic.TestGenericPath.test_shortest_path ... ok
+test_generic.TestGenericPath.test_shortest_path_length ... ok
+test_generic.TestGenericPath.test_shortest_path_length_target ... ok
+test_generic.TestGenericPath.test_shortest_path_target ... ok
+test_generic.TestGenericPath.test_single_source_shortest_path ... ok
+test_generic.TestGenericPath.test_single_source_shortest_path_length ... ok
+test_generic.TestGenericPath.test_weighted_average_shortest_path ... ok
+test_unweighted.TestUnweightedPath.test_all_pairs_shortest_path ... ok
+test_unweighted.TestUnweightedPath.test_all_pairs_shortest_path_length ... ok
+test_unweighted.TestUnweightedPath.test_bidirectional_shortest_path ... ok
+test_unweighted.TestUnweightedPath.test_predecessor ... ok
+test_unweighted.TestUnweightedPath.test_predecessor_cutoff ... ok
+test_unweighted.TestUnweightedPath.test_predecessor_target ... ok
+test_unweighted.TestUnweightedPath.test_shortest_path_length ... ok
+test_unweighted.TestUnweightedPath.test_single_source_shortest_path ... ok
+test_unweighted.TestUnweightedPath.test_single_source_shortest_path_length ... ok
+test_weighted.TestWeightedPath.test_bellman_ford ... ok
+test_weighted.TestWeightedPath.test_bidirectional_dijkstra ... ok
+test_weighted.TestWeightedPath.test_bidirectional_dijkstra_multigraph ... ok
+test_weighted.TestWeightedPath.test_bidirectional_dijkstra_no_path ... ok
+test_weighted.TestWeightedPath.test_dijkstra ... ok
+test_weighted.TestWeightedPath.test_dijkstra_pred_distance_multigraph ... ok
+test_weighted.TestWeightedPath.test_dijkstra_predecessor ... ok
+test_weighted.TestWeightedPath.test_negative_edge_cycle ... ok
+test_weighted.TestWeightedPath.test_single_source_dijkstra_path_length ... ok
+test_bfs.TestBFS.test_bfs_edges ... ok
+test_bfs.TestBFS.test_bfs_tree ... ok
+test_bfs.TestBFS.test_bfs_tree_isolates ... ok
+test_bfs.TestBFS.test_predecessor ... ok
+test_bfs.TestBFS.test_successor ... ok
+test_dfs.TestDFS.test_dfs_edges ... ok
+test_dfs.TestDFS.test_dfs_labeled_disconnected_edges ... ok
+test_dfs.TestDFS.test_dfs_labeled_edges ... ok
+test_dfs.TestDFS.test_dfs_tree ... ok
+test_dfs.TestDFS.test_dfs_tree_isolates ... ok
+test_dfs.TestDFS.test_postorder_nodes ... ok
+test_dfs.TestDFS.test_predecessor ... ok
+test_dfs.TestDFS.test_preorder_nodes ... ok
+test_dfs.TestDFS.test_successor ... ok
+test_block.TestBlock.test_barbell ... ok
+test_block.TestBlock.test_barbell_plus ... ok
+test_block.TestBlock.test_directed_multigraph_path ... ok
+test_block.TestBlock.test_directed_path ... ok
+test_block.TestBlock.test_multigraph_path ... ok
+test_block.TestBlock.test_overlapping ... ok
+test_block.TestBlock.test_path ... ok
+test_block.TestBlock.test_weighted_path ... ok
+Check edge boundaries in K10 ... ok
+Check node boundaries in K10 ... ok
+null graph has empty edge boundaries ... ok
+null graph has empty node boundaries ... ok
+Check edge boundaries in path graph. ... ok
+Check node boundaries in path graph. ... ok
+Check boundaries in the petersen graph ... ok
+test_clique.TestCliques.test_clique_number ... ok
+test_clique.TestCliques.test_cliques_containing_node ... ok
+test_clique.TestCliques.test_directed ... ok
+test_clique.TestCliques.test_find_cliques1 ... FAIL
+test_clique.TestCliques.test_find_cliques2 ... ok
+test_clique.TestCliques.test_make_clique_bipartite ... ok
+test_clique.TestCliques.test_node_clique_number ... ok
+test_clique.TestCliques.test_number_of_cliques ... ok
+test_clique.TestCliques.test_selfloops ... ok
+test_cluster.TestClustering.test_clustering ... ok
+test_cluster.TestClustering.test_cubical ... ok
+test_cluster.TestClustering.test_k5 ... ok
+test_cluster.TestClustering.test_path ... ok
+test_cluster.TestSquareClustering.test_bipartite_k5 ... ok
+test_cluster.TestSquareClustering.test_clustering ... ok
+test_cluster.TestSquareClustering.test_cubical ... ok
+test_cluster.TestSquareClustering.test_k5 ... ok
+Test C4 for figure 1 Lind et al (2005) ... ok
+test_cluster.TestSquareClustering.test_path ... ok
+test_cluster.TestTransitivity.test_cubical ... ok
+test_cluster.TestTransitivity.test_k5 ... ok
+test_cluster.TestTransitivity.test_path ... ok
+test_cluster.TestTransitivity.test_transitivity ... ok
+test_cluster.TestTriangles.test_cubical ... ok
+test_cluster.TestTriangles.test_empty ... ok
+test_cluster.TestTriangles.test_k5 ... ok
+test_cluster.TestTriangles.test_path ... ok
+test_cluster.TestWeightedClustering.test_clustering ... ok
+test_cluster.TestWeightedClustering.test_cubical ... ok
+test_cluster.TestWeightedClustering.test_k5 ... ok
+test_cluster.TestWeightedClustering.test_path ... ok
+test_cluster.TestWeightedClustering.test_triangle_and_edge ... ok
+test_cluster.test_average_clustering ... ok
+test_core.TestCore.test_core_number ... ok
+test_core.TestCore.test_find_cores ... ok
+test_core.TestCore.test_find_cores2 ... ok
+test_core.TestCore.test_k_core ... ok
+test_core.TestCore.test_k_corona ... ok
+test_core.TestCore.test_k_crust ... ok
+test_core.TestCore.test_k_shell ... ok
+test_core.TestCore.test_main_core ... ok
+test_core.TestCore.test_main_crust ... ok
+test_core.TestCore.test_main_shell ... ok
+Empty graph ... ok
+test_cycles.TestCycles.test_complete_directed_graph ... ok
+test_cycles.TestCycles.test_cycle_basis ... ok
+test_cycles.TestCycles.test_recursive_simple_and_not ... ok
+test_cycles.TestCycles.test_simple_cycles ... ok
+test_cycles.TestCycles.test_simple_cycles_empty ... ok
+test_cycles.TestCycles.test_simple_cycles_graph ... ok
+test_cycles.TestCycles.test_simple_cycles_small ... ok
+test_cycles.TestCycles.test_unsortable ... ok
+test_cycles.TestCycles.test_worst_case_graph ... ok
+test_dag.TestDAG.test_ancestors ... ok
+test_dag.TestDAG.test_descendants ... ok
+test_dag.TestDAG.test_is_directed_acyclic_graph ... ok
+test_dag.TestDAG.test_nbunch_argument ... ok
+test_dag.TestDAG.test_topological_sort1 ... ok
+test_dag.TestDAG.test_topological_sort2 ... ok
+test_dag.TestDAG.test_topological_sort3 ... ok
+test_dag.TestDAG.test_topological_sort4 ... ok
+test_dag.TestDAG.test_topological_sort5 ... ok
+test_dag.test_is_aperiodic_cycle ... ok
+test_dag.test_is_aperiodic_cycle2 ... ok
+test_dag.test_is_aperiodic_cycle3 ... ok
+test_dag.test_is_aperiodic_cycle4 ... ok
+test_dag.test_is_aperiodic_selfloop ... ok
+test_dag.test_is_aperiodic_raise ... ok
+test_dag.test_is_aperiodic_bipartite ... ok
+test_dag.test_is_aperiodic_rary_tree ... ok
+test_dag.test_is_aperiodic_disconnected ... ok
+test_dag.test_is_aperiodic_disconnected2 ... ok
+test_distance_measures.TestDistance.test_center ... ok
+test_distance_measures.TestDistance.test_diameter ... ok
+test_distance_measures.TestDistance.test_eccentricity ... ok
+test_distance_measures.TestDistance.test_eccentricity_infinite ... ok
+test_distance_measures.TestDistance.test_eccentricity_invalid ... ok
+test_distance_measures.TestDistance.test_periphery ... ok
+test_distance_measures.TestDistance.test_radius ... ok
+test_distance_measures.TestDistance.test_radius_exception ... ok
+test_distance_regular.TestDistanceRegular.test_global_parameters ... ok
+test_distance_regular.TestDistanceRegular.test_intersection_array ... ok
+test_distance_regular.TestDistanceRegular.test_is_distance_regular ... ok
+test_distance_regular.TestDistanceRegular.test_not_connected ... ok
+test_dominating.test_dominating_set ... ok
+In complete graphs each node is a dominating set. ... ok
+test_dominating.test_dominating_set_error ... ok
+test_dominating.test_is_dominating_set ... ok
+Example from http://en.wikipedia.org/wiki/Dominating_set ... ok
+test_euler.TestEuler.test_eulerian_circuit_cycle ... ok
+test_euler.TestEuler.test_eulerian_circuit_digraph ... ok
+test_euler.TestEuler.test_eulerian_circuit_multigraph ... ok
+test_euler.TestEuler.test_is_eulerian ... ok
+test_euler.TestEuler.test_is_eulerian2 ... ok
+test_euler.TestEuler.test_not_eulerian ... ok
+test_graphical.test_valid_degree_sequence1 ... ok
+test_graphical.test_valid_degree_sequence2 ... ok
+test_graphical.test_string_input ... ok
+test_graphical.test_negative_input ... ok
+test_graphical.test_atlas ... ok
+test_graphical.test_small_graph_true ... ok
+test_graphical.test_small_graph_false ... ok
+test_graphical.test_directed_degree_sequence ... ok
+test_graphical.test_small_directed_sequences ... ok
+test_graphical.test_multi_sequence ... ok
+test_graphical.test_pseudo_sequence ... ok
+test_hierarchy.test_hierarchy_exception ... ok
+test_hierarchy.test_hierarchy_cycle ... ok
+test_hierarchy.test_hierarchy_tree ... ok
+test_hierarchy.test_hierarchy_1 ... ok
+test_hierarchy.test_hierarchy_weight ... ok
+Floating point weights ... ok
+Create blossom, relabel as T in more than one way, expand, ... ok
+Again but slightly different: ... ok
+Create nested blossom, relabel as T in more than one way ... ok
+Create nested S-blossom, relabel as S, expand recursively: ... ok
+Create blossom, relabel as T, expand such that a new ... ok
+Negative weights ... ok
+Create nested S-blossom, use for augmentation: ... ok
+Create nested S-blossom, augment, expand recursively: ... ok
+Create S-blossom, relabel as S, include in nested S-blossom: ... ok
+Create nested S-blossom, relabel as T, expand: ... ok
+Create S-blossom and use it for augmentation: ... ok
+Create S-blossom, relabel as T, expand: ... ok
+Create S-blossom, relabel as T-blossom, use for augmentation: ... ok
+Empty graph ... ok
+Self loop ... ok
+Single edge ... ok
+Small graph ... ok
+Path ... ok
+test_matching.test_maximal_matching ... ok
+Maximal independent set: K5 ... ok
+Maximal independent set: K55 ... ok
+test_mis.TestMaximalIndependantSet.test_bipartite ... ok
+Bad input should raise exception. ... ok
+test_mis.TestMaximalIndependantSet.test_florentine_family ... ok
+Generate 50 random graphs of different types and sizes and ... ok
+test_mst.TestMST.test_mst ... ok
+test_mst.TestMST.test_mst_attributes ... ok
+test_mst.TestMST.test_mst_disconnected ... ok
+test_mst.TestMST.test_mst_edges ... ok
+test_mst.TestMST.test_mst_edges_specify_weight ... ok
+test_mst.TestMST.test_mst_isolate ... ok
+test_mst.TestMST.test_prim_mst ... ok
+test_mst.TestMST.test_prim_mst_attributes ... ok
+test_mst.TestMST.test_prim_mst_disconnected ... ok
+test_mst.TestMST.test_prim_mst_edges ... ok
+test_mst.TestMST.test_prim_mst_edges_specify_weight ... ok
+test_mst.TestMST.test_prim_mst_isolate ... ok
+test_richclub.test_richclub ... ok
+test_richclub.test_richclub_normalized ... ok
+test_richclub.test_richclub2 ... ok
+test_simple_paths.test_all_simple_paths ... ok
+test_simple_paths.test_all_simple_paths_cutoff ... ok
+test_simple_paths.test_all_simple_paths_multigraph ... ok
+test_simple_paths.test_all_simple_paths_multigraph_with_cutoff ... ok
+test_simple_paths.test_all_simple_paths_directed ... ok
+test_simple_paths.test_all_simple_paths_empty ... ok
+test_simple_paths.test_hamiltonian_path ... ok
+test_simple_paths.test_cutoff_zero ... ok
+test_simple_paths.test_source_missing ... ok
+test_simple_paths.test_target_missing ... ok
+test_smetric.test_smetric ... ok
+test_smetric.test_normalized ... ok
+test_swap.test_double_edge_swap ... ok
+test_swap.test_connected_double_edge_swap ... ok
+test_swap.test_double_edge_swap_small ... ok
+test_swap.test_double_edge_swap_tries ... ok
+test_swap.test_connected_double_edge_swap_small ... ok
+test_swap.test_connected_double_edge_swap_not_connected ... ok
+test_swap.test_degree_seq_c4 ... ok
+test_vitality.TestVitality.test_closeness_vitality_unweighted ... ok
+test_vitality.TestVitality.test_closeness_vitality_unweighted_digraph ... ok
+test_vitality.TestVitality.test_closeness_vitality_weighted ... ok
+test_vitality.TestVitality.test_closeness_vitality_weighted_digraph ... ok
+test_vitality.TestVitality.test_closeness_vitality_weighted_multidigraph ... ok
+test_digraph.TestDiGraph.test_add_cycle ... ok
+test_digraph.TestDiGraph.test_add_edge ... ok
+test_digraph.TestDiGraph.test_add_edges_from ... ok
+test_digraph.TestDiGraph.test_add_node ... ok
+test_digraph.TestDiGraph.test_add_nodes_from ... ok
+test_digraph.TestDiGraph.test_add_path ... ok
+test_digraph.TestDiGraph.test_add_star ... ok
+test_digraph.TestDiGraph.test_adjacency_iter ... ok
+test_digraph.TestDiGraph.test_adjacency_list ... ok
+test_digraph.TestDiGraph.test_attr_dict_not_dict ... ok
+test_digraph.TestDiGraph.test_clear ... ok
+test_digraph.TestDiGraph.test_contains ... ok
+test_digraph.TestDiGraph.test_copy ... ok
+test_digraph.TestDiGraph.test_copy_attr ... ok
+test_digraph.TestDiGraph.test_data_input ... ok
+test_digraph.TestDiGraph.test_degree ... ok
+test_digraph.TestDiGraph.test_degree_iter ... ok
+test_digraph.TestDiGraph.test_edge_attr ... ok
+test_digraph.TestDiGraph.test_edge_attr2 ... ok
+test_digraph.TestDiGraph.test_edge_attr3 ... ok
+test_digraph.TestDiGraph.test_edge_attr4 ... ok
+test_digraph.TestDiGraph.test_edges ... ok
+test_digraph.TestDiGraph.test_edges_data ... ok
+test_digraph.TestDiGraph.test_edges_iter ... ok
+test_digraph.TestDiGraph.test_get_edge_data ... ok
+test_digraph.TestDiGraph.test_getitem ... ok
+test_digraph.TestDiGraph.test_graph_attr ... ok
+test_digraph.TestDiGraph.test_has_edge ... ok
+test_digraph.TestDiGraph.test_has_node ... ok
+test_digraph.TestDiGraph.test_has_predecessor ... ok
+test_digraph.TestDiGraph.test_has_successor ... ok
+test_digraph.TestDiGraph.test_in_degree ... ok
+test_digraph.TestDiGraph.test_in_degree_iter ... ok
+test_digraph.TestDiGraph.test_in_degree_iter_weighted ... ok
+test_digraph.TestDiGraph.test_in_edges_dir ... ok
+test_digraph.TestDiGraph.test_in_edges_iter_dir ... ok
+test_digraph.TestDiGraph.test_name ... ok
+test_digraph.TestDiGraph.test_nbunch_iter ... ok
+test_digraph.TestDiGraph.test_neighbors ... ok
+test_digraph.TestDiGraph.test_neighbors_iter ... ok
+test_digraph.TestDiGraph.test_node_attr ... ok
+test_digraph.TestDiGraph.test_node_attr2 ... ok
+test_digraph.TestDiGraph.test_nodes ... ok
+test_digraph.TestDiGraph.test_nodes_iter ... ok
+test_digraph.TestDiGraph.test_order ... ok
+test_digraph.TestDiGraph.test_out_degree ... ok
+test_digraph.TestDiGraph.test_out_degree_iter ... ok
+test_digraph.TestDiGraph.test_out_degree_iter_weighted ... ok
+test_digraph.TestDiGraph.test_out_edges ... ok
+test_digraph.TestDiGraph.test_out_edges_dir ... ok
+test_digraph.TestDiGraph.test_out_edges_iter ... ok
+test_digraph.TestDiGraph.test_out_edges_iter_dir ... ok
+test_digraph.TestDiGraph.test_predecessors ... ok
+test_digraph.TestDiGraph.test_predecessors_iter ... ok
+test_digraph.TestDiGraph.test_remove_edge ... ok
+test_digraph.TestDiGraph.test_remove_edges_from ... ok
+test_digraph.TestDiGraph.test_remove_node ... ok
+test_digraph.TestDiGraph.test_remove_nodes_from ... ok
+test_digraph.TestDiGraph.test_reverse_copy ... ok
+test_digraph.TestDiGraph.test_reverse_nocopy ... ok
+test_digraph.TestDiGraph.test_selfloop_degree ... ok
+test_digraph.TestDiGraph.test_selfloops ... ok
+test_digraph.TestDiGraph.test_selfloops_attr ... ok
+test_digraph.TestDiGraph.test_size ... ok
+test_digraph.TestDiGraph.test_subgraph ... ok
+test_digraph.TestDiGraph.test_successors ... ok
+test_digraph.TestDiGraph.test_successors_iter ... ok
+test_digraph.TestDiGraph.test_to_directed ... ok
+test_digraph.TestDiGraph.test_to_undirected ... ok
+test_digraph.TestDiGraph.test_to_undirected_reciprocal ... ok
+test_digraph.TestDiGraph.test_weighted_degree ... ok
+test_digraph.TestGraph.test_add_cycle ... ok
+test_digraph.TestGraph.test_add_edge ... ok
+test_digraph.TestGraph.test_add_edges_from ... ok
+test_digraph.TestGraph.test_add_node ... ok
+test_digraph.TestGraph.test_add_nodes_from ... ok
+test_digraph.TestGraph.test_add_path ... ok
+test_digraph.TestGraph.test_add_star ... ok
+test_digraph.TestGraph.test_adjacency_iter ... ok
+test_digraph.TestGraph.test_adjacency_list ... ok
+test_digraph.TestGraph.test_attr_dict_not_dict ... ok
+test_digraph.TestGraph.test_clear ... ok
+test_digraph.TestGraph.test_contains ... ok
+test_digraph.TestGraph.test_copy ... ok
+test_digraph.TestGraph.test_copy_attr ... ok
+test_digraph.TestGraph.test_data_input ... ok
+test_digraph.TestGraph.test_degree ... ok
+test_digraph.TestGraph.test_degree_iter ... ok
+test_digraph.TestGraph.test_edge_attr ... ok
+test_digraph.TestGraph.test_edge_attr2 ... ok
+test_digraph.TestGraph.test_edge_attr3 ... ok
+test_digraph.TestGraph.test_edge_attr4 ... ok
+test_digraph.TestGraph.test_edges ... ok
+test_digraph.TestGraph.test_edges_data ... ok
+test_digraph.TestGraph.test_edges_iter ... ok
+test_digraph.TestGraph.test_get_edge_data ... ok
+test_digraph.TestGraph.test_getitem ... ok
+test_digraph.TestGraph.test_graph_attr ... ok
+test_digraph.TestGraph.test_has_edge ... ok
+test_digraph.TestGraph.test_has_node ... ok
+test_digraph.TestGraph.test_name ... ok
+test_digraph.TestGraph.test_nbunch_iter ... ok
+test_digraph.TestGraph.test_neighbors ... ok
+test_digraph.TestGraph.test_neighbors_iter ... ok
+test_digraph.TestGraph.test_node_attr ... ok
+test_digraph.TestGraph.test_node_attr2 ... ok
+test_digraph.TestGraph.test_nodes ... ok
+test_digraph.TestGraph.test_nodes_iter ... ok
+test_digraph.TestGraph.test_order ... ok
+test_digraph.TestGraph.test_remove_edge ... ok
+test_digraph.TestGraph.test_remove_edges_from ... ok
+test_digraph.TestGraph.test_remove_node ... ok
+test_digraph.TestGraph.test_remove_nodes_from ... ok
+test_digraph.TestGraph.test_selfloop_degree ... ok
+test_digraph.TestGraph.test_selfloops ... ok
+test_digraph.TestGraph.test_selfloops_attr ... ok
+test_digraph.TestGraph.test_size ... ok
+test_digraph.TestGraph.test_subgraph ... ok
+test_digraph.TestGraph.test_to_directed ... ok
+test_digraph.TestGraph.test_to_undirected ... ok
+test_digraph.TestGraph.test_weighted_degree ... ok
+test_digraph_historical.TestDiGraphHistorical.test_add_edge ... ok
+test_digraph_historical.TestDiGraphHistorical.test_add_edges_from ... ok
+test_digraph_historical.TestDiGraphHistorical.test_add_edges_from2 ... ok
+test_digraph_historical.TestDiGraphHistorical.test_add_edges_from3 ... ok
+test_digraph_historical.TestDiGraphHistorical.test_add_nodes_from ... ok
+test_digraph_historical.TestDiGraphHistorical.test_add_remove ... ok
+test_digraph_historical.TestDiGraphHistorical.test_add_remove_node ... ok
+test_digraph_historical.TestDiGraphHistorical.test_complete_subgraph ... ok
+test_digraph_historical.TestDiGraphHistorical.test_contains ... ok
+test_digraph_historical.TestDiGraphHistorical.test_copy ... ok
+test_digraph_historical.TestDiGraphHistorical.test_degree ... ok
+test_digraph_historical.TestDiGraphHistorical.test_degree2 ... ok
+test_digraph_historical.TestDiGraphHistorical.test_degree_digraph ... ok
+test_digraph_historical.TestDiGraphHistorical.test_degree_graph ... ok
+test_digraph_historical.TestDiGraphHistorical.test_edges_iter_nbunch ... ok
+test_digraph_historical.TestDiGraphHistorical.test_edges_nbunch ... ok
+test_digraph_historical.TestDiGraphHistorical.test_empty_subgraph ... ok
+test_digraph_historical.TestDiGraphHistorical.test_in_degree ... ok
+test_digraph_historical.TestDiGraphHistorical.test_iterators ... ok
+test_digraph_historical.TestDiGraphHistorical.test_name ... ok
+test_digraph_historical.TestDiGraphHistorical.test_nbunch_dict ... ok
+test_digraph_historical.TestDiGraphHistorical.test_nbunch_graph ... ok
+test_digraph_historical.TestDiGraphHistorical.test_nbunch_is_list ... ok
+test_digraph_historical.TestDiGraphHistorical.test_nbunch_is_set ... ok
+test_digraph_historical.TestDiGraphHistorical.test_nbunch_iterator ... ok
+test_digraph_historical.TestDiGraphHistorical.test_neighbors ... ok
+test_digraph_historical.TestDiGraphHistorical.test_node_tuple_error ... ok
+test_digraph_historical.TestDiGraphHistorical.test_nonhashable_node ... ok
+test_digraph_historical.TestDiGraphHistorical.test_null ... ok
+test_digraph_historical.TestDiGraphHistorical.test_null_subgraph ... ok
+test_digraph_historical.TestDiGraphHistorical.test_order_size ... ok
+test_digraph_historical.TestDiGraphHistorical.test_out_degree ... ok
+test_digraph_historical.TestDiGraphHistorical.test_predecessors ... ok
+test_digraph_historical.TestDiGraphHistorical.test_remove_edge ... ok
+test_digraph_historical.TestDiGraphHistorical.test_reverse ... ok
+test_digraph_historical.TestDiGraphHistorical.test_reverse2 ... ok
+test_digraph_historical.TestDiGraphHistorical.test_reverse3 ... ok
+test_digraph_historical.TestDiGraphHistorical.test_self_loop ... ok
+test_digraph_historical.TestDiGraphHistorical.test_subgraph ... ok
+test_digraph_historical.TestDiGraphHistorical.test_subgraph_nbunch ... ok
+test_digraph_historical.TestDiGraphHistorical.test_successors ... ok
+test_digraph_historical.TestDiGraphHistorical.test_to_directed ... ok
+test_digraph_historical.TestDiGraphHistorical.test_to_undirected ... ok
+test_function.TestFunction.test_create_empty_copy ... ok
+test_function.TestFunction.test_degree ... ok
+test_function.TestFunction.test_degree_histogram ... ok
+test_function.TestFunction.test_density ... ok
+test_function.TestFunction.test_density_selfloop ... ok
+test_function.TestFunction.test_edges ... ok
+test_function.TestFunction.test_edges_iter ... ok
+test_function.TestFunction.test_freeze ... ok
+test_function.TestFunction.test_info ... ok
+test_function.TestFunction.test_info_digraph ... ok
+test_function.TestFunction.test_is_directed ... ok
+test_function.TestFunction.test_is_frozen ... ok
+test_function.TestFunction.test_neighbors ... ok
+test_function.TestFunction.test_nodes ... ok
+test_function.TestFunction.test_nodes_iter ... ok
+test_function.TestFunction.test_non_neighbors ... ok
+test_function.TestFunction.test_number_of_edges ... ok
+test_function.TestFunction.test_number_of_nodes ... ok
+test_function.TestFunction.test_subgraph ... ok
+test_graph.TestGraph.test_add_cycle ... ok
+test_graph.TestGraph.test_add_edge ... ok
+test_graph.TestGraph.test_add_edges_from ... ok
+test_graph.TestGraph.test_add_node ... ok
+test_graph.TestGraph.test_add_nodes_from ... ok
+test_graph.TestGraph.test_add_path ... ok
+test_graph.TestGraph.test_add_star ... ok
+test_graph.TestGraph.test_adjacency_iter ... ok
+test_graph.TestGraph.test_adjacency_list ... ok
+test_graph.TestGraph.test_attr_dict_not_dict ... ok
+test_graph.TestGraph.test_clear ... ok
+test_graph.TestGraph.test_contains ... ok
+test_graph.TestGraph.test_copy ... ok
+test_graph.TestGraph.test_copy_attr ... ok
+test_graph.TestGraph.test_data_input ... ok
+test_graph.TestGraph.test_degree ... ok
+test_graph.TestGraph.test_degree_iter ... ok
+test_graph.TestGraph.test_edge_attr ... ok
+test_graph.TestGraph.test_edge_attr2 ... ok
+test_graph.TestGraph.test_edge_attr3 ... ok
+test_graph.TestGraph.test_edge_attr4 ... ok
+test_graph.TestGraph.test_edges ... ok
+test_graph.TestGraph.test_edges_data ... ok
+test_graph.TestGraph.test_edges_iter ... ok
+test_graph.TestGraph.test_get_edge_data ... ok
+test_graph.TestGraph.test_getitem ... ok
+test_graph.TestGraph.test_graph_attr ... ok
+test_graph.TestGraph.test_has_edge ... ok
+test_graph.TestGraph.test_has_node ... ok
+test_graph.TestGraph.test_name ... ok
+test_graph.TestGraph.test_nbunch_iter ... ok
+test_graph.TestGraph.test_neighbors ... ok
+test_graph.TestGraph.test_neighbors_iter ... ok
+test_graph.TestGraph.test_node_attr ... ok
+test_graph.TestGraph.test_node_attr2 ... ok
+test_graph.TestGraph.test_nodes ... ok
+test_graph.TestGraph.test_nodes_iter ... ok
+test_graph.TestGraph.test_order ... ok
+test_graph.TestGraph.test_remove_edge ... ok
+test_graph.TestGraph.test_remove_edges_from ... ok
+test_graph.TestGraph.test_remove_node ... ok
+test_graph.TestGraph.test_remove_nodes_from ... ok
+test_graph.TestGraph.test_selfloop_degree ... ok
+test_graph.TestGraph.test_selfloops ... ok
+test_graph.TestGraph.test_selfloops_attr ... ok
+test_graph.TestGraph.test_size ... ok
+test_graph.TestGraph.test_subgraph ... ok
+test_graph.TestGraph.test_to_directed ... ok
+test_graph.TestGraph.test_to_undirected ... ok
+test_graph.TestGraph.test_weighted_degree ... ok
+test_graph_historical.TestGraphHistorical.test_add_edge ... ok
+test_graph_historical.TestGraphHistorical.test_add_edges_from ... ok
+test_graph_historical.TestGraphHistorical.test_add_edges_from2 ... ok
+test_graph_historical.TestGraphHistorical.test_add_edges_from3 ... ok
+test_graph_historical.TestGraphHistorical.test_add_nodes_from ... ok
+test_graph_historical.TestGraphHistorical.test_add_remove ... ok
+test_graph_historical.TestGraphHistorical.test_add_remove_node ... ok
+test_graph_historical.TestGraphHistorical.test_complete_subgraph ... ok
+test_graph_historical.TestGraphHistorical.test_contains ... ok
+test_graph_historical.TestGraphHistorical.test_copy ... ok
+test_graph_historical.TestGraphHistorical.test_degree ... ok
+test_graph_historical.TestGraphHistorical.test_degree2 ... ok
+test_graph_historical.TestGraphHistorical.test_degree_graph ... ok
+test_graph_historical.TestGraphHistorical.test_edges_iter_nbunch ... ok
+test_graph_historical.TestGraphHistorical.test_edges_nbunch ... ok
+test_graph_historical.TestGraphHistorical.test_empty_subgraph ... ok
+test_graph_historical.TestGraphHistorical.test_iterators ... ok
+test_graph_historical.TestGraphHistorical.test_name ... ok
+test_graph_historical.TestGraphHistorical.test_nbunch_dict ... ok
+test_graph_historical.TestGraphHistorical.test_nbunch_graph ... ok
+test_graph_historical.TestGraphHistorical.test_nbunch_is_list ... ok
+test_graph_historical.TestGraphHistorical.test_nbunch_is_set ... ok
+test_graph_historical.TestGraphHistorical.test_nbunch_iterator ... ok
+test_graph_historical.TestGraphHistorical.test_neighbors ... ok
+test_graph_historical.TestGraphHistorical.test_node_tuple_error ... ok
+test_graph_historical.TestGraphHistorical.test_nonhashable_node ... ok
+test_graph_historical.TestGraphHistorical.test_null ... ok
+test_graph_historical.TestGraphHistorical.test_null_subgraph ... ok
+test_graph_historical.TestGraphHistorical.test_order_size ... ok
+test_graph_historical.TestGraphHistorical.test_remove_edge ... ok
+test_graph_historical.TestGraphHistorical.test_self_loop ... ok
+test_graph_historical.TestGraphHistorical.test_subgraph ... ok
+test_graph_historical.TestGraphHistorical.test_subgraph_nbunch ... ok
+test_graph_historical.TestGraphHistorical.test_to_directed ... ok
+test_graph_historical.TestGraphHistorical.test_to_undirected ... ok
+test_multidigraph.TestMultiDiGraph.test_add_cycle ... ok
+test_multidigraph.TestMultiDiGraph.test_add_edge ... ok
+test_multidigraph.TestMultiDiGraph.test_add_edge_conflicting_key ... ok
+test_multidigraph.TestMultiDiGraph.test_add_edges_from ... ok
+test_multidigraph.TestMultiDiGraph.test_add_node ... ok
+test_multidigraph.TestMultiDiGraph.test_add_nodes_from ... ok
+test_multidigraph.TestMultiDiGraph.test_add_path ... ok
+test_multidigraph.TestMultiDiGraph.test_add_star ... ok
+test_multidigraph.TestMultiDiGraph.test_adjacency_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_adjacency_list ... ok
+test_multidigraph.TestMultiDiGraph.test_attr_dict_not_dict ... ok
+test_multidigraph.TestMultiDiGraph.test_clear ... ok
+test_multidigraph.TestMultiDiGraph.test_contains ... ok
+test_multidigraph.TestMultiDiGraph.test_copy ... ok
+test_multidigraph.TestMultiDiGraph.test_copy_attr ... ok
+test_multidigraph.TestMultiDiGraph.test_data_input ... ok
+test_multidigraph.TestMultiDiGraph.test_degree ... ok
+test_multidigraph.TestMultiDiGraph.test_degree_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_edge_attr ... ok
+test_multidigraph.TestMultiDiGraph.test_edge_attr2 ... ok
+test_multidigraph.TestMultiDiGraph.test_edge_attr3 ... ok
+test_multidigraph.TestMultiDiGraph.test_edge_attr4 ... ok
+test_multidigraph.TestMultiDiGraph.test_edges ... ok
+test_multidigraph.TestMultiDiGraph.test_edges_data ... ok
+test_multidigraph.TestMultiDiGraph.test_edges_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_get_edge_data ... ok
+test_multidigraph.TestMultiDiGraph.test_getitem ... ok
+test_multidigraph.TestMultiDiGraph.test_graph_attr ... ok
+test_multidigraph.TestMultiDiGraph.test_has_edge ... ok
+test_multidigraph.TestMultiDiGraph.test_has_node ... ok
+test_multidigraph.TestMultiDiGraph.test_has_predecessor ... ok
+test_multidigraph.TestMultiDiGraph.test_has_successor ... ok
+test_multidigraph.TestMultiDiGraph.test_in_degree ... ok
+test_multidigraph.TestMultiDiGraph.test_in_degree_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_in_edges ... ok
+test_multidigraph.TestMultiDiGraph.test_in_edges_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_name ... ok
+test_multidigraph.TestMultiDiGraph.test_nbunch_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_neighbors ... ok
+test_multidigraph.TestMultiDiGraph.test_neighbors_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_node_attr ... ok
+test_multidigraph.TestMultiDiGraph.test_node_attr2 ... ok
+test_multidigraph.TestMultiDiGraph.test_nodes ... ok
+test_multidigraph.TestMultiDiGraph.test_nodes_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_order ... ok
+test_multidigraph.TestMultiDiGraph.test_out_degree ... ok
+test_multidigraph.TestMultiDiGraph.test_out_degree_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_out_edges ... ok
+test_multidigraph.TestMultiDiGraph.test_out_edges_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_predecessors ... ok
+test_multidigraph.TestMultiDiGraph.test_predecessors_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_remove_edge ... ok
+test_multidigraph.TestMultiDiGraph.test_remove_edges_from ... ok
+test_multidigraph.TestMultiDiGraph.test_remove_multiedge ... ok
+test_multidigraph.TestMultiDiGraph.test_remove_node ... ok
+test_multidigraph.TestMultiDiGraph.test_remove_nodes_from ... ok
+test_multidigraph.TestMultiDiGraph.test_reverse_copy ... ok
+test_multidigraph.TestMultiDiGraph.test_reverse_nocopy ... ok
+test_multidigraph.TestMultiDiGraph.test_selfloop_degree ... ok
+test_multidigraph.TestMultiDiGraph.test_selfloops ... ok
+test_multidigraph.TestMultiDiGraph.test_selfloops2 ... ok
+test_multidigraph.TestMultiDiGraph.test_selfloops_attr ... ok
+test_multidigraph.TestMultiDiGraph.test_size ... ok
+test_multidigraph.TestMultiDiGraph.test_subgraph ... ok
+test_multidigraph.TestMultiDiGraph.test_successors ... ok
+test_multidigraph.TestMultiDiGraph.test_successors_iter ... ok
+test_multidigraph.TestMultiDiGraph.test_to_directed ... ok
+test_multidigraph.TestMultiDiGraph.test_to_undirected ... ok
+test_multidigraph.TestMultiDiGraph.test_to_undirected_reciprocal ... ok
+test_multidigraph.TestMultiDiGraph.test_weighted_degree ... ok
+test_multidigraph.TestMultiGraph.test_add_cycle ... ok
+test_multidigraph.TestMultiGraph.test_add_edge ... ok
+test_multidigraph.TestMultiGraph.test_add_edge_conflicting_key ... ok
+test_multidigraph.TestMultiGraph.test_add_edges_from ... ok
+test_multidigraph.TestMultiGraph.test_add_node ... ok
+test_multidigraph.TestMultiGraph.test_add_nodes_from ... ok
+test_multidigraph.TestMultiGraph.test_add_path ... ok
+test_multidigraph.TestMultiGraph.test_add_star ... ok
+test_multidigraph.TestMultiGraph.test_adjacency_iter ... ok
+test_multidigraph.TestMultiGraph.test_adjacency_list ... ok
+test_multidigraph.TestMultiGraph.test_attr_dict_not_dict ... ok
+test_multidigraph.TestMultiGraph.test_clear ... ok
+test_multidigraph.TestMultiGraph.test_contains ... ok
+test_multidigraph.TestMultiGraph.test_copy ... ok
+test_multidigraph.TestMultiGraph.test_copy_attr ... ok
+test_multidigraph.TestMultiGraph.test_data_input ... ok
+test_multidigraph.TestMultiGraph.test_degree ... ok
+test_multidigraph.TestMultiGraph.test_degree_iter ... ok
+test_multidigraph.TestMultiGraph.test_edge_attr ... ok
+test_multidigraph.TestMultiGraph.test_edge_attr2 ... ok
+test_multidigraph.TestMultiGraph.test_edge_attr3 ... ok
+test_multidigraph.TestMultiGraph.test_edge_attr4 ... ok
+test_multidigraph.TestMultiGraph.test_edges ... ok
+test_multidigraph.TestMultiGraph.test_edges_data ... ok
+test_multidigraph.TestMultiGraph.test_edges_iter ... ok
+test_multidigraph.TestMultiGraph.test_get_edge_data ... ok
+test_multidigraph.TestMultiGraph.test_getitem ... ok
+test_multidigraph.TestMultiGraph.test_graph_attr ... ok
+test_multidigraph.TestMultiGraph.test_has_edge ... ok
+test_multidigraph.TestMultiGraph.test_has_node ... ok
+test_multidigraph.TestMultiGraph.test_name ... ok
+test_multidigraph.TestMultiGraph.test_nbunch_iter ... ok
+test_multidigraph.TestMultiGraph.test_neighbors ... ok
+test_multidigraph.TestMultiGraph.test_neighbors_iter ... ok
+test_multidigraph.TestMultiGraph.test_node_attr ... ok
+test_multidigraph.TestMultiGraph.test_node_attr2 ... ok
+test_multidigraph.TestMultiGraph.test_nodes ... ok
+test_multidigraph.TestMultiGraph.test_nodes_iter ... ok
+test_multidigraph.TestMultiGraph.test_order ... ok
+test_multidigraph.TestMultiGraph.test_remove_edge ... ok
+test_multidigraph.TestMultiGraph.test_remove_edges_from ... ok
+test_multidigraph.TestMultiGraph.test_remove_multiedge ... ok
+test_multidigraph.TestMultiGraph.test_remove_node ... ok
+test_multidigraph.TestMultiGraph.test_remove_nodes_from ... ok
+test_multidigraph.TestMultiGraph.test_selfloop_degree ... ok
+test_multidigraph.TestMultiGraph.test_selfloops ... ok
+test_multidigraph.TestMultiGraph.test_selfloops2 ... ok
+test_multidigraph.TestMultiGraph.test_selfloops_attr ... ok
+test_multidigraph.TestMultiGraph.test_size ... ok
+test_multidigraph.TestMultiGraph.test_subgraph ... ok
+test_multidigraph.TestMultiGraph.test_to_directed ... ok
+test_multidigraph.TestMultiGraph.test_to_undirected ... ok
+test_multidigraph.TestMultiGraph.test_weighted_degree ... ok
+test_multigraph.TestGraph.test_add_cycle ... ok
+test_multigraph.TestGraph.test_add_edge ... ok
+test_multigraph.TestGraph.test_add_edges_from ... ok
+test_multigraph.TestGraph.test_add_node ... ok
+test_multigraph.TestGraph.test_add_nodes_from ... ok
+test_multigraph.TestGraph.test_add_path ... ok
+test_multigraph.TestGraph.test_add_star ... ok
+test_multigraph.TestGraph.test_adjacency_iter ... ok
+test_multigraph.TestGraph.test_adjacency_list ... ok
+test_multigraph.TestGraph.test_attr_dict_not_dict ... ok
+test_multigraph.TestGraph.test_clear ... ok
+test_multigraph.TestGraph.test_contains ... ok
+test_multigraph.TestGraph.test_copy ... ok
+test_multigraph.TestGraph.test_copy_attr ... ok
+test_multigraph.TestGraph.test_data_input ... ok
+test_multigraph.TestGraph.test_degree ... ok
+test_multigraph.TestGraph.test_degree_iter ... ok
+test_multigraph.TestGraph.test_edge_attr ... ok
+test_multigraph.TestGraph.test_edge_attr2 ... ok
+test_multigraph.TestGraph.test_edge_attr3 ... ok
+test_multigraph.TestGraph.test_edge_attr4 ... ok
+test_multigraph.TestGraph.test_edges ... ok
+test_multigraph.TestGraph.test_edges_data ... ok
+test_multigraph.TestGraph.test_edges_iter ... ok
+test_multigraph.TestGraph.test_get_edge_data ... ok
+test_multigraph.TestGraph.test_getitem ... ok
+test_multigraph.TestGraph.test_graph_attr ... ok
+test_multigraph.TestGraph.test_has_edge ... ok
+test_multigraph.TestGraph.test_has_node ... ok
+test_multigraph.TestGraph.test_name ... ok
+test_multigraph.TestGraph.test_nbunch_iter ... ok
+test_multigraph.TestGraph.test_neighbors ... ok
+test_multigraph.TestGraph.test_neighbors_iter ... ok
+test_multigraph.TestGraph.test_node_attr ... ok
+test_multigraph.TestGraph.test_node_attr2 ... ok
+test_multigraph.TestGraph.test_nodes ... ok
+test_multigraph.TestGraph.test_nodes_iter ... ok
+test_multigraph.TestGraph.test_order ... ok
+test_multigraph.TestGraph.test_remove_edge ... ok
+test_multigraph.TestGraph.test_remove_edges_from ... ok
+test_multigraph.TestGraph.test_remove_node ... ok
+test_multigraph.TestGraph.test_remove_nodes_from ... ok
+test_multigraph.TestGraph.test_selfloop_degree ... ok
+test_multigraph.TestGraph.test_selfloops ... ok
+test_multigraph.TestGraph.test_selfloops_attr ... ok
+test_multigraph.TestGraph.test_size ... ok
+test_multigraph.TestGraph.test_subgraph ... ok
+test_multigraph.TestGraph.test_to_directed ... ok
+test_multigraph.TestGraph.test_to_undirected ... ok
+test_multigraph.TestGraph.test_weighted_degree ... ok
+test_multigraph.TestMultiGraph.test_add_cycle ... ok
+test_multigraph.TestMultiGraph.test_add_edge ... ok
+test_multigraph.TestMultiGraph.test_add_edge_conflicting_key ... ok
+test_multigraph.TestMultiGraph.test_add_edges_from ... ok
+test_multigraph.TestMultiGraph.test_add_node ... ok
+test_multigraph.TestMultiGraph.test_add_nodes_from ... ok
+test_multigraph.TestMultiGraph.test_add_path ... ok
+test_multigraph.TestMultiGraph.test_add_star ... ok
+test_multigraph.TestMultiGraph.test_adjacency_iter ... ok
+test_multigraph.TestMultiGraph.test_adjacency_list ... ok
+test_multigraph.TestMultiGraph.test_attr_dict_not_dict ... ok
+test_multigraph.TestMultiGraph.test_clear ... ok
+test_multigraph.TestMultiGraph.test_contains ... ok
+test_multigraph.TestMultiGraph.test_copy ... ok
+test_multigraph.TestMultiGraph.test_copy_attr ... ok
+test_multigraph.TestMultiGraph.test_data_input ... ok
+test_multigraph.TestMultiGraph.test_degree ... ok
+test_multigraph.TestMultiGraph.test_degree_iter ... ok
+test_multigraph.TestMultiGraph.test_edge_attr ... ok
+test_multigraph.TestMultiGraph.test_edge_attr2 ... ok
+test_multigraph.TestMultiGraph.test_edge_attr3 ... ok
+test_multigraph.TestMultiGraph.test_edge_attr4 ... ok
+test_multigraph.TestMultiGraph.test_edges ... ok
+test_multigraph.TestMultiGraph.test_edges_data ... ok
+test_multigraph.TestMultiGraph.test_edges_iter ... ok
+test_multigraph.TestMultiGraph.test_get_edge_data ... ok
+test_multigraph.TestMultiGraph.test_getitem ... ok
+test_multigraph.TestMultiGraph.test_graph_attr ... ok
+test_multigraph.TestMultiGraph.test_has_edge ... ok
+test_multigraph.TestMultiGraph.test_has_node ... ok
+test_multigraph.TestMultiGraph.test_name ... ok
+test_multigraph.TestMultiGraph.test_nbunch_iter ... ok
+test_multigraph.TestMultiGraph.test_neighbors ... ok
+test_multigraph.TestMultiGraph.test_neighbors_iter ... ok
+test_multigraph.TestMultiGraph.test_node_attr ... ok
+test_multigraph.TestMultiGraph.test_node_attr2 ... ok
+test_multigraph.TestMultiGraph.test_nodes ... ok
+test_multigraph.TestMultiGraph.test_nodes_iter ... ok
+test_multigraph.TestMultiGraph.test_order ... ok
+test_multigraph.TestMultiGraph.test_remove_edge ... ok
+test_multigraph.TestMultiGraph.test_remove_edges_from ... ok
+test_multigraph.TestMultiGraph.test_remove_multiedge ... ok
+test_multigraph.TestMultiGraph.test_remove_node ... ok
+test_multigraph.TestMultiGraph.test_remove_nodes_from ... ok
+test_multigraph.TestMultiGraph.test_selfloop_degree ... ok
+test_multigraph.TestMultiGraph.test_selfloops ... ok
+test_multigraph.TestMultiGraph.test_selfloops2 ... ok
+test_multigraph.TestMultiGraph.test_selfloops_attr ... ok
+test_multigraph.TestMultiGraph.test_size ... ok
+test_multigraph.TestMultiGraph.test_subgraph ... ok
+test_multigraph.TestMultiGraph.test_to_directed ... ok
+test_multigraph.TestMultiGraph.test_to_undirected ... ok
+test_multigraph.TestMultiGraph.test_weighted_degree ... ok
+SKIP: PyGraphviz not available.
+SKIP: numpy not available.
+SKIP: pydot not available.
+SKIP: matplotlib not available.
+test_atlas.TestAtlas.test_monotone_degree_sequence ... ok
+test_atlas.TestAtlas.test_monotone_nodes ... ok
+test_atlas.TestAtlas.test_names ... ok
+test_atlas.TestAtlas.test_sizes ... ok
+test_bipartite.TestGeneratorsBipartite.test_alternating_havel_hakimi_graph ... ok
+test_bipartite.TestGeneratorsBipartite.test_bipartite_gnmk_random_graph ... ok
+test_bipartite.TestGeneratorsBipartite.test_bipartite_random_graph ... ok
+test_bipartite.TestGeneratorsBipartite.test_configuration_model ... ok
+test_bipartite.TestGeneratorsBipartite.test_directed_bipartite_random_graph ... ok
+test_bipartite.TestGeneratorsBipartite.test_havel_hakimi_graph ... ok
+test_bipartite.TestGeneratorsBipartite.test_preferential_attachment ... ok
+test_bipartite.TestGeneratorsBipartite.test_reverse_havel_hakimi_graph ... ok
+test_classic.TestGeneratorClassic.test_balanced_tree ... ok
+test_classic.TestGeneratorClassic.test_balanced_tree_star ... ok
+test_classic.TestGeneratorClassic.test_barbell_graph ... ok
+test_classic.TestGeneratorClassic.test_circular_ladder_graph ... ok
+test_classic.TestGeneratorClassic.test_complete_bipartite_graph ... ok
+test_classic.TestGeneratorClassic.test_complete_digraph ... ok
+test_classic.TestGeneratorClassic.test_complete_graph ... ok
+test_classic.TestGeneratorClassic.test_cycle_graph ... ok
+test_classic.TestGeneratorClassic.test_dorogovtsev_goltsev_mendes_graph ... ok
+test_classic.TestGeneratorClassic.test_empty_graph ... ok
+test_classic.TestGeneratorClassic.test_full_rary_tree ... ok
+test_classic.TestGeneratorClassic.test_full_rary_tree_3_20 ... ok
+test_classic.TestGeneratorClassic.test_full_rary_tree_balanced ... ok
+test_classic.TestGeneratorClassic.test_full_rary_tree_empty ... ok
+test_classic.TestGeneratorClassic.test_full_rary_tree_path ... ok
+test_classic.TestGeneratorClassic.test_grid_2d_graph ... ok
+grid_graph([n,m]) is a connected simple graph with the ... ok
+test_classic.TestGeneratorClassic.test_hypercube_graph ... ok
+test_classic.TestGeneratorClassic.test_ladder_graph ... ok
+test_classic.TestGeneratorClassic.test_lollipop_graph ... ok
+test_classic.TestGeneratorClassic.test_null_graph ... ok
+test_classic.TestGeneratorClassic.test_path_graph ... ok
+test_classic.TestGeneratorClassic.test_periodic_grid_2d_graph ... ok
+test_classic.TestGeneratorClassic.test_star_graph ... ok
+test_classic.TestGeneratorClassic.test_trivial_graph ... ok
+test_classic.TestGeneratorClassic.test_wheel_graph ... ok
+test_degree_seq.test_configuration_model_empty ... ok
+test_degree_seq.test_configuration_model ... ok
+test_degree_seq.test_configuation_raise ... ok
+test_degree_seq.test_configuation_raise_odd ... ok
+test_degree_seq.test_directed_configuation_raise_unequal ... ok
+test_degree_seq.test_directed_configuation_mode ... ok
+test_degree_seq.test_expected_degree_graph_empty ... ok
+test_degree_seq.test_expected_degree_graph ... ok
+test_degree_seq.test_expected_degree_graph_selfloops ... ok
+test_degree_seq.test_expected_degree_graph_skew ... ok
+test_degree_seq.test_havel_hakimi_construction ... ok
+test_degree_seq.test_directed_havel_hakimi ... ok
+test_degree_seq.test_degree_sequence_tree ... ok
+test_degree_seq.test_random_degree_sequence_graph ... ok
+test_degree_seq.test_random_degree_sequence_graph_raise ... ok
+test_degree_seq.test_random_degree_sequence_large ... ok
+test_directed.TestGeneratorsDirected.test_create_using_keyword_arguments ... ok
+test_directed.TestGeneratorsDirected.test_smoke_test_random_graphs ... ok
+test_ego.TestGeneratorEgo.test_ego ... ok
+test_ego.TestGeneratorEgo.test_ego_distance ... ok
+test_geometric.TestGeneratorsGeometric.test_geographical_threshold_graph ... ok
+test_geometric.TestGeneratorsGeometric.test_naviable_small_world ... ok
+test_geometric.TestGeneratorsGeometric.test_random_geometric_graph ... ok
+test_geometric.TestGeneratorsGeometric.test_waxman_graph ... ok
+test_hybrid.test_2d_grid_graph ... ok
+test_hybrid.test_small_graph ... ok
+test_intersection.TestIntersectionGraph.test_general_random_intersection_graph ... ok
+test_intersection.TestIntersectionGraph.test_k_random_intersection_graph ... ok
+test_intersection.TestIntersectionGraph.test_random_intersection_graph ... ok
+test_line.TestGeneratorLine.test_create1 ... ok
+test_line.TestGeneratorLine.test_create2 ... ok
+test_line.TestGeneratorLine.test_cycle ... ok
+test_line.TestGeneratorLine.test_digraph1 ... ok
+test_line.TestGeneratorLine.test_digraph2 ... ok
+test_line.TestGeneratorLine.test_path ... ok
+test_line.TestGeneratorLine.test_star ... ok
+test_line.test_node_func ... ok
+test_line.test_edge_func ... ok
+test_line.test_sorted_edge ... ok
+test_random_clustered.TestRandomClusteredGraph.test_invalid1 ... ok
+test_random_clustered.TestRandomClusteredGraph.test_invalid2 ... ok
+test_random_clustered.TestRandomClusteredGraph.test_valid ... ok
+test_random_clustered.TestRandomClusteredGraph.test_valid2 ... ok
+test_random_graphs.TestGeneratorsRandom.smoke_test_random_graph ... ok
+test_random_graphs.TestGeneratorsRandom.test_fast_gnp ... ok
+test_random_graphs.TestGeneratorsRandom.test_gnm ... ok
+test_random_graphs.TestGeneratorsRandom.test_gnp ... ok
+test_random_graphs.TestGeneratorsRandom.test_watts_strogatz_big_k ... ok
+test_small.TestGeneratorsSmall.test__LCF_graph ... ok
+test_small.TestGeneratorsSmall.test_make_small_graph ... ok
+test_small.TestGeneratorsSmall.test_properties_named_small_graphs ... ok
+test_stochastic.test_stochastic ... ok
+test_stochastic.test_stochastic_ints ... ok
+test_stochastic.test_stochastic_graph_input ... ok
+test_stochastic.test_stochastic_multigraph_input ... ok
+test_threshold.TestGeneratorThreshold.test_create_using ... ok
+test_threshold.TestGeneratorThreshold.test_creation_sequences ... ok
+test_threshold.TestGeneratorThreshold.test_eigenvectors ... SKIP: NumPy not available.
+test_threshold.TestGeneratorThreshold.test_fast_versions_properties_threshold_graphs ... ok
+test_threshold.TestGeneratorThreshold.test_finding_routines ... ok
+test_threshold.TestGeneratorThreshold.test_shortest_path ... ok
+test_threshold.TestGeneratorThreshold.test_tg_creation_routines ... ok
+test_threshold.TestGeneratorThreshold.test_threshold_sequence_graph_test ... ok
+test_threshold.TestGeneratorThreshold.test_weights_thresholds ... ok
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+SKIP: NumPy not available.
+test_adjacency.TestAdjacency.test_digraph ... ok
+test_adjacency.TestAdjacency.test_graph ... ok
+test_adjacency.TestAdjacency.test_graph_attributes ... ok
+test_adjacency.TestAdjacency.test_multidigraph ... ok
+test_adjacency.TestAdjacency.test_multigraph ... ok
+test_node_link.TestNodeLink.test_digraph ... ok
+test_node_link.TestNodeLink.test_graph ... ok
+test_node_link.TestNodeLink.test_graph_attributes ... ok
+test_node_link.TestNodeLink.test_multigraph ... ok
+test_serialize.TestAdjacency.test_digraph ... ok
+test_serialize.TestAdjacency.test_graph ... ok
+test_serialize.TestAdjacency.test_graph_attributes ... ok
+test_serialize.TestAdjacency.test_multidigraph ... ok
+test_tree.TestTree.test_graph ... ok
+test_tree.TestTree.test_graph_attributes ... ok
+test_adjlist.TestAdjlist.test_adjlist_delimiter ... ok
+test_adjlist.TestAdjlist.test_adjlist_digraph ... ok
+test_adjlist.TestAdjlist.test_adjlist_graph ... ok
+test_adjlist.TestAdjlist.test_adjlist_integers ... ok
+test_adjlist.TestAdjlist.test_adjlist_multidigraph ... ok
+test_adjlist.TestAdjlist.test_adjlist_multigraph ... ok
+test_adjlist.TestAdjlist.test_latin1 ... ok
+test_adjlist.TestAdjlist.test_latin1_error ... ok
+test_adjlist.TestAdjlist.test_read_multiline_adjlist_1 ... ok
+test_adjlist.TestAdjlist.test_unicode ... ok
+test_adjlist.TestMultilineAdjlist.test_multiline_adjlist_delimiter ... ok
+test_adjlist.TestMultilineAdjlist.test_multiline_adjlist_digraph ... ok
+test_adjlist.TestMultilineAdjlist.test_multiline_adjlist_graph ... ok
+test_adjlist.TestMultilineAdjlist.test_multiline_adjlist_integers ... ok
+test_adjlist.TestMultilineAdjlist.test_multiline_adjlist_multidigraph ... ok
+test_adjlist.TestMultilineAdjlist.test_multiline_adjlist_multigraph ... ok
+test_edgelist.TestEdgelist.test_edgelist_digraph ... ok
+test_edgelist.TestEdgelist.test_edgelist_graph ... ok
+test_edgelist.TestEdgelist.test_edgelist_integers ... ok
+test_edgelist.TestEdgelist.test_edgelist_multidigraph ... ok
+test_edgelist.TestEdgelist.test_edgelist_multigraph ... ok
+test_edgelist.TestEdgelist.test_latin1 ... ok
+test_edgelist.TestEdgelist.test_latin1_error ... ok
+test_edgelist.TestEdgelist.test_read_edgelist_1 ... ok
+test_edgelist.TestEdgelist.test_read_edgelist_2 ... ok
+test_edgelist.TestEdgelist.test_read_edgelist_3 ... ok
+test_edgelist.TestEdgelist.test_unicode ... ok
+test_edgelist.TestEdgelist.test_write_edgelist_1 ... ok
+test_edgelist.TestEdgelist.test_write_edgelist_2 ... ok
+test_edgelist.TestEdgelist.test_write_edgelist_3 ... ok
+test_edgelist.TestEdgelist.test_write_edgelist_4 ... ok
+test_gexf.TestGEXF.test_bool ... ok
+test_gexf.TestGEXF.test_default_attribute ... ok
+test_gexf.TestGEXF.test_directed_edge_in_undirected ... ok
+test_gexf.TestGEXF.test_key_error ... ok
+test_gexf.TestGEXF.test_read_attribute_graphml ... ok
+test_gexf.TestGEXF.test_read_simple_directed_graphml ... ok
+test_gexf.TestGEXF.test_read_simple_undirected_graphml ... ok
+test_gexf.TestGEXF.test_relabel ... ok
+test_gexf.TestGEXF.test_serialize_ints_to_strings ... ok
+test_gexf.TestGEXF.test_undirected_edge_in_directed ... ok
+test_gexf.TestGEXF.test_write_read_simple_directed_graphml ... ok
+test_gexf.TestGEXF.test_write_with_node_attributes ... ok
+test_gml.TestGraph.test_bool ... ok
+test_gml.TestGraph.test_parse_gml ... ok
+test_gml.TestGraph.test_read_gml ... ok
+test_gml.TestGraph.test_relabel_duplicate ... ok
+test_gpickle.TestGpickle.test_gpickle ... ok
+test_graphml.TestGraph.test_bool ... ok
+test_graphml.TestGraph.test_default_attribute ... ok
+test_graphml.TestGraph.test_directed_edge_in_undirected ... ok
+test_graphml.TestGraph.test_hyperedge_error ... ok
+test_graphml.TestGraph.test_key_error ... ok
+test_graphml.TestGraph.test_multigraph_keys ... ok
+test_graphml.TestGraph.test_multigraph_to_graph ... ok
+test_graphml.TestGraph.test_read_attribute_graphml ... ok
+test_graphml.TestGraph.test_read_simple_directed_graphml ... ok
+test_graphml.TestGraph.test_read_simple_undirected_graphml ... ok
+test_graphml.TestGraph.test_undirected_edge_in_directed ... ok
+test_graphml.TestGraph.test_unicode ... ok
+test_graphml.TestGraph.test_write_read_simple_directed_graphml ... ok
+test_graphml.TestGraph.test_yfiles_extension ... ok
+test_leda.TestLEDA.test_parse_leda ... ok
+test_leda.TestLEDA.test_read_LEDA ... ok
+test_p2g.TestP2G.test_read_p2g ... ok
+test_p2g.TestP2G.test_write_p2g ... ok
+test_p2g.TestP2G.test_write_read_p2g ... ok
+test_pajek.TestPajek.test_noname ... ok
+test_pajek.TestPajek.test_parse_pajek ... ok
+test_pajek.TestPajek.test_parse_pajek_simple ... ok
+test_pajek.TestPajek.test_read_pajek ... ok
+SKIP: ogr not available.
+test_sparsegraph6.TestGraph6.test_parse_graph6 ... ok
+test_sparsegraph6.TestGraph6.test_read_graph6 ... ok
+test_sparsegraph6.TestGraph6.test_read_many_graph6 ... ok
+test_sparsegraph6.TestSparseGraph6.test_parse_sparse6 ... ok
+test_sparsegraph6.TestSparseGraph6.test_read_many_graph6 ... ok
+test_sparsegraph6.TestSparseGraph6.test_read_sparse6 ... ok
+test_yaml.TestYaml.testDirected ... ok
+test_yaml.TestYaml.testMultiGraph ... ok
+test_yaml.TestYaml.testUndirected ... ok
+test_decorators.TestOpenFileDecorator.test_writer_arg0_fobj ... ok
+test_decorators.TestOpenFileDecorator.test_writer_arg0_str ... ok
+test_decorators.TestOpenFileDecorator.test_writer_arg1_fobj ... ok
+test_decorators.TestOpenFileDecorator.test_writer_arg1_str ... ok
+test_decorators.TestOpenFileDecorator.test_writer_arg2default_fobj ... ok
+test_decorators.TestOpenFileDecorator.test_writer_arg2default_str ... ok
+test_decorators.TestOpenFileDecorator.test_writer_arg4default_fobj ... ok
+test_decorators.TestOpenFileDecorator.test_writer_kwarg_fobj ... ok
+test_decorators.TestOpenFileDecorator.test_writer_kwarg_str ... ok
+test_decorators.test_not_implemented_decorator ... ok
+test_decorators.test_not_implemented_decorator_key ... ok
+test_decorators.test_not_implemented_decorator_raise ... ok
+test_decorators.test_require_decorator1 ... ok
+test_decorators.test_require_decorator2 ... ok
+SKIP: NumPy not available.
+test_misc.test_is_string_like ... ok
+test_misc.test_iterable ... ok
+test_misc.test_graph_iterable ... ok
+test_misc.test_is_list_of_ints ... ok
+test_misc.test_random_number_distribution ... ok
+test_random_sequence.test_degree_sequences ... ok
+test_random_sequence.test_zipf_rv ... ok
+test_random_sequence.test_zipf_sequence ... ok
+test_random_sequence.test_random_weighted_sample ... ok
+test_random_sequence.test_random_weighted_choice ... ok
+test_rcm.test_reverse_cuthill_mckee ... ok
+test_utils.TestEdgesEqual.test_edges_equal ... ok
+test_utils.TestEdgesEqual.test_edges_not_equal ... ok
+test_utils.TestEdgesEqual.test_edges_with_data_equal ... ok
+test_utils.TestEdgesEqual.test_edges_with_data_not_equal ... ok
+test_utils.TestGraphsEqual.test_graphs_equal ... ok
+test_utils.TestGraphsEqual.test_graphs_not_equal ... ok
+test_utils.TestGraphsEqual.test_graphs_not_equal2 ... ok
+test_utils.TestGraphsEqual.test_graphs_not_equal3 ... ok
+test_utils.TestNodesEqual.test_edges_with_data_not_equal ... ok
+test_utils.TestNodesEqual.test_nodes_equal ... ok
+test_utils.TestNodesEqual.test_nodes_not_equal ... ok
+test_utils.TestNodesEqual.test_nodes_with_data_equal ... ok
+networkx.tests.test_convert.TestConvert.test_digraphs ... ok
+networkx.tests.test_convert.TestConvert.test_directed_to_undirected ... ok
+networkx.tests.test_convert.TestConvert.test_edgelists ... ok
+networkx.tests.test_convert.TestConvert.test_graph ... ok
+networkx.tests.test_convert.TestConvert.test_simple_graphs ... ok
+networkx.tests.test_convert.TestConvert.test_with_multiedges_self_loops ... ok
+SKIP: NumPy not available.
+SKIP: SciPy sparse library not available.
+networkx.tests.test_exceptions.test_raises_networkx_exception ... ok
+networkx.tests.test_exceptions.test_raises_networkx_error ... ok
+networkx.tests.test_exceptions.test_raises_networkx_pointless_concept ... ok
+networkx.tests.test_exceptions.test_raises_networkx_algorithm_error ... ok
+networkx.tests.test_exceptions.test_raises_networkx_unfeasible ... ok
+networkx.tests.test_exceptions.test_raises_networkx_no_path ... ok
+networkx.tests.test_exceptions.test_raises_networkx_unbounded ... ok
+networkx.tests.test_relabel.TestRelabel.test_convert_node_labels_to_integers ... ok
+networkx.tests.test_relabel.TestRelabel.test_convert_to_integers2 ... ok
+networkx.tests.test_relabel.TestRelabel.test_convert_to_integers_raise ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_nodes_copy ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_nodes_digraph ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_nodes_function ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_nodes_graph ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_nodes_missing ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_nodes_multidigraph ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_nodes_multigraph ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_selfloop ... ok
+networkx.tests.test_relabel.TestRelabel.test_relabel_toposort ... ok
+
+======================================================================
+FAIL: test_clique.TestCliques.test_find_cliques1
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy_with_system_site_packages/site-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/travis/virtualenv/pypy_with_system_site_packages/site-packages/networkx/algorithms/tests/test_clique.py", line 22, in test_find_cliques1
+    [[2, 6, 1, 3], [2, 6, 4], [5, 4, 7], [8, 9], [10, 11]])
+AssertionError: Lists differ: [[11, 10], [2, 6, 1, 3], [2, 6... != [[2, 6, 1, 3], [2, 6, 4], [5, ...
+
+First differing element 0:
+[11, 10]
+[2, 6, 1, 3]
+
+- [[11, 10], [2, 6, 1, 3], [2, 6, 4], [5, 4, 7], [8, 9]]
+?  ----------
+
++ [[2, 6, 1, 3], [2, 6, 4], [5, 4, 7], [8, 9], [10, 11]]
+?                                            +++++++++ +
+
+
+Name                                                             Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------
+networkx                                                            31      2    94%   38-39
+networkx.algorithms                                                 51      0   100%
+networkx.algorithms.approximation                                    7      0   100%
+networkx.algorithms.approximation.clique                            25      1    96%   53
+networkx.algorithms.approximation.clustering_coefficient            17      0   100%
+networkx.algorithms.approximation.dominating_set                    27      2    93%   59, 113
+networkx.algorithms.approximation.independent_set                    7      0   100%
+networkx.algorithms.approximation.matching                           6      0   100%
+networkx.algorithms.approximation.ramsey                            15      0   100%
+networkx.algorithms.approximation.vertex_cover                      12      0   100%
+networkx.algorithms.assortativity                                    5      0   100%
+networkx.algorithms.assortativity.connectivity                      40      1    98%   28
+networkx.algorithms.assortativity.correlation                       62     49    21%   76-77, 132-139, 184-185, 229-230, 252-263, 269-285, 290-298
+networkx.algorithms.assortativity.mixing                            66     34    48%   83-87, 155-164, 188-197, 240-248
+networkx.algorithms.assortativity.neighbor_degree                   21      1    95%   19
+networkx.algorithms.assortativity.pairs                             46      9    80%   126-134
+networkx.algorithms.bipartite                                        6      0   100%
+networkx.algorithms.bipartite.basic                                 81     18    78%   82-95, 331-335
+networkx.algorithms.bipartite.centrality                            54      0   100%
+networkx.algorithms.bipartite.cluster                               57      0   100%
+networkx.algorithms.bipartite.projection                           112      7    94%   89, 182, 276, 369, 371-372, 476
+networkx.algorithms.bipartite.redundancy                            20     14    30%   69-83
+networkx.algorithms.bipartite.spectral                              32     26    19%   56-76, 80-88
+networkx.algorithms.block                                           41      0   100%
+networkx.algorithms.boundary                                        17      0   100%
+networkx.algorithms.centrality                                      20      0   100%
+networkx.algorithms.centrality.betweenness                         149      7    95%   101-102, 199, 305, 315, 323, 330
+networkx.algorithms.centrality.betweenness_subset                   83      6    93%   100, 182, 236, 251-254
+networkx.algorithms.centrality.closeness                            24      3    88%   87, 99, 101
+networkx.algorithms.centrality.communicability_alg                 115     92    20%   80-88, 151-163, 240-268, 272-281, 345-365, 427-440, 483, 487-495
+networkx.algorithms.centrality.current_flow_betweenness            114    105     8%   83-137, 210-244, 317-350, 356-361
+networkx.algorithms.centrality.current_flow_betweenness_subset      74     66    11%   98-135, 216-251, 257-262
+networkx.algorithms.centrality.current_flow_closeness               46     39    15%   73-117, 123-127
+networkx.algorithms.centrality.degree_alg                           22      2    91%   85, 123
+networkx.algorithms.centrality.eigenvector                          55     49    11%   71-109, 152-171, 176-181
+networkx.algorithms.centrality.flow_matrix                          96     73    24%   7-27, 36-46, 49, 52, 55, 59-61, 64-65, 69-77, 81-82, 85-87, 90, 95-96, 99-101, 104-106, 113-116, 119-121, 124-126, 132-139
+networkx.algorithms.centrality.katz                                 72     34    53%   166-169, 269-296, 301-306
+networkx.algorithms.centrality.load                                 82      6    93%   71, 134-138
+networkx.algorithms.chordal                                          1      0   100%
+networkx.algorithms.chordal.chordal_alg                            117     11    91%   75, 77, 193, 237-243, 248, 341
+networkx.algorithms.clique                                         242     25    90%   287-288, 292, 320-321, 325, 333-337, 343-345, 349-351, 363-364, 368, 386-387, 391, 448-450
+networkx.algorithms.cluster                                         95      5    95%   53, 67, 90, 237, 362
+networkx.algorithms.community                                        1      0   100%
+networkx.algorithms.community.kclique                               29      0   100%
+networkx.algorithms.components                                       5      0   100%
+networkx.algorithms.components.attracting                           22      2    91%   75-76
+networkx.algorithms.components.biconnected                          74      1    99%   368
+networkx.algorithms.components.connected                            34      0   100%
+networkx.algorithms.components.strongly_connected                  126      2    98%   308, 349
+networkx.algorithms.components.weakly_connected                     47      0   100%
+networkx.algorithms.connectivity                                     2      0   100%
+networkx.algorithms.connectivity.connectivity                      141     21    85%   340-363, 381
+networkx.algorithms.connectivity.cuts                              100     29    71%   86-89, 223, 225, 231-234, 331, 333, 340-357, 361, 377
+networkx.algorithms.core                                            63      5    92%   64, 68, 73-75
+networkx.algorithms.cycles                                         123     31    75%   65-95
+networkx.algorithms.dag                                             95      0   100%
+networkx.algorithms.distance_measures                               43      0   100%
+networkx.algorithms.distance_regular                                44      2    95%   148, 173
+networkx.algorithms.dominating                                      27      0   100%
+networkx.algorithms.euler                                           37      1    97%   115
+networkx.algorithms.flow                                             2      0   100%
+networkx.algorithms.flow.maxflow                                    94      1    99%   100
+networkx.algorithms.flow.mincost                                   208      6    97%   46-47, 165, 172, 371, 373
+networkx.algorithms.graphical                                      152      6    96%   270, 308, 343, 345, 352, 390
+networkx.algorithms.hierarchy                                        9      0   100%
+networkx.algorithms.isolate                                          8      1    88%   41
+networkx.algorithms.isomorphism                                      3      0   100%
+networkx.algorithms.isomorphism.isomorph                            50      2    96%   51, 223
+networkx.algorithms.isomorphism.isomorphvf2                        353     17    95%   197, 350, 357-358, 428, 448, 471, 639, 650, 652, 659, 680, 694, 697, 713, 716, 733
+networkx.algorithms.isomorphism.matchhelpers                       133     41    69%   27-29, 100-104, 177-181, 193-209, 256-267, 321, 327, 344
+networkx.algorithms.isomorphism.vf2userfunc                         50      0   100%
+networkx.algorithms.link_analysis                                    2      0   100%
+networkx.algorithms.link_analysis.hits_alg                         114     68    40%   73, 75, 110, 124-125, 129-130, 177-200, 261-296, 300-308
+networkx.algorithms.link_analysis.pagerank_alg                     132     82    38%   82, 85, 180-211, 267-287, 347-385, 391-399
+networkx.algorithms.matching                                       405      0   100%
+networkx.algorithms.mis                                             21      0   100%
+networkx.algorithms.mst                                             55      4    93%   73, 83, 179, 203
+networkx.algorithms.operators                                        4      0   100%
+networkx.algorithms.operators.all                                   32      2    94%   11-12
+networkx.algorithms.operators.binary                               126      2    98%   179, 189
+networkx.algorithms.operators.product                              118      0   100%
+networkx.algorithms.operators.unary                                 15      1    93%   67
+networkx.algorithms.richclub                                        34      3    91%   63, 66, 96
+networkx.algorithms.shortest_paths                                   5      0   100%
+networkx.algorithms.shortest_paths.astar                            43      1    98%   70
+networkx.algorithms.shortest_paths.dense                            46     17    63%   44-57, 152-156
+networkx.algorithms.shortest_paths.generic                          92      5    95%   125, 130, 137, 248, 373
+networkx.algorithms.shortest_paths.unweighted                      116      0   100%
+networkx.algorithms.shortest_paths.weighted                        208      1    99%   723
+networkx.algorithms.simple_paths                                    56      7    88%   111-112, 114-118
+networkx.algorithms.smetric                                          5      0   100%
+networkx.algorithms.swap                                            82      4    95%   59, 93-95, 156
+networkx.algorithms.traversal                                        4      0   100%
+networkx.algorithms.traversal.breadth_first_search                  32      1    97%   21
+networkx.algorithms.traversal.depth_first_search                    69      0   100%
+networkx.algorithms.tree                                             1      0   100%
+networkx.algorithms.tree.recognition                                14      8    43%   25-28, 47-50
+networkx.algorithms.vitality                                        29      0   100%
+networkx.classes                                                     5      0   100%
+networkx.classes.digraph                                           267      0   100%
+networkx.classes.function                                          104      1    99%   399
+networkx.classes.graph                                             302      1    99%   1814
+networkx.classes.multidigraph                                      173      0   100%
+networkx.classes.multigraph                                        182      2    99%   848, 857
+networkx.convert                                                   281    177    37%   69-70, 120-121, 125-128, 138-139, 147-181, 186, 191, 280-281, 289-292, 386-389, 479-528, 574-623, 672-703, 769-801, 821-835, 839-847
+networkx.drawing                                                    15      3    80%   11-12, 17
+networkx.drawing.layout                                            233    218     6%   50-56, 89-100, 135-159, 216-248, 256-312, 320-385, 424-454, 460-480, 486-513, 520-527, 532-540
+networkx.drawing.nx_agraph                                         158    142    10%   67-107, 129-160, 172-181, 191-198, 229, 255-274, 316-402, 428-439, 443-447
+networkx.drawing.nx_pylab                                          247    229     7%   103-138, 253-268, 354-391, 481-624, 690-727, 806-871, 876, 881, 886, 891, 896-899, 904-905, 910, 915-921
+networkx.exception                                                  10      0   100%
+networkx.external                                                    0      0   100%
+networkx.external.decorator                                          4      1    75%   6
+networkx.external.decorator.decorator2                               0      0   100%
+networkx.external.decorator.decorator2._decorator2                 130     26    80%   39-49, 52, 84, 98, 103-104, 112, 114, 118, 122, 141, 147, 154-157, 200
+networkx.generators                                                 16      0   100%
+networkx.generators.atlas                                           10      0   100%
+networkx.generators.bipartite                                      223     10    96%   68, 351, 356, 428, 431, 433, 500, 503, 505, 508
+networkx.generators.classic                                        200      5    98%   125, 338, 364, 366, 369
+networkx.generators.degree_seq                                     311     27    91%   229, 246-265, 445, 523, 564, 599-600, 620, 681, 696-697, 708
+networkx.generators.directed                                       100      7    93%   78, 137, 182, 266, 268, 270, 273
+networkx.generators.ego                                             15      0   100%
+networkx.generators.geometric                                      111      9    92%   90, 175, 181, 329, 331, 333, 335, 349-350
+networkx.generators.hybrid                                          73      4    95%   84-87
+networkx.generators.intersection                                    25      0   100%
+networkx.generators.line                                            51      0   100%
+networkx.generators.random_clustered                                36      3    92%   90-91, 94
+networkx.generators.random_graphs                                  333     40    88%   100, 214, 220, 268, 452-455, 498, 604, 672, 676, 695-703, 832-843, 868-889
+networkx.generators.small                                          139      3    98%   95, 103, 147
+networkx.generators.social                                          81      0   100%
+networkx.generators.stochastic                                      15      1    93%   41
+networkx.generators.threshold                                      479    104    78%   77, 95, 119, 122-125, 147, 149, 153, 180, 235, 239, 291-292, 329, 481-482, 496, 520, 523-527, 531, 533, 549, 569, 573-576, 587-588, 593, 649-691, 706-711, 772-784, 808-809, 813, 841-842, 846, 857, 875, 885-888, 900-905
+networkx.linalg                                                      8      0   100%
+networkx.linalg.attrmatrix                                          96     89     7%   33-46, 79-120, 241-281, 403-444, 449-457
+networkx.linalg.graphmatrix                                         45     38    16%   71-108, 146, 152-156
+networkx.linalg.laplacianmatrix                                     90     75    17%   58-83, 137-154, 228-269, 273-277
+networkx.linalg.spectrum                                            21     15    29%   44-49, 77-82, 86-90
+networkx.readwrite                                                  12      0   100%
+networkx.readwrite.adjlist                                          67      9    87%   201-202, 216-217, 223-224, 312-314
+networkx.readwrite.edgelist                                         78     17    78%   120-121, 245-246, 257, 265-266, 276-277, 282, 289-290, 402, 461-464
+networkx.readwrite.gexf                                            542    152    72%   32-36, 198, 227, 245-246, 271, 282, 319, 333-339, 353, 358, 368, 384, 390, 395-403, 439, 452-495, 501-506, 510-517, 523-531, 568-569, 582-587, 601, 604, 607, 631, 668, 686, 691-692, 700, 703, 712-717, 725, 729, 733-735, 739, 744, 750-753, 757-764, 769-773, 800, 814, 818, 822, 828, 831, 855-860, 909-910, 915, 926, 928, 933-937, 941-945
+networkx.readwrite.gml                                             164     47    71%   127-131, 137-141, 160, 172, 182, 211-219, 278-284, 289, 291, 298, 302, 312, 315-317, 327, 390-392, 397-404, 408-410
+networkx.readwrite.gpickle                                          15      4    73%   38-39, 99-100
+networkx.readwrite.graphml                                         284     50    82%   49-53, 110-113, 210-211, 233-234, 246, 250-253, 284, 309-316, 339, 355-356, 389-390, 401, 445, 453, 466, 488, 531, 534, 551-552, 554, 567-571, 575-579
+networkx.readwrite.json_graph                                        4      0   100%
+networkx.readwrite.json_graph.adjacency                             50      0   100%
+networkx.readwrite.json_graph.node_link                             40      0   100%
+networkx.readwrite.json_graph.serialize                             20      0   100%
+networkx.readwrite.json_graph.tree                                  42      2    95%   54, 56
+networkx.readwrite.leda                                             34      3    91%   84, 101-102
+networkx.readwrite.multiline_adjlist                               120     23    81%   97, 106, 121, 133, 237-238, 248-249, 253-254, 261-263, 271, 277-278, 282-285, 388-390
+networkx.readwrite.nx_shp                                          112    106     5%   53-87, 116-215, 220-224
+networkx.readwrite.nx_yaml                                          27     11    59%   57-58, 91-92, 100-104, 108-109
+networkx.readwrite.p2g                                              34      0   100%
+networkx.readwrite.pajek                                           105     39    63%   39-76, 100-102, 199, 226-230, 235-236
+networkx.readwrite.sparsegraph6                                     87     10    89%   56, 61, 109, 111, 133-136, 161, 169
+networkx.relabel                                                    76      2    97%   94-95
+networkx.release                                                    89     38    57%   51-118, 128-151, 154, 183-185, 194-197, 254
+networkx.utils                                                       5      0   100%
+networkx.utils.decorators                                           75     10    87%   116-117, 120-121, 220-224, 227-232
+networkx.utils.misc                                                 85     37    56%   98-102, 108-111, 116-133, 138-151
+networkx.utils.random_sequence                                      71      3    96%   59, 130, 189
+networkx.utils.rcm                                                  45      2    96%   119, 138
+networkx.utils.union_find                                           27      1    96%   63
+----------------------------------------------------------------------------------------------
+TOTAL                                                            13099   2857    78%
+----------------------------------------------------------------------
+Ran 1399 tests in 498.327s
+
+FAILED (SKIP=44, failures=1)
+
+The command "nosetests -v --with-coverage --cover-erase --cover-package=networkx" exited with 1.
+
+Done. Your build exited with 1.

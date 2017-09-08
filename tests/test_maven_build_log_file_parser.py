@@ -18,13 +18,13 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
         return '\n'.join(new_lines)
 
     def test_failed_tests_4(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit_4.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit_4.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_errored, set([]))
         self.assertSetEqual(parser.tests_failed, {'com.zaxxer.hikari.pool.HouseKeeperCleanupTest.testHouseKeeperCleanupWithCustomExecutor'})
 
     def test_failed_tests_2(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit_2.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit_2.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_errored, set([]))
         self.assertSetEqual(parser.tests_failed,
@@ -32,34 +32,34 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
 
 
     def test_failed_tests_3(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit_3.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit_3.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_errored, set([]))
         self.assertSetEqual(parser.tests_failed, {'org.apache.commons.io.filefilter.FileFilterTestCase.testAgeFilter'})
 
     
     def test_failed_tests(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_errored, set([]))
         self.assertSetEqual(parser.tests_failed, {'com.google.inject.JitBindingsTest.testChildInjectorInheritsOption'})
 
 
     def test_test_framework_junit(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_failed_tests_junit.txt'), 'DEBUG', False)
         parser.parse()
         self.assertEqual(parser.test_framework, 'junit')
         self.assertEqual(parser.tests_run_completely, True)
         
     def test_errored_tests_2(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_2.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_2.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_failed, set([]))
         self.assertSetEqual(parser.tests_errored, {'com.google.inject.testing.persist.PersistJUnit4ClassRunnerTest.testSimpleNonTransaction',
                                                    'com.google.inject.testing.persist.PersistJUnit4ClassRunnerTest.testSimpleTransaction'})
 
     def test_errored_tests(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_failed, set([]))
         self.assertSetEqual(parser.tests_errored, {'org.apache.commons.math4.fraction.FractionTest.testAdd',
@@ -73,7 +73,7 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
                                                    'org.apache.commons.math4.util.CombinatoricsUtilsTest.testFactorialFail'})
 
     def test_errored_tests_3(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_3.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_3.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_failed, set([]))
         self.assertSetEqual(parser.tests_errored, {'okio.BufferedSourceTest.longDecimalStringTooShortThrows[RealBufferedSource]',
@@ -88,7 +88,7 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
                                                    'okio.BufferedSourceTest.longDecimalStringTooHighThrows[RealBufferedSource]'})
 
     def test_errored_tests_4(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_4.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_4.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_failed, set([]))
         self.assertSetEqual(parser.tests_errored, {
@@ -97,7 +97,7 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
              })
 
     def test_errored_tests_5_and_ignore_errors_because_of_setup_method(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_5.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_5.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_failed, set([]))
         self.assertSetEqual(parser.tests_errored,
@@ -159,7 +159,7 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
                              })
 
     def test_errored_tests_6(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_6.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_6.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_errored,
                             {
@@ -183,7 +183,7 @@ class MavenBuildLogFileParserTest(unittest.TestCase):
         self.assertSetEqual(parser.tests_failed, set([]))
 
     def test_errored_tests_7(self):
-        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_7.txt'), 'DEBUG')
+        parser = MavenBuildLogFileParser(self._get_log('maven_errored_tests_junit_7.txt'), 'DEBUG', False)
         parser.parse()
         self.assertSetEqual(parser.tests_failed,
                             {

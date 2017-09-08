@@ -1,0 +1,9088 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: wjb-1.macstadium-us-se-1.travisci.net:d7f3c626-bf30-44d7-8cc9-859e0e18edf3
+version: v2.9.3 https://github.com/travis-ci/worker/tree/a41c772c638071fbbdbc106f31a664c0532e0c36
+instance: cbe3e19f-9c1a-4483-88e3-2e9d37d08810:travis-ci-osx10.11-xcode7.3-1480691248 (via amqp)
+startup: 1m21.11275057s
+travis_fold:end:worker_info
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+
+Build language: generic
+
+Build id: 255525636
+
+Job id: 255525638
+
+travis-build version: 00c4513d8
+
+travis_fold:end:system_info
+[0K
+
+Fix WWDRCA Certificate
+
+$ rvm use
+
+Warning! PATH is not properly set up, '/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin' is not at first place,
+
+         usually this is caused by shell initialization files - check them for 'PATH=...' entries,
+
+         it might also help to re-add RVM to your dotfiles: 'rvm get stable --auto-dotfiles',
+
+         to fix temporarily in this shell session run: 'rvm use ruby-2.0.0-p648'.
+
+Using /Users/travis/.rvm/gems/ruby-2.0.0-p648
+
+travis_fold:start:git.checkout
+[0Ktravis_time:start:1ef25d6c
+[0K$ git clone --depth=50 --branch=master https://github.com/MagicStack/uvloop.git MagicStack/uvloop
+
+Cloning into 'MagicStack/uvloop'...
+
+
+
+travis_time:end:1ef25d6c:start=1500526667179345000,finish=1500526667978052000,duration=798707000
+[0K$ cd MagicStack/uvloop
+
+$ git checkout -qf 490c41032172b1a7d365ea83642aff7696ef9fc1
+
+travis_fold:end:git.checkout
+[0Ktravis_fold:start:git.submodule
+[0Ktravis_time:start:1b888e34
+[0K$ git submodule update --init --recursive
+
+Submodule 'vendor/libuv' (https://github.com/libuv/libuv.git) registered for path 'vendor/libuv'
+
+Cloning into '/Users/travis/build/MagicStack/uvloop/vendor/libuv'...
+
+Submodule path 'vendor/libuv': checked out '7452ef4e06a4f99ee26b694c65476401534f2725'
+
+
+
+travis_time:end:1b888e34:start=1500526668155463000,finish=1500526670663886000,duration=2508423000
+[0Ktravis_fold:end:git.submodule
+[0K
+
+[33;1mSetting environment variables from .travis.yml[0m
+
+$ export PYMODULE=uvloop
+
+$ export RELEASE_PYTHON_VERSIONS="3.5 3.6"
+
+$ export S3_UPLOAD_USERNAME=oss-ci-bot
+
+$ export S3_UPLOAD_BUCKET=magicstack-oss-releases
+
+$ export S3_UPLOAD_ACCESSKEY=[secure]
+
+$ export S3_UPLOAD_SECRET=[secure]
+
+$ export TWINE_USERNAME=magicstack-ci
+
+$ export TWINE_PASSWORD=[secure]
+
+$ export BUILD=tests,wheels
+
+$ export PYTHON_VERSION=3.6.0
+
+$ export PIP_USER=1
+
+
+
+$ bash -c 'echo $BASH_VERSION'
+
+3.2.57(1)-release
+
+travis_fold:start:install
+[0Ktravis_time:start:22bfefbc
+[0K$ .ci/travis-install.sh
+
++'[' osx == osx ']'
+
++rvm get head
+
+Downloading https://get.rvm.io
+
+No GPG software exists to validate rvm-installer, skipping.
+
+Downloading https://github.com/rvm/rvm/archive/master.tar.gz
+
+
+
+Upgrading the RVM installation in /Users/travis/.rvm/
+
+    RVM PATH line found in /Users/travis/.mkshrc /Users/travis/.profile /Users/travis/.bashrc /Users/travis/.zshrc.
+
+    RVM sourcing line found in /Users/travis/.profile /Users/travis/.bash_profile /Users/travis/.zlogin.
+
+Upgrade of RVM in /Users/travis/.rvm/ is complete.
+
+
+
+Upgrade Notes:
+
+
+
+  * No new notes to display.
+
+
+
+RVM reloaded!
+
++git clone --depth 1 https://github.com/yyuu/pyenv.git /Users/travis/.pyenv
+
+Cloning into '/Users/travis/.pyenv'...
+
++PYENV_ROOT=/Users/travis/.pyenv
+
++PATH=/Users/travis/.pyenv/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+++pyenv init -
+
++eval 'export PATH="/Users/travis/.pyenv/shims:${PATH}"
+
+export PYENV_SHELL=bash
+
+source '\''/Users/travis/.pyenv/libexec/../completions/pyenv.bash'\''
+
+command pyenv rehash 2>/dev/null
+
+pyenv() {
+
+  local command
+
+  command="$1"
+
+  if [ "$#" -gt 0 ]; then
+
+    shift
+
+  fi
+
+
+
+  case "$command" in
+
+  rehash|shell)
+
+    eval "$(pyenv "sh-$command" "$@")";;
+
+  *)
+
+    command pyenv "$command" "$@";;
+
+  esac
+
+}'
+
+++export PATH=/Users/travis/.pyenv/shims:/Users/travis/.pyenv/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+++PATH=/Users/travis/.pyenv/shims:/Users/travis/.pyenv/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+++export PYENV_SHELL=bash
+
+++PYENV_SHELL=bash
+
+++source /Users/travis/.pyenv/libexec/../completions/pyenv.bash
+
++++complete -F _pyenv pyenv
+
+++command pyenv rehash
+
++pyenv versions
+
++local command
+
++command=versions
+
++'[' 1 -gt 0 ']'
+
++shift
+
++case "$command" in
+
++command pyenv versions
+
++pyenv versions
+
++grep '3.6.0$'
+
++pyenv install 3.6.0
+
++local command
+
++command=install
+
++'[' 2 -gt 0 ']'
+
++shift
+
++case "$command" in
+
++command pyenv install 3.6.0
+
++pyenv install 3.6.0
+
+Downloading Python-3.6.0.tar.xz...
+
+-> https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
+
+Installing Python-3.6.0...
+
+Installed Python-3.6.0 to /Users/travis/.pyenv/versions/3.6.0
+
+
+
++pyenv global 3.6.0
+
++local command
+
++command=global
+
++'[' 2 -gt 0 ']'
+
++shift
+
++case "$command" in
+
++command pyenv global 3.6.0
+
++pyenv global 3.6.0
+
++pyenv rehash
+
++local command
+
++command=rehash
+
++'[' 1 -gt 0 ']'
+
++shift
+
++case "$command" in
+
+++pyenv sh-rehash
+
+++local command
+
+++command=sh-rehash
+
+++'[' 1 -gt 0 ']'
+
+++shift
+
+++case "$command" in
+
+++command pyenv sh-rehash
+
+++pyenv sh-rehash
+
++eval 'hash -r 2>/dev/null || true'
+
+++hash -r
+
++brew update
+
+Updated 3 taps (caskroom/cask, homebrew/core, homebrew/versions).
+
+==> New Formulae
+
+abuse
+
+adr-tools
+
+advancemame
+
+advancemenu
+
+advancescan
+
+afuse
+
+alexjs
+
+allure
+
+angband
+
+angolmois
+
+angular-cli
+
+ansible-lint
+
+ansible@1.9
+
+ansible@2.0
+
+ant@1.9
+
+antlr4-cpp-runtime
+
+apache-arrow
+
+apache-ctakes
+
+apache-spark@1.5
+
+apache-spark@1.6
+
+apm-bash-completion
+
+apple-gcc42
+
+aptly-completion
+
+archivemount
+
+arx-libertatis
+
+asdf
+
+atari800
+
+audacious
+
+aurora
+
+autoconf@2.13
+
+autoconf@2.64
+
+automake@1.12
+
+autorest
+
+avanor
+
+avfs
+
+awk
+
+awslogs
+
+babel
+
+ballerburg
+
+bandcamp-dl
+
+bartycrouch
+
+bastet
+
+bc
+
+bdsup2sub
+
+binaryen
+
+bindfs
+
+biogeme
+
+bit
+
+bitcoin
+
+blastem
+
+bluepill
+
+bnd
+
+bochs
+
+boom-completion
+
+boost-mpi
+
+boot2docker-completion
+
+bower
+
+brew-cask-completion
+
+brogue
+
+btfs
+
+bubbros
+
+buildifier
+
+bundler-completion
+
+bzip2
+
+c10t
+
+c14-cli
+
+c2048
+
+cap-completion
+
+cargo-completion
+
+carrot2
+
+cataclysm
+
+cdogs-sdl
+
+cgoban
+
+chakra
+
+cheapglk
+
+cheops
+
+chezscheme
+
+chocolate-doom
+
+chronograf
+
+ck
+
+ckan
+
+closure-stylesheets
+
+cmark-gfm
+
+cnats
+
+
+cockatrice
+
+cockroach
+
+collector-sidecar
+
+color-code
+
+conjure-up
+
+corebird
+
+corsixth
+
+crowdin
+
+crystal-icr
+
+ctop
+
+curaengine
+
+curlftpfs
+
+curseofwar
+
+cython
+
+dbt
+
+dcm2niix
+
+dcos-cli
+
+ddd
+
+dehydrated
+
+dgen
+
+dhall-json
+
+diffstat
+
+diffutils
+
+django-completion
+
+djmount
+
+dmenu
+
+dnsviz
+
+docker-completion
+
+docker-compose-completion
+
+docker-credential-helper
+
+docker-machine-completion
+
+docker-machine-driver-vultr
+
+docker2aci
+
+dopewars
+
+dosbox
+
+dosbox-x
+
+druid
+
+dungeon
+
+dvd-vr
+
+dwarf
+
+dwm
+
+easy-tag
+
+easyrpg-player
+
+ed
+
+einstein
+
+eject
+
+elm-format
+
+ems-flasher
+
+encfs
+
+enigma
+
+erlang@19
+
+exa
+
+excel-compare
+
+expect
+
+ext2fuse
+
+ext4fuse
+
+exult
+
+faas-cli
+
+fabric-completion
+
+fairymax
+
+fceux
+
+fd
+
+feh
+
+fifechan
+
+file-formula
+
+firebase-cli
+
+fizmo
+
+flif
+
+flint-checker
+
+fmsx
+
+fox
+
+freeciv
+
+freedink
+
+freeglut
+
+freerdp
+
+frobtads
+
+frotz
+
+fs-uae
+
+fsql
+
+fstrm
+
+fuego
+
+fuse-emulator
+
+fuse-zip
+
+fzy
+
+gandi.cli
+
+gcsfuse
+
+gearboy
+
+gearsystem
+
+geeqie
+
+gem-completion
+
+geomview
+
+get_iplayer
+
+gifcap
+
+git-cinnabar
+
+git-game
+
+git-if
+
+git-quick-stats
+
+git-recent
+
+gitfs
+
+github-keygen
+
+gitter-cli
+
+glkterm
+
+glktermw
+
+globjects
+
+glulxe
+
+gnome-autoar
+
+gnu-chess
+
+gnu-go
+
+gnu-shogi
+
+gnupg@1.4
+
+gnupg@2.0
+
+gnuski
+
+go-gui
+
+go@1.7
+
+goad
+
+gobby
+
+gobuster
+
+goenv
+
+goofys
+
+google-java-format
+
+gpatch
+
+gpcslots2
+
+gperf
+
+grace
+
+gradle-completion
+
+grakn
+
+greed
+
+grep
+
+groff
+
+grpc
+
+grunt-completion
+
+gsmartcontrol
+
+gst-rtsp-server
+
+gtef
+
+gtk-chtheme
+
+guetzli
+
+guichan
+
+guile@2.0
+
+gv
+
+gzip
+
+handbrake
+
+haste-client
+
+hatari
+
+hdf5
+
+heimdal
+
+hexgui
+
+historian
+
+homesick-completion
+
+homeworlds
+
+httest
+
+httpflow
+
+huexpress
+
+i3
+
+i3status
+
+iamy
+
+ib
+
+ifuse
+
+imagemagick@6
+
+imake
+
+immortal
+
+inform6
+
+insect
+
+instead
+
+ipython
+
+ipython@5
+
+ivykis
+
+jenkins-lts
+
+jhipster
+
+jid
+
+jing-trang
+
+jnethack
+
+jose
+
+jpcsp
+
+juju-wait
+
+juju@1.25
+
+jvm-mon
+
+kitchen-completion
+
+klavaro
+
+knot-resolver
+
+kompose
+
+kops
+
+krb5
+
+ktmpl
+
+kubectx
+
+kubernetes-helm
+
+lapack
+
+lasso
+
+latexila
+
+launchctl-completion
+
+lcs
+
+less
+
+lftp
+
+libcds
+
+libchaos
+
+libedit
+
+libetpan
+
+libggz
+
+libgosu
+
+libhttpseverywhere
+
+libiconv
+
+liblcf
+
+libmypaint
+
+libnice
+
+libopusenc
+
+libpcap
+
+librealsense
+
+libspectrum
+
+libswiftnav
+
+libtcod
+
+libxkbcommon
+
+lincity-ng
+
+llvm@3.9
+
+lolcat
+
+lsof
+
+lumo
+
+lxc
+
+m4
+
+magic-wormhole
+
+magnetix
+
+make
+
+mame
+
+mapcrafter
+
+mariadb@10.1
+
+maven-completion
+
+maven@3.0
+
+maven@3.3
+
+mednafen
+
+mesalib-glw
+
+mgba
+
+minetest
+
+mingw-w64
+
+mix-completion
+
+mkhexgrid
+
+mmark
+
+molecule
+
+monitoring-plugins
+
+mono-libgdiplus
+
+moodbar
+
+moon-buggy
+
+morse
+
+mp3fs
+
+mps-youtube
+
+mruby-cli
+
+mscgen
+
+mupdf
+
+mupen64plus
+
+myman
+
+mysql-utilities
+
+naga
+
+nano
+
+nanomsgxx
+
+nativefier
+
+nazghul
+
+ncompress
+
+ncurses
+
+ndenv
+
+nedit
+
+neopop-sdl
+
+neovim
+
+nesemu2
+
+nestopia-ue
+
+nethack
+
+nethack4
+
+nethacked
+
+netris
+
+nettoe
+
+nicotine-plus
+
+ninvaders
+
+nnn
+
+np2
+
+npush
+
+nsnake
+
+nsuds
+
+ntfs-3g
+
+ntp
+
+nudoku
+
+numpy
+
+nuvie
+
+nxengine
+
+omega-rpg
+
+onscripter
+
+open-completion
+
+open-tyrian
+
+openclonk
+
+opencoarrays
+
+openfortivpn
+
+openjazz
+
+openldap
+
+openmotif
+
+openmsx
+
+openrct2
+
+openssh
+
+opensyobon
+
+openttd
+
+orc-tools
+
+ori
+
+osmium-tool
+
+overmind
+
+pachi
+
+packer-completion
+
+packetbeat
+
+packetq
+
+pacman4console
+
+pari
+
+passwdqc
+
+pc6001vx
+
+pdf2image
+
+pdftoipe
+
+percona-server-mongodb
+
+pgplot
+
+pilosa
+
+pioneer
+
+pioneers
+
+pip-completion
+
+polyglot
+
+ponscripter-sekai
+
+ppsspp
+
+pqiv
+
+prest
+
+proselint
+
+protobuf@3.1
+
+puzzles
+
+pycodestyle
+
+pytouhou
+
+qcli
+
+qdae
+
+qmmp
+
+qt@5.7
+
+qtads
+
+quasi88
+
+qwtpolar
+
+r
+
+rails-completion
+
+raine
+
+rake-completion
+
+rawgl
+
+rdesktop
+
+recon-ng
+
+redex
+
+redis@3.2
+
+reminiscence
+
+residualvm
+
+rex
+
+rlvm
+
+robot-framework
+
+robotfindskitten
+
+rofs-filtered
+
+rogue
+
+roll
+
+rom-tools
+
+rpcgen
+
+rsync
+
+ruby-completion
+
+rustc-completion
+
+rustup-init
+
+rxvt-unicode
+
+s3-backer
+
+s3fs
+
+sbjson
+
+scipy
+
+screen
+
+scummvm
+
+scummvm-tools
+
+sdlpop
+
+securefs
+
+servus
+
+sha1dc
+
+shellshare
+
+shfmt
+
+simple-mtpfs
+
+simple-obfs
+
+simutrans
+
+ski
+
+slashem
+
+solarus
+
+sonar-completion
+
+sonarlint
+
+source-to-image
+
+sourcery
+
+spaceinvaders-go
+
+spdlog
+
+speexdsp
+
+spigot
+
+spring-completion
+
+sqlparse
+
+sshconfigfs
+
+sshfs
+
+startup-notification
+
+statik
+
+stella
+
+stern
+
+stockfish
+
+stone-soup
+
+stormlib
+
+stormssh-completion
+
+streamlink
+
+supermodel
+
+supertux
+
+svgo
+
+swiftformat
+
+swiftplate
+
+swimat
+
+sxiv
+
+sz81
+
+t-completion
+
+taisei
+
+tarsnap-gui
+
+tarsnapper
+
+tcl-tk
+
+tcpdump
+
+tectonic
+
+teleconsole
+
+telegram-cli
+
+teleport
+
+temporal_tables
+
+terminator
+
+termius
+
+terraform-docs
+
+tfenv
+
+tgif
+
+tiger-vnc
+
+tmuxinator-completion
+
+todoman
+
+tokei
+
+tomcat@8.0
+
+tty-solitaire
+
+tundra
+
+tup
+
+twine-pypi
+
+ucg
+
+ucon64
+
+ufoai
+
+uftp
+
+uggconv
+
+uniutils
+
+unnethack
+
+unzip
+
+urh
+
+vagrant-completion
+
+vecx
+
+vips
+
+vitetris
+
+vmdktool
+
+wabt
+
+warp
+
+watchexec
+
+wdfs
+
+webpack
+
+wesnoth
+
+whois
+
+widelands
+
+wmctrl
+
+woboq_codebrowser
+
+wpcli-completion
+
+wpscan
+
+write-good
+
+wu
+
+wumpus
+
+x3270
+
+xboard
+
+xclip
+
+xdotool
+
+xlispstat
+
+xmlsectool
+
+xmoto
+
+xmount
+
+xpa
+
+xpdf
+
+xrick
+
+xshogi
+
+xsv
+
+xu4
+
+yetris
+
+yosys
+
+zboy
+
+zelda-roth-se
+
+zeromq@4.1
+
+zlib
+
+zork
+
+zsdx
+
+zsxd
+
+zxing-cpp
+
+zyre
+
+==> Updated Formulae
+
+aalib
+
+abcde
+
+abcl
+
+abcm2ps
+
+ace
+
+ack
+
+acmetool
+
+acpica
+
+activemq
+
+admesh
+
+adns
+
+advancecomp
+
+aescrypt-packetizer
+
+afflib
+
+afl-fuzz
+
+agda
+
+aha
+
+akka
+
+algernon
+
+algol68g
+
+allegro
+
+alot
+
+alpine
+
+amazon-ecs-cli
+
+ammonite-repl
+
+amqp-cpp
+
+amtterm
+
+ansible
+
+ansible-cmdb
+
+ansifilter
+
+ansiweather
+
+ant
+
+antigen
+
+antlr
+
+apache-archiva
+
+apache-brooklyn-cli
+
+apache-drill
+
+apache-flink
+
+apache-geode
+
+apache-spark
+
+apache-zeppelin
+
+apktool
+
+app-engine-go-64
+
+app-engine-java
+
+app-engine-python
+
+appscale-tools
+
+apr
+
+apr-util
+
+aptly
+
+arangodb
+
+archi-steam-farm
+
+argus
+
+argyll-cms
+
+aria2
+
+arm
+
+armor
+
+arping
+
+artifactory
+
+ascii
+
+asciinema
+
+asio
+
+asn1c
+
+aspectj
+
+assh
+
+assimp
+
+astyle
+
+at-spi2-atk
+
+at-spi2-core
+
+atk
+
+atlassian-cli
+
+ats2-postiats
+
+aubio
+
+audiofile
+
+augeas
+
+aurora-cli
+
+autoconf-archive
+
+autogen
+
+autojump
+
+automake
+
+avra
+
+awf
+
+aws-elasticbeanstalk
+
+aws-sdk-cpp
+
+awscli
+
+axel
+
+azure-cli
+
+b2-tools
+
+babeld
+
+babl
+
+bacula-fd
+
+bagit
+
+baobab
+
+baresip
+
+basex
+
+bash
+
+bash-completion
+
+bash-git-prompt
+
+bash-preexec
+
+batik
+
+bazel
+
+beansdb
+
+bear
+
+bee
+
+berkeley-db
+
+bfg
+
+bgpdump
+
+bib-tool
+
+bibtex2html
+
+bibutils
+
+bind
+
+binutils
+
+binwalk
+
+bitlbee
+
+bitrise
+
+blackbox
+
+blockhash
+
+blueutil
+
+bmake
+
+bmon
+
+bogofilter
+
+bonnie++
+
+boost
+
+boost-bcp
+
+boost-python
+
+borg
+
+botan
+
+boxes
+
+bro
+
+brotli
+
+buku
+
+bullet
+
+bup
+
+burp
+
+byacc
+
+byobu
+
+byteman
+
+bzrtools
+
+c-ares
+
+cabal-install
+
+caddy
+
+cadubi
+
+caf
+
+cairo
+
+cairomm
+
+cake
+
+calabash
+
+calc
+
+calcurse
+
+camlp4
+
+camlp5
+
+capnp
+
+carina
+
+carthage
+
+casperjs
+
+cassandra
+
+castxml
+
+catimg
+
+cattle
+
+cayley
+
+ccache
+
+ccextractor
+
+cdiff
+
+cdk
+
+cereal
+
+certbot
+
+certigo
+
+ceylon
+
+cfengine
+
+cfr-decompiler
+
+cgal
+
+cgdb
+
+cgrep
+
+chaiscript
+
+chapel
+
+charm
+
+charm-tools
+
+cheat
+
+check
+
+check_postgres
+
+checkstyle
+
+chicken
+
+chkrootkit
+
+chromaprint
+
+chromedriver
+
+chruby-fish
+
+cimg
+
+citus
+
+cjdns
+
+clang-format
+
+clasp
+
+clhep
+
+cli53
+
+clipper
+
+clipsafe
+
+cloc
+
+clojurescript
+
+cloog
+
+closure-compiler
+
+clutter
+
+clutter-gst
+
+cmake
+
+cmark
+
+cmocka
+
+cmus
+
+coccinelle
+
+cocoapods
+
+codec2
+
+codequery
+
+coffeescript
+
+collectd
+
+colordiff
+
+commandbox
+
+compcert
+
+compose2kube
+
+conan
+
+concurrencykit
+
+confuse
+
+consul
+
+consul-backinator
+
+consul-template
+
+convmv
+
+convox
+
+cookiecutter
+
+coq
+
+coreutils
+
+coturn
+
+couchdb
+
+couchdb-lucene
+
+cpanminus
+
+cppcheck
+
+cppunit
+
+creduce
+
+cromwell
+
+crystal-lang
+
+csfml
+
+csmith
+
+cspice
+
+csvtomd
+
+cucumber-cpp
+
+curl
+
+curlpp
+
+cweb
+
+czmq
+
+dante
+
+dar
+
+darcs
+
+dark-mode
+
+darkice
+
+datetime-fortran
+
+dateutils
+
+datomic
+
+davix
+
+davmail
+
+dbhash
+
+dbus
+
+dbus-glib
+
+dbxml
+
+dcd
+
+dcmtk
+
+dcraw
+
+ddar
+
+ddrescue
+
+debianutils
+
+deis
+
+deisctl
+
+dependency-check
+
+depqbf
+
+derby
+
+devd
+
+devil
+
+dfc
+
+dfix
+
+dfmt
+
+di
+
+dialog
+
+dieharder
+
+diff-pdf
+
+diff-so-fancy
+
+diffoscope
+
+digdag
+
+direnv
+
+dirmngr
+
+dirt
+
+discount
+
+djview4
+
+dmd
+
+dmtx-utils
+
+dnscrypt-proxy
+
+dnscrypt-wrapper
+
+dnsmasq
+
+dnsperf
+
+docker
+
+docker-cloud
+
+docker-compose
+
+docker-machine
+
+docker-machine-driver-xhyve
+
+docker-machine-nfs
+
+docker-machine-parallels
+
+docker-swarm
+
+dockviz
+
+dockward
+
+doctl
+
+docutils
+
+doitlive
+
+dos2unix
+
+dosfstools
+
+dovecot
+
+doxygen
+
+dpkg
+
+dropbear
+
+dscanner
+
+dspdfviewer
+
+dub
+
+duck
+
+duplicity
+
+duply
+
+dvm
+
+dwarfutils
+
+dwdiff
+
+e2fsprogs
+
+ebook-tools
+
+ecl
+
+efl
+
+eiffelstudio
+
+eigen
+
+ejabberd
+
+ejdb
+
+elasticsearch
+
+elixir
+
+elixirscript
+
+elm
+
+elvish
+
+emacs
+
+embulk
+
+emp
+
+emscripten
+
+entr
+
+epeg
+
+ephemeralpg
+
+epubcheck
+
+eralchemy
+
+erlang
+
+esniper
+
+etcd
+
+ettercap
+
+euca2ools
+
+eventql
+
+evince
+
+exercism
+
+exiftool
+
+exim
+
+exiv2
+
+expat
+
+exploitdb
+
+extract_url
+
+faac
+
+fabio
+
+fabric
+
+fades
+
+fantom
+
+fdk-aac
+
+fdroidserver
+
+feedgnuplot
+
+fetch-crl
+
+ffe
+
+ffmpeg
+
+fftw
+
+fibjs
+
+ficy
+
+file-roller
+
+filebeat
+
+fio
+
+fish
+
+fits
+
+flac
+
+flake8
+
+flashrom
+
+flatbuffers
+
+flatcc
+
+fleetctl
+
+flex
+
+flow
+
+flowgrind
+
+fltk
+
+fluent-bit
+
+flyway
+
+fmt
+
+fobis
+
+folly
+
+fon-flash-cli
+
+fontconfig
+
+fontforge
+
+fonttools
+
+fop
+
+format-udf
+
+fossil
+
+fpc
+
+fping
+
+fpp
+
+fq
+
+fragroute
+
+freeimage
+
+freeipmi
+
+freeling
+
+freeradius-server
+
+freeswitch
+
+freetds
+
+freetype
+
+frege
+
+frege-repl
+
+frei0r
+
+fstar
+
+fuseki
+
+fwup
+
+fzf
+
+g3log
+
+gabedit
+
+galen
+
+game-music-emu
+
+gammaray
+
+gammu
+
+ganglia
+
+gauge
+
+gcal
+
+gcc
+
+gcore
+
+gd
+
+gdal
+
+gdb
+
+gdbm
+
+gdk-pixbuf
+
+gearman
+
+geckodriver
+
+gecode
+
+gedit
+
+gegl
+
+generate-json-schema
+
+geographiclib
+
+geoip
+
+geoipupdate
+
+geos
+
+geoserver
+
+getdns
+
+getmail
+
+gexiv2
+
+gflags
+
+ghc
+
+ghi
+
+ghostscript
+
+gibo
+
+giflib
+
+gifsicle
+
+gimme
+
+ginac
+
+gist
+
+git
+
+git-annex
+
+git-archive-all
+
+git-cola
+
+git-extras
+
+git-flow-avh
+
+git-fresh
+
+git-ftp
+
+git-lfs
+
+git-octopus
+
+git-plus
+
+git-secret
+
+git-series
+
+git-subrepo
+
+git-test
+
+git-town
+
+git-tracker
+
+gitbucket
+
+giter8
+
+gitg
+
+github-markdown-toc
+
+github-release
+
+gitlab-ci-multi-runner
+
+gitless
+
+gitup
+
+gitversion
+
+gjs
+
+gjstest
+
+gkrellm
+
+glassfish
+
+glbinding
+
+glib
+
+glibmm
+
+glm
+
+global
+
+glog
+
+gmic
+
+gmime
+
+gmp
+
+gnatsd
+
+gnome-builder
+
+gnome-icon-theme
+
+gnome-themes-standard
+
+gnu-apl
+
+gnu-cobol
+
+gnu-sed
+
+gnu-typist
+
+gnu-units
+
+gnumeric
+
+gnupg
+
+gnupg-pkcs11-scd
+
+gnuplot
+
+gnuradio
+
+gnutls
+
+go
+
+goaccess
+
+gobject-introspection
+
+godep
+
+gofabric8
+
+goffice
+
+gollum
+
+golo
+
+goocanvas
+
+googler
+
+gor
+
+gosu
+
+gotags
+
+govendor
+
+gpa
+
+gpac
+
+gperftools
+
+gpg-agent
+
+gpgme
+
+gphoto2
+
+gpsbabel
+
+gradle
+
+grafana
+
+grails
+
+graphene
+
+graphicsmagick
+
+graphite2
+
+graphviz
+
+grc
+
+grib-api
+
+grok
+
+gron
+
+groonga
+
+groovy
+
+groovysdk
+
+grsync
+
+gsettings-desktop-schemas
+
+gsl
+
+gsoap
+
+gspell
+
+gssdp
+
+gssh
+
+gst-editing-services
+
+gst-libav
+
+gst-plugins-bad
+
+gst-plugins-base
+
+gst-plugins-good
+
+gst-plugins-ugly
+
+gst-python
+
+gst-validate
+
+gstreamer
+
+gti
+
+gtk+
+
+gtk+3
+
+gtk-mac-integration
+
+gtk-vnc
+
+gtkdatabox
+
+gtkglext
+
+gtkmm3
+
+gtksourceview
+
+gtksourceview3
+
+gtksourceviewmm
+
+gtkspell3
+
+gucharmap
+
+guile
+
+gupnp
+
+gupnp-tools
+
+gwenhywfar
+
+gws
+
+gwt
+
+gwyddion
+
+gx
+
+gx-go
+
+gxml
+
+h2
+
+h2o
+
+hackrf
+
+hadolint
+
+hadoop
+
+halibut
+
+hana
+
+haproxy
+
+harfbuzz
+
+hashcat
+
+haskell-stack
+
+haxe
+
+hbase
+
+headphones
+
+hebcal
+
+heroku
+
+hevea
+
+hg-fast-export
+
+hg-flow
+
+hh
+
+highlight
+
+highlighting-kate
+
+hive
+
+hivemind
+
+hledger
+
+homebank
+
+honcho
+
+hqx
+
+html-xml-utils
+
+htmlcleaner
+
+httpie
+
+httrack
+
+hugo
+
+hunspell
+
+hydra
+
+hyper
+
+hyperscan
+
+i2p
+
+ibex
+
+icarus-verilog
+
+icdiff
+
+ice
+
+icecast
+
+icoutils
+
+icu4c
+
+ideviceinstaller
+
+idris
+
+ievms
+
+imagejs
+
+imagemagick
+
+imageworsener
+
+imapfilter
+
+imlib2
+
+infer
+
+influxdb
+
+innotop
+
+inspircd
+
+intercal
+
+internetarchive
+
+io
+
+ioping
+
+ios-deploy
+
+ios-sim
+
+ios-webkit-debug-proxy
+
+ipbt
+
+iperf3
+
+ipfs
+
+ipmitool
+
+iproute2mac
+
+ipsumdump
+
+ipv6calc
+
+ircd-hybrid
+
+ironcli
+
+irssi
+
+isl
+
+iso-codes
+
+isync
+
+jack
+
+jadx
+
+jansson
+
+jasper
+
+javarepl
+
+jbake
+
+jbig2dec
+
+jboss-forge
+
+jdnssec-tools
+
+jemalloc
+
+jenkins
+
+jetty
+
+jetty-runner
+
+jfrog-cli-go
+
+jhead
+
+jigdo
+
+jlog
+
+jmeter
+
+jmxtrans
+
+jo
+
+joe
+
+jpeg-turbo
+
+jrnl
+
+jruby
+
+jsdoc3
+
+jshon
+
+json-fortran
+
+json-glib
+
+jsoncpp
+
+jsonnet
+
+jsonschema2pojo
+
+juise
+
+juju
+
+jumanpp
+
+jump
+
+jvgrep
+
+jython
+
+kafka
+
+kafkacat
+
+kapacitor
+
+kawa
+
+keepassc
+
+kerl
+
+khal
+
+khard
+
+kibana
+
+kitchen-sync
+
+knot
+
+kobalt
+
+kotlin
+
+kube-aws
+
+kubernetes-cli
+
+kvazaar
+
+lablgtk
+
+languagetool
+
+lastpass-cli
+
+latex2html
+
+latex2rtf
+
+lbdb
+
+lcdf-typetools
+
+lcov
+
+ldc
+
+ldns
+
+lean-cli
+
+leaps
+
+ledger
+
+ledit
+
+lego
+
+lensfun
+
+leptonica
+
+lesspipe
+
+leveldb
+
+lfe
+
+lft
+
+libaacs
+
+libao
+
+libarchive
+
+libass
+
+libatomic_ops
+
+libav
+
+libbluray
+
+libbpg
+
+libbtbb
+
+libcdr
+
+libcec
+
+libchamplain
+
+libcouchbase
+
+libcroco
+
+libcue
+
+libdap
+
+libdc1394
+
+libdvbpsi
+
+libebur128
+
+libepoxy
+
+libev
+
+libevent
+
+libextractor
+
+libfabric
+
+libffi
+
+libflowmanager
+
+libgadu
+
+libgcrypt
+
+libgee
+
+libgeotiff
+
+libgetdata
+
+libgit2
+
+libgit2-glib
+
+libglade
+
+libglademm
+
+libgnomecanvas
+
+libgnomecanvasmm
+
+libgpg-error
+
+libgphoto2
+
+libgraphqlparser
+
+libgsf
+
+libgtop
+
+libgweather
+
+libgxps
+
+libhdhomerun
+
+libical
+
+libical-glib
+
+libicns
+
+libimobiledevice
+
+liblas
+
+liblastfm
+
+liblinear
+
+libltc
+
+libmagic
+
+libmatroska
+
+libmaxminddb
+
+libmemcached
+
+libmicrohttpd
+
+libmikmod
+
+libmill
+
+libming
+
+libmpc
+
+libmpdclient
+
+libmspub
+
+libmtp
+
+libmwaw
+
+libmxml
+
+libnfs
+
+liboping
+
+libosmium
+
+libphonenumber
+
+libplist
+
+libpng
+
+libpointing
+
+libpqxx
+
+libprotoident
+
+libproxy
+
+libpst
+
+libqalculate
+
+libquicktime
+
+libraw
+
+librdkafka
+
+libre
+
+librem
+
+libressl
+
+librsvg
+
+libsass
+
+libsecret
+
+libsigsegv
+
+libslax
+
+libsndfile
+
+libsodium
+
+libsoup
+
+libspectre
+
+libsquish
+
+libssh
+
+libstfl
+
+libsvm
+
+libtasn1
+
+libtermkey
+
+libtiff
+
+libtins
+
+libtommath
+
+libtorrent-rasterbar
+
+libtrace
+
+libuninameslist
+
+libunistring
+
+libupnp
+
+libusb
+
+libusb-compat
+
+libuv
+
+libvidstab
+
+libvirt
+
+libvisio
+
+libvoikko
+
+libvorbis
+
+libvpx
+
+libwandevent
+
+libwbxml
+
+libwebsockets
+
+libwpd
+
+libwps
+
+libxc
+
+libxml2
+
+libxmp-lite
+
+libzdb
+
+libzip
+
+libzzip
+
+lighttpd
+
+lilv
+
+link-grammar
+
+linkerd
+
+links
+
+liquigraph
+
+lldpd
+
+llnode
+
+llvm
+
+lmdb
+
+lnav
+
+loc
+
+log4cpp
+
+log4cxx
+
+logcheck
+
+logentries
+
+logrotate
+
+logstash
+
+logtalk
+
+lrdf
+
+lrzip
+
+lsdvd
+
+lsyncd
+
+ltc-tools
+
+luabind
+
+luajit
+
+luaradio
+
+luvit
+
+lv2
+
+lynis
+
+lysp
+
+lz4
+
+lzip
+
+lzo
+
+m-cli
+
+mackup
+
+macosvpn
+
+macvim
+
+mahout
+
+mailhog
+
+mailutils
+
+makensis
+
+makepkg
+
+makeself
+
+mandoc
+
+mapnik
+
+mapserver
+
+mariadb
+
+masscan
+
+mat
+
+maven
+
+mawk
+
+mbedtls
+
+mcabber
+
+mdk
+
+mdv
+
+mecab-jumandic
+
+media-info
+
+mediaconch
+
+megatools
+
+memcached
+
+memcacheq
+
+menhir
+
+mercurial
+
+meson
+
+mesos
+
+metabase
+
+metaproxy
+
+metricbeat
+
+mftrace
+
+mg
+
+mg3a
+
+micro
+
+micropython
+
+midnight-commander
+
+mighttpd2
+
+mikmod
+
+mikutter
+
+miller
+
+minicom
+
+minidlna
+
+minimal-racket
+
+minimesos
+
+minio
+
+minio-mc
+
+minisat
+
+miniupnpc
+
+minizinc
+
+minizip
+
+mitmproxy
+
+mkdocs
+
+mksh
+
+mktorrent
+
+mkvtoolnix
+
+mldonkey
+
+mlt
+
+mobile-shell
+
+moc
+
+mockserver
+
+moco
+
+modd
+
+moe
+
+monetdb
+
+mongo-orchestration
+
+mongodb
+
+mongoose
+
+monit
+
+monkeysphere
+
+mono
+
+monotone
+
+moreutils
+
+mosquitto
+
+mozjpeg
+
+mp3blaster
+
+mpd
+
+mpdas
+
+mpg123
+
+mpich
+
+mpv
+
+mr
+
+mruby
+
+msgpack
+
+mtr
+
+mu
+
+mupdf-tools
+
+mutt
+
+mvnvm
+
+mvtools
+
+mycli
+
+mypy
+
+mysql
+
+mysql++
+
+mysql-cluster
+
+mysql-connector-c
+
+mysql-connector-c++
+
+mysql-sandbox
+
+mysqltuner
+
+mytop
+
+n
+
+nagios
+
+nagios-plugins
+
+nanopb-generator
+
+nasm
+
+nats-streaming-server
+
+nave
+
+ncdc
+
+ncftp
+
+ncmpc
+
+ncmpcpp
+
+ndpi
+
+ne
+
+neatvi
+
+neo4j
+
+neofetch
+
+netpbm
+
+newlisp
+
+newt
+
+nexus
+
+nghttp2
+
+nginx
+
+ngircd
+
+nifi
+
+nim
+
+ninja
+
+nmap
+
+no-more-secrets
+
+node
+
+node-build
+
+nodebrew
+
+nodeenv
+
+nodenv
+
+nomad
+
+noti
+
+notmuch
+
+npth
+
+nq
+
+nsd
+
+nspr
+
+nsq
+
+nss
+
+ntl
+
+ntopng
+
+nu
+
+nuget
+
+nuxeo
+
+nvc
+
+nvi
+
+nvm
+
+nylon
+
+nzbget
+
+oath-toolkit
+
+oauth2_proxy
+
+ocaml
+
+ocamlbuild
+
+ocamlsdl
+
+ocproxy
+
+ocrad
+
+ode
+
+offlineimap
+
+ola
+
+omega
+
+ompl
+
+one-ml
+
+oniguruma
+
+ooniprobe
+
+opam
+
+open-cobol
+
+open-jtalk
+
+open-mesh
+
+open-mpi
+
+open-ocd
+
+open-scene-graph
+
+openal-soft
+
+openconnect
+
+opencore-amr
+
+openh264
+
+openjpeg
+
+openrtsp
+
+opensc
+
+openshift-cli
+
+openssl
+
+openssl@1.1
+
+opentsdb
+
+openvdb
+
+openvpn
+
+ophcrack
+
+opus
+
+opus-tools
+
+orientdb
+
+osc
+
+oscats
+
+osm-pbf
+
+osm2pgrouting
+
+osm2pgsql
+
+osmfilter
+
+osquery
+
+osrm-backend
+
+owfs
+
+oysttyer
+
+p11-kit
+
+packer
+
+paket
+
+pandoc
+
+pandoc-citeproc
+
+pandoc-crossref
+
+pango
+
+par2
+
+parallel
+
+parquet-tools
+
+pass
+
+passenger
+
+passpie
+
+pazpar2
+
+pbzip2
+
+pcap_dnsproxy
+
+pcre
+
+pcre2
+
+pcsc-lite
+
+pdal
+
+pdf-redact-tools
+
+pdf2htmlex
+
+pdf2json
+
+pdf2svg
+
+pdfcrack
+
+pdfgrep
+
+pdftoedn
+
+pdns
+
+pdnsrec
+
+peco
+
+pegtl
+
+percona-server
+
+percona-toolkit
+
+percona-xtrabackup
+
+perl
+
+perl-build
+
+pev
+
+pex
+
+pg_top
+
+pgbadger
+
+pgbouncer
+
+pgcli
+
+pgformatter
+
+pgloader
+
+pgpdump
+
+pgpool-ii
+
+pgroonga
+
+pgrouting
+
+phoronix-test-suite
+
+pick
+
+pidgin
+
+pigz
+
+pike
+
+pinentry
+
+pipes-sh
+
+pius
+
+
+pixman
+
+pkcs11-helper
+
+pkg-config
+
+planck
+
+plantuml
+
+platformio
+
+platypus
+
+pldebugger
+
+plplot
+
+plustache
+
+pmd
+
+pngcrush
+
+pngpaste
+
+pngquant
+
+poco
+
+pod2man
+
+podofo
+
+polyml
+
+ponyc
+
+poppler
+
+portaudio
+
+portmidi
+
+postgis
+
+postgresql
+
+postgrest
+
+potrace
+
+pre-commit
+
+presto
+
+prettyping
+
+primesieve
+
+prips
+
+profanity
+
+proftpd
+
+prometheus
+
+proof-general
+
+protobuf
+
+protobuf-c
+
+protobuf-swift
+
+proxychains-ng
+
+psql2csv
+
+psqlodbc
+
+pstoedit
+
+pugixml
+
+pulseaudio
+
+pure-ftpd
+
+purescript
+
+pushpin
+
+putty
+
+pv
+
+pwntools
+
+pxz
+
+py3cairo
+
+pybind11
+
+pyenv
+
+pyexiv2
+
+pygobject
+
+pygobject3
+
+pygtkglext
+
+pygtksourceview
+
+pyinvoke
+
+pypy
+
+pypy3
+
+pyqt
+
+python
+
+python3
+
+q
+
+qbs
+
+qca
+
+qcachegrind
+
+qemu
+
+qjackctl
+
+qjson
+
+qscintilla2
+
+qt
+
+quantlib
+
+quazip
+
+questdb
+
+quex
+
+qwt
+
+qxmpp
+
+rabbitmq
+
+radare2
+
+ragel
+
+rakudo-star
+
+rancher-cli
+
+rancher-compose
+
+rancid
+
+ranger
+
+rbenv
+
+rbenv-bundler-ruby-version
+
+rbenv-ctags
+
+rclone
+
+re2
+
+readline
+
+recoverjpeg
+
+redis
+
+redis-leveldb
+
+redpen
+
+redsocks
+
+remarshal
+
+remctl
+
+reposurgeon
+
+rgbds
+
+riak
+
+riemann
+
+riemann-client
+
+ringojs
+
+ripgrep
+
+rkflashtool
+
+rkhunter
+
+rlwrap
+
+rmlint
+
+rocksdb
+
+roswell
+
+rpm
+
+rrdtool
+
+rswift
+
+rtags
+
+rtv
+
+ruby
+
+ruby-build
+
+ruby-install
+
+rust
+
+s-lang
+
+s-search
+
+s3cmd
+
+s6
+
+sagittarius-scheme
+
+saldl
+
+saltstack
+
+sane-backends
+
+sassc
+
+saxon
+
+sbcl
+
+sbt
+
+sbtenv
+
+scala
+
+scalaenv
+
+scalariform
+
+scale2x
+
+scamper
+
+schismtracker
+
+scm-manager
+
+scmpuff
+
+screenfetch
+
+scriptcs
+
+scrypt
+
+scw
+
+sdb
+
+sdcv
+
+sdl2_image
+
+sdl2_mixer
+
+sdl_image
+
+sdl_mixer
+
+sdl_sound
+
+sdl_ttf
+
+sec
+
+selenium-server-standalone
+
+serd
+
+serf
+
+serveit
+
+sfcgal
+
+sfk
+
+sflowtool
+
+sfml
+
+shadowsocks-libev
+
+
+shairport-sync
+
+shared-mime-info
+
+shc
+
+shellcheck
+
+shmcat
+
+shyaml
+
+sile
+
+simple-tiles
+
+sip
+
+sjk
+
+skinny
+
+slackcat
+
+sleuthkit
+
+slimerjs
+
+slrn
+
+smali
+
+smlnj
+
+snakemake
+
+snap-telemetry
+
+snap7
+
+snappy
+
+snappystream
+
+snapraid
+
+sngrep
+
+snort
+
+snzip
+
+socat
+
+soci
+
+softhsm
+
+solr
+
+sonar-scanner
+
+sonarqube
+
+sops
+
+sord
+
+source-highlight
+
+sourcekitten
+
+sparkey
+
+spdylay
+
+sphinx-doc
+
+spim
+
+spiped
+
+sqlcipher
+
+sqldiff
+
+sqlite
+
+sqlite-analyzer
+
+sqliteodbc
+
+sqlmap
+
+squid
+
+sratom
+
+src
+
+srclib
+
+srtp
+
+ssdb
+
+ssh-copy-id
+
+sshguard
+
+sshuttle
+
+sslscan
+
+sslsplit
+
+sslyze
+
+ssreflect
+
+sstp-client
+
+st
+
+stdman
+
+stk
+
+stlink
+
+stoken
+
+storm
+
+stormpath-cli
+
+stout
+
+strongswan
+
+stunnel
+
+stuntman
+
+subversion
+
+supersonic
+
+supervisor
+
+suricata
+
+svgcleaner
+
+svtplay-dl
+
+swagger-codegen
+
+swaks
+
+swi-prolog
+
+swift
+
+swiftgen
+
+swiftlint
+
+swig
+
+sylpheed
+
+sync_gateway
+
+syncthing
+
+syncthing-inotify
+
+synfig
+
+syntaxerl
+
+sysbench
+
+sysdig
+
+szl
+
+tag
+
+tailor
+
+talloc
+
+tarantool
+
+tasksh
+
+taylor
+
+tbb
+
+tbox
+
+tccutil
+
+tcpkali
+
+tcpreplay
+
+tcptraceroute
+
+tcsh
+
+td
+
+tee-clc
+
+telegraf
+
+tenyr
+
+terminal-notifier
+
+terraform
+
+terragrunt
+
+tesseract
+
+testssl
+
+texinfo
+
+texmath
+
+tgui
+
+the_platinum_searcher
+
+the_silver_searcher
+
+thefuck
+
+thrift
+
+tidy-html5
+
+tig
+
+tika
+
+tile38
+
+timelimit
+
+tin
+
+tinc
+
+tintin
+
+tinyxml2
+
+tippecanoe
+
+tldr
+
+tmate
+
+tmux
+
+tnef
+
+todolist
+
+tomcat
+
+tomcat-native
+
+tor
+
+trafficserver
+
+traildb
+
+transcrypt
+
+translate-shell
+
+translate-toolkit
+
+transmission
+
+treefrog
+
+ttfautohint
+
+tth
+
+tty-clock
+
+ttyd
+
+tvnamer
+
+twarc
+
+twemcache
+
+twtxt
+
+typescript
+
+u-boot-tools
+
+ubertooth
+
+udunits
+
+ufraw
+
+uhd
+
+unbound
+
+uncrustify
+
+unicorn
+
+unison
+
+unittest-cpp
+
+unrar
+
+unshield
+
+upscaledb
+
+upx
+
+urbit
+
+urweb
+
+utf8proc
+
+uwsgi
+
+vala
+
+valabind
+
+valgrind
+
+vamp-plugin-sdk
+
+vapoursynth
+
+varnish
+
+vault
+
+vaulted
+
+vc4asm
+
+vdirsyncer
+
+vegeta
+
+verilator
+
+vert.x
+
+vice
+
+viewvc
+
+vifm
+
+vim
+
+vmtouch
+
+vnstat
+
+vnu
+
+volatility
+
+voltdb
+
+vowpal-wabbit
+
+vte3
+
+vultr
+
+wakatime-cli
+
+walkmod
+
+wallpaper
+
+wandio
+
+wartremover
+
+wavpack
+
+webalizer
+
+webdis
+
+weboob
+
+webp
+
+weechat
+
+wget
+
+whatmp3
+
+wiki
+
+wimlib
+
+wine
+
+winetricks
+
+wiredtiger
+
+wireguard-tools
+
+wireshark
+
+wolfssl
+
+wtf
+
+wxmac
+
+x264
+
+x265
+
+xapian
+
+xctool
+
+xdot
+
+xmake
+
+xmlrpc-c
+
+xonsh
+
+xplanet
+
+xqilla
+
+xrootd
+
+xxhash
+
+xz
+
+yacas
+
+yadm
+
+yank
+
+yara
+
+yarn
+
+yash
+
+yasm
+
+yaws
+
+yaz
+
+ykneomgr
+
+ykpers
+
+yle-dl
+
+you-get
+
+youtube-dl
+
+yubico-piv-tool
+
+z80dasm
+
+zabbix
+
+zanata-client
+
+zbackup
+
+zbar
+
+zebra
+
+zenity
+
+zero-install
+
+zeromq
+
+zimg
+
+zinc
+
+znapzend
+
+znc
+
+zookeeper
+
+zorba
+
+zplug
+
+zsh
+
+zsh-autosuggestions
+
+zsh-completions
+
+zsh-history-substring-search
+
+zstd
+
+zurl
+
+==> Renamed Formulae
+
+antlr2 -> antlr@2
+
+antlr3 -> antlr@3
+
+bash-completion2 -> bash-completion@2
+
+bazel02 -> bazel@0.2
+
+berkeley-db4 -> berkeley-db@4
+
+bigdata -> blazegraph
+
+bison27 -> bison@2.7
+
+boost-python159 -> boost-python@1.59
+
+boost155 -> boost@1.55
+
+boost157 -> boost@1.57
+
+boost159 -> boost@1.59
+
+boost160 -> boost@1.60
+
+cassandra21 -> cassandra@2.1
+
+cassandra22 -> cassandra@2.2
+
+clang-format38 -> clang-format@3.8
+
+cloog-ppl015 -> cloog@0.15
+
+docker111 -> docker@1.11
+
+docker171 -> docker@1.71
+
+eigen32 -> eigen@3.2
+
+elasticsearch24 -> elasticsearch@2.4
+
+eris -> monax
+
+erlang-r18 -> erlang@18
+
+ffmpeg28 -> ffmpeg@2.8
+
+freetds091 -> freetds@0.91
+
+gcc46 -> gcc@4.6
+
+gcc47 -> gcc@4.7
+
+gcc48 -> gcc@4.8
+
+gcc49 -> gcc@4.9
+
+gcc5 -> gcc@5
+
+gcc6 -> gcc@6
+
+glfw2 -> glfw@2
+
+glfw3 -> glfw
+
+gmp4 -> gmp@4
+
+gnuplot4 -> gnuplot@4
+
+go14 -> go@1.4
+
+go15 -> go@1.5
+
+go16 -> go@1.6
+
+gradle214 -> gradle@2.14
+
+grails25 -> grails@2.5
+
+grunt -> grunt-cli
+
+gsl1 -> gsl@1
+
+gst-plugins-bad010 -> gst-plugins-bad@0.10
+
+gst-plugins-base010 -> gst-plugins-base@0.10
+
+gst-plugins-good010 -> gst-plugins-good@0.10
+
+gst-plugins-ugly010 -> gst-plugins-ugly@0.10
+
+gstreamer010 -> gstreamer@0.10
+
+influxdb08 -> influxdb@0.8
+
+isl011 -> isl@0.11
+
+isl012 -> isl@0.12
+
+isl014 -> isl@0.14
+
+jboss-as5 -> jboss-as@5
+
+jetty8 -> jetty@8
+
+jpeg6b -> jpeg@6
+
+jpeg9 -> jpeg@9
+
+kafka080 -> kafka@0.80
+
+kibana44 -> kibana@4.4
+
+kubernetes-cli13 -> kubernetes-cli@1.3
+
+ledger26 -> ledger@2.6
+
+libmongoclient -> mongo-cxx-driver
+
+libmpc08 -> libmpc@0.8
+
+libpng12 -> libpng@1.2
+
+libpqxx3 -> libpqxx@3
+
+libxml278 -> libxml2@2.7
+
+llvm37 -> llvm@3.7
+
+llvm38 -> llvm@3.8
+
+logstash24 -> logstash@2.4
+
+lua51 -> lua@5.1
+
+lua53 -> lua@5.3
+
+mapnik2 -> mapnik@2
+
+mariadb100 -> mariadb@10.0
+
+maven31 -> maven@3.1
+
+maven32 -> maven@3.2
+
+mongo-c -> mongo-c-driver
+
+mongodb26 -> mongodb@2.6
+
+mongodb30 -> mongodb@3.0
+
+mongodb32 -> mongodb@3.2
+
+mpfr2 -> mpfr@2
+
+mysql55 -> mysql@5.5
+
+mysql56 -> mysql@5.6
+
+node4-lts -> node@4
+
+node6-lts -> node@6
+
+open-mpi16 -> open-mpi@1.6
+
+osh -> etsh
+
+percona-server55 -> percona-server@5.5
+
+percona-server56 -> percona-server@5.6
+
+perl514 -> perl@5.14
+
+perl518 -> perl@5.18
+
+phantomjs192 -> phantomjs@1.92
+
+phantomjs198 -> phantomjs@1.98
+
+postgresql94 -> postgresql@9.4
+
+postgresql95 -> postgresql@9.5
+
+ppl011 -> ppl@0.11
+
+protobuf250 -> protobuf@2.5
+
+protobuf260 -> protobuf@2.6
+
+qt55 -> qt@5.5
+
+rebar3 -> rebar@3
+
+recipes -> gnome-recipes
+
+redis26 -> redis@2.6
+
+redis28 -> redis@2.8
+
+ruby187 -> ruby@1.8
+
+ruby193 -> ruby@1.9
+
+ruby20 -> ruby@2.0
+
+ruby21 -> ruby@2.1
+
+ruby22 -> ruby@2.2
+
+ruby23 -> ruby@2.3
+
+scala210 -> scala@2.10
+
+scala211 -> scala@2.11
+
+selenium-server-standalone245 -> selenium-server-standalone@2.45
+
+solr54 -> solr@5.4
+
+solr55 -> solr@5.5
+
+speedtest_cli -> speedtest-cli
+
+srtp15 -> srtp@1.5
+
+subversion18 -> subversion@1.8
+
+swig2 -> swig@2
+
+swig304 -> swig@3.04
+
+tensorflow -> libtensorflow
+
+thrift090 -> thrift@0.90
+
+tomcat6 -> tomcat@6
+
+tomcat7 -> tomcat@7
+
+unison240 -> unison@2.40
+
+v8-315 -> v8@3.15
+
+varnish4 -> varnish@4
+
+vim74 -> vim@7.4
+
+zeromq32 -> zeromq@3.2
+
+zeromq40 -> zeromq@4.0
+
+==> Deleted Formulae
+
+apg
+
+autotrace
+
+bip
+
+blucat
+
+cpp-netlib
+
+ctorrent
+
+cups-pdf
+
+devhelp
+
+dvtm
+
+dynamodb-local
+
+edelta
+
+ee
+
+esound
+
+fb-adb
+
+gnupg2
+
+homebrew/versions/allegro4
+
+homebrew/versions/android-ndk-r10e
+
+homebrew/versions/android-ndk-r11c
+
+homebrew/versions/appledoc20
+
+homebrew/versions/appledoc21
+
+homebrew/versions/appledoc22
+
+homebrew/versions/arangodb2
+
+homebrew/versions/astyle204
+
+homebrew/versions/bind99
+
+homebrew/versions/camlp5-606
+
+homebrew/versions/clojure14
+
+homebrew/versions/cvsps2
+
+homebrew/versions/doxygen1831
+
+homebrew/versions/drush4
+
+homebrew/versions/duplicity06
+
+homebrew/versions/eigen2
+
+homebrew/versions/elasticsearch17
+
+homebrew/versions/erlang-r19
+
+homebrew/versions/gawk3
+
+homebrew/versions/gcc43
+
+homebrew/versions/gcc44
+
+homebrew/versions/gcc45
+
+homebrew/versions/gdal111
+
+homebrew/versions/gecode373
+
+homebrew/versions/gegl02
+
+homebrew/versions/git-tf-2.0.2
+
+homebrew/versions/grails31
+
+homebrew/versions/gst-ffmpeg010
+
+homebrew/versions/gst-python010
+
+homebrew/versions/gst-rtsp010
+
+homebrew/versions/guile18
+
+homebrew/versions/hadoop121
+
+homebrew/versions/hadoop25
+
+homebrew/versions/hive011
+
+homebrew/versions/hive12
+
+homebrew/versions/imagemagick-ruby186
+
+homebrew/versions/iojs
+
+homebrew/versions/jboss-forge1
+
+homebrew/versions/jetty76
+
+homebrew/versions/jruby1721
+
+homebrew/versions/jruby9000
+
+homebrew/versions/json-c010
+
+homebrew/versions/jython253
+
+homebrew/versions/kafka090
+
+homebrew/versions/kettle54
+
+homebrew/versions/leptonica169
+
+homebrew/versions/libcouchbase1
+
+homebrew/versions/libgee08
+
+homebrew/versions/libidn2
+
+homebrew/versions/libmongoclient-legacy
+
+homebrew/versions/libotr4
+
+homebrew/versions/libuv0
+
+homebrew/versions/libxc21
+
+homebrew/versions/llvm-gcc28
+
+homebrew/versions/llvm33
+
+homebrew/versions/llvm34
+
+homebrew/versions/llvm35
+
+homebrew/versions/llvm36
+
+homebrew/versions/log4cplus10
+
+homebrew/versions/lz4r117
+
+homebrew/versions/mkvtoolnix58
+
+homebrew/versions/mono3
+
+homebrew/versions/nasm21106
+
+homebrew/versions/nifi021
+
+homebrew/versions/node5
+
+homebrew/versions/nu0
+
+homebrew/versions/objective-caml312
+
+homebrew/versions/openjpeg20
+
+homebrew/versions/openssl101
+
+homebrew/versions/perl516
+
+homebrew/versions/play14
+
+homebrew/versions/play22
+
+homebrew/versions/postgresql93
+
+homebrew/versions/povray36
+
+homebrew/versions/ppl10
+
+homebrew/versions/qt52
+
+homebrew/versions/rabbitmq30
+
+homebrew/versions/raptor1
+
+homebrew/versions/redis1310
+
+homebrew/versions/riak132
+
+homebrew/versions/ruby192
+
+homebrew/versions/saxon6
+
+homebrew/versions/scala29
+
+homebrew/versions/sonar4
+
+homebrew/versions/spidermonkey45
+
+homebrew/versions/subversion17
+
+homebrew/versions/unison232
+
+homebrew/versions/valgrind38
+
+homebrew/versions/varnish3
+
+homebrew/versions/virtuoso616
+
+lcab
+
+libbson
+
+libgroove
+
+libtess2
+
+malaga
+
+multirust
+
+pangox-compat
+
+pdksh
+
+polygen
+
+probatron4j
+
+pyqt5
+
+qt5
+
+qtplay
+
+rtpbreak
+
+s3sync
+
+scsh
+
+silc-client
+
+suomi-malaga-voikko
+
+ttylog
+
+tutum
+
+unfs3
+
+webkitgtk
+
+xplanetfx
+
+xstow
+
+yelp-xsl
+
+==> Migrating cloog018 to cloog
+
+==> Unlinking cloog018
+
+==> Moving cloog018 children
+
+==> Linking cloog
+
+==> Migrating gcc49 to gcc@4.9
+
+==> Unlinking gcc49
+
+==> Moving gcc49 children
+
+==> Linking gcc@4.9
+
+==> Migrating gmp4 to gmp@4
+
+==> Unlinking gmp4
+
+==> Moving gmp4 children
+
+==> Linking gmp@4
+
+==> Migrating isl011 to isl@0.11
+
+==> Unlinking isl011
+
+==> Moving isl011 children
+
+==> Linking isl@0.11
+
+==> Migrating libmpc08 to libmpc@0.8
+
+==> Unlinking libmpc08
+
+==> Moving libmpc08 children
+
+==> Linking libmpc@0.8
+
+==> Migrating mpfr2 to mpfr@2
+
+==> Unlinking mpfr2
+
+==> Moving mpfr2 children
+
+==> Linking mpfr@2
+
++brew install gnu-sed --with-default-names
+
+Updating Homebrew...
+
+==> Auto-updated Homebrew!
+
+Updated 1 tap (caskroom/cask).
+
+No changes to formulae.
+
+
+
+==> Using the sandbox
+
+==> Downloading https://ftp.gnu.org/gnu/sed/sed-4.4.tar.xz
+
+==> ./configure --prefix=/usr/local/Cellar/gnu-sed/4.4
+
+==> make install
+
+ðŸº  /usr/local/Cellar/gnu-sed/4.4: 10 files, 491KB, built in 1 minute 25 seconds
+
++brew outdated libtool
+
++brew outdated autoconf
+
++brew outdated automake
+
+automake
+
++brew upgrade automake --with-default-names
+
+==> Upgrading 1 outdated package, with result:
+
+automake 1.15.1
+
+==> Upgrading automake
+
+==> Downloading https://homebrew.bintray.com/bottles/automake-1.15.1.el_capitan.bottle.tar.gz
+
+==> Pouring automake-1.15.1.el_capitan.bottle.tar.gz
+
+==> Using the sandbox
+
+ðŸº  /usr/local/Cellar/automake/1.15.1: 131 files, 3.0MB
+
++pip install --upgrade pip wheel
+
+Requirement already up-to-date: pip in /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/site-packages
+
+Collecting wheel
+
+  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)
+
+Installing collected packages: wheel
+
+Successfully installed wheel-0.29.0
+
++pip install --upgrade setuptools
+
+Collecting setuptools
+
+  Downloading setuptools-36.2.0-py2.py3-none-any.whl (477kB)
+
+Installing collected packages: setuptools
+
+Successfully installed setuptools-36.2.0
+
++pip install -r .ci/requirements.txt
+
+Collecting cython==0.25.2 (from -r .ci/requirements.txt (line 1))
+
+  Downloading Cython-0.25.2-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (4.2MB)
+
+Collecting aiohttp (from -r .ci/requirements.txt (line 2))
+
+  Downloading aiohttp-2.2.3.tar.gz (787kB)
+
+Collecting tinys3 (from -r .ci/requirements.txt (line 3))
+
+  Downloading tinys3-0.1.12.tar.gz
+
+Collecting twine (from -r .ci/requirements.txt (line 4))
+
+  Downloading twine-1.9.1-py2.py3-none-any.whl
+
+Collecting chardet (from aiohttp->-r .ci/requirements.txt (line 2))
+
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133kB)
+
+Collecting multidict>=2.1.4 (from aiohttp->-r .ci/requirements.txt (line 2))
+
+  Downloading multidict-3.1.3.tar.gz (118kB)
+
+Collecting async_timeout>=1.2.0 (from aiohttp->-r .ci/requirements.txt (line 2))
+
+  Downloading async_timeout-1.2.1-py3-none-any.whl
+
+Collecting yarl>=0.11 (from aiohttp->-r .ci/requirements.txt (line 2))
+
+  Downloading yarl-0.12.0.tar.gz (132kB)
+
+Collecting requests>=1.2.0 (from tinys3->-r .ci/requirements.txt (line 3))
+
+  Downloading requests-2.18.1-py2.py3-none-any.whl (88kB)
+
+Requirement already satisfied: setuptools>=0.7.0 in /Users/travis/.local/lib/python3.6/site-packages (from twine->-r .ci/requirements.txt (line 4))
+
+Collecting requests-toolbelt>=0.8.0 (from twine->-r .ci/requirements.txt (line 4))
+
+  Downloading requests_toolbelt-0.8.0-py2.py3-none-any.whl (54kB)
+
+Collecting tqdm>=4.11 (from twine->-r .ci/requirements.txt (line 4))
+
+  Downloading tqdm-4.14.0-py2.py3-none-any.whl (46kB)
+
+Collecting pkginfo>=1.0 (from twine->-r .ci/requirements.txt (line 4))
+
+  Downloading pkginfo-1.4.1-py2.py3-none-any.whl
+
+Collecting urllib3<1.22,>=1.21.1 (from requests>=1.2.0->tinys3->-r .ci/requirements.txt (line 3))
+
+  Downloading urllib3-1.21.1-py2.py3-none-any.whl (131kB)
+
+Collecting idna<2.6,>=2.5 (from requests>=1.2.0->tinys3->-r .ci/requirements.txt (line 3))
+
+  Downloading idna-2.5-py2.py3-none-any.whl (55kB)
+
+Collecting certifi>=2017.4.17 (from requests>=1.2.0->tinys3->-r .ci/requirements.txt (line 3))
+
+  Downloading certifi-2017.4.17-py2.py3-none-any.whl (375kB)
+
+Building wheels for collected packages: aiohttp, tinys3, multidict, yarl
+
+  Running setup.py bdist_wheel for aiohttp: started
+
+  Running setup.py bdist_wheel for aiohttp: finished with status 'done'
+
+  Stored in directory: /Users/travis/Library/Caches/pip/wheels/70/c3/90/ea006b6379d7cd1713330d1c6dd73c433432f9ba2d5a0ef6e6
+
+  Running setup.py bdist_wheel for tinys3: started
+
+  Running setup.py bdist_wheel for tinys3: finished with status 'done'
+
+  Stored in directory: /Users/travis/Library/Caches/pip/wheels/94/1a/d4/c2ce91130cf228a170d7ce91f7075ae1d7b66df1441b5300be
+
+  Running setup.py bdist_wheel for multidict: started
+
+  Running setup.py bdist_wheel for multidict: finished with status 'done'
+
+  Stored in directory: /Users/travis/Library/Caches/pip/wheels/1a/72/84/f16ab01372e35e3c014bee637baf8408c395126a864035fe36
+
+  Running setup.py bdist_wheel for yarl: started
+
+  Running setup.py bdist_wheel for yarl: finished with status 'done'
+
+  Stored in directory: /Users/travis/Library/Caches/pip/wheels/11/3e/58/c2691fa78f73bb131b849504ece3959f5416afe87355cc9d11
+
+Successfully built aiohttp tinys3 multidict yarl
+
+Installing collected packages: cython, chardet, multidict, async-timeout, yarl, aiohttp, urllib3, idna, certifi, requests, tinys3, requests-toolbelt, tqdm, pkginfo, twine
+
+Successfully installed aiohttp-2.2.3 async-timeout-1.2.1 certifi-2017.4.17 chardet-3.0.4 cython-0.25.2 idna-2.5 multidict-3.1.3 pkginfo-1.4.1 requests-2.18.1 requests-toolbelt-0.8.0 tinys3-0.1.12 tqdm-4.14.0 twine-1.9.1 urllib3-1.21.1 yarl-0.12.0
+
+
+
+travis_time:end:22bfefbc:start=1500526670695774000,finish=1500527065931826000,duration=395236052000
+[0Ktravis_fold:end:install
+[0Ktravis_time:start:1938744f
+[0K$ .ci/travis-tests.sh && .ci/travis-build-wheels.sh
+
++[[ tests,wheels != *tests* ]]
+
++'[' osx == osx ']'
+
++PYENV_ROOT=/Users/travis/.pyenv
+
++PATH=/Users/travis/.pyenv/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+++pyenv init -
+
++eval 'export PATH="/Users/travis/.pyenv/shims:${PATH}"
+
+export PYENV_SHELL=bash
+
+source '\''/Users/travis/.pyenv/libexec/../completions/pyenv.bash'\''
+
+command pyenv rehash 2>/dev/null
+
+pyenv() {
+
+  local command
+
+  command="$1"
+
+  if [ "$#" -gt 0 ]; then
+
+    shift
+
+  fi
+
+
+
+  case "$command" in
+
+  rehash|shell)
+
+    eval "$(pyenv "sh-$command" "$@")";;
+
+  *)
+
+    command pyenv "$command" "$@";;
+
+  esac
+
+}'
+
+++export PATH=/Users/travis/.pyenv/shims:/Users/travis/.pyenv/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+++PATH=/Users/travis/.pyenv/shims:/Users/travis/.pyenv/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+++export PYENV_SHELL=bash
+
+++PYENV_SHELL=bash
+
+++source /Users/travis/.pyenv/libexec/../completions/pyenv.bash
+
++++complete -F _pyenv pyenv
+
+++command pyenv rehash
+
++make distclean
+
+rm -fr dist/ doc/_build/ *.egg-info uvloop/loop.*.pyd
+
+rm -fr build/lib.* build/temp.*
+
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so
+
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+
+find . -name '__pycache__' | xargs rm -rf
+
+(cd vendor/libuv; git clean -dfX)
+
+rm -fr build/
+
++make
+
+rm -fr dist/ doc/_build/ *.egg-info uvloop/loop.*.pyd
+
+rm -fr build/lib.* build/temp.*
+
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so
+
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+
+find . -name '__pycache__' | xargs rm -rf
+
+python setup.py build_ext --inplace --cython-always
+
+running build_ext
+
+uvloop/loop.pyx: cannot find cimported module '.includes'
+
+uvloop/loop.pxd: cannot find cimported module '.includes'
+
+Compiling uvloop/loop.pyx because it changed.
+
+[1/1] Cythonizing uvloop/loop.pyx
+
++glibtoolize --copy
+
+glibtoolize: putting auxiliary files in '.'.
+
+glibtoolize: copying file './ltmain.sh'
+
+glibtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+
+glibtoolize: copying file 'm4/libtool.m4'
+
+glibtoolize: copying file 'm4/ltoptions.m4'
+
+glibtoolize: copying file 'm4/ltsugar.m4'
+
+glibtoolize: copying file 'm4/ltversion.m4'
+
+glibtoolize: copying file 'm4/lt~obsolete.m4'
+
++aclocal -I m4
+
++autoconf
+
++automake --add-missing --copy
+
+configure.ac:37: installing './ar-lib'
+
+configure.ac:25: installing './compile'
+
+configure.ac:22: installing './config.guess'
+
+configure.ac:22: installing './config.sub'
+
+configure.ac:21: installing './install-sh'
+
+configure.ac:21: installing './missing'
+
+Makefile.am: installing './depcomp'
+
+checking for a BSD-compatible install... /usr/local/bin/ginstall -c
+
+checking whether build environment is sane... yes
+
+checking for a thread-safe mkdir -p... /usr/local/bin/gmkdir -p
+
+checking for gawk... no
+
+checking for mawk... no
+
+checking for nawk... no
+
+checking for awk... awk
+
+checking whether make sets $(MAKE)... yes
+
+checking whether make supports nested variables... yes
+
+checking build system type... x86_64-apple-darwin15.6.0
+
+checking host system type... x86_64-apple-darwin15.6.0
+
+checking for gcc... gcc
+
+checking whether the C compiler works... yes
+
+checking for C compiler default output file name... a.out
+
+checking for suffix of executables...
+
+checking whether we are cross compiling... no
+
+checking for suffix of object files... o
+
+checking whether we are using the GNU C compiler... yes
+
+checking whether gcc accepts -g... yes
+
+checking for gcc option to accept ISO C89... none needed
+
+checking whether gcc understands -c and -o together... yes
+
+checking for style of include used by make... GNU
+
+checking dependency style of gcc... gcc3
+
+checking if gcc supports -pedantic flag... yes
+
+checking for gcc way to treat warnings as errors... -Werror
+
+checking if gcc supports -fvisibility=hidden... yes
+
+checking if gcc supports -g flag... yes
+
+checking if gcc supports -std=gnu89 flag... yes
+
+checking if gcc supports -Wall flag... yes
+
+checking if gcc supports -Wextra flag... yes
+
+checking if gcc supports -Wno-unused-parameter flag... yes
+
+checking for ar... ar
+
+checking the archiver (ar) interface... ar
+
+checking how to print strings... printf
+
+checking for a sed that does not truncate output... /usr/local/bin/sed
+
+checking for grep that handles long lines and -e... /usr/bin/grep
+
+checking for egrep... /usr/bin/grep -E
+
+checking for fgrep... /usr/bin/grep -F
+
+checking for ld used by gcc... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+
+checking whether ln -s works... yes
+
+checking the maximum length of command line arguments... 196608
+
+checking how to convert x86_64-apple-darwin15.6.0 file names to x86_64-apple-darwin15.6.0 format... func_convert_file_noop
+
+checking how to convert x86_64-apple-darwin15.6.0 file names to toolchain format... func_convert_file_noop
+
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+
+checking for objdump... no
+
+checking how to recognize dependent libraries... pass_all
+
+checking for dlltool... no
+
+checking how to associate runtime and link libraries... printf %s\n
+
+checking for archiver @FILE support... no
+
+checking for strip... strip
+
+checking for ranlib... ranlib
+
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+
+checking for sysroot... no
+
+checking for a working dd... /bin/dd
+
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+
+checking for mt... no
+
+checking if : is a manifest tool... no
+
+checking for dsymutil... dsymutil
+
+checking for nmedit... nmedit
+
+checking for lipo... lipo
+
+checking for otool... otool
+
+checking for otool64... no
+
+checking for -single_module linker flag... yes
+
+checking for -exported_symbols_list linker flag... yes
+
+checking for -force_load linker flag... yes
+
+checking how to run the C preprocessor... gcc -E
+
+checking for ANSI C header files... yes
+
+checking for sys/types.h... yes
+
+checking for sys/stat.h... yes
+
+checking for stdlib.h... yes
+
+checking for string.h... yes
+
+checking for memory.h... yes
+
+checking for strings.h... yes
+
+checking for inttypes.h... yes
+
+checking for stdint.h... yes
+
+checking for unistd.h... yes
+
+checking for dlfcn.h... yes
+
+checking for objdir... .libs
+
+checking if gcc supports -fno-rtti -fno-exceptions... yes
+
+checking for gcc option to produce PIC... -fno-common -DPIC
+
+checking if gcc PIC flag -fno-common -DPIC works... yes
+
+checking if gcc static flag -static works... no
+
+checking if gcc supports -c -o file.o... yes
+
+checking if gcc supports -c -o file.o... (cached) yes
+
+checking whether the gcc linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+
+checking dynamic linker characteristics... darwin15.6.0 dyld
+
+checking how to hardcode library paths into programs... immediate
+
+checking whether stripping libraries is possible... yes
+
+checking if libtool supports shared libraries... yes
+
+checking whether to build shared libraries... yes
+
+checking whether to build static libraries... yes
+
+checking whether make supports nested variables... (cached) yes
+
+checking for dlopen in -ldl... yes
+
+checking for kstat_lookup in -lkstat... no
+
+checking for kvm_open in -lkvm... no
+
+checking for gethostbyname in -lnsl... no
+
+checking for perfstat_cpu in -lperfstat... no
+
+checking for pthread_mutex_init in -lpthread... yes
+
+checking for clock_gettime in -lrt... no
+
+checking for sendfile in -lsendfile... no
+
+checking for socket in -lsocket... no
+
+checking for special C compiler options needed for large files... no
+
+checking for _FILE_OFFSET_BITS value needed for large files... no
+
+checking sys/ahafs_evProds.h usability... no
+
+checking sys/ahafs_evProds.h presence... no
+
+checking for sys/ahafs_evProds.h... no
+
+checking for pkg-config... yes
+
+checking that generated files are newer than configure... done
+
+configure: creating ./config.status
+
+config.status: creating libuv.pc
+
+config.status: creating Makefile
+
+config.status: executing depfiles commands
+
+config.status: executing libtool commands
+
+  CC       src/libuv_la-fs-poll.lo
+
+  CC       src/libuv_la-inet.lo
+
+  CC       src/libuv_la-threadpool.lo
+
+  CC       src/libuv_la-uv-common.lo
+
+  CC       src/libuv_la-version.lo
+
+  CC       src/unix/libuv_la-async.lo
+
+  CC       src/unix/libuv_la-core.lo
+
+  CC       src/unix/libuv_la-dl.lo
+
+  CC       src/unix/libuv_la-fs.lo
+
+  CC       src/unix/libuv_la-getaddrinfo.lo
+
+  CC       src/unix/libuv_la-getnameinfo.lo
+
+  CC       src/unix/libuv_la-loop-watcher.lo
+
+  CC       src/unix/libuv_la-loop.lo
+
+  CC       src/unix/libuv_la-pipe.lo
+
+  CC       src/unix/libuv_la-poll.lo
+
+  CC       src/unix/libuv_la-process.lo
+
+  CC       src/unix/libuv_la-signal.lo
+
+  CC       src/unix/libuv_la-stream.lo
+
+  CC       src/unix/libuv_la-tcp.lo
+
+  CC       src/unix/libuv_la-thread.lo
+
+  CC       src/unix/libuv_la-timer.lo
+
+  CC       src/unix/libuv_la-tty.lo
+
+  CC       src/unix/libuv_la-udp.lo
+
+  CC       src/unix/libuv_la-darwin.lo
+
+  CC       src/unix/libuv_la-darwin-proctitle.lo
+
+  CC       src/unix/libuv_la-fsevents.lo
+
+  CC       src/unix/libuv_la-kqueue.lo
+
+  CC       src/unix/libuv_la-proctitle.lo
+
+  CC       src/unix/libuv_la-pthread-barrier.lo
+
+  CCLD     libuv.la
+
+building 'uvloop.loop' extension
+
+creating build/temp.macosx-10.11-x86_64-3.6
+
+creating build/temp.macosx-10.11-x86_64-3.6/uvloop
+
+clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/travis/.pyenv/versions/3.6.0/include/python3.6m -Ivendor/libuv/include -c uvloop/loop.c -o build/temp.macosx-10.11-x86_64-3.6/uvloop/loop.o -O2
+
+In file included from uvloop/loop.c:450:
+
+uvloop/includes/compat.h:28:69: warning: control reaches end of non-void function [-Wreturn-type]
+
+int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event) {};
+
+                                                                    ^
+
+uvloop/loop.c:69194:34: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
+
+      __pyx_t_2 = ((__pyx_v_sent < 0) != 0);
+
+                    ~~~~~~~~~~~~ ^ ~
+
+uvloop/loop.c:87118:15: warning: code will never be executed [-Wunreachable-code]
+
+              goto __pyx_L24;
+
+              ^~~~~~~~~~~~~~
+
+uvloop/loop.c:133897:93: warning: code will never be executed [-Wunreachable-code]
+
+        module = PyImport_ImportModule((PY_VERSION_HEX >= 0x03030000) ? "collections.abc" : "collections");
+
+                                                                                            ^~~~~~~~~~~~~
+
+uvloop/loop.c:133897:59: note: silence by adding parentheses to mark code as explicitly dead
+
+        module = PyImport_ImportModule((PY_VERSION_HEX >= 0x03030000) ? "collections.abc" : "collections");
+
+                                                          ^
+
+                                                          /* DISABLES CODE */ ( )
+
+4 warnings generated.
+
+creating build/lib.macosx-10.11-x86_64-3.6
+
+creating build/lib.macosx-10.11-x86_64-3.6/uvloop
+
+clang -bundle -undefined dynamic_lookup -L/usr/local/opt/readline/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/openssl/lib -L/Users/travis/.pyenv/versions/3.6.0/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/openssl/lib -L/Users/travis/.pyenv/versions/3.6.0/lib build/temp.macosx-10.11-x86_64-3.6/uvloop/loop.o build/libuv/.libs/libuv.a -o build/lib.macosx-10.11-x86_64-3.6/uvloop/loop.cpython-36m-darwin.so
+
+copying build/lib.macosx-10.11-x86_64-3.6/uvloop/loop.cpython-36m-darwin.so -> uvloop
+
++make test
+
+PYTHONASYNCIODEBUG=1 python setup.py test
+
+running test
+
+running egg_info
+
+creating uvloop.egg-info
+
+writing uvloop.egg-info/PKG-INFO
+
+writing dependency_links to uvloop.egg-info/dependency_links.txt
+
+writing top-level names to uvloop.egg-info/top_level.txt
+
+writing manifest file 'uvloop.egg-info/SOURCES.txt'
+
+reading manifest file 'uvloop.egg-info/SOURCES.txt'
+
+reading manifest template 'MANIFEST.in'
+
+warning: no previously-included files matching '*' found under directory 'vendor/libuv/.git'
+
+writing manifest file 'uvloop.egg-info/SOURCES.txt'
+
+running build_ext
+
+copying build/lib.macosx-10.11-x86_64-3.6/uvloop/loop.cpython-36m-darwin.so -> uvloop
+
+test_aiohttp_basic_1 (tests.test_aiohttp.Test_AIO_AioHTTP) ... skipped 'no aiohttp module'
+
+test_aiohttp_basic_1 (tests.test_aiohttp.Test_UV_AioHTTP) ... skipped 'no aiohttp module'
+
+test_call_at (tests.test_base.TestBaseAIO) ... skipped 'time is not monotonic on Travis'
+
+test_call_later_1 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_later_2 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_later_negative (tests.test_base.TestBaseAIO) ... ok
+
+test_call_soon (tests.test_base.TestBaseAIO) ... ok
+
+test_call_soon_base_exc (tests.test_base.TestBaseAIO) ... ok
+
+test_calls_debug_reporting (tests.test_base.TestBaseAIO) ... ok
+
+test_check_thread (tests.test_base.TestBaseAIO) ... ok
+
+test_close (tests.test_base.TestBaseAIO) ... ok
+
+test_debug_slow_callbacks (tests.test_base.TestBaseAIO) ... ok
+
+test_debug_slow_timer_callbacks (tests.test_base.TestBaseAIO) ... ok
+
+test_default_exc_handler_broken (tests.test_base.TestBaseAIO) ... ok
+
+test_default_exc_handler_callback (tests.test_base.TestBaseAIO) ... ok
+
+test_handle_weakref (tests.test_base.TestBaseAIO) ... ok
+
+test_now_update (tests.test_base.TestBaseAIO) ... ok
+
+test_run_once_in_executor_plain (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_error (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_loop (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_type_error (tests.test_base.TestBaseAIO) ... ok
+
+test_set_debug (tests.test_base.TestBaseAIO) ... ok
+
+test_set_exc_handler_broken (tests.test_base.TestBaseAIO) ... ok
+
+test_set_exc_handler_custom (tests.test_base.TestBaseAIO) ... ok
+
+test_set_task_factory (tests.test_base.TestBaseAIO) ... ok
+
+test_set_task_factory_invalid (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_01 (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_02 (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_03 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_at (tests.test_base.TestBaseUV) ... skipped 'time is not monotonic on Travis'
+
+test_call_later_1 (tests.test_base.TestBaseUV) ... ok
+
+test_call_later_2 (tests.test_base.TestBaseUV) ... ok
+
+test_call_later_negative (tests.test_base.TestBaseUV) ... ok
+
+test_call_soon (tests.test_base.TestBaseUV) ... ok
+
+test_call_soon_base_exc (tests.test_base.TestBaseUV) ... ok
+
+test_calls_debug_reporting (tests.test_base.TestBaseUV) ... ok
+
+test_check_thread (tests.test_base.TestBaseUV) ... ok
+
+test_close (tests.test_base.TestBaseUV) ... ok
+
+test_debug_slow_callbacks (tests.test_base.TestBaseUV) ... ok
+
+test_debug_slow_timer_callbacks (tests.test_base.TestBaseUV) ... ok
+
+test_default_exc_handler_broken (tests.test_base.TestBaseUV) ... ok
+
+test_default_exc_handler_callback (tests.test_base.TestBaseUV) ... ok
+
+test_handle_weakref (tests.test_base.TestBaseUV) ... ok
+
+test_loop_create_future (tests.test_base.TestBaseUV) ... ok
+
+test_loop_std_files_cloexec (tests.test_base.TestBaseUV) ... ok
+
+test_now_update (tests.test_base.TestBaseUV) ... ok
+
+test_run_once_in_executor_plain (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_error (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_loop (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_type_error (tests.test_base.TestBaseUV) ... ok
+
+test_set_debug (tests.test_base.TestBaseUV) ... ok
+
+test_set_exc_handler_broken (tests.test_base.TestBaseUV) ... ok
+
+test_set_exc_handler_custom (tests.test_base.TestBaseUV) ... ok
+
+test_set_task_factory (tests.test_base.TestBaseUV) ... ok
+
+test_set_task_factory_invalid (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_01 (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_02 (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_03 (tests.test_base.TestBaseUV) ... ok
+
+test_get_event_loop_returns_running_loop (tests.test_base.TestPolicy) ... ok
+
+test_running_loop_within_a_loop (tests.test_base.TestPolicy) ... ok
+
+test_uvloop_policy (tests.test_base.TestPolicy) ... ok
+
+test_cython_coro_is_coroutine (tests.test_cython.TestCythonIntegration) ... ok
+
+test_getaddrinfo_1 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_10 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_11 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_12 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_13 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_14 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_15 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_16 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_17 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_18 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_19 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_2 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_20 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_3 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_4 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_5 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_6 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_7 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_8 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_9 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_1 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_2 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_3 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_4 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_5 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_1 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_10 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_11 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_12 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_13 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_14 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_15 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_16 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_17 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_18 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_19 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_2 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_20 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_3 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_4 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_5 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_6 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_7 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_8 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_9 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_close_loop (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_1 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_2 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_3 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_4 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_5 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_executors_process_pool_01 (tests.test_executors.TestAIOExecutors) ... ok
+
+test_executors_process_pool_02 (tests.test_executors.TestAIOExecutors) ... ok
+
+test_executors_process_pool_01 (tests.test_executors.TestUVExecutors) ... ok
+
+test_executors_process_pool_02 (tests.test_executors.TestUVExecutors) ... ok
+
+test_future_cancel (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_copy_state (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_class (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_initial_state (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_repr (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_result (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_result (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_result (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_result (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_read_pipe (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_read_pty_output (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pipe (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pipe_disconnect_on_close (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pty (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_read_pipe (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_read_pty_output (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pipe (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pipe_disconnect_on_close (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pty (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_cancel_make_subprocess_transport_exec (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_post_init (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_process_wait (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_communicate (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_kill (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_send_signal (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_shell (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_start_new_session (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_stdin_not_inheritable (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_stdin_stdout (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_terminate (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_make_subprocess_transport_exec (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_cancel_post_init (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_cancel_process_wait (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_communicate (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_kill (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_send_signal (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_shell (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_start_new_session (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_stdin_not_inheritable (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_stdin_stdout (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_terminate (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_process_cwd_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_env_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_executable_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_pid_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_preexec_fn_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_preexec_fn_2 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_send_signal_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_basic_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_devnull (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_pass_fds (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_stderr_to_stdout (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_cwd_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_env_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_executable_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_lated_stdio_init (tests.test_process.Test_UV_Process) ... Executing <Handle <TaskSendMethWrapper object at 0x10c660668> created at /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/tasks.py:512> took 1.016 seconds
+
+Executing <Handle <TaskSendMethWrapper object at 0x10c7a7fd0> created at /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/tasks.py:512> took 1.013 seconds
+
+ok
+
+test_process_pid_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_preexec_fn_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_preexec_fn_2 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_send_signal_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_basic_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_devnull (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_pass_fds (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_redirect (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_stderr_to_stdout (tests.test_process.Test_UV_Process) ... ok
+
+test_signals_and_custom_handler_1 (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_coro_callback (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_invalid_signal (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_and_custom_handler (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_pycode_continue (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_pycode_stop (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_uvcode (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_and_custom_handler_1 (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_coro_callback (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_invalid_signal (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_and_custom_handler (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_pycode_continue (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_pycode_stop (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_uvcode (tests.test_signals.Test_UV_Signals) ... ok
+
+test_socket_accept_recv_send (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_blocking_error (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_connect_recv_send (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_failed_connect (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_accept_recv_send (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_blocking_error (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_connect_recv_send (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_failed_connect (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_sync_remove (tests.test_sockets.TestUVSockets) ... skipped 'Linux only test'
+
+test_task_basics (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_create_connection_1 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_2 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_3 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_4 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_1 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_2 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_3 (tests.test_tcp.Test_AIO_TCP)
+
+check ephemeral port can be used ... ok
+
+test_create_server_4 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_5 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_6 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_tcp_handle_exception_in_connection_made (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_transport_shutdown (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_ssl_1 (tests.test_tcp.Test_AIO_TCPSSL) ... ok
+
+test_create_server_ssl_1 (tests.test_tcp.Test_AIO_TCPSSL) ... ok
+
+test_connect_accepted_socket (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_1 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_2 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_3 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_4 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_wrong_sock (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_1 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_2 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_3 (tests.test_tcp.Test_UV_TCP)
+
+check ephemeral port can be used ... ok
+
+test_create_server_4 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_5 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_6 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_float_backlog (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_stream_bittype (tests.test_tcp.Test_UV_TCP) ... skipped 'no socket.SOCK_NONBLOCK (linux only)'
+
+test_create_server_wrong_sock (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_many_small_writes (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_abort_in_connection_made (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_exception_in_connection_made (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_unclosed_gc (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_transport_get_extra_info (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_transport_shutdown (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_ssl_1 (tests.test_tcp.Test_UV_TCPSSL) ... ok
+
+test_create_server_ssl_1 (tests.test_tcp.Test_UV_TCPSSL) ... ok
+
+test_ssl_connect_accepted_socket (tests.test_tcp.Test_UV_TCPSSL) ... /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/sslproto.py:335: ResourceWarning: unclosed transport <asyncio.sslproto._SSLProtocolTransport object at 0x10bcc7f28>
+
+  source=self)
+
+ok
+
+test_duplicate_methods (tests.test_testbase.TestBaseTest) ... ok
+
+test_duplicate_methods_parent_1 (tests.test_testbase.TestBaseTest) ... ok
+
+test_duplicate_methods_parent_2 (tests.test_testbase.TestBaseTest) ... ok
+
+test_create_datagram_endpoint_addrs (tests.test_udp.Test_AIO_UDP) ... ok
+
+test_create_datagram_endpoint_sock (tests.test_udp.Test_AIO_UDP) ... ok
+
+test_create_datagram_endpoint_addrs (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_datagram_endpoint_sock (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_datagram_endpoint_wrong_sock (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_unix_connection_1 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_2 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_3 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_4 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_5 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_server_1 (tests.test_unix.Test_AIO_Unix) ... Executing <Handle BaseSelectorEventLoop._accept_connection(<function sta...t 0x10d4e9d90>, <socket.socke...w139g1mn/sock>, None, <Server socke...39g1mn/sock>]>, 100) created at /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/selector_events.py:262> took 0.103 seconds
+
+ok
+
+test_create_unix_server_2 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_transport_unclosed_warning (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_ssl_1 (tests.test_unix.Test_AIO_UnixSSL) ... ok
+
+test_create_unix_server_ssl_1 (tests.test_unix.Test_AIO_UnixSSL) ... ok
+
+test_create_unix_connection_1 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_2 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_3 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_4 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_5 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_1 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_2 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_path_dgram (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_path_stream_bittype (tests.test_unix.Test_UV_Unix) ... skipped 'no socket.SOCK_NONBLOCK (linux only)'
+
+test_transport_fromsock_get_extra_info (tests.test_unix.Test_UV_Unix) ... ok
+
+test_transport_unclosed_warning (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_ssl_1 (tests.test_unix.Test_UV_UnixSSL) ... ok
+
+test_create_unix_server_ssl_1 (tests.test_unix.Test_UV_UnixSSL) ... ok
+
+
+
+----------------------------------------------------------------------
+
+Ran 414 tests in 151.324s
+
+
+
+OK (skipped=7)
+
+python setup.py test
+
+running test
+
+running egg_info
+
+writing uvloop.egg-info/PKG-INFO
+
+writing dependency_links to uvloop.egg-info/dependency_links.txt
+
+writing top-level names to uvloop.egg-info/top_level.txt
+
+reading manifest file 'uvloop.egg-info/SOURCES.txt'
+
+reading manifest template 'MANIFEST.in'
+
+warning: no previously-included files matching '*' found under directory 'vendor/libuv/.git'
+
+writing manifest file 'uvloop.egg-info/SOURCES.txt'
+
+running build_ext
+
+copying build/lib.macosx-10.11-x86_64-3.6/uvloop/loop.cpython-36m-darwin.so -> uvloop
+
+test_aiohttp_basic_1 (tests.test_aiohttp.Test_AIO_AioHTTP) ... skipped 'no aiohttp module'
+
+test_aiohttp_basic_1 (tests.test_aiohttp.Test_UV_AioHTTP) ... skipped 'no aiohttp module'
+
+test_call_at (tests.test_base.TestBaseAIO) ... skipped 'time is not monotonic on Travis'
+
+test_call_later_1 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_later_2 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_later_negative (tests.test_base.TestBaseAIO) ... ok
+
+test_call_soon (tests.test_base.TestBaseAIO) ... ok
+
+test_call_soon_base_exc (tests.test_base.TestBaseAIO) ... ok
+
+test_calls_debug_reporting (tests.test_base.TestBaseAIO) ... ok
+
+test_check_thread (tests.test_base.TestBaseAIO) ... ok
+
+test_close (tests.test_base.TestBaseAIO) ... ok
+
+test_debug_slow_callbacks (tests.test_base.TestBaseAIO) ... ok
+
+test_debug_slow_timer_callbacks (tests.test_base.TestBaseAIO) ... ok
+
+test_default_exc_handler_broken (tests.test_base.TestBaseAIO) ... ok
+
+test_default_exc_handler_callback (tests.test_base.TestBaseAIO) ... ok
+
+test_handle_weakref (tests.test_base.TestBaseAIO) ... ok
+
+test_now_update (tests.test_base.TestBaseAIO) ... ok
+
+test_run_once_in_executor_plain (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_error (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_loop (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_type_error (tests.test_base.TestBaseAIO) ... ok
+
+test_set_debug (tests.test_base.TestBaseAIO) ... ok
+
+test_set_exc_handler_broken (tests.test_base.TestBaseAIO) ... ok
+
+test_set_exc_handler_custom (tests.test_base.TestBaseAIO) ... ok
+
+test_set_task_factory (tests.test_base.TestBaseAIO) ... ok
+
+test_set_task_factory_invalid (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_01 (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_02 (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_03 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_at (tests.test_base.TestBaseUV) ... skipped 'time is not monotonic on Travis'
+
+test_call_later_1 (tests.test_base.TestBaseUV) ... ok
+
+test_call_later_2 (tests.test_base.TestBaseUV) ... ok
+
+test_call_later_negative (tests.test_base.TestBaseUV) ... ok
+
+test_call_soon (tests.test_base.TestBaseUV) ... ok
+
+test_call_soon_base_exc (tests.test_base.TestBaseUV) ... ok
+
+test_calls_debug_reporting (tests.test_base.TestBaseUV) ... ok
+
+test_check_thread (tests.test_base.TestBaseUV) ... ok
+
+test_close (tests.test_base.TestBaseUV) ... ok
+
+test_debug_slow_callbacks (tests.test_base.TestBaseUV) ... ok
+
+test_debug_slow_timer_callbacks (tests.test_base.TestBaseUV) ... ok
+
+test_default_exc_handler_broken (tests.test_base.TestBaseUV) ... ok
+
+test_default_exc_handler_callback (tests.test_base.TestBaseUV) ... ok
+
+test_handle_weakref (tests.test_base.TestBaseUV) ... ok
+
+test_loop_create_future (tests.test_base.TestBaseUV) ... ok
+
+test_loop_std_files_cloexec (tests.test_base.TestBaseUV) ... ok
+
+test_now_update (tests.test_base.TestBaseUV) ... ok
+
+test_run_once_in_executor_plain (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_error (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_loop (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_type_error (tests.test_base.TestBaseUV) ... ok
+
+test_set_debug (tests.test_base.TestBaseUV) ... ok
+
+test_set_exc_handler_broken (tests.test_base.TestBaseUV) ... ok
+
+test_set_exc_handler_custom (tests.test_base.TestBaseUV) ... ok
+
+test_set_task_factory (tests.test_base.TestBaseUV) ... ok
+
+test_set_task_factory_invalid (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_01 (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_02 (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_03 (tests.test_base.TestBaseUV) ... ok
+
+test_get_event_loop_returns_running_loop (tests.test_base.TestPolicy) ... ok
+
+test_running_loop_within_a_loop (tests.test_base.TestPolicy) ... ok
+
+test_uvloop_policy (tests.test_base.TestPolicy) ... ok
+
+test_cython_coro_is_coroutine (tests.test_cython.TestCythonIntegration) ... ok
+
+test_getaddrinfo_1 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_10 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_11 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_12 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_13 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_14 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_15 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_16 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_17 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_18 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_19 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_2 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_20 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_3 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_4 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_5 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_6 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_7 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_8 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_9 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_1 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_2 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_3 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_4 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_5 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_1 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_10 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_11 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_12 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_13 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_14 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_15 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_16 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_17 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_18 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_19 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_2 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_20 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_3 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_4 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_5 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_6 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_7 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_8 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_9 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_close_loop (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_1 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_2 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_3 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_4 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_5 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_executors_process_pool_01 (tests.test_executors.TestAIOExecutors) ... ok
+
+test_executors_process_pool_02 (tests.test_executors.TestAIOExecutors) ... ok
+
+test_executors_process_pool_01 (tests.test_executors.TestUVExecutors) ... ok
+
+test_executors_process_pool_02 (tests.test_executors.TestUVExecutors) ... ok
+
+test_future_cancel (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_copy_state (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_class (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_initial_state (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_repr (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_result (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_result (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_result (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_result (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_read_pipe (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_read_pty_output (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pipe (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pipe_disconnect_on_close (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pty (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_read_pipe (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_read_pty_output (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pipe (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pipe_disconnect_on_close (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pty (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_cancel_make_subprocess_transport_exec (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_post_init (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_process_wait (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_communicate (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_kill (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_send_signal (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_shell (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_start_new_session (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_stdin_not_inheritable (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_stdin_stdout (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_terminate (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_make_subprocess_transport_exec (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_cancel_post_init (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_cancel_process_wait (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_communicate (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_kill (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_send_signal (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_shell (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_start_new_session (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_stdin_not_inheritable (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_stdin_stdout (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_terminate (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_process_cwd_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_env_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_executable_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_pid_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_preexec_fn_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_preexec_fn_2 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_send_signal_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_basic_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_devnull (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_pass_fds (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_stderr_to_stdout (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_cwd_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_env_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_executable_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_lated_stdio_init (tests.test_process.Test_UV_Process) ... ok
+
+test_process_pid_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_preexec_fn_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_preexec_fn_2 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_send_signal_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_basic_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_devnull (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_pass_fds (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_redirect (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_stderr_to_stdout (tests.test_process.Test_UV_Process) ... ok
+
+test_signals_and_custom_handler_1 (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_coro_callback (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_invalid_signal (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_and_custom_handler (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_pycode_continue (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_pycode_stop (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_uvcode (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_and_custom_handler_1 (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_coro_callback (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_invalid_signal (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_and_custom_handler (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_pycode_continue (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_pycode_stop (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_uvcode (tests.test_signals.Test_UV_Signals) ... ok
+
+test_socket_accept_recv_send (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_blocking_error (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_connect_recv_send (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_failed_connect (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_accept_recv_send (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_blocking_error (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_connect_recv_send (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_failed_connect (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_sync_remove (tests.test_sockets.TestUVSockets) ... skipped 'Linux only test'
+
+test_task_basics (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_create_connection_1 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_2 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_3 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_4 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_1 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_2 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_3 (tests.test_tcp.Test_AIO_TCP)
+
+check ephemeral port can be used ... ok
+
+test_create_server_4 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_5 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_6 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_tcp_handle_exception_in_connection_made (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_transport_shutdown (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_ssl_1 (tests.test_tcp.Test_AIO_TCPSSL) ... /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/selector_events.py:631: ResourceWarning: unclosed transport <_SelectorSocketTransport fd=20>
+
+  source=self)
+
+/Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/selector_events.py:631: ResourceWarning: unclosed transport <_SelectorSocketTransport fd=27>
+
+  source=self)
+
+ok
+
+test_create_server_ssl_1 (tests.test_tcp.Test_AIO_TCPSSL) ... ok
+
+test_connect_accepted_socket (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_1 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_2 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_3 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_4 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_wrong_sock (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_1 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_2 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_3 (tests.test_tcp.Test_UV_TCP)
+
+check ephemeral port can be used ... ok
+
+test_create_server_4 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_5 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_6 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_float_backlog (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_stream_bittype (tests.test_tcp.Test_UV_TCP) ... skipped 'no socket.SOCK_NONBLOCK (linux only)'
+
+test_create_server_wrong_sock (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_many_small_writes (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_abort_in_connection_made (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_exception_in_connection_made (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_unclosed_gc (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_transport_get_extra_info (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_transport_shutdown (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_ssl_1 (tests.test_tcp.Test_UV_TCPSSL) ... ok
+
+test_create_server_ssl_1 (tests.test_tcp.Test_UV_TCPSSL) ... ok
+
+test_ssl_connect_accepted_socket (tests.test_tcp.Test_UV_TCPSSL) ... /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/sslproto.py:335: ResourceWarning: unclosed transport <asyncio.sslproto._SSLProtocolTransport object at 0x111c65240>
+
+  source=self)
+
+ok
+
+test_duplicate_methods (tests.test_testbase.TestBaseTest) ... ok
+
+test_duplicate_methods_parent_1 (tests.test_testbase.TestBaseTest) ... ok
+
+test_duplicate_methods_parent_2 (tests.test_testbase.TestBaseTest) ... ok
+
+test_create_datagram_endpoint_addrs (tests.test_udp.Test_AIO_UDP) ... ok
+
+test_create_datagram_endpoint_sock (tests.test_udp.Test_AIO_UDP) ... ok
+
+test_create_datagram_endpoint_addrs (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_datagram_endpoint_sock (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_datagram_endpoint_wrong_sock (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_unix_connection_1 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_2 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_3 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_4 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_5 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_server_1 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_server_2 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_transport_unclosed_warning (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_ssl_1 (tests.test_unix.Test_AIO_UnixSSL) ... ok
+
+test_create_unix_server_ssl_1 (tests.test_unix.Test_AIO_UnixSSL) ... ok
+
+test_create_unix_connection_1 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_2 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_3 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_4 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_5 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_1 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_2 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_path_dgram (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_path_stream_bittype (tests.test_unix.Test_UV_Unix) ... skipped 'no socket.SOCK_NONBLOCK (linux only)'
+
+test_transport_fromsock_get_extra_info (tests.test_unix.Test_UV_Unix) ... ok
+
+test_transport_unclosed_warning (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_ssl_1 (tests.test_unix.Test_UV_UnixSSL) ... ok
+
+test_create_unix_server_ssl_1 (tests.test_unix.Test_UV_UnixSSL) ... ok
+
+
+
+----------------------------------------------------------------------
+
+Ran 414 tests in 57.505s
+
+
+
+OK (skipped=7)
+
++make distclean
+
+rm -fr dist/ doc/_build/ *.egg-info uvloop/loop.*.pyd
+
+rm -fr build/lib.* build/temp.*
+
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so
+
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+
+find . -name '__pycache__' | xargs rm -rf
+
+(cd vendor/libuv; git clean -dfX)
+
+Removing Makefile.in
+
+Removing aclocal.m4
+
+Removing ar-lib
+
+Removing autom4te.cache/
+
+Removing compile
+
+Removing config.guess
+
+Removing config.sub
+
+Removing configure
+
+Removing depcomp
+
+Removing install-sh
+
+Removing ltmain.sh
+
+Removing m4/libtool.m4
+
+Removing m4/libuv-extra-automake-flags.m4
+
+Removing m4/ltoptions.m4
+
+Removing m4/ltsugar.m4
+
+Removing m4/ltversion.m4
+
+Removing m4/lt~obsolete.m4
+
+Removing missing
+
+rm -fr build/
+
++make debug
+
+rm -fr dist/ doc/_build/ *.egg-info uvloop/loop.*.pyd
+
+rm -fr build/lib.* build/temp.*
+
+rm -fr uvloop/*.c uvloop/*.html uvloop/*.so
+
+rm -fr uvloop/handles/*.html uvloop/includes/*.html
+
+find . -name '__pycache__' | xargs rm -rf
+
+python setup.py build_ext --inplace --debug \
+
+		--cython-always \
+
+		--cython-annotate \
+
+		--cython-directives="linetrace=True" \
+
+		--define UVLOOP_DEBUG,CYTHON_TRACE,CYTHON_TRACE_NOGIL
+
+running build_ext
+
+uvloop/loop.pyx: cannot find cimported module '.includes'
+
+uvloop/loop.pxd: cannot find cimported module '.includes'
+
+Compiling uvloop/loop.pyx because it changed.
+
+[1/1] Cythonizing uvloop/loop.pyx
+
++glibtoolize --copy
+
+glibtoolize: putting auxiliary files in '.'.
+
+glibtoolize: copying file './ltmain.sh'
+
+glibtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+
+glibtoolize: copying file 'm4/libtool.m4'
+
+glibtoolize: copying file 'm4/ltoptions.m4'
+
+glibtoolize: copying file 'm4/ltsugar.m4'
+
+glibtoolize: copying file 'm4/ltversion.m4'
+
+glibtoolize: copying file 'm4/lt~obsolete.m4'
+
++aclocal -I m4
+
++autoconf
+
++automake --add-missing --copy
+
+configure.ac:37: installing './ar-lib'
+
+configure.ac:25: installing './compile'
+
+configure.ac:22: installing './config.guess'
+
+configure.ac:22: installing './config.sub'
+
+configure.ac:21: installing './install-sh'
+
+configure.ac:21: installing './missing'
+
+Makefile.am: installing './depcomp'
+
+checking for a BSD-compatible install... /usr/local/bin/ginstall -c
+
+checking whether build environment is sane... yes
+
+checking for a thread-safe mkdir -p... /usr/local/bin/gmkdir -p
+
+checking for gawk... no
+
+checking for mawk... no
+
+checking for nawk... no
+
+checking for awk... awk
+
+checking whether make sets $(MAKE)... yes
+
+checking whether make supports nested variables... yes
+
+checking build system type... x86_64-apple-darwin15.6.0
+
+checking host system type... x86_64-apple-darwin15.6.0
+
+checking for gcc... gcc
+
+checking whether the C compiler works... yes
+
+checking for C compiler default output file name... a.out
+
+checking for suffix of executables...
+
+checking whether we are cross compiling... no
+
+checking for suffix of object files... o
+
+checking whether we are using the GNU C compiler... yes
+
+checking whether gcc accepts -g... yes
+
+checking for gcc option to accept ISO C89... none needed
+
+checking whether gcc understands -c and -o together... yes
+
+checking for style of include used by make... GNU
+
+checking dependency style of gcc... gcc3
+
+checking if gcc supports -pedantic flag... yes
+
+checking for gcc way to treat warnings as errors... -Werror
+
+checking if gcc supports -fvisibility=hidden... yes
+
+checking if gcc supports -g flag... yes
+
+checking if gcc supports -std=gnu89 flag... yes
+
+checking if gcc supports -Wall flag... yes
+
+checking if gcc supports -Wextra flag... yes
+
+checking if gcc supports -Wno-unused-parameter flag... yes
+
+checking for ar... ar
+
+checking the archiver (ar) interface... ar
+
+checking how to print strings... printf
+
+checking for a sed that does not truncate output... /usr/local/bin/sed
+
+checking for grep that handles long lines and -e... /usr/bin/grep
+
+checking for egrep... /usr/bin/grep -E
+
+checking for fgrep... /usr/bin/grep -F
+
+checking for ld used by gcc... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+
+checking whether ln -s works... yes
+
+checking the maximum length of command line arguments... 196608
+
+checking how to convert x86_64-apple-darwin15.6.0 file names to x86_64-apple-darwin15.6.0 format... func_convert_file_noop
+
+checking how to convert x86_64-apple-darwin15.6.0 file names to toolchain format... func_convert_file_noop
+
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+
+checking for objdump... no
+
+checking how to recognize dependent libraries... pass_all
+
+checking for dlltool... no
+
+checking how to associate runtime and link libraries... printf %s\n
+
+checking for archiver @FILE support... no
+
+checking for strip... strip
+
+checking for ranlib... ranlib
+
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+
+checking for sysroot... no
+
+checking for a working dd... /bin/dd
+
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+
+checking for mt... no
+
+checking if : is a manifest tool... no
+
+checking for dsymutil... dsymutil
+
+checking for nmedit... nmedit
+
+checking for lipo... lipo
+
+checking for otool... otool
+
+checking for otool64... no
+
+checking for -single_module linker flag... yes
+
+checking for -exported_symbols_list linker flag... yes
+
+checking for -force_load linker flag... yes
+
+checking how to run the C preprocessor... gcc -E
+
+checking for ANSI C header files... yes
+
+checking for sys/types.h... yes
+
+checking for sys/stat.h... yes
+
+checking for stdlib.h... yes
+
+checking for string.h... yes
+
+checking for memory.h... yes
+
+checking for strings.h... yes
+
+checking for inttypes.h... yes
+
+checking for stdint.h... yes
+
+checking for unistd.h... yes
+
+checking for dlfcn.h... yes
+
+checking for objdir... .libs
+
+checking if gcc supports -fno-rtti -fno-exceptions... yes
+
+checking for gcc option to produce PIC... -fno-common -DPIC
+
+checking if gcc PIC flag -fno-common -DPIC works... yes
+
+checking if gcc static flag -static works... no
+
+checking if gcc supports -c -o file.o... yes
+
+checking if gcc supports -c -o file.o... (cached) yes
+
+checking whether the gcc linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+
+checking dynamic linker characteristics... darwin15.6.0 dyld
+
+checking how to hardcode library paths into programs... immediate
+
+checking whether stripping libraries is possible... yes
+
+checking if libtool supports shared libraries... yes
+
+checking whether to build shared libraries... yes
+
+checking whether to build static libraries... yes
+
+checking whether make supports nested variables... (cached) yes
+
+checking for dlopen in -ldl... yes
+
+checking for kstat_lookup in -lkstat... no
+
+checking for kvm_open in -lkvm... no
+
+checking for gethostbyname in -lnsl... no
+
+checking for perfstat_cpu in -lperfstat... no
+
+checking for pthread_mutex_init in -lpthread... yes
+
+checking for clock_gettime in -lrt... no
+
+checking for sendfile in -lsendfile... no
+
+checking for socket in -lsocket... no
+
+checking for special C compiler options needed for large files... no
+
+checking for _FILE_OFFSET_BITS value needed for large files... no
+
+checking sys/ahafs_evProds.h usability... no
+
+checking sys/ahafs_evProds.h presence... no
+
+checking for sys/ahafs_evProds.h... no
+
+checking for pkg-config... yes
+
+checking that generated files are newer than configure... done
+
+configure: creating ./config.status
+
+config.status: creating libuv.pc
+
+config.status: creating Makefile
+
+config.status: executing depfiles commands
+
+config.status: executing libtool commands
+
+  CC       src/libuv_la-fs-poll.lo
+
+  CC       src/libuv_la-inet.lo
+
+  CC       src/libuv_la-threadpool.lo
+
+  CC       src/libuv_la-uv-common.lo
+
+  CC       src/libuv_la-version.lo
+
+  CC       src/unix/libuv_la-async.lo
+
+  CC       src/unix/libuv_la-core.lo
+
+  CC       src/unix/libuv_la-dl.lo
+
+  CC       src/unix/libuv_la-fs.lo
+
+  CC       src/unix/libuv_la-getaddrinfo.lo
+
+  CC       src/unix/libuv_la-getnameinfo.lo
+
+  CC       src/unix/libuv_la-loop-watcher.lo
+
+  CC       src/unix/libuv_la-loop.lo
+
+  CC       src/unix/libuv_la-pipe.lo
+
+  CC       src/unix/libuv_la-poll.lo
+
+  CC       src/unix/libuv_la-process.lo
+
+  CC       src/unix/libuv_la-signal.lo
+
+  CC       src/unix/libuv_la-stream.lo
+
+  CC       src/unix/libuv_la-tcp.lo
+
+  CC       src/unix/libuv_la-thread.lo
+
+  CC       src/unix/libuv_la-timer.lo
+
+  CC       src/unix/libuv_la-tty.lo
+
+  CC       src/unix/libuv_la-udp.lo
+
+  CC       src/unix/libuv_la-darwin.lo
+
+  CC       src/unix/libuv_la-darwin-proctitle.lo
+
+  CC       src/unix/libuv_la-fsevents.lo
+
+  CC       src/unix/libuv_la-kqueue.lo
+
+  CC       src/unix/libuv_la-proctitle.lo
+
+  CC       src/unix/libuv_la-pthread-barrier.lo
+
+  CCLD     libuv.la
+
+building 'uvloop.loop' extension
+
+creating build/temp.macosx-10.11-x86_64-3.6
+
+creating build/temp.macosx-10.11-x86_64-3.6/uvloop
+
+clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -g -DUVLOOP_DEBUG=1 -DCYTHON_TRACE=1 -DCYTHON_TRACE_NOGIL=1 -I/Users/travis/.pyenv/versions/3.6.0/include/python3.6m -Ivendor/libuv/include -c uvloop/loop.c -o build/temp.macosx-10.11-x86_64-3.6/uvloop/loop.o -O2
+
+In file included from uvloop/loop.c:450:
+
+uvloop/includes/compat.h:28:69: warning: control reaches end of non-void function [-Wreturn-type]
+
+int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event) {};
+
+                                                                    ^
+
+uvloop/loop.c:72153:34: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
+
+      __pyx_t_2 = ((__pyx_v_sent < 0) != 0);
+
+                    ~~~~~~~~~~~~ ^ ~
+
+uvloop/loop.c:91162:15: warning: code will never be executed [-Wunreachable-code]
+
+              goto __pyx_L24;
+
+              ^~~~~~~~~~~~~~
+
+uvloop/loop.c:122828:3: warning: variable '__pyx_gilstate_save' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+
+  __Pyx_TraceLine(2591,1,__PYX_ERR(1, 2591, __pyx_L1_error))
+
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+uvloop/loop.c:2920:19: note: expanded from macro '__Pyx_TraceLine'
+
+              if (unlikely(ret)) goto_error;\
+
+                  ^~~~~~~~~~~~~
+
+uvloop/loop.c:633:23: note: expanded from macro 'unlikely'
+
+  #define unlikely(x) __builtin_expect(!!(x), 0)
+
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+uvloop/loop.c:122861:22: note: uninitialized use occurs here
+
+  PyGILState_Release(__pyx_gilstate_save);
+
+                     ^~~~~~~~~~~~~~~~~~~
+
+uvloop/loop.c:122828:3: note: remove the 'if' if its condition is always false
+
+  __Pyx_TraceLine(2591,1,__PYX_ERR(1, 2591, __pyx_L1_error))
+
+  ^
+
+uvloop/loop.c:2920:15: note: expanded from macro '__Pyx_TraceLine'
+
+              if (unlikely(ret)) goto_error;\
+
+              ^
+
+uvloop/loop.c:122693:3: warning: variable '__pyx_gilstate_save' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+
+  __Pyx_TraceCall("__atfork_child", __pyx_f[1], 2589, 1, __PYX_ERR(1, 2589, __pyx_L1_error));
+
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+uvloop/loop.c:2795:15: note: expanded from macro '__Pyx_TraceCall'
+
+          if (unlikely(__Pyx_use_tracing < 0)) goto_error;\
+
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+uvloop/loop.c:633:23: note: expanded from macro 'unlikely'
+
+  #define unlikely(x) __builtin_expect(!!(x), 0)
+
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+uvloop/loop.c:122861:22: note: uninitialized use occurs here
+
+  PyGILState_Release(__pyx_gilstate_save);
+
+                     ^~~~~~~~~~~~~~~~~~~
+
+uvloop/loop.c:122693:3: note: remove the 'if' if its condition is always false
+
+  __Pyx_TraceCall("__atfork_child", __pyx_f[1], 2589, 1, __PYX_ERR(1, 2589, __pyx_L1_error));
+
+  ^
+
+uvloop/loop.c:2795:11: note: expanded from macro '__Pyx_TraceCall'
+
+          if (unlikely(__Pyx_use_tracing < 0)) goto_error;\
+
+          ^
+
+uvloop/loop.c:122690:3: note: variable '__pyx_gilstate_save' is declared here
+
+  PyGILState_STATE __pyx_gilstate_save;
+
+  ^
+
+uvloop/loop.c:139915:93: warning: code will never be executed [-Wunreachable-code]
+
+        module = PyImport_ImportModule((PY_VERSION_HEX >= 0x03030000) ? "collections.abc" : "collections");
+
+                                                                                            ^~~~~~~~~~~~~
+
+uvloop/loop.c:139915:59: note: silence by adding parentheses to mark code as explicitly dead
+
+        module = PyImport_ImportModule((PY_VERSION_HEX >= 0x03030000) ? "collections.abc" : "collections");
+
+                                                          ^
+
+                                                          /* DISABLES CODE */ ( )
+
+6 warnings generated.
+
+creating build/lib.macosx-10.11-x86_64-3.6
+
+creating build/lib.macosx-10.11-x86_64-3.6/uvloop
+
+clang -bundle -undefined dynamic_lookup -L/usr/local/opt/readline/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/openssl/lib -L/Users/travis/.pyenv/versions/3.6.0/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/openssl/lib -L/Users/travis/.pyenv/versions/3.6.0/lib -g build/temp.macosx-10.11-x86_64-3.6/uvloop/loop.o build/libuv/.libs/libuv.a -o build/lib.macosx-10.11-x86_64-3.6/uvloop/loop.cpython-36m-darwin.so
+
+copying build/lib.macosx-10.11-x86_64-3.6/uvloop/loop.cpython-36m-darwin.so -> uvloop
+
++make test
+
+PYTHONASYNCIODEBUG=1 python setup.py test
+
+running test
+
+running egg_info
+
+creating uvloop.egg-info
+
+writing uvloop.egg-info/PKG-INFO
+
+writing dependency_links to uvloop.egg-info/dependency_links.txt
+
+writing top-level names to uvloop.egg-info/top_level.txt
+
+writing manifest file 'uvloop.egg-info/SOURCES.txt'
+
+reading manifest file 'uvloop.egg-info/SOURCES.txt'
+
+reading manifest template 'MANIFEST.in'
+
+warning: no previously-included files matching '*' found under directory 'vendor/libuv/.git'
+
+writing manifest file 'uvloop.egg-info/SOURCES.txt'
+
+running build_ext
+
+copying build/lib.macosx-10.11-x86_64-3.6/uvloop/loop.cpython-36m-darwin.so -> uvloop
+
+test_aiohttp_basic_1 (tests.test_aiohttp.Test_AIO_AioHTTP) ... skipped 'no aiohttp module'
+
+test_aiohttp_basic_1 (tests.test_aiohttp.Test_UV_AioHTTP) ... skipped 'no aiohttp module'
+
+test_call_at (tests.test_base.TestBaseAIO) ... skipped 'time is not monotonic on Travis'
+
+test_call_later_1 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_later_2 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_later_negative (tests.test_base.TestBaseAIO) ... ok
+
+test_call_soon (tests.test_base.TestBaseAIO) ... ok
+
+test_call_soon_base_exc (tests.test_base.TestBaseAIO) ... ok
+
+test_calls_debug_reporting (tests.test_base.TestBaseAIO) ... ok
+
+test_check_thread (tests.test_base.TestBaseAIO) ... ok
+
+test_close (tests.test_base.TestBaseAIO) ... ok
+
+test_debug_slow_callbacks (tests.test_base.TestBaseAIO) ... ok
+
+test_debug_slow_timer_callbacks (tests.test_base.TestBaseAIO) ... ok
+
+test_default_exc_handler_broken (tests.test_base.TestBaseAIO) ... ok
+
+test_default_exc_handler_callback (tests.test_base.TestBaseAIO) ... ok
+
+test_handle_weakref (tests.test_base.TestBaseAIO) ... ok
+
+test_now_update (tests.test_base.TestBaseAIO) ... ok
+
+test_run_once_in_executor_plain (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_error (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_loop (tests.test_base.TestBaseAIO) ... ok
+
+test_run_until_complete_type_error (tests.test_base.TestBaseAIO) ... ok
+
+test_set_debug (tests.test_base.TestBaseAIO) ... ok
+
+test_set_exc_handler_broken (tests.test_base.TestBaseAIO) ... ok
+
+test_set_exc_handler_custom (tests.test_base.TestBaseAIO) ... ok
+
+test_set_task_factory (tests.test_base.TestBaseAIO) ... ok
+
+test_set_task_factory_invalid (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_01 (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_02 (tests.test_base.TestBaseAIO) ... ok
+
+test_shutdown_asyncgens_03 (tests.test_base.TestBaseAIO) ... ok
+
+test_call_at (tests.test_base.TestBaseUV) ... skipped 'time is not monotonic on Travis'
+
+test_call_later_1 (tests.test_base.TestBaseUV) ... ok
+
+test_call_later_2 (tests.test_base.TestBaseUV) ... ok
+
+test_call_later_negative (tests.test_base.TestBaseUV) ... ok
+
+test_call_soon (tests.test_base.TestBaseUV) ... ok
+
+test_call_soon_base_exc (tests.test_base.TestBaseUV) ... ok
+
+test_calls_debug_reporting (tests.test_base.TestBaseUV) ... ok
+
+test_check_thread (tests.test_base.TestBaseUV) ... ok
+
+test_close (tests.test_base.TestBaseUV) ... ok
+
+test_debug_slow_callbacks (tests.test_base.TestBaseUV) ... ok
+
+test_debug_slow_timer_callbacks (tests.test_base.TestBaseUV) ... ok
+
+test_default_exc_handler_broken (tests.test_base.TestBaseUV) ... ok
+
+test_default_exc_handler_callback (tests.test_base.TestBaseUV) ... ok
+
+test_handle_weakref (tests.test_base.TestBaseUV) ... ok
+
+test_loop_create_future (tests.test_base.TestBaseUV) ... ok
+
+test_loop_std_files_cloexec (tests.test_base.TestBaseUV) ... ok
+
+test_now_update (tests.test_base.TestBaseUV) ... ok
+
+test_run_once_in_executor_plain (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_error (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_loop (tests.test_base.TestBaseUV) ... ok
+
+test_run_until_complete_type_error (tests.test_base.TestBaseUV) ... ok
+
+test_set_debug (tests.test_base.TestBaseUV) ... ok
+
+test_set_exc_handler_broken (tests.test_base.TestBaseUV) ... ok
+
+test_set_exc_handler_custom (tests.test_base.TestBaseUV) ... ok
+
+test_set_task_factory (tests.test_base.TestBaseUV) ... ok
+
+test_set_task_factory_invalid (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_01 (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_02 (tests.test_base.TestBaseUV) ... ok
+
+test_shutdown_asyncgens_03 (tests.test_base.TestBaseUV) ... ok
+
+test_get_event_loop_returns_running_loop (tests.test_base.TestPolicy) ... ok
+
+test_running_loop_within_a_loop (tests.test_base.TestPolicy) ... ok
+
+test_uvloop_policy (tests.test_base.TestPolicy) ... ok
+
+test_cython_coro_is_coroutine (tests.test_cython.TestCythonIntegration) ... ok
+
+test_getaddrinfo_1 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_10 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_11 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_12 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_13 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_14 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_15 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_16 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_17 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_18 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_19 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_2 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_20 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_3 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_4 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_5 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_6 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_7 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_8 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_9 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_1 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_2 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_3 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_4 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getnameinfo_5 (tests.test_dns.Test_AIO_DNS) ... ok
+
+test_getaddrinfo_1 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_10 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_11 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_12 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_13 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_14 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_15 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_16 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_17 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_18 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_19 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_2 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_20 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_3 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_4 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_5 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_6 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_7 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_8 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_9 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getaddrinfo_close_loop (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_1 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_2 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_3 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_4 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_getnameinfo_5 (tests.test_dns.Test_UV_DNS) ... ok
+
+test_executors_process_pool_01 (tests.test_executors.TestAIOExecutors) ... ok
+
+test_executors_process_pool_02 (tests.test_executors.TestAIOExecutors) ... ok
+
+test_executors_process_pool_01 (tests.test_executors.TestUVExecutors) ... ok
+
+test_executors_process_pool_02 (tests.test_executors.TestUVExecutors) ... ok
+
+test_future_cancel (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_copy_state (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_class (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_initial_state (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_repr (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_result (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_AIO_Futures) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_AIO_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_result (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_AIO_Futures) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_UV_AIO_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_result (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_UV_Future) ... ok
+
+test_future_callbacks_invoked_on_set_exception (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_callbacks_invoked_on_set_result (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_remove_done_callback (tests.test_futures.Test_UV_UV_FuturesCallbacks) ... ok
+
+test_future_cancel (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_copy_state (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_class (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_never_retrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_exception_never_retrieved_debug (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_initial_state (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_repr (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_result (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_source_traceback (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_abandoned (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_result_retrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_tb_logger_result_unretrieved (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_cancel (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_cancel2 (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_future (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_wrap_future_use_global_loop (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_future_yield_from_twice (tests.test_futures.Test_UV_UV_create_future) ... ok
+
+test_read_pipe (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_read_pty_output (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pipe (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pipe_disconnect_on_close (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_write_pty (tests.test_pipes.Test_AIO_Pipes) ... ok
+
+test_read_pipe (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_read_pty_output (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pipe (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pipe_disconnect_on_close (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_write_pty (tests.test_pipes.Test_UV_Pipes) ... ok
+
+test_cancel_make_subprocess_transport_exec (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_post_init (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_process_wait (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_communicate (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_kill (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_send_signal (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_shell (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_start_new_session (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_stdin_not_inheritable (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_stdin_stdout (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_terminate (tests.test_process.TestAsyncio_AIO_Process) ... ok
+
+test_cancel_make_subprocess_transport_exec (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_cancel_post_init (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_cancel_process_wait (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_communicate (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_kill (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_send_signal (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_shell (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_start_new_session (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_stdin_not_inheritable (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_stdin_stdout (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_terminate (tests.test_process.TestAsyncio_UV_Process) ... ok
+
+test_process_cwd_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_env_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_executable_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_pid_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_preexec_fn_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_preexec_fn_2 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_send_signal_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_basic_1 (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_devnull (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_pass_fds (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_streams_stderr_to_stdout (tests.test_process.Test_AIO_Process) ... ok
+
+test_process_cwd_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_env_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_executable_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_lated_stdio_init (tests.test_process.Test_UV_Process) ... Executing <Handle <TaskSendMethWrapper object at 0x10e8d00b8> created at /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/tasks.py:512> took 1.017 seconds
+
+Executing <Handle <TaskSendMethWrapper object at 0x10e7bf048> created at /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/tasks.py:512> took 1.004 seconds
+
+test_process_pid_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_preexec_fn_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_preexec_fn_2 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_send_signal_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_basic_1 (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_devnull (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_pass_fds (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_redirect (tests.test_process.Test_UV_Process) ... ok
+
+test_process_streams_stderr_to_stdout (tests.test_process.Test_UV_Process) ... ok
+
+test_signals_and_custom_handler_1 (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_coro_callback (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_invalid_signal (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_and_custom_handler (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_pycode_continue (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_pycode_stop (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_sigint_uvcode (tests.test_signals.Test_AIO_Signals) ... ok
+
+test_signals_and_custom_handler_1 (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_coro_callback (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_invalid_signal (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_and_custom_handler (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_pycode_continue (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_pycode_stop (tests.test_signals.Test_UV_Signals) ... ok
+
+test_signals_sigint_uvcode (tests.test_signals.Test_UV_Signals) ... ok
+
+test_socket_accept_recv_send (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_blocking_error (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_connect_recv_send (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_failed_connect (tests.test_sockets.TestAIOSockets) ... ok
+
+test_socket_accept_recv_send (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_blocking_error (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_connect_recv_send (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_failed_connect (tests.test_sockets.TestUVSockets) ... ok
+
+test_socket_sync_remove (tests.test_sockets.TestUVSockets) ... skipped 'Linux only test'
+
+test_task_basics (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_AIO_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_AIO_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_UV_Tasks) ... ok
+
+test_task_basics (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_both_task_and_inner_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_current_task (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_inner_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_task_catching (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_task_ignoring (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_cancel_yield (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_current_task (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_current_task_with_interleaving_tasks (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_repr (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_result (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_result_future (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_step_with_baseexception (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_future_passes_cancel (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_vs_yield_from (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_task_yield_wait_does_not_shield_cancel (tests.test_tasks.Test_UV_UV_Tasks_AIO_Future) ... ok
+
+test_create_connection_1 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_2 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_3 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_4 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_1 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_2 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_3 (tests.test_tcp.Test_AIO_TCP)
+
+check ephemeral port can be used ... ok
+
+test_create_server_4 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_5 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_server_6 (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_tcp_handle_exception_in_connection_made (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_transport_shutdown (tests.test_tcp.Test_AIO_TCP) ... ok
+
+test_create_connection_ssl_1 (tests.test_tcp.Test_AIO_TCPSSL) ... ok
+
+test_create_server_ssl_1 (tests.test_tcp.Test_AIO_TCPSSL) ... ok
+
+test_connect_accepted_socket (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_1 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_2 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_3 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_4 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_wrong_sock (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_1 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_2 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_3 (tests.test_tcp.Test_UV_TCP)
+
+check ephemeral port can be used ... ok
+
+test_create_server_4 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_5 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_6 (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_float_backlog (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_server_stream_bittype (tests.test_tcp.Test_UV_TCP) ... skipped 'no socket.SOCK_NONBLOCK (linux only)'
+
+test_create_server_wrong_sock (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_many_small_writes (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_abort_in_connection_made (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_exception_in_connection_made (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_tcp_handle_unclosed_gc (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_transport_get_extra_info (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_transport_shutdown (tests.test_tcp.Test_UV_TCP) ... ok
+
+test_create_connection_ssl_1 (tests.test_tcp.Test_UV_TCPSSL) ... ok
+
+test_create_server_ssl_1 (tests.test_tcp.Test_UV_TCPSSL) ... ok
+
+test_ssl_connect_accepted_socket (tests.test_tcp.Test_UV_TCPSSL) ... /Users/travis/.pyenv/versions/3.6.0/lib/python3.6/asyncio/sslproto.py:335: ResourceWarning: unclosed transport <asyncio.sslproto._SSLProtocolTransport object at 0x10d6a6cc0>
+
+  source=self)
+
+ok
+
+test_duplicate_methods (tests.test_testbase.TestBaseTest) ... ok
+
+test_duplicate_methods_parent_1 (tests.test_testbase.TestBaseTest) ... ok
+
+test_duplicate_methods_parent_2 (tests.test_testbase.TestBaseTest) ... ok
+
+test_create_datagram_endpoint_addrs (tests.test_udp.Test_AIO_UDP) ... ok
+
+test_create_datagram_endpoint_sock (tests.test_udp.Test_AIO_UDP) ... ok
+
+test_create_datagram_endpoint_addrs (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_datagram_endpoint_sock (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_datagram_endpoint_wrong_sock (tests.test_udp.Test_UV_UDP) ... ok
+
+test_create_unix_connection_1 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_2 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_3 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_4 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_5 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_server_1 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_server_2 (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_transport_unclosed_warning (tests.test_unix.Test_AIO_Unix) ... ok
+
+test_create_unix_connection_ssl_1 (tests.test_unix.Test_AIO_UnixSSL) ... ok
+
+test_create_unix_server_ssl_1 (tests.test_unix.Test_AIO_UnixSSL) ... ok
+
+test_create_unix_connection_1 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_2 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_3 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_4 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_5 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_1 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_2 (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_path_dgram (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_server_path_stream_bittype (tests.test_unix.Test_UV_Unix) ... skipped 'no socket.SOCK_NONBLOCK (linux only)'
+
+test_transport_fromsock_get_extra_info (tests.test_unix.Test_UV_Unix) ... ok
+
+test_transport_unclosed_warning (tests.test_unix.Test_UV_Unix) ... ok
+
+test_create_unix_connection_ssl_1 (tests.test_unix.Test_UV_UnixSSL) ... ok
+
+test_create_unix_server_ssl_1 (tests.test_unix.Test_UV_UnixSSL) ... ok
+
+
+
+======================================================================
+
+FAIL: test_process_lated_stdio_init (tests.test_process.Test_UV_Process) [no pause, no stdin]
+
+----------------------------------------------------------------------
+
+Traceback (most recent call last):
+
+  File "/Users/travis/build/MagicStack/uvloop/tests/test_process.py", line 592, in test_process_lated_stdio_init
+
+    ('CL', 0, None)
+
+AssertionError: Items in the second set but not the first:
+
+('CL', 0, None)
+
+('STDOUT', 'LOST')
+
+
+
+======================================================================
+
+FAIL: test_process_lated_stdio_init (tests.test_process.Test_UV_Process) [Alive handle after test] (handle_name='UVProcessTransport')
+
+----------------------------------------------------------------------
+
+Traceback (most recent call last):
+
+  File "/Users/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 121, in tearDown
+
+    'alive {} after test'.format(h_name))
+
+AssertionError: 1 != 0 : alive UVProcessTransport after test
+
+
+
+======================================================================
+
+FAIL: test_process_lated_stdio_init (tests.test_process.Test_UV_Process) [Alive handle after test] (handle_name='ReadUnixTransport')
+
+----------------------------------------------------------------------
+
+Traceback (most recent call last):
+
+  File "/Users/travis/build/MagicStack/uvloop/uvloop/_testbase.py", line 121, in tearDown
+
+    'alive {} after test'.format(h_name))
+
+AssertionError: 2 != 0 : alive ReadUnixTransport after test
+
+
+
+----------------------------------------------------------------------
+
+Ran 414 tests in 157.298s
+
+
+
+FAILED (failures=3, skipped=7)
+
+Test failed: <unittest.runner.TextTestResult run=414 errors=0 failures=3>
+
+error: Test failed: <unittest.runner.TextTestResult run=414 errors=0 failures=3>
+
+make: *** [test] Error 1
+
+
+
+travis_time:end:1938744f:start=1500527065946092000,finish=1500527618863687000,duration=552917595000
+[0K
+
+[31;1mThe command ".ci/travis-tests.sh && .ci/travis-build-wheels.sh" exited with 2.[0m
+
+
+
+Done. Your build exited with 1.
+
+/Users/travis/.travis/job_stages: line 166: shell_session_update: command not found
+

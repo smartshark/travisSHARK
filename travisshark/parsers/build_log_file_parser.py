@@ -17,11 +17,12 @@ def all_subclasses(cls):
 
 
 class BuildLogFileParser(object):
-    def __init__(self, log, debug_level):
+    def __init__(self, log, debug_level, ignore_errors):
         self.log = log
         self.logger = logging.getLogger("parser")
         self.debug_level = debug_level
         self.logger.setLevel(debug_level)
+        self.ignore_errors = ignore_errors
 
     def get_correct_parser(self, job_config):
         BuildLogFileParser._import_parser()
@@ -31,14 +32,13 @@ class BuildLogFileParser(object):
         if 'language' not in job_config:
             raise JobConfigError("No language specified")
 
-        if job_config['language'] not in ['java', 'python']:
-            raise NotImplementedError("Only java and python are implemented at the moment!")
+        #if job_config['language'] not in ['java', 'python', 'generic']:
+        #    raise NotImplementedError("Only java and python are implemented at the moment!")
 
         list_of_parsers = all_subclasses(BuildLogFileParser)
         list_of_parsers.reverse()
         for sc in list_of_parsers:
-            parser = sc(self.log, self.debug_level)
-            print(parser.__class__.__name__)
+            parser = sc(self.log, self.debug_level, self.ignore_errors)
             try:
                 if parser.detect(job_config):
                     return parser
