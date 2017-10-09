@@ -1,0 +1,128 @@
+Using worker: ppp1.worker.travis-ci.org:travis-php-3
+
+$ cd ~/builds
+$ export HTTPBIN_URL=http://httpbin.org/
+$ git clone --depth=100 --quiet git://github.com/kennethreitz/requests.git kennethreitz/requests
+$ cd kennethreitz/requests
+$ git checkout -qf 32941fdd2039f48c705d90a2e8bf536097e544ae
+$ export TRAVIS_PYTHON_VERSION=3.2
+$ source ~/virtualenv/python3.2/bin/activate
+$ python --version
+Python 3.2.2
+$ pip --version
+pip 1.1 from /home/vagrant/virtualenv/python3.2/lib/python3.2/site-packages/pip-1.1-py3.2.egg (python 3.2)
+$ pip install nose
+Requirement already satisfied (use --upgrade to upgrade): nose in /home/vagrant/virtualenv/python3.2/lib/python3.2/site-packages
+Cleaning up...
+$ pip install . --use-mirrors
+Unpacking /home/vagrant/builds/kennethreitz/requests
+  Running setup.py egg_info for package from file:///home/vagrant/builds/kennethreitz/requests
+
+Downloading/unpacking certifi>=0.0.7 (from requests==0.13.1)
+  Real name of requirement certifi is certifi
+  Downloading certifi-0.0.8.tar.gz (118Kb):
+  Downloading certifi-0.0.8.tar.gz (118Kb):   3%  4.1Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):   6%  8.2Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  10%  12Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  13%  16Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  17%  20Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  20%  24Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  24%  28Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  27%  32Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  31%  36Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  34%  40Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  38%  45Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  41%  49Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  45%  53Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  48%  57Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  52%  61Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  55%  65Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  58%  69Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  62%  73Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  65%  77Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  69%  81Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  72%  86Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  76%  90Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  79%  94Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  83%  98Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  86%  102Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  90%  106Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  93%  110Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  97%  114Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb): 100%  118Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):
+  Downloading certifi-0.0.8.tar.gz (118Kb): 118Kb downloaded
+  Running setup.py egg_info for package certifi
+
+Downloading/unpacking chardet2 (from requests==0.13.1)
+  Real name of requirement chardet2 is chardet2
+  Downloading chardet2-2.0.1.tar.gz (151Kb):
+  Downloading chardet2-2.0.1.tar.gz (151Kb):   2%  4.1Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):   5%  8.2Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):   8%  12Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  10%  16Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  13%  20Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  16%  24Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  18%  28Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  21%  32Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  24%  36Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  26%  40Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  29%  45Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  32%  49Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  35%  53Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  37%  57Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  40%  61Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  43%  65Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  45%  69Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  48%  73Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  51%  77Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  53%  81Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  56%  86Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  59%  90Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  62%  94Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  64%  98Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  67%  102Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  70%  106Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  72%  110Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  75%  114Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  78%  118Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  80%  122Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  83%  126Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  86%  131Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  89%  135Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  91%  139Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  94%  143Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  97%  147Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  99%  151Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb): 100%  151Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):
+  Downloading chardet2-2.0.1.tar.gz (151Kb): 151Kb downloaded
+  Running setup.py egg_info for package chardet2
+
+Installing collected packages: certifi, chardet2, requests
+  Running setup.py install for certifi
+
+  Running setup.py install for chardet2
+
+  Running setup.py install for requests
+
+Successfully installed certifi chardet2 requests
+Cleaning up...
+$ make travis
+nosetests tests/test_cookies.py tests/test_requests.py tests/test_requests_https.py --with-xunit --xunit-file=junit-report.xml
+........................................E........................................
+======================================================================
+ERROR: test_file_post_data (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 471, in test_file_post_data
+    testfile.write(filecontent)
+TypeError: 'str' does not support the buffer interface
+
+----------------------------------------------------------------------
+Ran 81 tests in 52.210s
+
+FAILED (errors=1)
+make: *** [citests] Error 1
+
+Done. Build script exited with: 1

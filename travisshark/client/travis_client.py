@@ -30,20 +30,29 @@ class TravisClient(object):
         return self._send_request(req_url)
 
     def get_log_for_job_id(self, job_id):
-        req_url = "%s/jobs/%s/log.txt?deansi=true" % (self.base_url, job_id)
-        return self._send_request(req_url, accept_header='', json_format=False)
+        # Currently, travis is using the s3 service to store their job logs, we can directly retrieve it without
+        # using the api. Especially, as sometimes the api is failing.
+        req_url = "https://s3.amazonaws.com/archive.travis-ci.org/jobs/%s/log.txt" % job_id
 
-    def _send_request(self, url, accept_header='application/vnd.travis-ci.2+json', json_format=True):
+        # Sometimes, the direct connection to the s3 service fails, thats why we are using the api afterwards
+        try:
+            return self._send_request(req_url, accept_header='', json_format=False, authorization=False)
+        except RequestException:
+            req_url = "%s/jobs/%s/log.txt?deansi=true" % (self.base_url, job_id)
+            return self._send_request(req_url, accept_header='', json_format=False)
+
+    def _send_request(self, url, accept_header='application/vnd.travis-ci.2+json', json_format=True, authorization=True):
         tries = 1
         while tries <= 2:
             logger.debug("Sending request to url: %s" % url)
 
             # If tokens are used, set the header, if not use basic authentication
             headers = {
-                'Authorization': 'token %s' % self.travis_token,
                 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0',
                 'Accept': accept_header
             }
+            if authorization:
+                headers['Authorization'] = 'token %s' % self.travis_token
 
             # Make the request
             resp = requests.get(url, headers=headers, proxies=self.proxy)

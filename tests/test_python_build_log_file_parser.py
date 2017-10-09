@@ -15,6 +15,109 @@ class PythonBuildLogFileParserTest(unittest.TestCase):
                 new_lines.append(line.strip("\n") + "\r")
         return '\n'.join(new_lines)
 
+    def test_trial_errored_tests_4(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_errored_tests_trial_4.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertEqual(len(set(failed_tests)), 10)
+        self.assertEqual(len(set(errored_tests)), 21)
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "unittest")
+
+    def test_trial_errored_tests_3(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_errored_tests_trial_3.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), set([]))
+        self.assertSetEqual(set(errored_tests), {'scrapy.tests.test_selector_libxml2',
+                                                 'scrapy.tests.test_contrib_linkextractors'})
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "unittest")
+
+    def test_trial_errored_tests_2(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_errored_tests_trial_2.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), set([]))
+        self.assertSetEqual(set(errored_tests), {'scrapy.tests.test_selector_libxml2',
+                                                 'scrapy.tests.test_contrib_linkextractors'})
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "unittest")
+
+    def test_trial_errored_tests(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_errored_tests_trial.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), set([]))
+        self.assertSetEqual(set(errored_tests), {'scrapy.tests.test_selector_libxml2'})
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "unittest")
+
+    def test_trial_failed_tests(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_failed_tests_trial.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), {'scrapy.tests.test_contrib_exporter.JsonLinesItemExporterTest.test_nested_item'})
+        self.assertSetEqual(set(errored_tests), set([]))
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "unittest")
+
+    def test_special_case_4(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_special_case_4.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), {'tests.test_client_session.test_borrow_connector_loop',
+                                                'tests.test_client_session.test_create_session_outside_of_coroutine',
+                                                'tests.test_connector.TestHttpClientConnector.test_tcp_connector_uses_provided_local_addr'})
+        self.assertSetEqual(set(errored_tests), set([]))
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "pytest-sugar")
+
+    def test_special_case_3(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_special_case_3.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), set([]))
+        self.assertSetEqual(set(errored_tests), set([]))
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "pytest-sugar")
+
+    def test_special_case_2(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_special_case_2.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), {'tests.test_client_session.test_lazy_init_create_session'})
+        self.assertSetEqual(set(errored_tests), set([]))
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "pytest-sugar")
+
+    def test_special_case_1(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_special_case_1.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), {'tests.test_connector.TestHttpClientConnector.test_resolver_not_called_with_address_is_ip'})
+        self.assertSetEqual(set(errored_tests), set([]))
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "pytest-sugar")
+
+    def test_errored_test_unittest_7(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_errored_tests_unittest_7.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), set([]))
+        self.assertEqual(len(set(errored_tests)), 54)
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "unittest")
+
+    def test_errored_test_unittest_8(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_errored_tests_unittest_8.txt'), 'DEBUG', False)
+
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), set([]))
+        self.assertSetEqual(set(errored_tests), {'test_requests.RequestsTestSuite.test_file_post_data'})
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "unittest")
+
     def test_failed_test_unittest_6(self):
         parser = PythonBuildLogFileParser(self._get_log('python_failed_tests_unittest_6.txt'), 'DEBUG', False)
 
@@ -254,6 +357,21 @@ class PythonBuildLogFileParserTest(unittest.TestCase):
         parser = PythonBuildLogFileParser(self._get_log('python_failed_tests_pytest_3.txt'), 'DEBUG', False)
         failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
         self.assertEqual(len(failed_tests), 75)
+        self.assertSetEqual(set(errored_tests), set([]))
+        self.assertTrue(tests_run_completely)
+        self.assertEqual(test_framework, "pytest")
+
+    def test_failed_test_pytest_4(self):
+        parser = PythonBuildLogFileParser(self._get_log('python_failed_tests_pytest_4.txt'), 'DEBUG', True)
+        failed_tests, errored_tests, test_framework, tests_run_completely = parser.parse()
+        self.assertSetEqual(set(failed_tests), {
+            'tests.test_requests.TestPreparingURLs.test_preparing_url[6url6-http://xn--knigsgchen-b4a3dun.de/stra%C3%9Fe]',
+            'tests.test_requests.TestPreparingURLs.test_preparing_url[4url4-http://xn--strae-oqa.de/stra%C3%9Fe]',
+            'tests.test_requests.TestPreparingURLs.test_preparing_url[5http://stra\\xc3\\x9fe.de/stra\\xc3\\x9fe-http://xn--strae-oqa.de/stra%C3%9Fe]',
+            'tests.test_requests.TestPreparingURLs.test_preparing_url[3http://\\xe3\\x82\\xb8\\xe3\\x82\\xa7\\xe3\\x83\\xbc\\xe3\\x83\\x94\\xe3\\x83\\xbc\\xe3\\x83\\x8b\\xe3\\x83\\x83\\xe3\\x82\\xaf.jp-http://xn--hckqz9bzb1cyrb.jp/]',
+            'tests.test_requests.TestPreparingURLs.test_preparing_url[7http://K\\xc3\\xb6nigsg\\xc3\\xa4\\xc3\\x9fchen.de/stra\\xc3\\x9fe-http://xn--knigsgchen-b4a3dun.de/stra%C3%9Fe]',
+            'tests.test_requests.TestPreparingURLs.test_preparing_bad_url[4url4]',
+        })
         self.assertSetEqual(set(errored_tests), set([]))
         self.assertTrue(tests_run_completely)
         self.assertEqual(test_framework, "pytest")

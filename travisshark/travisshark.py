@@ -144,7 +144,10 @@ class TravisSHARK(object):
         m_build.state = build['builds'][0]['state']
         m_build.number = int(build['builds'][0]['number'])
         m_build.event_type = build['builds'][0]['event_type']
-        m_build.duration = int(build['builds'][0]['duration'])
+
+        # Some builds do not have a duration...
+        if build['builds'][0]['duration']:
+            m_build.duration = int(build['builds'][0]['duration'])
 
         if build['builds'][0]['started_at'] is not None:
             m_build.started_at = datetime.datetime.strptime(build['builds'][0]['started_at'], '%Y-%m-%dT%H:%M:%SZ')

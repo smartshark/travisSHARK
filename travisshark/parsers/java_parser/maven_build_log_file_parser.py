@@ -24,6 +24,9 @@ class MavenBuildLogFileParser(JavaBuildLogFileParser):
         return list(self.tests_failed), list(self.tests_errored), self.test_framework, self.tests_run_completely
 
     def detect(self, job_config):
+        if 'language' in job_config and job_config['language'].lower() != "java":
+            return False
+
         if self.check_if_list_is_in_job_config(job_config, ['mvn', 'maven', 'maven_opts']):
             self.logger.debug("Found Maven build file...")
             return True
