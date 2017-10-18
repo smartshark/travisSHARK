@@ -60,41 +60,22 @@ class TravisSHARK(object):
                     ))
                     continue
 
-                # Debug stuff
-                failed_jobs['https://api.travis-ci.org/jobs/%s/log.txt?deansi=true' % job_id] = {}
-
                 try:
                     logger.info("Collecting data for Job with id %s..." % job.tr_id)
                     log = self.client.get_log_for_job_id(job.tr_id)
 
-                    try:
-                        logger.debug("Looking at job config %s..." % job.config)
-                        parser = BuildLogFileParser(log, self.cfg.get_debug_level(), self.cfg.ignore_errors)\
-                            .get_correct_parser(job.config)
-                    except (NotImplementedError, JobConfigError) as e:
-                        logger.error("Got following error: %s" % e)
-                        continue
-                    except NoFittingParserFoundError as e:
-                        logger.error("No fitting parser was found, continue...")
-                        continue
+                    for parser in BuildLogFileParser(log, self.cfg.get_debug_level(), self.cfg.ignore_errors)\
+                            .get_correct_parsers(job.config):
+                        logger.info("Using %s." % parser.__class__.__name__)
+                        parser.parse(job)
 
-                    logger.info("Using %s." % parser.__class__.__name__)
+                        # Debug stuff
+                        logger.debug("Parsed the following job: %s" % repr(job))
 
-                    job.failed_tests, job.errored_tests, job.test_framework, job.tests_run = parser.parse()
-
-                    # Debug stuff
-                    failed_jobs['https://api.travis-ci.org/jobs/%s/log.txt?deansi=true' % job_id]['failed_tests'] = job.failed_tests
-                    failed_jobs['https://api.travis-ci.org/jobs/%s/log.txt?deansi=true' % job_id]['errored_tests'] = job.errored_tests
-                    logger.debug("The following tests failed: %s" % job.failed_tests)
-                    logger.debug("The following tests errored: %s" % job.errored_tests)
                 except RequestException:
                     logger.warning("Could not get log file for job with id %s. Travis error..." % job.tr_id)
 
             build.save()
-
-        for failed_job, results in failed_jobs.items():
-            print(failed_job)
-            print(results)
 
         elapsed = timeit.default_timer() - start_time
         logger.info("Execution time: %0.5f s" % elapsed)

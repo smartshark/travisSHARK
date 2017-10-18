@@ -1,6 +1,7 @@
-from travisshark.parsers.java_parser.java_build_log_file_parser import JavaBuildLogFileParser
+from travisshark.parsers.build_log_file_parser import BuildLogFileParser
 
-class AntBuildLogFileParser(JavaBuildLogFileParser):
+
+class AntBuildLogFileParser(BuildLogFileParser):
     def __init__(self, log, debug_level, ignore_errors):
         super().__init__(log, debug_level, ignore_errors)
         self.reactor_lines = []
@@ -12,10 +13,13 @@ class AntBuildLogFileParser(JavaBuildLogFileParser):
         self.test_framework = None
         self.tests_run_completely = False
 
-    def parse(self):
+    def parse(self, job):
         self._extract_tests()
         self._analyze_tests()
-        return list(self.tests_failed), list(self.tests_errored), self.test_framework, self.tests_run_completely
+        job.failed_tests = list(self.tests_failed)
+        job.errored_tests = list(self.tests_errored)
+        job.test_framework = self.test_framework
+        job.tests_run = self.tests_run_completely
 
     def _get_fqn_from_line(self, line):
         line_parts = line.strip().split('(')

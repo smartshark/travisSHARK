@@ -1,8 +1,6 @@
 import logging
 import re
 
-import binascii
-
 from travisshark.parsers.build_log_file_parser import BuildLogFileParser
 
 logger = logging.getLogger("parser")
@@ -43,23 +41,10 @@ class PythonBuildLogFileParser(BuildLogFileParser):
         self._pytest_sugar_errored_tests = re.compile("\s*(\d*) error\S*")
         self._pytest_sugar_test_name = re.compile("\s*- (\S*):\d*\s(\S*)")
 
-    def check_if_list_is_in_job_config(self, job_config, keywords):
-        KEYS_TO_CHECK = ['env', 'install', 'script', 'after_success', 'before_install', 'cache', 'global_env']
-
-        for key_to_check in KEYS_TO_CHECK:
-            if key_to_check in job_config and job_config[key_to_check] is not None:
-                for keyword_to_check in keywords:
-                    value_to_check = job_config[key_to_check]
-
-                    if isinstance(value_to_check, list):
-                        value_to_check = ' '.join(job_config[key_to_check])
-
-                    if keyword_to_check.lower() in value_to_check.lower():
-                        return True
-
-        return False
-
     def detect(self, job_config):
+        if 'language' in job_config and job_config['language'].lower() != "python":
+            return False
+
         if self.check_if_list_is_in_job_config(job_config, ['python', 'pytest', 'nose', 'nosetests', 'py.test', 'pip']) or \
                 job_config['language'] == "python":
             self.logger.debug("Found Python build...")
@@ -73,7 +58,7 @@ class PythonBuildLogFileParser(BuildLogFileParser):
                 return int(matches.group(1))
         return 0
 
-    def parse(self):
+    def parse(self, job):
         summary_started = False
         next_lines_must_be_parsed = False
         _parsed_num_errored_tests = 0
@@ -213,7 +198,7 @@ class PythonBuildLogFileParser(BuildLogFileParser):
                 else:
                     raise Exception("No pytest section found!")
             # Sometimes the build logs have some grunch before "___" stuff, so we need to check for that too
-            elif (line.startswith("_") or (line.startswiweilth(" ") and "test" in line.lower() and not line.startswith("  File"))) \
+            elif (line.startswith("_") or (line.startswith(" ") and "test" in line.lower() and not line.startswith("  File"))) \
                     and (line.endswith("_\r") or line.endswith(" \r")) and method_name_of_test is None and summary_started \
                     and " summary " not in line:
                 matches = re.search(self._test_method_name_pytest_regex, line)
@@ -284,13 +269,6 @@ class PythonBuildLogFileParser(BuildLogFileParser):
                     _parsed_num_errored_tests += int(matches.group(1))
 
 
-
-
-
-
-        print(self.failed_tests)
-        print(len(self.failed_tests))
-        print(self.errored_tests)
         # Sanity Checks. Sometimes, a build is so buggy that we could not parse and errored test
         # and also the number of errors is no longer correctly countable
         if self.tests_run_completely and found_num_errored_tests != _parsed_num_errored_tests and \
@@ -311,4 +289,7 @@ class PythonBuildLogFileParser(BuildLogFileParser):
             else:
                 self.logger.error(msg)
 
-        return list(self.failed_tests), list(self.errored_tests), self.test_framework, self.tests_run_completely
+        job.failed_tests = list(self.failed_tests)
+        job.errored_tests = list(self.errored_tests)
+        job.test_framework = self.test_framework
+        job.tests_run = self.tests_run_completely

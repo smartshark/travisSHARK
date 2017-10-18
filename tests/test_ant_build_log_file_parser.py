@@ -1,38 +1,30 @@
 import unittest
-import os
 
-from travisshark.parsers.java_parser.ant_build_log_file_parser import AntBuildLogFileParser
+from tests.base_test import BaseTest, JobMock
+from travisshark.parsers.ant_build_log_file_parser import AntBuildLogFileParser
 
 
-class MavenBuildLogFileParserTest(unittest.TestCase):
-    def _get_log(self, filename):
-        with open(os.path.join(os.path.dirname(__file__), 'data', filename), 'r', encoding='utf8') as file:
-            log = file.readlines()
-
-            # We need to make some adaptions so that the file matches the return value from the api
-            new_lines = []
-            for line in log:
-                new_lines.append(line.strip("\n")+"\r")
-        return '\n'.join(new_lines)
+class MavenBuildLogFileParserTest(BaseTest):
+    def setUp(self):
+        self.job = JobMock()
 
     def test_failed_tests_more_than_one(self):
-        parser = AntBuildLogFileParser(self._get_log('ant_failed_tests_junit_2.txt'), 'DEBUG', False)
-        parser.parse()
-        self.assertEqual(parser.tests_failed, {'com.google.inject.internal.WeakKeySetTest.testEviction_keyOverlap_2x',
-                                               'com.google.inject.internal.WeakKeySetTest.testWeakKeySet_integration',
-                                               'com.google.inject.internal.WeakKeySetTest.testWeakKeySet_integration_multipleChildren'})
+        parser = AntBuildLogFileParser(self.get_log('ant_failed_tests_junit_2.txt'), 'DEBUG', False)
+        parser.parse(self.job)
+        self.assertEqual(self.job.failed_tests, {'com.google.inject.internal.WeakKeySetTest.testEviction_keyOverlap_2x',
+                                                 'com.google.inject.internal.WeakKeySetTest.testWeakKeySet_integration',
+                                                 'com.google.inject.internal.WeakKeySetTest.testWeakKeySet_integration_multipleChildren'})
 
     def test_test_framework_junit(self):
-        parser = AntBuildLogFileParser(self._get_log('ant_failed_tests_junit.txt'), 'DEBUG', False)
-        parser.parse()
-        self.assertEqual(parser.test_framework, 'junit')
-        self.assertEqual(parser.tests_run_completely, True)
-        
-    
+        parser = AntBuildLogFileParser(self.get_log('ant_failed_tests_junit.txt'), 'DEBUG', False)
+        parser.parse(self.job)
+        self.assertEqual(self.job.test_framework, 'junit')
+        self.assertEqual(self.job.tests_run, True)
+
     def test_failed_tests(self):
-        parser = AntBuildLogFileParser(self._get_log('ant_failed_tests_junit.txt'), 'DEBUG', False)
-        parser.parse()
-        self.assertEqual(parser.tests_failed, {'com.google.inject.internal.WeakKeySetTest.testEviction'})
+        parser = AntBuildLogFileParser(self.get_log('ant_failed_tests_junit.txt'), 'DEBUG', False)
+        parser.parse(self.job)
+        self.assertEqual(self.job.failed_tests, {'com.google.inject.internal.WeakKeySetTest.testEviction'})
 
 if __name__ == '__main__':
     unittest.main()
