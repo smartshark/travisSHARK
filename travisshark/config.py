@@ -29,6 +29,7 @@ class Config(object):
         self.debug = args.debug
         self.only_failed = args.only_failed
         self.ignore_errors = args.ignore_errors
+        self.rerun = args.rerun
 
         if args.proxy_host and args.proxy_host.startswith('http://'):
             self.proxy_host = args.proxy_host[7:]

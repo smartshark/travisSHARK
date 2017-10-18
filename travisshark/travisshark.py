@@ -34,7 +34,8 @@ class TravisSHARK(object):
 
         for build_number in range(1, int(repo['last_build_number'])):
             # If we already have this build, we continue
-            if TravisBuild.objects(vcs_system_id=self.vcs_system_id, number=build_number).first() is not None:
+            if not self.cfg.rerun \
+                    and TravisBuild.objects(vcs_system_id=self.vcs_system_id, number=build_number).first() is not None:
                 logger.info("Travis build with number %d and vcs_system_id %s already in database. Skipping..." % (
                     build_number, self.vcs_system_id
                 ))

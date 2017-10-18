@@ -18,6 +18,8 @@ def start():
                         action='store_true')
     parser.add_argument('--only-failed', help='Switch on, if you only want to mine failed jobs', default=False,
                         action='store_true')
+    parser.add_argument('--rerun', help='Switch on, if you want to rerun on all builds', default=False,
+                        action='store_true')
 
     try:
         args = parser.parse_args()
@@ -28,6 +30,7 @@ def start():
 
     travisshark = TravisSHARK(cfg)
     travisshark.run()
+
 
 if __name__ == "__main__":
     start()

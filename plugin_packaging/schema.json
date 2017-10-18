@@ -1,0 +1,72 @@
+{
+"collections":[  
+      {  
+         "fields":[  
+            {  
+               "type":"ObjectIdType",
+               "logical_type":"OID",
+               "field_name":"_id",
+               "desc": "Identifier of the document"
+            },
+            {
+               "type":"ObjectIdType",
+               "logical_type":"RID",
+               "reference_to": "vcs_system",
+               "field_name":"vcs_system_id",
+               "desc": "ObjectID of the vcs_system to which this file belongs"
+            },
+            {
+               "type":"StringType",
+               "logical_type":"Name",
+               "field_name":"state",
+               "desc": "State that the build had (e.g., errored, failed, canceled)"
+            },
+            {
+               "type":"IntegerType",
+               "logical_type":"Name",
+               "field_name":"number",
+               "desc": "Number of the build"
+            },
+            {
+               "type":"StringType",
+               "logical_type":"Name",
+               "field_name":"event_type",
+               "desc": "Type of event that triggered the build (e.g., pull_request, push)"
+            },
+            {
+               "type":"IntegerType",
+               "logical_type":"ProductMetric",
+               "field_name":"duration",
+               "desc": "Duration of how long the build needed to finish."
+            },
+            {
+               "type":"DateType",
+               "logical_type":"Date",
+               "field_name":"started_at",
+               "desc": "Date at which the build started."
+            },
+            {
+               "type":"DateType",
+               "logical_type":"Date",
+               "field_name":"finished_at",
+               "desc": "Date at which the build finished."
+            },
+            {
+               "type":"IntegerType",
+               "logical_type":"Name",
+               "field_name":"pr_number",
+               "desc": "Number of the pull request (if it is a pull request)."
+            },
+            {
+               "sub_type":"StructType",
+               "type":"ArrayType",
+               "logical_type":"Name",
+               "field_name":"jobs",
+               "desc": "List of jobs that belong to this build."
+            }
+         ],
+         "collection_name":"travis_build",
+         "desc": "Collection that contains information about the travis builds of projects."
+      }
+   ]
+}

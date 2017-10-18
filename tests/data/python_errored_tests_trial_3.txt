@@ -1,0 +1,3008 @@
+Using worker: ppp1.worker.travis-ci.org:travis-php-4
+
+
+
+$ cd ~/builds
+
+$ export BUILDENV=lucid
+
+
+$ git clone --depth=100 --quiet git://github.com/scrapy/scrapy.git scrapy/scrapy
+
+
+
+$ cd scrapy/scrapy
+
+$ git checkout -qf 7cba9bc27415b59a2cb8f9390a682d1ad243bd09
+
+
+$ export TRAVIS_PYTHON_VERSION=2.7
+
+$ source ~/virtualenv/python2.7/bin/activate
+
+$ python --version
+Python 2.7.2+
+
+$ pip --version
+pip 1.1 from /home/vagrant/virtualenv/python2.7/lib/python2.7/site-packages/pip-1.1-py2.7.egg (python 2.7)
+
+$ sudo apt-get update -qq
+
+$ sudo apt-get install -qf python-libxml2
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  liblqr-1-0-dev libatk1.0-dev libglib2.0-bin libglib2.0-dev libjasper-dev
+  libxcb-shm0-dev x11proto-xinerama-dev libpango1.0-dev x11proto-render-dev
+  ocaml-base-nox libxi-dev libxrender-dev libgraphviz-dev libcairo2-dev
+  libpng12-dev libcgraph5 libfontconfig1-dev x11proto-composite-dev
+  libxcursor-dev libexif-dev libcairo-script-interpreter2 x11proto-randr-dev
+  x11proto-damage-dev libgtk2.0-dev libxdamage-dev libfreetype6-dev
+  x11proto-fixes-dev libxcomposite-dev libtiffxx0c2 liblcms1-dev libxdot4
+  libxrandr-dev libgvpr1 librsvg2-dev libpixman-1-dev libxft-dev libxml2-utils
+  libopenexr-dev libxcb-render0-dev libexif12 libxfixes-dev libxinerama-dev
+  libgdk-pixbuf2.0-dev libilmbase-dev
+Use 'apt-get autoremove' to remove them.
+The following NEW packages will be installed:
+  python-libxml2
+0 upgraded, 1 newly installed, 0 to remove and 20 not upgraded.
+Need to get 276 kB of archives.
+After this operation, 1,376 kB of additional disk space will be used.
+Get:1 http://de.archive.ubuntu.com/ubuntu/ oneiric-updates/main python-libxml2 i386 2.7.8.dfsg-4ubuntu0.2 [276 kB]
+Fetched 276 kB in 0s (1,242 kB/s)
+Selecting previously deselected package python-libxml2.
+(Reading database ...
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 84843 files and directories currently installed.)
+Unpacking python-libxml2 (from .../python-libxml2_2.7.8.dfsg-4ubuntu0.2_i386.deb) ...
+Setting up python-libxml2 (2.7.8.dfsg-4ubuntu0.2) ...
+
+$ pip install --use-mirrors -r .travis/requirements-$BUILDENV.txt
+Unpacking /home/vagrant/builds/scrapy/scrapy
+  Running setup.py egg_info for package from file:///home/vagrant/builds/scrapy/scrapy
+
+    warning: no files found matching 'license.txt' under directory 'scrapyd'
+    no previously-included directories found matching 'docs/build'
+    warning: no files found matching '*' under directory 'scripts'
+    warning: no files found matching '*' under directory 'examples'
+Downloading/unpacking pyOpenSSL==0.10 (from -r .travis/requirements-lucid.txt (line 1))
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):   1%  4.1Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):   3%  8.2Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):   5%  12Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):   7%  16Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):   9%  20Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  11%  24Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  12%  28Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  14%  32Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  16%  36Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  18%  40Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  20%  45Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  22%  49Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  23%  53Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  25%  57Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  27%  61Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  29%  65Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  31%  69Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  33%  73Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  35%  77Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  36%  81Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  38%  86Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  40%  90Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  42%  94Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  44%  98Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  46%  102Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  47%  106Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  49%  110Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  51%  114Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  53%  118Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  55%  122Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  57%  126Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  58%  131Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  60%  135Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  62%  139Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  64%  143Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  66%  147Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  68%  151Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  70%  155Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  71%  159Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  73%  163Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  75%  167Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  77%  172Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  79%  176Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  81%  180Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  82%  184Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  84%  188Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  86%  192Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  88%  196Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  90%  200Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  92%  204Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  94%  208Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  95%  212Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  97%  217Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):  99%  221Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb): 100%  222Kb
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb):
+  Downloading pyOpenSSL-0.10.tar.gz (222Kb): 222Kb downloaded
+  Running setup.py egg_info for package pyOpenSSL
+
+    warning: no previously-included files matching '*.pyc' found anywhere in distribution
+Downloading/unpacking lxml==2.2.4 (from -r .travis/requirements-lucid.txt (line 2))
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   0%  4.1Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   0%  8.2Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   0%  12Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   0%  16Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   0%  20Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   0%  24Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   0%  28Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   1%  32Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   1%  36Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   1%  40Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   1%  45Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   1%  49Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   1%  53Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   1%  57Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   2%  61Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   2%  65Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   2%  69Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   2%  73Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   2%  77Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   2%  81Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   2%  86Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   3%  90Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   3%  94Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   3%  98Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   3%  102Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   3%  106Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   3%  110Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   3%  114Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  118Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  122Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  126Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  131Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  135Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  139Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  143Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   4%  147Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   5%  151Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   5%  155Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   5%  159Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   5%  163Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   5%  167Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   5%  172Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   5%  176Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   6%  180Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   6%  184Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   6%  188Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   6%  192Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   6%  196Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   6%  200Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   6%  204Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   7%  208Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   7%  212Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   7%  217Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   7%  221Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   7%  225Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   7%  229Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   7%  233Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  237Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  241Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  245Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  249Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  253Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  258Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  262Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   8%  266Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   9%  270Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   9%  274Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   9%  278Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   9%  282Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   9%  286Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   9%  290Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):   9%  294Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  10%  299Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  10%  303Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  10%  307Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  10%  311Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  10%  315Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  10%  319Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  10%  323Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  11%  327Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  11%  331Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  11%  335Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  11%  339Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  11%  344Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  11%  348Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  11%  352Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  356Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  360Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  364Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  368Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  372Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  376Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  380Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  12%  385Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  13%  389Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  13%  393Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  13%  397Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  13%  401Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  13%  405Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  13%  409Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  13%  413Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  14%  417Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  14%  421Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  14%  425Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  14%  430Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  14%  434Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  14%  438Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  14%  442Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  15%  446Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  15%  450Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  15%  454Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  15%  458Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  15%  462Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  15%  466Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  15%  471Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  475Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  479Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  483Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  487Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  491Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  495Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  499Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  16%  503Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  17%  507Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  17%  512Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  17%  516Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  17%  520Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  17%  524Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  17%  528Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  17%  532Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  18%  536Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  18%  540Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  18%  544Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  18%  548Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  18%  552Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  18%  557Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  18%  561Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  19%  565Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  19%  569Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  19%  573Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  19%  577Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  19%  581Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  19%  585Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  19%  589Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  20%  593Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  20%  598Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  20%  602Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  20%  606Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  20%  610Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  20%  614Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  20%  618Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  622Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  626Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  630Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  634Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  638Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  643Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  647Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  21%  651Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  22%  655Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  22%  659Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  22%  663Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  22%  667Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  22%  671Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  22%  675Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  22%  679Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  23%  684Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  23%  688Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  23%  692Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  23%  696Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  23%  700Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  23%  704Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  23%  708Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  24%  712Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  24%  716Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  24%  720Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  24%  724Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  24%  729Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  24%  733Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  24%  737Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  741Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  745Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  749Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  753Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  757Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  761Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  765Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  25%  770Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  26%  774Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  26%  778Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  26%  782Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  26%  786Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  26%  790Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  26%  794Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  26%  798Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  27%  802Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  27%  806Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  27%  811Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  27%  815Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  27%  819Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  27%  823Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  27%  827Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  28%  831Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  28%  835Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  28%  839Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  28%  843Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  28%  847Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  28%  851Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  28%  856Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  860Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  864Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  868Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  872Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  876Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  880Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  884Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  29%  888Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  30%  892Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  30%  897Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  30%  901Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  30%  905Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  30%  909Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  30%  913Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  30%  917Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  31%  921Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  31%  925Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  31%  929Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  31%  933Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  31%  937Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  31%  942Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  31%  946Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  32%  950Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  32%  954Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  32%  958Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  32%  962Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  32%  966Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  32%  970Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  32%  974Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  978Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  983Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  987Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  991Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  995Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  999Kb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  33%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  34%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  34%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  34%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  34%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  34%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  34%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  34%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  35%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  35%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  35%  1.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  35%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  35%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  35%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  35%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  36%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  36%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  36%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  36%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  36%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  36%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  36%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  37%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  38%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  38%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  38%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  38%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  38%  1.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  38%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  38%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  39%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  39%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  39%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  39%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  39%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  39%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  39%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  40%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  40%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  40%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  40%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  40%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  40%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  40%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  41%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  41%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  41%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  41%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  41%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  41%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  41%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  42%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  43%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  43%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  43%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  43%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  43%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  43%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  43%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  44%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  44%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  44%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  44%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  44%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  44%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  44%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  45%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  45%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  45%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  45%  1.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  45%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  45%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  45%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  46%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  47%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  47%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  47%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  47%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  47%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  47%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  47%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  48%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  48%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  48%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  48%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  48%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  48%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  48%  1.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  49%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  49%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  49%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  49%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  49%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  49%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  49%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  50%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  51%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  51%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  51%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  51%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  51%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  51%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  51%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  52%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  52%  1.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  52%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  52%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  52%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  52%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  52%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  53%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  53%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  53%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  53%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  53%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  53%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  53%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  54%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  55%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  55%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  55%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  55%  1.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  55%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  55%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  55%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  56%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  56%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  56%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  56%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  56%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  56%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  56%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  57%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  57%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  57%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  57%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  57%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  57%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  57%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  58%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  58%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  58%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  58%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  58%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  58%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  58%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  59%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  60%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  60%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  60%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  60%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  60%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  60%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  60%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  61%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  61%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  61%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  61%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  61%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  61%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  61%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  62%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  62%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  62%  1.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  62%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  62%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  62%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  62%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  63%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  64%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  64%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  64%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  64%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  64%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  64%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  64%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  65%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  65%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  65%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  65%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  65%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  65%  1.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  65%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  66%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  66%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  66%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  66%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  66%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  66%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  66%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  67%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  68%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  68%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  68%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  68%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  68%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  68%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  68%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  69%  2.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  69%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  69%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  69%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  69%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  69%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  69%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  70%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  70%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  70%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  70%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  70%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  70%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  70%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  71%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  72%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  72%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  72%  2.1Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  72%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  72%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  72%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  72%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  73%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  73%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  73%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  73%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  73%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  73%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  73%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  74%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  74%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  74%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  74%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  74%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  74%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  74%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.2Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  75%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  76%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  76%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  76%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  76%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  76%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  76%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  76%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  77%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  77%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  77%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  77%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  77%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  77%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  77%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  78%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  78%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  78%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  78%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  78%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  78%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  78%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  79%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  79%  2.3Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  79%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  79%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  79%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  79%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  79%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  80%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  81%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  81%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  81%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  81%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  81%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  81%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  81%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  82%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  82%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  82%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  82%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  82%  2.4Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  82%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  82%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  83%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  83%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  83%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  83%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  83%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  83%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  83%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  84%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  85%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  85%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  85%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  85%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  85%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  85%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  85%  2.5Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  86%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  86%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  86%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  86%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  86%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  86%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  86%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  87%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  87%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  87%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  87%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  87%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  87%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  87%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  88%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  89%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  89%  2.6Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  89%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  89%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  89%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  89%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  89%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  90%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  90%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  90%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  90%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  90%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  90%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  90%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  91%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  91%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  91%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  91%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  91%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  91%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  91%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.7Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  92%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  93%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  93%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  93%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  93%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  93%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  93%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  93%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  94%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  94%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  94%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  94%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  94%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  94%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  94%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  95%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  95%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  95%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  95%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  95%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  95%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  95%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.8Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  96%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  97%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  97%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  97%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  97%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  97%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  97%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  97%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  98%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  98%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  98%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  98%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  98%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  98%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  98%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  99%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  99%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  99%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  99%  2.9Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  99%  3.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  99%  3.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):  99%  3.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb): 100%  3.0Mb
+  Downloading lxml-2.2.4.tar.gz (3.0Mb):
+  Downloading lxml-2.2.4.tar.gz (3.0Mb): 3.0Mb downloaded
+  Running setup.py egg_info for package lxml
+    Building lxml version 2.2.4.
+    NOTE: Trying to build without Cython, pre-generated 'src/lxml/lxml.etree.c' needs to be available.
+    Using build configuration of libxslt 1.1.26
+    Building against libxml2/libxslt in the following directory: /usr/lib
+
+    warning: no previously-included files found matching '*.py'
+Downloading/unpacking twisted==10.0.0 (from -r .travis/requirements-lucid.txt (line 3))
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   0%  4.1Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   0%  8.2Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   0%  12Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   0%  16Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   0%  20Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   0%  24Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   1%  28Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   1%  32Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   1%  36Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   1%  40Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   1%  45Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   1%  49Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   2%  53Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   2%  57Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   2%  61Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   2%  65Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   2%  69Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   2%  73Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   3%  77Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   3%  81Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   3%  86Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   3%  90Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   3%  94Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   3%  98Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   3%  102Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   4%  106Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   4%  110Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   4%  114Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   4%  118Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   4%  122Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   4%  126Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   5%  131Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   5%  135Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   5%  139Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   5%  143Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   5%  147Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   5%  151Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   6%  155Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   6%  159Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   6%  163Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   6%  167Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   6%  172Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   6%  176Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   6%  180Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   7%  184Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   7%  188Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   7%  192Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   7%  196Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   7%  200Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   7%  204Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   8%  208Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   8%  212Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   8%  217Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   8%  221Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   8%  225Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   8%  229Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   9%  233Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   9%  237Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   9%  241Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   9%  245Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   9%  249Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   9%  253Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):   9%  258Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  10%  262Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  10%  266Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  10%  270Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  10%  274Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  10%  278Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  10%  282Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  11%  286Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  11%  290Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  11%  294Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  11%  299Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  11%  303Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  11%  307Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  12%  311Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  12%  315Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  12%  319Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  12%  323Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  12%  327Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  12%  331Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  13%  335Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  13%  339Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  13%  344Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  13%  348Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  13%  352Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  13%  356Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  13%  360Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  14%  364Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  14%  368Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  14%  372Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  14%  376Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  14%  380Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  14%  385Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  15%  389Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  15%  393Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  15%  397Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  15%  401Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  15%  405Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  15%  409Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  16%  413Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  16%  417Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  16%  421Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  16%  425Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  16%  430Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  16%  434Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  16%  438Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  17%  442Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  17%  446Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  17%  450Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  17%  454Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  17%  458Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  17%  462Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  18%  466Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  18%  471Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  18%  475Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  18%  479Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  18%  483Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  18%  487Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  19%  491Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  19%  495Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  19%  499Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  19%  503Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  19%  507Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  19%  512Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  19%  516Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  20%  520Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  20%  524Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  20%  528Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  20%  532Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  20%  536Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  20%  540Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  21%  544Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  21%  548Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  21%  552Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  21%  557Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  21%  561Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  21%  565Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  22%  569Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  22%  573Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  22%  577Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  22%  581Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  22%  585Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  22%  589Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  22%  593Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  23%  598Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  23%  602Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  23%  606Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  23%  610Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  23%  614Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  23%  618Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  24%  622Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  24%  626Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  24%  630Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  24%  634Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  24%  638Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  24%  643Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  25%  647Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  25%  651Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  25%  655Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  25%  659Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  25%  663Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  25%  667Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  26%  671Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  26%  675Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  26%  679Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  26%  684Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  26%  688Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  26%  692Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  26%  696Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  27%  700Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  27%  704Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  27%  708Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  27%  712Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  27%  716Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  27%  720Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  28%  724Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  28%  729Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  28%  733Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  28%  737Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  28%  741Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  28%  745Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  29%  749Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  29%  753Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  29%  757Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  29%  761Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  29%  765Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  29%  770Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  29%  774Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  30%  778Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  30%  782Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  30%  786Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  30%  790Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  30%  794Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  30%  798Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  31%  802Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  31%  806Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  31%  811Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  31%  815Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  31%  819Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  31%  823Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  32%  827Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  32%  831Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  32%  835Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  32%  839Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  32%  843Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  32%  847Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  32%  851Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  33%  856Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  33%  860Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  33%  864Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  33%  868Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  33%  872Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  33%  876Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  34%  880Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  34%  884Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  34%  888Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  34%  892Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  34%  897Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  34%  901Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  35%  905Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  35%  909Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  35%  913Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  35%  917Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  35%  921Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  35%  925Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  35%  929Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  36%  933Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  36%  937Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  36%  942Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  36%  946Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  36%  950Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  36%  954Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  37%  958Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  37%  962Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  37%  966Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  37%  970Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  37%  974Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  37%  978Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  38%  983Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  38%  987Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  38%  991Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  38%  995Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  38%  999Kb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  38%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  39%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  39%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  39%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  39%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  39%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  39%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  39%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  40%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  40%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  40%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  40%  1.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  40%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  40%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  41%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  41%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  41%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  41%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  41%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  41%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  42%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  42%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  42%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  42%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  42%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  42%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  42%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  43%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  43%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  43%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  43%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  43%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  43%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  44%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  44%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  44%  1.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  44%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  44%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  44%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  45%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  45%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  45%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  45%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  45%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  45%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  45%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  46%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  46%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  46%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  46%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  46%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  46%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  47%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  47%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  47%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  47%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  47%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  47%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  48%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  48%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  48%  1.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  48%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  48%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  48%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  48%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  49%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  49%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  49%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  49%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  49%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  49%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  50%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  50%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  50%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  50%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  50%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  50%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  51%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  51%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  51%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  51%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  51%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  51%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  52%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  52%  1.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  52%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  52%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  52%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  52%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  52%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  53%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  53%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  53%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  53%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  53%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  53%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  54%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  54%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  54%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  54%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  54%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  54%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  55%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  55%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  55%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  55%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  55%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  55%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  55%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  56%  1.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  56%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  56%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  56%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  56%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  56%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  57%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  57%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  57%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  57%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  57%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  57%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  58%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  58%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  58%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  58%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  58%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  58%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  58%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  59%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  59%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  59%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  59%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  59%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  59%  1.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  60%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  60%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  60%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  60%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  60%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  60%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  61%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  61%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  61%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  61%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  61%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  61%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  61%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  62%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  62%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  62%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  62%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  62%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  62%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  63%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  63%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  63%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  63%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  63%  1.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  63%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  64%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  64%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  64%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  64%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  64%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  64%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  65%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  65%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  65%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  65%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  65%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  65%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  65%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  66%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  66%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  66%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  66%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  66%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  66%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  67%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  67%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  67%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  67%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  67%  1.7Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  67%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  68%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  68%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  68%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  68%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  68%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  68%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  68%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  69%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  69%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  69%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  69%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  69%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  69%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  70%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  70%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  70%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  70%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  70%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  70%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  71%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  71%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  71%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  71%  1.8Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  71%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  71%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  71%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  72%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  72%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  72%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  72%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  72%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  72%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  73%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  73%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  73%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  73%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  73%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  73%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  74%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  74%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  74%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  74%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  74%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  74%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  74%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  75%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  75%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  75%  1.9Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  75%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  75%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  75%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  76%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  76%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  76%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  76%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  76%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  76%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  77%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  77%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  77%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  77%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  77%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  77%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  78%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  78%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  78%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  78%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  78%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  78%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  78%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  79%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  79%  2.0Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  79%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  79%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  79%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  79%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  80%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  80%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  80%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  80%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  80%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  80%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  81%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  81%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  81%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  81%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  81%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  81%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  81%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  82%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  82%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  82%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  82%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  82%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  82%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  83%  2.1Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  83%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  83%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  83%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  83%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  83%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  84%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  84%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  84%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  84%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  84%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  84%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  84%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  85%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  85%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  85%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  85%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  85%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  85%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  86%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  86%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  86%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  86%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  86%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  86%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  87%  2.2Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  87%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  87%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  87%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  87%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  87%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  87%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  88%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  88%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  88%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  88%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  88%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  88%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  89%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  89%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  89%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  89%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  89%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  89%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  90%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  90%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  90%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  90%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  90%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  90%  2.3Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  91%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  91%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  91%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  91%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  91%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  91%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  91%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  92%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  92%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  92%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  92%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  92%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  92%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  93%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  93%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  93%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  93%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  93%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  93%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  94%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  94%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  94%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  94%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  94%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  94%  2.4Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  94%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  95%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  95%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  95%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  95%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  95%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  95%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  96%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  96%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  96%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  96%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  96%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  96%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  97%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  97%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  97%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  97%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  97%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  97%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  97%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  98%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  98%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  98%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  98%  2.5Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  98%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  98%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  99%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  99%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  99%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  99%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  99%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):  99%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb): 100%  2.6Mb
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb):
+  Downloading Twisted-10.0.0.tar.bz2 (2.6Mb): 2.6Mb downloaded
+  Running setup.py egg_info for package twisted
+
+Downloading/unpacking boto==1.9b (from -r .travis/requirements-lucid.txt (line 4))
+  Downloading boto-1.9b.tar.gz (218Kb):
+  Downloading boto-1.9b.tar.gz (218Kb):   1%  4.1Kb
+  Downloading boto-1.9b.tar.gz (218Kb):   3%  8.2Kb
+  Downloading boto-1.9b.tar.gz (218Kb):   5%  12Kb
+  Downloading boto-1.9b.tar.gz (218Kb):   7%  16Kb
+  Downloading boto-1.9b.tar.gz (218Kb):   9%  20Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  11%  24Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  13%  28Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  15%  32Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  16%  36Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  18%  40Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  20%  45Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  22%  49Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  24%  53Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  26%  57Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  28%  61Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  30%  65Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  31%  69Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  33%  73Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  35%  77Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  37%  81Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  39%  86Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  41%  90Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  43%  94Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  45%  98Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  46%  102Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  48%  106Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  50%  110Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  52%  114Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  54%  118Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  56%  122Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  58%  126Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  60%  131Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  61%  135Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  63%  139Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  65%  143Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  67%  147Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  69%  151Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  71%  155Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  73%  159Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  75%  163Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  76%  167Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  78%  172Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  80%  176Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  82%  180Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  84%  184Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  86%  188Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  88%  192Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  90%  196Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  91%  200Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  93%  204Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  95%  208Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  97%  212Kb
+  Downloading boto-1.9b.tar.gz (218Kb):  99%  217Kb
+  Downloading boto-1.9b.tar.gz (218Kb): 100%  218Kb
+  Downloading boto-1.9b.tar.gz (218Kb):
+  Downloading boto-1.9b.tar.gz (218Kb): 218Kb downloaded
+  Running setup.py egg_info for package boto
+
+Downloading/unpacking w3lib (from Scrapy==0.14.4->-r .travis/requirements-lucid.txt (line 5))
+  Downloading w3lib-1.2.tar.gz
+  Running setup.py egg_info for package w3lib
+
+Downloading/unpacking zope.interface (from twisted==10.0.0->-r .travis/requirements-lucid.txt (line 3))
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):   2%  4.1Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):   5%  8.2Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):   8%  12Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  11%  16Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  14%  20Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  17%  24Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  20%  28Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  23%  32Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  26%  36Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  29%  40Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  32%  45Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  35%  49Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  38%  53Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  41%  57Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  44%  61Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  47%  65Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  50%  69Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  53%  73Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  56%  77Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  59%  81Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  62%  86Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  65%  90Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  68%  94Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  71%  98Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  74%  102Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  77%  106Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  80%  110Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  83%  114Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  86%  118Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  89%  122Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  92%  126Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  95%  131Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):  98%  135Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb): 100%  136Kb
+  Downloading zope.interface-4.0.0.tar.gz (136Kb):
+  Downloading zope.interface-4.0.0.tar.gz (136Kb): 136Kb downloaded
+  Running setup.py egg_info for package zope.interface
+
+Requirement already satisfied (use --upgrade to upgrade): distribute in /home/vagrant/virtualenv/python2.7/lib/python2.7/site-packages/distribute-0.6.24-py2.7.egg (from zope.interface->twisted==10.0.0->-r .travis/requirements-lucid.txt (line 3))
+Installing collected packages: pyOpenSSL, lxml, twisted, boto, w3lib, Scrapy, zope.interface
+  Running setup.py install for pyOpenSSL
+    building 'OpenSSL.crypto' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/crypto.c -o build/temp.linux-i686-2.7/src/crypto/crypto.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/x509.c -o build/temp.linux-i686-2.7/src/crypto/x509.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/x509name.c -o build/temp.linux-i686-2.7/src/crypto/x509name.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/pkey.c -o build/temp.linux-i686-2.7/src/crypto/pkey.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/x509store.c -o build/temp.linux-i686-2.7/src/crypto/x509store.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/x509req.c -o build/temp.linux-i686-2.7/src/crypto/x509req.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/x509ext.c -o build/temp.linux-i686-2.7/src/crypto/x509ext.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/pkcs7.c -o build/temp.linux-i686-2.7/src/crypto/pkcs7.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/pkcs12.c -o build/temp.linux-i686-2.7/src/crypto/pkcs12.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/crypto/netscape_spki.c -o build/temp.linux-i686-2.7/src/crypto/netscape_spki.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/util.c -o build/temp.linux-i686-2.7/src/util.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/src/crypto/crypto.o build/temp.linux-i686-2.7/src/crypto/x509.o build/temp.linux-i686-2.7/src/crypto/x509name.o build/temp.linux-i686-2.7/src/crypto/pkey.o build/temp.linux-i686-2.7/src/crypto/x509store.o build/temp.linux-i686-2.7/src/crypto/x509req.o build/temp.linux-i686-2.7/src/crypto/x509ext.o build/temp.linux-i686-2.7/src/crypto/pkcs7.o build/temp.linux-i686-2.7/src/crypto/pkcs12.o build/temp.linux-i686-2.7/src/crypto/netscape_spki.o build/temp.linux-i686-2.7/src/util.o -lssl -lcrypto -o build/lib.linux-i686-2.7/OpenSSL/crypto.so
+    building 'OpenSSL.rand' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/rand/rand.c -o build/temp.linux-i686-2.7/src/rand/rand.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/util.c -o build/temp.linux-i686-2.7/src/util.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/src/rand/rand.o build/temp.linux-i686-2.7/src/util.o -lssl -lcrypto -o build/lib.linux-i686-2.7/OpenSSL/rand.so
+    building 'OpenSSL.SSL' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/ssl/connection.c -o build/temp.linux-i686-2.7/src/ssl/connection.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/ssl/context.c -o build/temp.linux-i686-2.7/src/ssl/context.o
+    src/ssl/context.c: In function â€˜ssl_Context_initâ€™:
+    src/ssl/context.c:1102:13: warning: implicit declaration of function â€˜SSLv2_methodâ€™ [-Wimplicit-function-declaration]
+    src/ssl/context.c:1102:20: warning: assignment makes pointer from integer without a cast [enabled by default]
+    src/ssl/context.c:1105:20: warning: assignment discards â€˜constâ€™ qualifier from pointer target type [enabled by default]
+    src/ssl/context.c:1108:20: warning: assignment discards â€˜constâ€™ qualifier from pointer target type [enabled by default]
+    src/ssl/context.c:1111:20: warning: assignment discards â€˜constâ€™ qualifier from pointer target type [enabled by default]
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/ssl/ssl.c -o build/temp.linux-i686-2.7/src/ssl/ssl.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/util.c -o build/temp.linux-i686-2.7/src/util.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/src/ssl/connection.o build/temp.linux-i686-2.7/src/ssl/context.o build/temp.linux-i686-2.7/src/ssl/ssl.o build/temp.linux-i686-2.7/src/util.o -lssl -lcrypto -o build/lib.linux-i686-2.7/OpenSSL/SSL.so
+
+    warning: no previously-included files matching '*.pyc' found anywhere in distribution
+  Running setup.py install for lxml
+    Building lxml version 2.2.4.
+    NOTE: Trying to build without Cython, pre-generated 'src/lxml/lxml.etree.c' needs to be available.
+    Using build configuration of libxslt 1.1.26
+    Building against libxml2/libxslt in the following directory: /usr/lib
+    building 'lxml.etree' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/libxml2 -I/usr/include/python2.7 -c src/lxml/lxml.etree.c -o build/temp.linux-i686-2.7/src/lxml/lxml.etree.o -w
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/src/lxml/lxml.etree.o -lxslt -lexslt -lxml2 -lz -lm -o build/lib.linux-i686-2.7/lxml/etree.so
+    building 'lxml.objectify' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/libxml2 -I/usr/include/python2.7 -c src/lxml/lxml.objectify.c -o build/temp.linux-i686-2.7/src/lxml/lxml.objectify.o -w
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/src/lxml/lxml.objectify.o -lxslt -lexslt -lxml2 -lz -lm -o build/lib.linux-i686-2.7/lxml/objectify.so
+
+  Running setup.py install for twisted
+
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c conftest.c -o conftest.o
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c conftest.c -o conftest.o
+    building 'twisted.runner.portmap' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c twisted/runner/portmap.c -o build/temp.linux-i686-2.7/twisted/runner/portmap.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/twisted/runner/portmap.o -o build/lib.linux-i686-2.7/twisted/runner/portmap.so
+    building 'twisted.protocols._c_urlarg' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c twisted/protocols/_c_urlarg.c -o build/temp.linux-i686-2.7/twisted/protocols/_c_urlarg.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/twisted/protocols/_c_urlarg.o -o build/lib.linux-i686-2.7/twisted/protocols/_c_urlarg.so
+    building 'twisted.test.raiser' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c twisted/test/raiser.c -o build/temp.linux-i686-2.7/twisted/test/raiser.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/twisted/test/raiser.o -o build/lib.linux-i686-2.7/twisted/test/raiser.so
+    building 'twisted.python._epoll' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c twisted/python/_epoll.c -o build/temp.linux-i686-2.7/twisted/python/_epoll.o
+    twisted/python/_epoll.c: In function â€˜__pyx_f_6_epoll_5epoll___dealloc__â€™:
+    twisted/python/_epoll.c:168:3: warning: label â€˜__pyx_L1â€™ defined but not used [-Wunused-label]
+    twisted/python/_epoll.c: In function â€˜__pyx_f_6_epoll_5epoll_waitâ€™:
+    twisted/python/_epoll.c:432:5: warning: label â€˜__pyx_L7â€™ defined but not used [-Wunused-label]
+    twisted/python/_epoll.c:430:7: warning: label â€˜__pyx_L6â€™ defined but not used [-Wunused-label]
+    twisted/python/_epoll.c: In function â€˜__pyx_tp_new_6_epoll_epollâ€™:
+    twisted/python/_epoll.c:508:35: warning: unused variable â€˜pâ€™ [-Wunused-variable]
+    twisted/python/_epoll.c: In function â€˜__pyx_tp_dealloc_6_epoll_epollâ€™:
+    twisted/python/_epoll.c:513:35: warning: unused variable â€˜pâ€™ [-Wunused-variable]
+    twisted/python/_epoll.c: In function â€˜__pyx_tp_traverse_6_epoll_epollâ€™:
+    twisted/python/_epoll.c:528:35: warning: unused variable â€˜pâ€™ [-Wunused-variable]
+    twisted/python/_epoll.c:527:7: warning: unused variable â€˜eâ€™ [-Wunused-variable]
+    twisted/python/_epoll.c: In function â€˜__pyx_tp_clear_6_epoll_epollâ€™:
+    twisted/python/_epoll.c:533:35: warning: unused variable â€˜pâ€™ [-Wunused-variable]
+    twisted/python/_epoll.c: At top level:
+    twisted/python/_epoll.c:32:18: warning: â€˜__Pyx_UnpackItemâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:33:12: warning: â€˜__Pyx_EndUnpackâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:34:12: warning: â€˜__Pyx_PrintItemâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:35:12: warning: â€˜__Pyx_PrintNewlineâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:37:13: warning: â€˜__Pyx_ReRaiseâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:38:18: warning: â€˜__Pyx_Importâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:39:18: warning: â€˜__Pyx_GetExcValueâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:40:12: warning: â€˜__Pyx_ArgTypeTestâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:41:12: warning: â€˜__Pyx_TypeTestâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:42:12: warning: â€˜__Pyx_GetStarArgsâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:43:13: warning: â€˜__Pyx_WriteUnraisableâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:45:22: warning: â€˜__Pyx_ImportTypeâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:46:12: warning: â€˜__Pyx_SetVtableâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:47:12: warning: â€˜__Pyx_GetVtableâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:48:18: warning: â€˜__Pyx_CreateClassâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:50:12: warning: â€˜__Pyx_InitStringsâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:51:12: warning: â€˜__Pyx_InitCApiâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    twisted/python/_epoll.c:52:12: warning: â€˜__Pyx_ImportModuleCApiâ€™ declared â€˜staticâ€™ but never defined [-Wunused-function]
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/twisted/python/_epoll.o -o build/lib.linux-i686-2.7/twisted/python/_epoll.so
+    building 'twisted.python._initgroups' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c twisted/python/_initgroups.c -o build/temp.linux-i686-2.7/twisted/python/_initgroups.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/twisted/python/_initgroups.o -o build/lib.linux-i686-2.7/twisted/python/_initgroups.so
+    changing mode of build/scripts-2.7/mktap from 664 to 775
+    changing mode of build/scripts-2.7/twistd from 664 to 775
+    changing mode of build/scripts-2.7/manhole from 664 to 775
+    changing mode of build/scripts-2.7/tap2rpm from 664 to 775
+    changing mode of build/scripts-2.7/pyhtmlizer from 664 to 775
+    changing mode of build/scripts-2.7/tap2deb from 664 to 775
+    changing mode of build/scripts-2.7/trial from 664 to 775
+    changing mode of build/scripts-2.7/tapconvert from 664 to 775
+    changing mode of build/scripts-2.7/mailmail from 664 to 775
+    changing mode of build/scripts-2.7/lore from 664 to 775
+    changing mode of build/scripts-2.7/cftp from 664 to 775
+    changing mode of build/scripts-2.7/tkconch from 664 to 775
+    changing mode of build/scripts-2.7/ckeygen from 664 to 775
+    changing mode of build/scripts-2.7/conch from 664 to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/cftp to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/mktap to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/twistd to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/manhole to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/tap2rpm to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/pyhtmlizer to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/mailmail to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/tkconch to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/lore to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/ckeygen to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/tap2deb to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/trial to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/conch to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/tapconvert to 775
+  Running setup.py install for boto
+    changing mode of build/scripts-2.7/sdbadmin from 664 to 775
+    changing mode of build/scripts-2.7/elbadmin from 664 to 775
+    changing mode of build/scripts-2.7/s3put from 664 to 775
+    changing mode of build/scripts-2.7/fetch_file from 664 to 775
+    changing mode of build/scripts-2.7/launch_instance from 664 to 775
+    changing mode of build/scripts-2.7/list_instances from 664 to 775
+    changing mode of build/scripts-2.7/taskadmin from 664 to 775
+
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/taskadmin to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/s3put to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/fetch_file to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/list_instances to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/sdbadmin to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/launch_instance to 775
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/elbadmin to 775
+  Running setup.py install for w3lib
+
+  Running setup.py install for Scrapy
+    changing mode of build/scripts-2.7/scrapy from 664 to 775
+
+    warning: no files found matching 'license.txt' under directory 'scrapyd'
+    no previously-included directories found matching 'docs/build'
+    warning: no files found matching '*' under directory 'scripts'
+    warning: no files found matching '*' under directory 'examples'
+    changing mode of /home/vagrant/virtualenv/python2.7/bin/scrapy to 775
+  Running setup.py install for zope.interface
+
+    building 'zope.interface._zope_interface_coptimizations' extension
+    gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c src/zope/interface/_zope_interface_coptimizations.c -o build/temp.linux-i686-2.7/src/zope/interface/_zope_interface_coptimizations.o
+    gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions build/temp.linux-i686-2.7/src/zope/interface/_zope_interface_coptimizations.o -o build/lib.linux-i686-2.7/zope/interface/_zope_interface_coptimizations.so
+    Skipping installation of /home/vagrant/virtualenv/python2.7/lib/python2.7/site-packages/zope/__init__.py (namespace package)
+    Installing /home/vagrant/virtualenv/python2.7/lib/python2.7/site-packages/zope.interface-4.0.0-py2.7-nspkg.pth
+Successfully installed pyOpenSSL lxml twisted boto w3lib Scrapy zope.interface
+Cleaning up...
+
+$ trial scrapy scrapyd
+scrapyd.tests.test_dont_load_settings
+  SettingsSafeModulesTest
+    test_modules_that_shouldnt_load_settings ... /home/vagrant/builds/scrapy/scrapy/scrapyd/eggutils.py:1: UserWarning: Module scrapy was already imported from /home/vagrant/builds/scrapy/scrapy/scrapy/__init__.py, but /home/vagrant/virtualenv/python2.7/lib/python2.7/site-packages is being added to sys.path
+/home/vagrant/builds/scrapy/scrapy/scrapyd/eggutils.py:1: UserWarning: Module scrapyd was already imported from /home/vagrant/builds/scrapy/scrapy/scrapyd/__init__.py, but /home/vagrant/virtualenv/python2.7/lib/python2.7/site-packages is being added to sys.path
+                          [32;1m[OK][0m
+scrapyd.tests.test_eggstorage
+  EggStorageTest
+    test_interface ...                                                     [32;1m[OK][0m
+    test_put_get_list_delete ...                                           [32;1m[OK][0m
+scrapyd.tests.test_environ
+  EnvironmentTest
+    test_get_environment_with_eggfile ...                                  [32;1m[OK][0m
+    test_interface ...                                                     [32;1m[OK][0m
+scrapyd.tests.test_poller
+  QueuePollerTest
+    test_interface ...                                                     [32;1m[OK][0m
+    test_poll_next ...                                                     [32;1m[OK][0m
+scrapyd.tests.test_scheduler
+  SpiderSchedulerTest
+    test_interface ...                                                     [32;1m[OK][0m
+    test_list_update_projects ...                                          [32;1m[OK][0m
+    test_schedule ...                                                      [32;1m[OK][0m
+scrapyd.tests.test_spiderqueue
+  SpiderQueueTest
+    test_add_pop_count ...                                                 [32;1m[OK][0m
+    test_clear ...                                                         [32;1m[OK][0m
+    test_interface ...                                                     [32;1m[OK][0m
+    test_list ...                                                          [32;1m[OK][0m
+scrapyd.tests.test_sqlite
+  JsonSqliteDictTest
+    test_basic_types ...                                                   [32;1m[OK][0m
+    test_in ...                                                            [32;1m[OK][0m
+    test_keyerror ...                                                      [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+  JsonSqlitePriorityQueueTest
+    test_empty ...                                                         [32;1m[OK][0m
+    test_iter_len_clear ...                                                [32;1m[OK][0m
+    test_multiple ...                                                      [32;1m[OK][0m
+    test_one ...                                                           [32;1m[OK][0m
+    test_priority ...                                                      [32;1m[OK][0m
+    test_types ...                                                         [32;1m[OK][0m
+  PickleSqliteDictTest
+    test_basic_types ...                                                   [32;1m[OK][0m
+    test_in ...                                                            [32;1m[OK][0m
+    test_keyerror ...                                                      [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+    test_request_persistance ...                                           [32;1m[OK][0m
+  PickleSqlitePriorityQueueTest
+    test_empty ...                                                         [32;1m[OK][0m
+    test_iter_len_clear ...                                                [32;1m[OK][0m
+    test_multiple ...                                                      [32;1m[OK][0m
+    test_one ...                                                           [32;1m[OK][0m
+    test_priority ...                                                      [32;1m[OK][0m
+    test_request_persistance ...                                           [32;1m[OK][0m
+    test_types ...                                                         [32;1m[OK][0m
+  SqliteDictTest
+    test_basic_types ...                                                   [32;1m[OK][0m
+    test_in ...                                                            [32;1m[OK][0m
+    test_keyerror ...                                                      [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+  SqlitePriorityQueueTest
+    test_empty ...                                                         [32;1m[OK][0m
+    test_iter_len_clear ...                                                [32;1m[OK][0m
+    test_multiple ...                                                      [32;1m[OK][0m
+    test_one ...                                                           [32;1m[OK][0m
+    test_priority ...                                                      [32;1m[OK][0m
+    test_types ...                                                         [32;1m[OK][0m
+scrapyd.tests.test_utils
+  GetSpiderListTest
+    test_get_spider_list ...                                               [32;1m[OK][0m
+  UtilsTest
+    test_get_crawl_args ...                                                [32;1m[OK][0m
+    test_get_crawl_args_with_settings ...                                  [32;1m[OK][0m
+scrapy.tests.test_clientform
+  ClientFormPatchTests
+    test_patched_unescape_charref ...                                      [32;1m[OK][0m
+scrapy.tests.test_cmdline
+  CmdlineTest
+    test_default_settings ...                                              [32;1m[OK][0m
+    test_override_settings_using_envvar ...                                [32;1m[OK][0m
+    test_override_settings_using_set_arg ...                               [32;1m[OK][0m
+scrapy.tests.test_command_fetch
+  FetchTest
+    test_headers ...                                                       [32;1m[OK][0m
+    test_output ...                                                        [32;1m[OK][0m
+scrapy.tests.test_command_shell
+  ShellTest
+    test_empty ...                                                         [32;1m[OK][0m
+    test_redirect ...                                                      [32;1m[OK][0m
+    test_response_body ...                                                 [32;1m[OK][0m
+    test_response_encoding_gb18030 ...                                     [32;1m[OK][0m
+    test_response_selector_html ...                                        [32;1m[OK][0m
+    test_response_type_html ...                                            [32;1m[OK][0m
+    test_response_type_text ...                                            [32;1m[OK][0m
+scrapy.tests.test_command_version
+  VersionTest
+    test_output ...                                                        [32;1m[OK][0m
+scrapy.tests.test_commands
+  GenspiderCommandTest
+    test_arguments ...                                                     [32;1m[OK][0m
+    test_dump ...                                                          [32;1m[OK][0m
+    test_list ...                                                          [32;1m[OK][0m
+    test_template ...                                                      [32;1m[OK][0m
+    test_template_basic ...                                                [32;1m[OK][0m
+    test_template_csvfeed ...                                              [32;1m[OK][0m
+    test_template_xmlfeed ...                                              [32;1m[OK][0m
+  MiscCommandsTest
+    test_list ...                                                          [32;1m[OK][0m
+  RunSpiderCommandTest
+    test_runspider ...                                                     [32;1m[OK][0m
+    test_runspider_file_not_found ...                                      [32;1m[OK][0m
+    test_runspider_no_spider_found ...                                     [32;1m[OK][0m
+    test_runspider_unable_to_load ...                                      [32;1m[OK][0m
+  StartprojectTest
+    test_startproject ...                                                  [32;1m[OK][0m
+scrapy.tests.test_contrib_exporter
+  BaseItemExporterTest
+    test_export_item ...                                                   [32;1m[OK][0m
+    test_field_custom_serializer ...                                       [32;1m[OK][0m
+    test_fields_to_export ...                                              [32;1m[OK][0m
+    test_serialize_field ...                                               [32;1m[OK][0m
+  CsvItemExporterTest
+    test_export_item ...                                                   [32;1m[OK][0m
+    test_field_custom_serializer ...                                       [32;1m[OK][0m
+    test_fields_to_export ...                                              [32;1m[OK][0m
+    test_header ...                                                        [32;1m[OK][0m
+    test_join_multivalue ...                                               [32;1m[OK][0m
+    test_serialize_field ...                                               [32;1m[OK][0m
+  CustomItemExporterTest
+    test_exporter_custom_serializer ...                                    [32;1m[OK][0m
+  JsonItemExporterTest
+    test_export_item ...                                                   [32;1m[OK][0m
+    test_field_custom_serializer ...                                       [32;1m[OK][0m
+    test_fields_to_export ...                                              [32;1m[OK][0m
+    test_serialize_field ...                                               [32;1m[OK][0m
+    test_two_items ...                                                     [32;1m[OK][0m
+  JsonLinesItemExporterTest
+    test_export_item ...                                                   [32;1m[OK][0m
+    test_field_custom_serializer ...                                       [32;1m[OK][0m
+    test_fields_to_export ...                                              [32;1m[OK][0m
+    test_serialize_field ...                                               [32;1m[OK][0m
+  PickleItemExporterTest
+    test_export_item ...                                                   [32;1m[OK][0m
+    test_export_multiple_items ...                                         [32;1m[OK][0m
+    test_field_custom_serializer ...                                       [32;1m[OK][0m
+    test_fields_to_export ...                                              [32;1m[OK][0m
+    test_serialize_field ...                                               [32;1m[OK][0m
+  PprintItemExporterTest
+    test_export_item ...                                                   [32;1m[OK][0m
+    test_field_custom_serializer ...                                       [32;1m[OK][0m
+    test_fields_to_export ...                                              [32;1m[OK][0m
+    test_serialize_field ...                                               [32;1m[OK][0m
+  XmlItemExporterTest
+    test_export_item ...                                                   [32;1m[OK][0m
+    test_field_custom_serializer ...                                       [32;1m[OK][0m
+    test_fields_to_export ...                                              [32;1m[OK][0m
+    test_multivalued_fields ...                                            [32;1m[OK][0m
+    test_serialize_field ...                                               [32;1m[OK][0m
+scrapy.tests.test_contrib_feedexport
+  FTPFeedStorageTest
+    test_store ...                                                    [34;1m[SKIPPED][0m
+  FileFeedStorageTest
+    test_interface ...                                                     [32;1m[OK][0m
+    test_store_direct_path ...                                             [32;1m[OK][0m
+    test_store_direct_path_relative ...                                    [32;1m[OK][0m
+    test_store_file_uri ...                                                [32;1m[OK][0m
+    test_store_file_uri_makedirs ...                                       [32;1m[OK][0m
+  S3FeedStorageTest
+    test_store ...                                                    [34;1m[SKIPPED][0m
+  StdoutFeedStorageTest
+    test_store ...                                                         [32;1m[OK][0m
+                                                     [31;1m[ERROR][0m
+scrapy.tests.test_contrib_loader
+  ItemLoaderTest
+    test_add_value ...                                                     [32;1m[OK][0m
+    test_add_value_on_unknown_field ...                                    [32;1m[OK][0m
+    test_add_zero ...                                                      [32;1m[OK][0m
+    test_compose_processor ...                                             [32;1m[OK][0m
+    test_default_input_processor ...                                       [32;1m[OK][0m
+    test_default_output_processor ...                                      [32;1m[OK][0m
+    test_empty_map_compose ...                                             [32;1m[OK][0m
+    test_extend_custom_input_processors ...                                [32;1m[OK][0m
+    test_extend_default_input_processors ...                               [32;1m[OK][0m
+    test_get_value ...                                                     [32;1m[OK][0m
+    test_identity_input_processor ...                                      [32;1m[OK][0m
+    test_inherited_default_input_processor ...                             [32;1m[OK][0m
+    test_input_processor_inheritance ...                                   [32;1m[OK][0m
+    test_item_passed_to_input_processor_functions ...                      [32;1m[OK][0m
+    test_iter_on_input_processor_input ...                                 [32;1m[OK][0m
+    test_load_item_using_custom_loader ...                                 [32;1m[OK][0m
+    test_load_item_using_default_loader ...                                [32;1m[OK][0m
+    test_loader_context_on_assign ...                                      [32;1m[OK][0m
+    test_loader_context_on_declaration ...                                 [32;1m[OK][0m
+    test_loader_context_on_instantiation ...                               [32;1m[OK][0m
+    test_map_compose_filter ...                                            [32;1m[OK][0m
+    test_map_compose_filter_multil ...                                     [32;1m[OK][0m
+    test_output_processor_error ...                                        [32;1m[OK][0m
+    test_output_processor_using_classes ...                                [32;1m[OK][0m
+    test_output_processor_using_function ...                               [32;1m[OK][0m
+    test_replace_value ...                                                 [32;1m[OK][0m
+  ProcessorsTest
+    test_compose ...                                                       [32;1m[OK][0m
+    test_identity ...                                                      [32;1m[OK][0m
+    test_join ...                                                          [32;1m[OK][0m
+    test_mapcompose ...                                                    [32;1m[OK][0m
+    test_take_first ...                                                    [32;1m[OK][0m
+  XPathItemLoaderTest
+    test_add_xpath_re ...                                                  [32;1m[OK][0m
+    test_constructor_errors ...                                            [32;1m[OK][0m
+    test_constructor_with_response ...                                     [32;1m[OK][0m
+    test_constructor_with_selector ...                                     [32;1m[OK][0m
+    test_get_xpath ...                                                     [32;1m[OK][0m
+    test_replace_xpath ...                                                 [32;1m[OK][0m
+    test_replace_xpath_multi_fields ...                                    [32;1m[OK][0m
+    test_replace_xpath_re ...                                              [32;1m[OK][0m
+scrapy.tests.test_contrib_spiderstate
+  SpiderStateTest
+    test_state_attribute ...                                               [32;1m[OK][0m
+    test_store_load ...                                                    [32;1m[OK][0m
+scrapy.tests.test_dependencies
+  ScrapyUtilsTest
+    test_required_openssl_version ...                                 [34;1m[SKIPPED][0m
+scrapy.tests.test_djangoitem
+  DjangoItemTest
+    test_base ...                                                     [34;1m[SKIPPED][0m
+    test_custom_primary_key_field ...                                 [34;1m[SKIPPED][0m
+    test_new_fields ...                                               [34;1m[SKIPPED][0m
+    test_override_field ...                                           [34;1m[SKIPPED][0m
+    test_override_save ...                                            [34;1m[SKIPPED][0m
+    test_save ...                                                     [34;1m[SKIPPED][0m
+scrapy.tests.test_downloader_handlers
+  FileTestCase
+    test_download ...                                                      [32;1m[OK][0m
+    test_non_existent ...                                                  [32;1m[OK][0m
+  HttpProxyTestCase
+    test_download_with_proxy ...                                           [32;1m[OK][0m
+    test_download_without_proxy ...                                        [32;1m[OK][0m
+  HttpTestCase
+    test_download ...                                                      [32;1m[OK][0m
+    test_download_head ...                                                 [32;1m[OK][0m
+    test_host_header_not_in_request_headers ...                            [32;1m[OK][0m
+    test_host_header_seted_in_request_headers ...                          [32;1m[OK][0m
+    test_payload ...                                                       [32;1m[OK][0m
+    test_redirect_status ...                                               [32;1m[OK][0m
+    test_redirect_status_head ...                                          [32;1m[OK][0m
+    test_timeout_download_from_spider ...                                  [32;1m[OK][0m
+  S3TestCase
+    test_request_signing1 ...                                              [32;1m[OK][0m
+    test_request_signing2 ...                                              [32;1m[OK][0m
+    test_request_signing3 ...                                              [32;1m[OK][0m
+    test_request_signing4 ...                                              [32;1m[OK][0m
+    test_request_signing5 ...                                              [32;1m[OK][0m
+    test_request_signing6 ...                                              [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_cookies
+  CookiesMiddlewareTest
+    test_basic ...                                                         [32;1m[OK][0m
+    test_dont_merge_cookies ...                                            [32;1m[OK][0m
+    test_merge_request_cookies ...                                         [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_decompression
+  DecompressionMiddlewareTest
+    test_empty_response ...                                                [32;1m[OK][0m
+    test_known_compression_formats ...                                     [32;1m[OK][0m
+    test_plain_response ...                                                [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_defaultheaders
+  TestDefaultHeadersMiddleware
+    test_process_request ...                                               [32;1m[OK][0m
+    test_spider_default_request_headers ...                                [32;1m[OK][0m
+    test_update_headers ...                                                [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_downloadtimeout
+  DownloadTimeoutMiddlewareTest
+    test_default_download_timeout ...                                      [32;1m[OK][0m
+    test_request_has_download_timeout ...                                  [32;1m[OK][0m
+    test_spider_has_download_timeout ...                                   [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_httpauth
+  HttpAuthMiddlewareTest
+    test_auth ...                                                          [32;1m[OK][0m
+    test_auth_already_set ...                                              [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_httpcache
+  HttpCacheMiddlewareTest
+    test_different_request_response_urls ...                               [32;1m[OK][0m
+    test_middleware ...                                                    [32;1m[OK][0m
+    test_middleware_ignore_http_codes ...                                  [32;1m[OK][0m
+    test_middleware_ignore_missing ...                                     [32;1m[OK][0m
+    test_middleware_ignore_schemes ...                                     [32;1m[OK][0m
+    test_storage ...                                                       [32;1m[OK][0m
+    test_storage_never_expire ...                                          [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_httpcompression
+  HttpCompressionTest
+    test_multipleencodings ...                                             [32;1m[OK][0m
+    test_process_request ...                                               [32;1m[OK][0m
+    test_process_response_encoding_inside_body ...                         [32;1m[OK][0m
+    test_process_response_force_recalculate_encoding ...                   [32;1m[OK][0m
+    test_process_response_gzip ...                                         [32;1m[OK][0m
+    test_process_response_plain ...                                        [32;1m[OK][0m
+    test_process_response_rawdeflate ...                                   [32;1m[OK][0m
+    test_process_response_zlibdelate ...                                   [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_httpproxy
+  TestDefaultHeadersMiddleware
+    test_enviroment_proxies ...                                            [32;1m[OK][0m
+    test_no_enviroment_proxies ...                                         [32;1m[OK][0m
+    test_no_proxies ...                                                    [32;1m[OK][0m
+    test_no_proxy ...                                                      [32;1m[OK][0m
+    test_proxy_already_seted ...                                           [32;1m[OK][0m
+    test_proxy_auth ...                                                    [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_redirect
+  RedirectMiddlewareTest
+    test_dont_redirect ...                                                 [32;1m[OK][0m
+    test_max_redirect_times ...                                            [32;1m[OK][0m
+    test_meta_refresh ...                                                  [32;1m[OK][0m
+    test_meta_refresh_trough_posted_request ...                            [32;1m[OK][0m
+    test_meta_refresh_with_high_interval ...                               [32;1m[OK][0m
+    test_priority_adjust ...                                               [32;1m[OK][0m
+    test_redirect_301 ...                                                  [32;1m[OK][0m
+    test_redirect_302 ...                                                  [32;1m[OK][0m
+    test_redirect_302_head ...                                             [32;1m[OK][0m
+    test_redirect_urls ...                                                 [32;1m[OK][0m
+    test_ttl ...                                                           [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_retry
+  RetryTest
+    test_404 ...                                                           [32;1m[OK][0m
+    test_503 ...                                                           [32;1m[OK][0m
+    test_dont_retry ...                                                    [32;1m[OK][0m
+    test_dont_retry_exc ...                                                [32;1m[OK][0m
+    test_priority_adjust ...                                               [32;1m[OK][0m
+    test_twistederrors ...                                                 [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_stats
+  TestDownloaderStats
+    test_process_exception ...                                             [32;1m[OK][0m
+    test_process_request ...                                               [32;1m[OK][0m
+    test_process_response ...                                              [32;1m[OK][0m
+scrapy.tests.test_downloadermiddleware_useragent
+  UserAgentMiddlewareTest
+    test_default_agent ...                                                 [32;1m[OK][0m
+    test_header_agent ...                                                  [32;1m[OK][0m
+    test_no_agent ...                                                      [32;1m[OK][0m
+    test_remove_agent ...                                                  [32;1m[OK][0m
+    test_spider_agent ...                                                  [32;1m[OK][0m
+scrapy.tests.test_dupefilter
+  RFPDupeFilterTest
+    test_filter ...                                                        [32;1m[OK][0m
+scrapy.tests.test_engine
+  EngineTest
+    test_crawler ...                                                       [32;1m[OK][0m
+scrapy.tests.test_http_cookies
+  WrappedRequestTest
+    test_add_unredirected_header ...                                       [32;1m[OK][0m
+    test_get_full_url ...                                                  [32;1m[OK][0m
+    test_get_header ...                                                    [32;1m[OK][0m
+    test_get_host ...                                                      [32;1m[OK][0m
+    test_get_origin_req_host ...                                           [32;1m[OK][0m
+    test_get_type ...                                                      [32;1m[OK][0m
+    test_has_header ...                                                    [32;1m[OK][0m
+    test_header_items ...                                                  [32;1m[OK][0m
+    test_is_unverifiable ...                                               [32;1m[OK][0m
+    test_is_unverifiable2 ...                                              [32;1m[OK][0m
+  WrappedResponseTest
+    test_getheaders ...                                                    [32;1m[OK][0m
+    test_info ...                                                          [32;1m[OK][0m
+scrapy.tests.test_http_headers
+  HeadersTest
+    test_appendlist ...                                                    [32;1m[OK][0m
+    test_basics ...                                                        [32;1m[OK][0m
+    test_copy ...                                                          [32;1m[OK][0m
+    test_delete_and_contains ...                                           [32;1m[OK][0m
+    test_encode_latin1 ...                                                 [32;1m[OK][0m
+    test_encode_multiple ...                                               [32;1m[OK][0m
+    test_encode_utf8 ...                                                   [32;1m[OK][0m
+    test_iterables ...                                                     [32;1m[OK][0m
+    test_multivalue ...                                                    [32;1m[OK][0m
+    test_setdefault ...                                                    [32;1m[OK][0m
+    test_setlist ...                                                       [32;1m[OK][0m
+    test_setlistdefault ...                                                [32;1m[OK][0m
+    test_single_value ...                                                  [32;1m[OK][0m
+    test_update ...                                                        [32;1m[OK][0m
+scrapy.tests.test_http_request
+  FormRequestTest
+    test_ajax_url ...                                                      [32;1m[OK][0m
+    test_body ...                                                          [32;1m[OK][0m
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_custom_encoding ...                                               [32;1m[OK][0m
+    test_default_encoding ...                                              [32;1m[OK][0m
+    test_empty_formdata ...                                                [32;1m[OK][0m
+    test_eq ...                                                            [32;1m[OK][0m
+    test_from_response_dont_click ...                                      [32;1m[OK][0m
+    test_from_response_errors_formnumber ...                               [32;1m[OK][0m
+    test_from_response_errors_noform ...                                   [32;1m[OK][0m
+    test_from_response_extra_headers ...                                   [32;1m[OK][0m
+    test_from_response_formname_errors_formnumber ...                      [32;1m[OK][0m
+    test_from_response_formname_exists ...                                 [32;1m[OK][0m
+    test_from_response_formname_notexist ...                               [32;1m[OK][0m
+    test_from_response_get ...                                             [32;1m[OK][0m
+    test_from_response_noformname ...                                      [32;1m[OK][0m
+    test_from_response_override_params ...                                 [32;1m[OK][0m
+    test_from_response_post ...                                            [32;1m[OK][0m
+    test_from_response_submit_first_clickeable ...                         [32;1m[OK][0m
+    test_from_response_submit_not_first_clickeable ...                     [32;1m[OK][0m
+    test_headers ...                                                       [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_method_always_str ...                                             [32;1m[OK][0m
+    test_multi_key_values ...                                              [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+    test_url ...                                                           [32;1m[OK][0m
+    test_url_no_scheme ...                                                 [32;1m[OK][0m
+  RequestTest
+    test_ajax_url ...                                                      [32;1m[OK][0m
+    test_body ...                                                          [32;1m[OK][0m
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_eq ...                                                            [32;1m[OK][0m
+    test_headers ...                                                       [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_method_always_str ...                                             [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+    test_url ...                                                           [32;1m[OK][0m
+    test_url_no_scheme ...                                                 [32;1m[OK][0m
+  XmlRpcRequestTest
+    test_ajax_url ...                                                      [32;1m[OK][0m
+    test_body ...                                                          [32;1m[OK][0m
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_eq ...                                                            [32;1m[OK][0m
+    test_headers ...                                                       [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_method_always_str ...                                             [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+    test_url ...                                                           [32;1m[OK][0m
+    test_url_no_scheme ...                                                 [32;1m[OK][0m
+    test_xmlrpc_dumps ...                                                  [32;1m[OK][0m
+scrapy.tests.test_http_response
+  BaseResponseTest
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_copy_meta ...                                                     [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+  HtmlResponseTest
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_copy_meta ...                                                     [32;1m[OK][0m
+    test_declared_encoding_invalid ...                                     [32;1m[OK][0m
+    test_encoding ...                                                      [32;1m[OK][0m
+    test_html5_meta_charset ...                                            [32;1m[OK][0m
+    test_html_encoding ...                                                 [32;1m[OK][0m
+    test_httpequiv_meta ...                                                [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_invalid_utf8_encoded_body_with_valid_utf8_BOM ...                 [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+    test_replace_wrong_encoding ...                                        [32;1m[OK][0m
+    test_unicode_body ...                                                  [32;1m[OK][0m
+    test_unicode_url ...                                                   [32;1m[OK][0m
+    test_utf16 ...                                                         [32;1m[OK][0m
+  ResponseText
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_copy_meta ...                                                     [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_no_unicode_url ...                                                [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+  TextResponseTest
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_copy_meta ...                                                     [32;1m[OK][0m
+    test_declared_encoding_invalid ...                                     [32;1m[OK][0m
+    test_encoding ...                                                      [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_invalid_utf8_encoded_body_with_valid_utf8_BOM ...                 [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+    test_replace_wrong_encoding ...                                        [32;1m[OK][0m
+    test_unicode_body ...                                                  [32;1m[OK][0m
+    test_unicode_url ...                                                   [32;1m[OK][0m
+    test_utf16 ...                                                         [32;1m[OK][0m
+  XmlResponseTest
+    test_copy ...                                                          [32;1m[OK][0m
+    test_copy_inherited_classes ...                                        [32;1m[OK][0m
+    test_copy_meta ...                                                     [32;1m[OK][0m
+    test_declared_encoding_invalid ...                                     [32;1m[OK][0m
+    test_encoding ...                                                      [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_invalid_utf8_encoded_body_with_valid_utf8_BOM ...                 [32;1m[OK][0m
+    test_replace ...                                                       [32;1m[OK][0m
+    test_replace_encoding ...                                              [32;1m[OK][0m
+    test_replace_wrong_encoding ...                                        [32;1m[OK][0m
+    test_unicode_body ...                                                  [32;1m[OK][0m
+    test_unicode_url ...                                                   [32;1m[OK][0m
+    test_utf16 ...                                                         [32;1m[OK][0m
+    test_xml_encoding ...                                                  [32;1m[OK][0m
+scrapy.tests.test_item
+  ItemTest
+    test_custom_methods ...                                                [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_invalid_field ...                                                 [32;1m[OK][0m
+    test_metaclass ...                                                     [32;1m[OK][0m
+    test_metaclass_inheritance ...                                         [32;1m[OK][0m
+    test_private_attr ...                                                  [32;1m[OK][0m
+    test_raise_getattr ...                                                 [32;1m[OK][0m
+    test_raise_setattr ...                                                 [32;1m[OK][0m
+    test_repr ...                                                          [32;1m[OK][0m
+    test_simple ...                                                        [32;1m[OK][0m
+    test_to_dict ...                                                       [32;1m[OK][0m
+scrapy.tests.test_libxml2
+  Libxml2Test
+    test_libxml2_bug_2_6_27 ...                                       [34;1m[SKIPPED][0m
+scrapy.tests.test_link
+  LinkTest
+    test_eq_and_hash ...                                                   [32;1m[OK][0m
+    test_repr ...                                                          [32;1m[OK][0m
+scrapy.tests.test_log
+  Latin1ScrapyFileLogObserverTest
+    test_err_exc ...                                                       [32;1m[OK][0m
+    test_err_failure ...                                                   [32;1m[OK][0m
+    test_err_noargs ...                                                    [32;1m[OK][0m
+    test_err_why ...                                                       [32;1m[OK][0m
+    test_error_outside_scrapy ...                                          [32;1m[OK][0m
+    test_msg_basic ...                                                     [32;1m[OK][0m
+    test_msg_encoding ...                                                  [32;1m[OK][0m
+    test_msg_ignore_level ...                                              [32;1m[OK][0m
+    test_msg_ignore_system ...                                             [32;1m[OK][0m
+    test_msg_ignore_system_err ...                                         [32;1m[OK][0m
+    test_msg_level1 ...                                                    [32;1m[OK][0m
+    test_msg_level2 ...                                                    [32;1m[OK][0m
+    test_msg_level_spider ...                                              [32;1m[OK][0m
+    test_msg_spider ...                                                    [32;1m[OK][0m
+    test_msg_wrong_level ...                                               [32;1m[OK][0m
+  LogTest
+    test_get_log_level ...                                                 [32;1m[OK][0m
+  ScrapyFileLogObserverTest
+    test_err_exc ...                                                       [32;1m[OK][0m
+    test_err_failure ...                                                   [32;1m[OK][0m
+    test_err_noargs ...                                                    [32;1m[OK][0m
+    test_err_why ...                                                       [32;1m[OK][0m
+    test_error_outside_scrapy ...                                          [32;1m[OK][0m
+    test_msg_basic ...                                                     [32;1m[OK][0m
+    test_msg_encoding ...                                                  [32;1m[OK][0m
+    test_msg_ignore_level ...                                              [32;1m[OK][0m
+    test_msg_ignore_system ...                                             [32;1m[OK][0m
+    test_msg_ignore_system_err ...                                         [32;1m[OK][0m
+    test_msg_level1 ...                                                    [32;1m[OK][0m
+    test_msg_level2 ...                                                    [32;1m[OK][0m
+    test_msg_level_spider ...                                              [32;1m[OK][0m
+    test_msg_spider ...                                                    [32;1m[OK][0m
+    test_msg_wrong_level ...                                               [32;1m[OK][0m
+scrapy.tests.test_logformatter
+  LoggingContribTest
+    test_crawled ...                                                       [32;1m[OK][0m
+    test_dropped ...                                                       [32;1m[OK][0m
+    test_scraped ...                                                       [32;1m[OK][0m
+scrapy.tests.test_mail
+  MailSenderTest
+    test_send ...                                                          [32;1m[OK][0m
+    test_send_attach ...                                                   [32;1m[OK][0m
+scrapy.tests.test_middleware
+  MiddlewareManagerTest
+    test_enabled ...                                                       [32;1m[OK][0m
+    test_enabled_from_settings ...                                         [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_methods ...                                                       [32;1m[OK][0m
+scrapy.tests.test_pipeline_images
+  ImagesPipelineTestCase
+    test_convert_image ...                                            [34;1m[SKIPPED][0m
+    test_fs_store ...                                                 [34;1m[SKIPPED][0m
+    test_image_path ...                                               [34;1m[SKIPPED][0m
+    test_thumbnail_name ...                                           [34;1m[SKIPPED][0m
+scrapy.tests.test_pipeline_media
+  BaseMediaPipelineTestCase
+    test_default_get_media_requests ...                                    [32;1m[OK][0m
+    test_default_item_completed ...                                        [32;1m[OK][0m
+    test_default_media_downloaded ...                                      [32;1m[OK][0m
+    test_default_media_failed ...                                          [32;1m[OK][0m
+    test_default_media_to_download ...                                     [32;1m[OK][0m
+    test_default_process_item ...                                          [32;1m[OK][0m
+  MediaPipelineTestCase
+    test_default_get_media_requests ...                                    [32;1m[OK][0m
+    test_default_item_completed ...                                        [32;1m[OK][0m
+    test_default_media_downloaded ...                                      [32;1m[OK][0m
+    test_default_media_failed ...                                          [32;1m[OK][0m
+    test_default_media_to_download ...                                     [32;1m[OK][0m
+    test_default_process_item ...                                          [32;1m[OK][0m
+    test_get_media_requests ...                                            [32;1m[OK][0m
+    test_mix_of_success_and_failure ...                                    [32;1m[OK][0m
+    test_result_failure ...                                                [32;1m[OK][0m
+    test_result_succeed ...                                                [32;1m[OK][0m
+    test_results_are_cached_across_multiple_items ...                      [32;1m[OK][0m
+    test_results_are_cached_for_requests_of_single_item ...                [32;1m[OK][0m
+    test_use_media_to_download_result ...                                  [32;1m[OK][0m
+    test_wait_if_request_is_downloading ...                                [32;1m[OK][0m
+scrapy.tests.test_responsetypes
+  ResponseTypesTest
+    test_custom_mime_types_loaded ...                                      [32;1m[OK][0m
+    test_from_args ...                                                     [32;1m[OK][0m
+    test_from_body ...                                                     [32;1m[OK][0m
+    test_from_content_disposition ...                                      [32;1m[OK][0m
+    test_from_content_type ...                                             [32;1m[OK][0m
+    test_from_filename ...                                                 [32;1m[OK][0m
+    test_from_headers ...                                                  [32;1m[OK][0m
+scrapy.tests.test_selector
+  XPathSelectorTestCase
+    test_dont_strip ...                                                    [32;1m[OK][0m
+    test_empty_bodies ...                                                  [32;1m[OK][0m
+    test_http_header_encoding_precedence ...                               [32;1m[OK][0m
+    test_selector_boolean_result ...                                       [32;1m[OK][0m
+    test_selector_invalid_xpath ...                                        [32;1m[OK][0m
+    test_selector_namespaces_multiple ...                                  [32;1m[OK][0m
+    test_selector_namespaces_simple ...                                    [32;1m[OK][0m
+    test_selector_nested ...                                               [32;1m[OK][0m
+    test_selector_over_text ...                                            [32;1m[OK][0m
+    test_selector_re ...                                                   [32;1m[OK][0m
+    test_selector_same_type ...                                            [32;1m[OK][0m
+    test_selector_simple ...                                               [32;1m[OK][0m
+    test_selector_unicode_query ...                                        [32;1m[OK][0m
+    test_selector_xml_html ...                                             [32;1m[OK][0m
+    test_weakref_slots ...                                                 [32;1m[OK][0m
+scrapy.tests.test_selector_dummy
+    test_raises ...                                                        [32;1m[OK][0m
+                                                    [31;1m[ERROR][0m
+scrapy.tests.test_selector_lxml
+  LxmlXPathSelectorTestCase
+    test_dont_strip ...                                                    [32;1m[OK][0m
+    test_empty_bodies ...                                                  [32;1m[OK][0m
+    test_http_header_encoding_precedence ...                               [32;1m[OK][0m
+    test_selector_boolean_result ...                                       [32;1m[OK][0m
+    test_selector_invalid_xpath ...                                        [32;1m[OK][0m
+    test_selector_namespaces_multiple ...                                  [32;1m[OK][0m
+    test_selector_namespaces_simple ...                                    [32;1m[OK][0m
+    test_selector_nested ...                                               [32;1m[OK][0m
+    test_selector_over_text ...                                            [32;1m[OK][0m
+    test_selector_re ...                                                   [32;1m[OK][0m
+    test_selector_same_type ...                                            [32;1m[OK][0m
+    test_selector_simple ...                                               [32;1m[OK][0m
+    test_selector_unicode_query ...                                        [32;1m[OK][0m
+    test_selector_xml_html ...                                             [32;1m[OK][0m
+    test_weakref_slots ...                                                 [32;1m[OK][0m
+scrapy.tests.test_settings
+  CrawlerSettingsTest
+    test_defaults ...                                                      [32;1m[OK][0m
+    test_global_defaults ...                                               [32;1m[OK][0m
+    test_overrides ...                                                     [32;1m[OK][0m
+    test_settings_module ...                                               [32;1m[OK][0m
+  SettingsTest
+    test_get ...                                                           [32;1m[OK][0m
+  SpiderSettingsTest
+    test_crawler_defaults ...                                              [32;1m[OK][0m
+    test_defaults ...                                                      [32;1m[OK][0m
+    test_global_defaults ...                                               [32;1m[OK][0m
+    test_overrides_most_precedence ...                                     [32;1m[OK][0m
+    test_spider_overrides_crawler ...                                      [32;1m[OK][0m
+scrapy.tests.test_spider
+  BaseSpiderTest
+    test_base_spider ...                                                   [32;1m[OK][0m
+    test_spider_args ...                                                   [32;1m[OK][0m
+    test_spider_without_name ...                                           [32;1m[OK][0m
+  CSVFeedSpiderTest
+    test_base_spider ...                                                   [32;1m[OK][0m
+    test_spider_args ...                                                   [32;1m[OK][0m
+    test_spider_without_name ...                                           [32;1m[OK][0m
+  CrawlSpiderTest
+    test_base_spider ...                                                   [32;1m[OK][0m
+    test_spider_args ...                                                   [32;1m[OK][0m
+    test_spider_without_name ...                                           [32;1m[OK][0m
+  InitSpiderTest
+    test_base_spider ...                                                   [32;1m[OK][0m
+    test_spider_args ...                                                   [32;1m[OK][0m
+    test_spider_without_name ...                                           [32;1m[OK][0m
+  SitemapSpiderTest
+    test_base_spider ...                                                   [32;1m[OK][0m
+    test_spider_args ...                                                   [32;1m[OK][0m
+    test_spider_without_name ...                                           [32;1m[OK][0m
+  XMLFeedSpiderTest
+    test_base_spider ...                                                   [32;1m[OK][0m
+    test_spider_args ...                                                   [32;1m[OK][0m
+    test_spider_without_name ...                                           [32;1m[OK][0m
+scrapy.tests.test_spidermanager
+  SpiderManagerTest
+    test_create ...                                                        [32;1m[OK][0m
+    test_find_by_request ...                                               [32;1m[OK][0m
+    test_interface ...                                                     [32;1m[OK][0m
+    test_list ...                                                          [32;1m[OK][0m
+    test_load_base_spider ...                                              [32;1m[OK][0m
+    test_load_spider_module ...                                            [32;1m[OK][0m
+scrapy.tests.test_spidermiddleware_depth
+  TestDepthMiddleware
+    test_process_spider_output ...                                         [32;1m[OK][0m
+scrapy.tests.test_spidermiddleware_httperror
+  TestHttpErrorMiddleware
+    test_handle_httpstatus_list ...                                        [32;1m[OK][0m
+    test_process_spider_exception ...                                      [32;1m[OK][0m
+    test_process_spider_input ...                                          [32;1m[OK][0m
+scrapy.tests.test_spidermiddleware_offsite
+  TestOffsiteMiddleware
+    test_process_spider_output ...                                         [32;1m[OK][0m
+  TestOffsiteMiddleware2
+    test_process_spider_output ...                                         [32;1m[OK][0m
+  TestOffsiteMiddleware3
+    test_process_spider_output ...                                         [32;1m[OK][0m
+scrapy.tests.test_spidermiddleware_referer
+  TestRefererMiddleware
+    test_process_spider_output ...                                         [32;1m[OK][0m
+scrapy.tests.test_spidermiddleware_urllength
+  TestUrlLengthMiddleware
+    test_process_spider_output ...                                         [32;1m[OK][0m
+scrapy.tests.test_squeue
+  ChunkSize1MarshalFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+  ChunkSize1PickleFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+    test_serialize_item ...                                                [32;1m[OK][0m
+    test_serialize_loader ...                                              [32;1m[OK][0m
+    test_serialize_request_recursive ...                                   [32;1m[OK][0m
+  ChunkSize2MarshalFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+  ChunkSize2PickleFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+    test_serialize_item ...                                                [32;1m[OK][0m
+    test_serialize_loader ...                                              [32;1m[OK][0m
+    test_serialize_request_recursive ...                                   [32;1m[OK][0m
+  ChunkSize3MarshalFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+  ChunkSize3PickleFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+    test_serialize_item ...                                                [32;1m[OK][0m
+    test_serialize_loader ...                                              [32;1m[OK][0m
+    test_serialize_request_recursive ...                                   [32;1m[OK][0m
+  ChunkSize4MarshalFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+  ChunkSize4PickleFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+    test_serialize_item ...                                                [32;1m[OK][0m
+    test_serialize_loader ...                                              [32;1m[OK][0m
+    test_serialize_request_recursive ...                                   [32;1m[OK][0m
+  MarshalFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+  MarshalLifoDiskQueueTest
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_file_size_shrinks ...                                             [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+  PickleFifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+    test_serialize_item ...                                                [32;1m[OK][0m
+    test_serialize_loader ...                                              [32;1m[OK][0m
+    test_serialize_request_recursive ...                                   [32;1m[OK][0m
+  PickleLifoDiskQueueTest
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_file_size_shrinks ...                                             [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_nonserializable_object ...                                        [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+    test_serialize ...                                                     [32;1m[OK][0m
+    test_serialize_item ...                                                [32;1m[OK][0m
+    test_serialize_loader ...                                              [32;1m[OK][0m
+    test_serialize_request_recursive ...                                   [32;1m[OK][0m
+scrapy.tests.test_stats
+  StatsCollectorTest
+    test_collector ...                                                     [32;1m[OK][0m
+    test_dummy_collector ...                                               [32;1m[OK][0m
+    test_signals ...                                                       [32;1m[OK][0m
+scrapy.tests.test_urlparse_monkeypatches
+  UrlparseTestCase
+    test_s3_url ...                                                        [32;1m[OK][0m
+scrapy.tests.test_utils_conf
+  UtilsConfTestCase
+    test_arglist_to_dict ...                                               [32;1m[OK][0m
+    test_build_component_list ...                                          [32;1m[OK][0m
+scrapy.tests.test_utils_datatypes
+  CaselessDictTest
+    test_caseless ...                                                      [32;1m[OK][0m
+    test_contains ...                                                      [32;1m[OK][0m
+    test_copy ...                                                          [32;1m[OK][0m
+    test_delete ...                                                        [32;1m[OK][0m
+    test_fromkeys ...                                                      [32;1m[OK][0m
+    test_getdefault ...                                                    [32;1m[OK][0m
+    test_init ...                                                          [32;1m[OK][0m
+    test_normkey ...                                                       [32;1m[OK][0m
+    test_normvalue ...                                                     [32;1m[OK][0m
+    test_pop ...                                                           [32;1m[OK][0m
+    test_setdefault ...                                                    [32;1m[OK][0m
+Doctest: scrapy.utils
+  datatypes
+    MultiValueDict ...                                                     [32;1m[OK][0m
+scrapy.tests.test_utils_defer
+  DeferUtilsTest
+    test_process_chain ...                                                 [32;1m[OK][0m
+    test_process_chain_both ...                                            [32;1m[OK][0m
+    test_process_parallel ...                                              [32;1m[OK][0m
+    test_process_parallel_failure ...                                      [32;1m[OK][0m
+  IterErrbackTest
+    test_iter_errback_bad ...                                              [32;1m[OK][0m
+    test_iter_errback_good ...                                             [32;1m[OK][0m
+  MustbeDeferredTest
+    test_success_function ...                                              [32;1m[OK][0m
+    test_unfired_deferred ...                                              [32;1m[OK][0m
+scrapy.tests.test_utils_encoding
+  UtilsEncodingTestCase
+    test_encoding_exists ...                                               [32;1m[OK][0m
+    test_resolve_encoding ...                                              [32;1m[OK][0m
+scrapy.tests.test_utils_gz
+  GzTest
+    test_gunzip_basic ...                                                  [32;1m[OK][0m
+    test_gunzip_no_gzip_file_raises ...                                    [32;1m[OK][0m
+    test_gunzip_truncated ...                                              [32;1m[OK][0m
+scrapy.tests.test_utils_http
+  ChunkedTest
+    test_decode_chunked_transfer ...                                       [32;1m[OK][0m
+scrapy.tests.test_utils_httpobj
+  HttpobjUtilsTest
+    test_urlparse_cached ...                                               [32;1m[OK][0m
+scrapy.tests.test_utils_iterators
+  LxmlXmliterTestCase
+    test_xmliter ...                                                       [32;1m[OK][0m
+    test_xmliter_encoding ...                                              [32;1m[OK][0m
+    test_xmliter_exception ...                                             [32;1m[OK][0m
+    test_xmliter_iterate_namespace ...                                     [32;1m[OK][0m
+    test_xmliter_namespaces ...                                            [32;1m[OK][0m
+    test_xmliter_text ...                                                  [32;1m[OK][0m
+  UtilsCsvTestCase
+    test_csviter_defaults ...                                              [32;1m[OK][0m
+    test_csviter_delimiter ...                                             [32;1m[OK][0m
+    test_csviter_delimiter_binary_response_assume_utf8_encoding ...        [32;1m[OK][0m
+    test_csviter_encoding ...                                              [32;1m[OK][0m
+    test_csviter_exception ...                                             [32;1m[OK][0m
+    test_csviter_falserow ...                                              [32;1m[OK][0m
+    test_csviter_headers ...                                               [32;1m[OK][0m
+  XmliterTestCase
+    test_xmliter ...                                                       [32;1m[OK][0m
+    test_xmliter_encoding ...                                              [32;1m[OK][0m
+    test_xmliter_exception ...                                             [32;1m[OK][0m
+    test_xmliter_namespaces ...                                            [32;1m[OK][0m
+    test_xmliter_text ...                                                  [32;1m[OK][0m
+scrapy.tests.test_utils_jsonrpc
+  JsonRpcUtilsTestCase
+    test_jsonrpc_client_call_args_kwargs_raises ...                        [32;1m[OK][0m
+    test_jsonrpc_client_call_request ...                                   [32;1m[OK][0m
+    test_jsonrpc_client_call_response ...                                  [32;1m[OK][0m
+    test_jsonrpc_server_call ...                                           [32;1m[OK][0m
+scrapy.tests.test_utils_memory
+  UtilsMemoryTestCase
+    test_get_vmvalue_from_procfs ...                                       [32;1m[OK][0m
+scrapy.tests.test_utils_misc
+  UtilsMiscTestCase
+    test_arg_to_iter ...                                                   [32;1m[OK][0m
+    test_load_object ...                                                   [32;1m[OK][0m
+    test_walk_modules ...                                                  [32;1m[OK][0m
+    test_walk_modules_egg ...                                              [32;1m[OK][0m
+Doctest: scrapy.utils
+  misc
+    md5sum ...                                                             [32;1m[OK][0m
+scrapy.tests.test_utils_pqueue
+  FifoDiskPriorityQueueTest
+    test_close ...                                                         [32;1m[OK][0m
+    test_close_return_active ...                                           [32;1m[OK][0m
+    test_len_nonzero ...                                                   [32;1m[OK][0m
+    test_nonserializable_object_many_close ...                             [32;1m[OK][0m
+    test_nonserializable_object_many_pop ...                               [32;1m[OK][0m
+    test_nonserializable_object_one ...                                    [32;1m[OK][0m
+    test_popped_internal_queues_closed ...                                 [32;1m[OK][0m
+    test_push_pop_noprio ...                                               [32;1m[OK][0m
+    test_push_pop_prio ...                                                 [32;1m[OK][0m
+  FifoMemoryPriorityQueueTest
+    test_close ...                                                         [32;1m[OK][0m
+    test_close_return_active ...                                           [32;1m[OK][0m
+    test_len_nonzero ...                                                   [32;1m[OK][0m
+    test_popped_internal_queues_closed ...                                 [32;1m[OK][0m
+    test_push_pop_noprio ...                                               [32;1m[OK][0m
+    test_push_pop_prio ...                                                 [32;1m[OK][0m
+  LifoDiskPriorityQueueTest
+    test_close ...                                                         [32;1m[OK][0m
+    test_close_return_active ...                                           [32;1m[OK][0m
+    test_len_nonzero ...                                                   [32;1m[OK][0m
+    test_popped_internal_queues_closed ...                                 [32;1m[OK][0m
+    test_push_pop_noprio ...                                               [32;1m[OK][0m
+    test_push_pop_prio ...                                                 [32;1m[OK][0m
+  LifoMemoryPriorityQueueTest
+    test_close ...                                                         [32;1m[OK][0m
+    test_close_return_active ...                                           [32;1m[OK][0m
+    test_len_nonzero ...                                                   [32;1m[OK][0m
+    test_popped_internal_queues_closed ...                                 [32;1m[OK][0m
+    test_push_pop_noprio ...                                               [32;1m[OK][0m
+    test_push_pop_prio ...                                                 [32;1m[OK][0m
+scrapy.tests.test_utils_python
+  UtilsPythonTestCase
+    test_equal_attributes ...                                              [32;1m[OK][0m
+    test_isbinarytext ...                                                  [32;1m[OK][0m
+    test_memoizemethod_noargs ...                                          [32;1m[OK][0m
+    test_str_to_unicode ...                                                [32;1m[OK][0m
+    test_stringify_dict ...                                                [32;1m[OK][0m
+    test_stringify_dict_keys_only ...                                      [32;1m[OK][0m
+    test_stringify_dict_tuples ...                                         [32;1m[OK][0m
+    test_unicode_to_str ...                                                [32;1m[OK][0m
+    test_weakkeycache ...                                                  [32;1m[OK][0m
+Doctest: scrapy.utils
+  python
+    flatten ...                                                            [32;1m[OK][0m
+scrapy.tests.test_utils_queue
+  ChunkSize1FifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+  ChunkSize2FifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+  ChunkSize3FifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+  ChunkSize4FifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+  FifoDiskQueueTest
+    test_chunks ...                                                        [32;1m[OK][0m
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+  FifoMemoryQueueTest
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+  LifoDiskQueueTest
+    test_cleanup ...                                                       [32;1m[OK][0m
+    test_close_open ...                                                    [32;1m[OK][0m
+    test_empty ...                                                         [32;1m[OK][0m
+    test_file_size_shrinks ...                                             [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+  LifoMemoryQueueTest
+    test_empty ...                                                         [32;1m[OK][0m
+    test_len ...                                                           [32;1m[OK][0m
+    test_push_pop1 ...                                                     [32;1m[OK][0m
+    test_push_pop2 ...                                                     [32;1m[OK][0m
+scrapy.tests.test_utils_reqser
+  RequestSerializationTest
+    test_all_attributes ...                                                [32;1m[OK][0m
+    test_basic ...                                                         [32;1m[OK][0m
+    test_callback_serialization ...                                        [32;1m[OK][0m
+    test_latin1_body ...                                                   [32;1m[OK][0m
+    test_unserializable_callback1 ...                                      [32;1m[OK][0m
+    test_unserializable_callback2 ...                                      [32;1m[OK][0m
+    test_utf8_body ...                                                     [32;1m[OK][0m
+scrapy.tests.test_utils_request
+  UtilsRequestTest
+    test_request_authenticate ...                                          [32;1m[OK][0m
+    test_request_fingerprint ...                                           [32;1m[OK][0m
+    test_request_httprepr ...                                              [32;1m[OK][0m
+scrapy.tests.test_utils_response
+  ResponseUtilsTest
+    test_body_or_str_encoding ...                                          [32;1m[OK][0m
+    test_body_or_str_extraction ...                                        [32;1m[OK][0m
+    test_body_or_str_input ...                                             [32;1m[OK][0m
+    test_get_meta_refresh ...                                              [32;1m[OK][0m
+    test_open_in_browser ...                                               [32;1m[OK][0m
+    test_response_httprepr ...                                             [32;1m[OK][0m
+Doctest: scrapy.utils
+  response
+    response_status_message ...                                            [32;1m[OK][0m
+scrapy.tests.test_utils_serialize
+  JsonEncoderTestCase
+    test_encode_decode ...                                                 [32;1m[OK][0m
+    test_encode_request ...                                                [32;1m[OK][0m
+    test_encode_response ...                                               [32;1m[OK][0m
+  SpiderReferencerTestCase
+    test_encode_decode ...                                                 [32;1m[OK][0m
+    test_spiders_and_references ...                                        [32;1m[OK][0m
+scrapy.tests.test_utils_signal
+  SendCatchLogDeferredTest
+    test_send_catch_log ...                                                [32;1m[OK][0m
+  SendCatchLogDeferredTest2
+    test_send_catch_log ...                                                [32;1m[OK][0m
+  SendCatchLogTest
+    test_send_catch_log ...                                                [32;1m[OK][0m
+  SendCatchLogTest2
+    test_error_logged_if_deferred_not_supported ...                        [32;1m[OK][0m
+scrapy.tests.test_utils_sitemap
+  SitemapTest
+    test_sitemap ...                                                       [32;1m[OK][0m
+    test_sitemap_index ...                                                 [32;1m[OK][0m
+    test_sitemap_strip ...                                                 [32;1m[OK][0m
+    test_sitemap_urls_from_robots ...                                      [32;1m[OK][0m
+    test_sitemap_wrong_ns ...                                              [32;1m[OK][0m
+    test_sitemap_wrong_ns2 ...                                             [32;1m[OK][0m
+scrapy.tests.test_utils_spider
+  UtilsSpidersTestCase
+    test_iter_spider_classes ...                                           [32;1m[OK][0m
+    test_iterate_spider_output ...                                         [32;1m[OK][0m
+Doctest: scrapy.utils
+  template
+    string_camelcase ...                                                   [32;1m[OK][0m
+scrapy.tests.test_utils_url
+  UrlUtilsTest
+    test_canonicalize_url ...                                              [32;1m[OK][0m
+    test_url_is_from_any_domain ...                                        [32;1m[OK][0m
+    test_url_is_from_spider ...                                            [32;1m[OK][0m
+    test_url_is_from_spider_class_attributes ...                           [32;1m[OK][0m
+    test_url_is_from_spider_with_allowed_domains ...                       [32;1m[OK][0m
+    test_url_is_from_spider_with_allowed_domains_class_attributes ...      [32;1m[OK][0m
+Doctest: scrapy.utils
+  url
+    escape_ajax ...                                                        [32;1m[OK][0m
+scrapy.tests.test_webclient
+  ParseUrlTestCase
+    testParse ...                                                          [32;1m[OK][0m
+    test_externalUnicodeInterference ...                                   [32;1m[OK][0m
+  ScrapyHTTPPageGetterTests
+    test_earlyHeaders ...                                                  [32;1m[OK][0m
+    test_non_standard_line_endings ...                                     [32;1m[OK][0m
+  WebClientTestCase
+    testFactoryInfo ...                                                    [32;1m[OK][0m
+    testHostHeader ...                                                     [32;1m[OK][0m
+    testNotFound ...                                                       [32;1m[OK][0m
+    testPayload ...                                                        [32;1m[OK][0m
+    testRedirect ...                                                       [32;1m[OK][0m
+    test_getPage ...                                                       [32;1m[OK][0m
+    test_getPageHead ...                                                   [32;1m[OK][0m
+    test_timeoutNotTriggering ...                                          [32;1m[OK][0m
+    test_timeoutTriggering ...                                             [32;1m[OK][0m
+
+===============================================================================
+[SKIPPED]: scrapy.tests.test_contrib_feedexport.FTPFeedStorageTest.test_store
+
+No FTP server available for testing
+===============================================================================
+[SKIPPED]: scrapy.tests.test_contrib_feedexport.S3FeedStorageTest.test_store
+
+AWS keys not found
+===============================================================================
+[SKIPPED]: scrapy.tests.test_dependencies.ScrapyUtilsTest.test_required_openssl_version
+
+OpenSSL is not available
+===============================================================================
+[SKIPPED]: scrapy.tests.test_djangoitem.DjangoItemTest.test_base
+
+Django is not available
+===============================================================================
+[SKIPPED]: scrapy.tests.test_djangoitem.DjangoItemTest.test_custom_primary_key_field
+
+Django is not available
+===============================================================================
+[SKIPPED]: scrapy.tests.test_djangoitem.DjangoItemTest.test_new_fields
+
+Django is not available
+===============================================================================
+[SKIPPED]: scrapy.tests.test_djangoitem.DjangoItemTest.test_override_field
+
+Django is not available
+===============================================================================
+[SKIPPED]: scrapy.tests.test_djangoitem.DjangoItemTest.test_override_save
+
+Django is not available
+===============================================================================
+[SKIPPED]: scrapy.tests.test_djangoitem.DjangoItemTest.test_save
+
+Django is not available
+===============================================================================
+[SKIPPED]: scrapy.tests.test_libxml2.Libxml2Test.test_libxml2_bug_2_6_27
+
+No module named libxml2
+===============================================================================
+[SKIPPED]: scrapy.tests.test_pipeline_images.ImagesPipelineTestCase.test_convert_image
+
+True
+===============================================================================
+[SKIPPED]: scrapy.tests.test_pipeline_images.ImagesPipelineTestCase.test_fs_store
+
+True
+===============================================================================
+[SKIPPED]: scrapy.tests.test_pipeline_images.ImagesPipelineTestCase.test_image_path
+
+True
+===============================================================================
+[SKIPPED]: scrapy.tests.test_pipeline_images.ImagesPipelineTestCase.test_thumbnail_name
+
+True
+===============================================================================
+[ERROR]: scrapy.tests.test_contrib_linkextractors
+
+Traceback (most recent call last):
+  File "/home/vagrant/virtualenv/python2.7/local/lib/python2.7/site-packages/twisted/trial/runner.py", line 563, in loadPackage
+    module = modinfo.load()
+  File "/home/vagrant/virtualenv/python2.7/local/lib/python2.7/site-packages/twisted/python/modules.py", line 381, in load
+    return self.pathEntry.pythonPath.moduleLoader(self.name)
+  File "/home/vagrant/virtualenv/python2.7/local/lib/python2.7/site-packages/twisted/python/reflect.py", line 464, in namedAny
+    topLevelPackage = _importAndCheckStack(trialname)
+  File "/home/vagrant/builds/scrapy/scrapy/scrapy/tests/test_contrib_linkextractors.py", line 7, in <module>
+    from scrapy.contrib.linkextractors.image import HTMLImageLinkExtractor
+  File "/home/vagrant/builds/scrapy/scrapy/scrapy/contrib/linkextractors/image.py", line 10, in <module>
+    from scrapy.selector.libxml2sel import XPathSelectorList, HtmlXPathSelector
+  File "/home/vagrant/builds/scrapy/scrapy/scrapy/selector/libxml2sel.py", line 5, in <module>
+    import libxml2
+exceptions.ImportError: No module named libxml2
+===============================================================================
+[ERROR]: scrapy.tests.test_selector_libxml2
+
+Traceback (most recent call last):
+  File "/home/vagrant/virtualenv/python2.7/local/lib/python2.7/site-packages/twisted/trial/runner.py", line 563, in loadPackage
+    module = modinfo.load()
+  File "/home/vagrant/virtualenv/python2.7/local/lib/python2.7/site-packages/twisted/python/modules.py", line 381, in load
+    return self.pathEntry.pythonPath.moduleLoader(self.name)
+  File "/home/vagrant/virtualenv/python2.7/local/lib/python2.7/site-packages/twisted/python/reflect.py", line 464, in namedAny
+    topLevelPackage = _importAndCheckStack(trialname)
+  File "/home/vagrant/builds/scrapy/scrapy/scrapy/tests/test_selector_libxml2.py", line 8, in <module>
+    from scrapy.selector.libxml2sel import XmlXPathSelector, HtmlXPathSelector, \
+  File "/home/vagrant/builds/scrapy/scrapy/scrapy/selector/libxml2sel.py", line 5, in <module>
+    import libxml2
+exceptions.ImportError: No module named libxml2
+-------------------------------------------------------------------------------
+Ran 863 tests in 16.170s
+
+[31;1mFAILED[0m (skips=14, errors=2, successes=849)
+
+
+Done. Build script exited with: 1

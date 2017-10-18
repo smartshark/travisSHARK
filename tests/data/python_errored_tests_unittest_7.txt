@@ -1,0 +1,1485 @@
+Using worker: ppp2.worker.travis-ci.org:travis-php-5
+
+
+
+$ cd ~/builds
+
+$ export HTTPBIN_URL=http://httpbin.org/
+
+
+$ git clone --depth=100 --quiet git://github.com/kennethreitz/requests.git kennethreitz/requests
+
+
+
+$ cd kennethreitz/requests
+
+$ git fetch origin +refs/pull/638/merge:
+remote: Counting objects: 8, done.[K
+remote: Compressing objects:  50% (1/2)   [K
+remote: Compressing objects: 100% (2/2)   [K
+remote: Compressing objects: 100% (2/2), done.[K
+remote: Total 5 (delta 3), reused 5 (delta 3)[K
+Unpacking objects:  20% (1/5)
+Unpacking objects:  40% (2/5)
+Unpacking objects:  60% (3/5)
+Unpacking objects:  80% (4/5)
+Unpacking objects: 100% (5/5)
+Unpacking objects: 100% (5/5), done.
+From git://github.com/kennethreitz/requests
+ * branch            refs/pull/638/merge -> FETCH_HEAD
+
+$ git checkout -qf edaf69bc5b3d127cc68420230c6f417a00afedda
+
+
+$ export TRAVIS_PYTHON_VERSION=3.2
+
+$ source ~/virtualenv/python3.2/bin/activate
+
+$ python --version
+Python 3.2.2
+
+$ pip --version
+pip 1.1 from /home/vagrant/virtualenv/python3.2/lib/python3.2/site-packages/pip-1.1-py3.2.egg (python 3.2)
+
+$ pip install nose
+Requirement already satisfied (use --upgrade to upgrade): nose in /home/vagrant/virtualenv/python3.2/lib/python3.2/site-packages
+Cleaning up...
+
+$ pip install . --use-mirrors
+Unpacking /home/vagrant/builds/kennethreitz/requests
+  Running setup.py egg_info for package from file:///home/vagrant/builds/kennethreitz/requests
+
+Downloading/unpacking certifi>=0.0.7 (from requests==0.12.1)
+  Real name of requirement certifi is certifi
+  Downloading certifi-0.0.8.tar.gz (118Kb):
+  Downloading certifi-0.0.8.tar.gz (118Kb):   3%  4.1Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):   6%  8.2Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  10%  12Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  13%  16Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  17%  20Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  20%  24Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  24%  28Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  27%  32Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  31%  36Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  34%  40Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  38%  45Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  41%  49Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  45%  53Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  48%  57Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  52%  61Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  55%  65Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  58%  69Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  62%  73Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  65%  77Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  69%  81Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  72%  86Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  76%  90Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  79%  94Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  83%  98Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  86%  102Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  90%  106Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  93%  110Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):  97%  114Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb): 100%  118Kb
+  Downloading certifi-0.0.8.tar.gz (118Kb):
+  Downloading certifi-0.0.8.tar.gz (118Kb): 118Kb downloaded
+  Running setup.py egg_info for package certifi
+
+Downloading/unpacking chardet2 (from requests==0.12.1)
+  Real name of requirement chardet2 is chardet2
+  Downloading chardet2-2.0.1.tar.gz (151Kb):
+  Downloading chardet2-2.0.1.tar.gz (151Kb):   2%  4.1Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):   5%  8.2Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):   8%  12Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  10%  16Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  13%  20Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  16%  24Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  18%  28Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  21%  32Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  24%  36Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  26%  40Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  29%  45Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  32%  49Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  35%  53Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  37%  57Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  40%  61Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  43%  65Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  45%  69Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  48%  73Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  51%  77Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  53%  81Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  56%  86Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  59%  90Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  62%  94Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  64%  98Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  67%  102Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  70%  106Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  72%  110Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  75%  114Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  78%  118Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  80%  122Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  83%  126Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  86%  131Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  89%  135Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  91%  139Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  94%  143Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  97%  147Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):  99%  151Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb): 100%  151Kb
+  Downloading chardet2-2.0.1.tar.gz (151Kb):
+  Downloading chardet2-2.0.1.tar.gz (151Kb): 151Kb downloaded
+  Running setup.py egg_info for package chardet2
+
+Installing collected packages: certifi, chardet2, requests
+  Running setup.py install for certifi
+
+  Running setup.py install for chardet2
+
+  Running setup.py install for requests
+
+Successfully installed certifi chardet2 requests
+Cleaning up...
+
+$ make travis
+nosetests tests/test_cookies.py tests/test_requests.py tests/test_requests_https.py --with-xunit --xunit-file=junit-report.xml
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.EE.EEEEEE.EEEEEEEEEEE.EEEEEEEEEEEE.EEEE
+======================================================================
+ERROR: Test that keys, values, and items are defined and that we can convert
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 147, in test_convert_jar_to_dict
+    r = requests.get(httpbin('cookies', 'set', 'myname', 'myvalue'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Basic test that we correctly parse received cookies in the Response object.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 23, in test_cookies_from_response
+    r = requests.get(httpbin('cookies', 'set', 'myname', 'myvalue'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Cookies should not be sent to domains they didn't originate from.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 39, in test_crossdomain_cookies
+    r = requests.get("http://github.com")
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that cookies are not persisted when configured accordingly.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 110, in test_disabled_cookie_persistence
+    cookies = requests.get(httpbin('cookies', 'set', 'key', 'value'), store_cookies = False).cookies
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test utility functions such as list_domains, list_paths, multiple_domains.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 128, in test_jar_utility_functions
+    r = requests.get("http://github.com")
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Regression test: don't send a Cookie header with a string value of 'None'!
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 87, in test_none_cookie
+    page = json.loads(requests.get(httpbin('headers')).text)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Cookies should get overwritten when appropriate.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 60, in test_overwrite
+    r = requests.get(httpbin('cookies', 'set', 'shimon', 'yochai'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that cookies set by a 302 page are correctly processed.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 75, in test_redirects
+    r = requests.get(httpbin('cookies', 'set', 'redirects', 'work'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that secure cookies can only be sent via https.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 94, in test_secure_cookies
+    cookies = requests.get(url, verify=False).cookies
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that we can save cookies to a FileCookieJar.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 184, in test_cookiejar_persistence
+    response = requests.get(httpbin('cookies', 'set', 'key', 'value'), cookies=cookiejar)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test persistence of the domains associated with the cookies.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 213, in test_crossdomain
+    requests.get("http://github.com", cookies=cookiejar)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that we correctly interpret persistent cookies.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 238, in test_persistent_cookies
+    requests.get(url, cookies=cookiejar)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that we can save cookies to a FileCookieJar.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 184, in test_cookiejar_persistence
+    response = requests.get(httpbin('cookies', 'set', 'key', 'value'), cookies=cookiejar)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test persistence of the domains associated with the cookies.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 213, in test_crossdomain
+    requests.get("http://github.com", cookies=cookiejar)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that we correctly interpret persistent cookies.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_cookies.py", line 238, in test_persistent_cookies
+    requests.get(url, cookies=cookiejar)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_BASICAUTH_HTTP_200_OK_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 244, in test_BASICAUTH_HTTP_200_OK_GET
+    r = get(url, auth=auth)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_BASICAUTH_TUPLE_HTTP_200_OK_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 227, in test_BASICAUTH_TUPLE_HTTP_200_OK_GET
+    r = get(url, auth=auth)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_DIGESTAUTH_HTTP_200_OK_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 265, in test_DIGESTAUTH_HTTP_200_OK_GET
+    r = get(url, auth=auth)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_DIGESTAUTH_WRONG_HTTP_401_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 282, in test_DIGESTAUTH_WRONG_HTTP_401_GET
+    r = get(url, auth=auth)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_GET_no_redirect (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 556, in test_GET_no_redirect
+    r = get(service('redirect', '3'), allow_redirects=False)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HEAD_no_redirect (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 564, in test_HEAD_no_redirect
+    r = head(service('redirect', '3'), allow_redirects=False)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 77, in head
+    return request('head', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HTTP_200_OK_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 86, in test_HTTP_200_OK_GET
+    r = get(httpbin('get'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HTTP_200_OK_GET_WITH_MIXED_PARAMS (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 113, in test_HTTP_200_OK_GET_WITH_MIXED_PARAMS
+    r = get(httpbin('get') + '?test=true', params={'q': 'test'}, headers=heads)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HTTP_200_OK_GET_WITH_PARAMS (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 105, in test_HTTP_200_OK_GET_WITH_PARAMS
+    r = get(httpbin('user-agent'), headers=heads)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HTTP_200_OK_HEAD (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 213, in test_HTTP_200_OK_HEAD
+    r = head(httpbin('get'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 77, in head
+    return request('head', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HTTP_200_OK_PUT (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 217, in test_HTTP_200_OK_PUT
+    r = put(httpbin('put'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 99, in put
+    return request('put', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HTTP_302_ALLOW_REDIRECT_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 95, in test_HTTP_302_ALLOW_REDIRECT_GET
+    r = get(httpbin('redirect', '1'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_HTTP_302_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 99, in test_HTTP_302_GET
+    r = get(httpbin('redirect', '1'), allow_redirects=False)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_POSTBIN_GET_POST_FILES (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 294, in test_POSTBIN_GET_POST_FILES
+    post1 = post(url).raise_for_status()
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_POSTBIN_GET_POST_FILES_STRINGS (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 338, in test_POSTBIN_GET_POST_FILES_STRINGS
+    post1 = post(url, files={'fname.txt': 'fdata'})
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_POSTBIN_GET_POST_FILES_WITH_HEADERS (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 328, in test_POSTBIN_GET_POST_FILES_WITH_HEADERS
+    headers={'User-Agent': 'requests-tests'})
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_POSTBIN_GET_POST_FILES_WITH_PARAMS (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 314, in test_POSTBIN_GET_POST_FILES_WITH_PARAMS
+    data={'some': 'data'})
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_cached_response (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 789, in test_cached_response
+    r1 = get(httpbin('get'), prefetch=False)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_can_have_none_in_header_values (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 878, in test_can_have_none_in_header_values
+    requests.get(httpbin('headers'), headers={'Foo': None})
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test that we send 'Connection: close' when keep_alive is disabled.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 906, in test_connection_keepalive_and_close
+    r1 = requests.get(httpbin('get'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_danger_mode_redirects (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 885, in test_danger_mode_redirects
+    s.get(httpbin('redirect', '4'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 249, in get
+    return self.request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_decompress_gzip (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 401, in test_decompress_gzip
+    r = get(httpbin('gzip'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_default_status_raising (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 394, in test_default_status_raising
+    self.assertRaises(HTTPError, get, *args, **kwargs)
+  File "/usr/lib/python3.2/unittest/case.py", line 557, in assertRaises
+    callableObj(*args, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_empty_response (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 889, in test_empty_response
+    r = requests.get(httpbin('status', '404'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_httpauth_recursion (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 431, in test_httpauth_recursion
+    r = get(service('basic-auth', 'user', 'pass'), auth=http_auth)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_invalid_content (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 777, in test_invalid_content
+    r = get(hah, allow_redirects=False)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_iter_lines (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 804, in test_iter_lines
+    r = get(httpbin('stream', str(i)), prefetch=False)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Test the max_redirects config variable, normally and under safe_mode.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 896, in test_max_redirects
+    self.assertRaises(requests.exceptions.TooManyRedirects, unsafe_callable)
+  File "/usr/lib/python3.2/unittest/case.py", line 557, in assertRaises
+    callableObj(*args, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 895, in unsafe_callable
+    requests.get(httpbin('redirect', '3'), config=dict(max_redirects=2))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_multiple_hooks (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 655, in test_multiple_hooks
+    'args': [add_foo_header, add_bar_header]
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_nonurlencoded_post_data (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 453, in test_nonurlencoded_post_data
+    r = post(service('post'), data='fooaowpeuf')
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_nonurlencoded_postdata (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 501, in test_nonurlencoded_postdata
+    r = post(service('post'), data="foobar")
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_nonzero_evaluation (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 367, in test_nonzero_evaluation
+    r = get(service('status', '500'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_redirect_history (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 572, in test_redirect_history
+    r = get(service('redirect', '3'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_relative_redirect_history (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 580, in test_relative_redirect_history
+    r = get(service('relative-redirect', '3'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_request_ok_set (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 377, in test_request_ok_set
+    r = get(service('status', '404'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_response_has_unicode_url (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 410, in test_response_has_unicode_url
+    response = get(url)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_response_sent (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 90, in test_response_sent
+    r = get(httpbin('get'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_safe_mode (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 835, in test_safe_mode
+    r = get('http://_/', session=safe)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 30, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_session_HTTP_200_OK_GET (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 587, in test_session_HTTP_200_OK_GET
+    r = get(httpbin('get'), session=s)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_session_cookies_with_return_response_false (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 734, in test_session_cookies_with_return_response_false
+    rq.send(prefetch=True)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_session_persistent_cookies (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 668, in test_session_persistent_cookies
+    r = get(httpbin('cookies'), cookies=_c, session=s)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_session_persistent_headers (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 598, in test_session_persistent_headers
+    r1 = get(httpbin('user-agent'), session=s)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_session_persistent_params (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 712, in test_session_persistent_params
+    r1 = get(httpbin('get'), session=s)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_single_hook (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 624, in test_single_hook
+    response = get(url=url, hooks={'args': add_foo_header})
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_status_raising (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 383, in test_status_raising
+    r = get(httpbin('status', '404'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_unicode_get (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 420, in test_unicode_get
+    get(url, params={'foo': 'fÃ¸Ã¸'})
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_unpickled_session_requests (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 758, in test_unpickled_session_requests
+    r = get(httpbin('cookies', 'set', 'k', 'v'), allow_redirects=True, session=s)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_upload_binary_data (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 857, in test_upload_binary_data
+    requests.get(httpbin('post'), auth=('a', 'b'), data='\xff')
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_urlencoded_get_query_multivalued_param (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 515, in test_urlencoded_get_query_multivalued_param
+    r = get(service('get'), params=dict(test=['foo', 'baz']))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_urlencoded_post_data (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 438, in test_urlencoded_post_data
+    r = post(service('post'), data=dict(test='fooaowpeuf'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_urlencoded_post_query_and_data (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 487, in test_urlencoded_post_query_and_data
+    data=dict(test2="foobar"))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_urlencoded_post_query_multivalued_and_data (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 539, in test_urlencoded_post_query_multivalued_and_data
+    data=dict(test2="foobar", test3=['foo', 'baz']))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_urlencoded_post_querystring (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 470, in test_urlencoded_post_querystring
+    r = post(service('post'), params=dict(test='fooaowpeuf'))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_urlencoded_post_querystring_multivalued (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 523, in test_urlencoded_post_querystring_multivalued
+    r = post(service('post'), params=dict(test=['foo', 'baz']))
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 88, in post
+    return request('post', url, data=data, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_useful_exception_for_invalid_port (test_requests.RequestsTestSuite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 864, in test_useful_exception_for_invalid_port
+    'http://google.com:banana')
+  File "/usr/lib/python3.2/unittest/case.py", line 557, in assertRaises
+    callableObj(*args, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Issue XX
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests.py", line 201, in test_user_agent_transfers
+    r = get(httpbin('user-agent'), headers=heads)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: perform_smoke_test (test_requests_https.HTTPSTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests_https.py", line 18, in perform_smoke_test
+    result = requests.get(self.smoke_url, verify=verify)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Smoke test without verification.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests_https.py", line 23, in test_smoke
+    self.perform_smoke_test(verify=False)
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests_https.py", line 18, in perform_smoke_test
+    result = requests.get(self.smoke_url, verify=verify)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+======================================================================
+ERROR: Smoke test with SSL verification.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests_https.py", line 27, in test_smoke_verified
+    self.perform_smoke_test(verify=True)
+  File "/home/vagrant/builds/kennethreitz/requests/tests/test_requests_https.py", line 18, in perform_smoke_test
+    result = requests.get(self.smoke_url, verify=verify)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/safe_mode.py", line 37, in wrapped
+    return function(method, url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/api.py", line 43, in request
+    return s.request(method=method, url=url, **kwargs)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/sessions.py", line 235, in request
+    r.send(prefetch=prefetch)
+  File "/home/vagrant/builds/kennethreitz/requests/requests/models.py", line 525, in send
+    no_proxy = filter(string.strip, self.proxies.get('no', '').split(','))
+AttributeError: 'module' object has no attribute 'strip'
+
+----------------------------------------------------------------------
+Ran 79 tests in 0.065s
+
+FAILED (errors=74)
+make: *** [citests] Error 1
+
+
+Done. Build script exited with: 1
