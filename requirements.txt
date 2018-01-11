@@ -1,4 +1,4 @@
 mongoengine
 pymongo
 requests
-git+https://github.com/smartshark/pycoSHARK.git@1.0.16#egg=pycoshark-1.0.16
+git+https://github.com/smartshark/pycoSHARK.git@1.0.17#egg=pycoshark-1.0.17
