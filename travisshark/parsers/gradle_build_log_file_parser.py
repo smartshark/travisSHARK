@@ -2,17 +2,14 @@ from travisshark.parsers.build_log_file_parser import BuildLogFileParser
 
 
 class GradleBuildLogFileParser(BuildLogFileParser):
-    def __init__(self, log, debug_level, ignore_errors):
-        super().__init__(log, debug_level, ignore_errors)
+    def __init__(self, log, debug_level, ignore_errors, job):
+        super().__init__(log, debug_level, ignore_errors, job)
 
-    def parse(self, job):
+    def parse(self):
         pass
 
-    def detect(self, job_config):
-        if 'language' in job_config and job_config['language'].lower() != "java":
-            return False
-
-        if self.check_if_list_is_in_job_config(job_config, ['gradle', 'gradlew']):
+    def detect(self):
+        if any(identifier in self.log for identifier in ['gralde', 'gradlew']):
             self.logger.debug("Found Gradle build file...")
             return True
         return False

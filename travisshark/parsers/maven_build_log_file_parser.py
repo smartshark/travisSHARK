@@ -5,8 +5,8 @@ from travisshark.parsers.build_log_file_parser import BuildLogFileParser
 # https://github.com/TestRoots/travistorrent-tools/blob/master/lib/languages/java_maven_log_file_analyzer.rb
 class MavenBuildLogFileParser(BuildLogFileParser):
 
-    def __init__(self, log, debug_level, ignore_errors):
-        super().__init__(log, debug_level, ignore_errors)
+    def __init__(self, log, debug_level, ignore_errors, job):
+        super().__init__(log, debug_level, ignore_errors, job)
         self.LETTERS = "abcdefghijklmnopqrstuvwxyz"
         self.reactor_lines = []
         self._test_lines = []
@@ -17,28 +17,22 @@ class MavenBuildLogFileParser(BuildLogFileParser):
         self.test_framework = None
         self.tests_run_completely = False
 
-    def parse(self, job):
+    def parse(self):
         self._extract_tests()
         self._analyze_tests()
-        job.failed_tests = list(self.tests_failed)
-        job.errored_tests = list(self.tests_errored)
-        job.test_framework = self.test_framework
-        job.tests_run = self.tests_run_completely
+        self.job.metrics['failed_tests'] = self.tests_failed
+        self.job.metrics['errored_tests'] = self.tests_errored
+        self.job.metrics['test_framework'] = self.test_framework
+        self.job.metrics['tests_run'] = self.tests_run_completely
 
-    def detect(self, job_config):
-        if 'language' in job_config and job_config['language'].lower() != "java":
-            return False
-
-        if self.check_if_list_is_in_job_config(job_config, ['mvn', 'maven', 'maven_opts']):
-            self.logger.debug("Found Maven build file...")
-            return True
-
+    def detect(self):
         # It seems that the default travis configuration is executing these commands
         # See: https://s3.amazonaws.com/archive.travis-ci.org/jobs/124988080/log.txt
         # And the travis yml for this build:
         # https://github.com/alibaba/druid/blob/a30c83b73a2307d354a1a32e4a1991969074c634/.travis.yml
-        if "mvn install" in self.log or "mvn test" in self.log or "maven-surefire-plugin" in self.log or \
-                        "mvn -Dtest" in self.log:
+        if any(identifier in self.log for identifier in ['mvn install', 'mvn test', 'mvn -Dtest',
+                                                         'maven-surefire-plugin']):
+            self.logger.debug("Found Maven build file...")
             return True
         return False
 

@@ -43,7 +43,8 @@ class Config(object):
         self._validate_config()
 
     def get_slug(self):
-        return '/'.join(self.vcs_system_url.split('/')[-2:])
+        slug = '%2F'.join(self.vcs_system_url.split('/')[-2:])
+        return slug
 
 
     def _validate_config(self):

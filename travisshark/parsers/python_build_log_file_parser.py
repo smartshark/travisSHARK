@@ -7,8 +7,8 @@ logger = logging.getLogger("parser")
 
 
 class PythonBuildLogFileParser(BuildLogFileParser):
-    def __init__(self, log, debug_level, ignore_errors):
-        super().__init__(log, debug_level, ignore_errors)
+    def __init__(self, log, debug_level, ignore_errors, job):
+        super().__init__(log, debug_level, ignore_errors, job)
         self.errored_tests = set([])
         self.failed_tests = set([])
         self.test_framework = None
@@ -41,13 +41,10 @@ class PythonBuildLogFileParser(BuildLogFileParser):
         self._pytest_sugar_errored_tests = re.compile("\s*(\d*) error\S*")
         self._pytest_sugar_test_name = re.compile("\s*- (\S*):\d*\s(\S*)")
 
-    def detect(self, job_config):
-        if 'language' in job_config and job_config['language'].lower() != "python":
-            return False
-
-        if self.check_if_list_is_in_job_config(job_config, ['python', 'pytest', 'nose', 'nosetests', 'py.test', 'pip']) or \
-                job_config['language'] == "python":
-            self.logger.debug("Found Python build...")
+    def detect(self):
+        if any(identifier in self.log for identifier in ['python', 'pytest', 'nose', 'nosetests', 'py.test',
+                                                         'pip install']):
+            self.logger.debug("Found Python build file...")
             return True
         return False
 
@@ -58,7 +55,7 @@ class PythonBuildLogFileParser(BuildLogFileParser):
                 return int(matches.group(1))
         return 0
 
-    def parse(self, job):
+    def parse(self):
         summary_started = False
         next_lines_must_be_parsed = False
         _parsed_num_errored_tests = 0
@@ -289,7 +286,7 @@ class PythonBuildLogFileParser(BuildLogFileParser):
             else:
                 self.logger.error(msg)
 
-        job.failed_tests = list(self.failed_tests)
-        job.errored_tests = list(self.errored_tests)
-        job.test_framework = self.test_framework
-        job.tests_run = self.tests_run_completely
+        self.job.metrics['failed_tests'] = self.failed_tests
+        self.job.metrics['errored_tests'] = self.errored_tests
+        self.job.metrics['test_framework'] = self.test_framework
+        self.job.metrics['tests_run'] = self.tests_run_completely
