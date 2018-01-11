@@ -50,8 +50,8 @@ class TravisClient(object):
             if authorization:
                 headers['Authorization'] = 'token %s' % self.travis_token
 
-            while (dt.datetime.now()-self.last_request).total_seconds() <= 3:
-                time.sleep(2)
+            while (dt.datetime.now()-self.last_request).total_seconds() <= 1:
+                time.sleep(1)
 
             # Make the request
             resp = requests.get(url, headers=headers, proxies=self.proxy)

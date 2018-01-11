@@ -40,14 +40,14 @@ class TravisSHARK(object):
             for build in resp['builds']:
 
                 # If we already have this build, we continue
-                if not self.cfg.rerun and \
-                        TravisBuild.objects(vcs_system_id=self.vcs_system_id,number=build['number']).first() is not None:
-                    logger.info("Travis build with number %s and vcs_system_id %s already in database. Skipping..." % (
-                        build['number'], self.vcs_system_id
-                    ))
-                    continue
+                m_build = TravisBuild.objects(vcs_system_id=self.vcs_system_id, number=build['number']).first()
+                if m_build is None:
+                    m_build = self._create_mongo_build(build)
+                else:
+                    if not self.cfg.rerun:
+                        logger.info("Travis build %s already exists in database. Skipping..." % repr(m_build))
+                        continue
 
-                m_build = self._create_mongo_build(build)
                 logger.info("Build with number %d and id %s got %d job(s). Parsing..." % (m_build.number, m_build.tr_id,
                                                                                           len(m_build.jobs)))
                 for job in m_build.jobs:
