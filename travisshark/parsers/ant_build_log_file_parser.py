@@ -56,7 +56,10 @@ class AntBuildLogFileParser(BuildLogFileParser):
                 self._test_lines.append(line)
 
     def detect(self):
-        if any(identifier in self.log for identifier in ['[javac]', 'ant dist', 'ant test', 'ant test.dist']):
+        if 'language' in self.job.config and self.job.config['language'].lower() != "java":
+            return False
+
+        if self.check_if_list_is_in_job_config(self.job.config, ['ant']):
             self.logger.debug("Found Ant build file...")
             return True
         return False

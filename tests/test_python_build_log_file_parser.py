@@ -9,15 +9,6 @@ class PythonBuildLogFileParserTest(BaseTest):
     def setUp(self):
         self.job = JobMock()
 
-    def test_detect(self):
-        for log_name in self.get_all_log_names():
-            parser = PythonBuildLogFileParser(self.get_log(log_name), 'DEBUG', False, self.job)
-
-            if log_name.startswith('python'):
-                self.assertTrue(parser.detect(), 'Log %s should not be an python log file!' % log_name)
-            else:
-                self.assertFalse(parser.detect(), 'Log %s should be an python log file!' % log_name)
-
     def test_errored_test_pytest_1(self):
         parser = PythonBuildLogFileParser(self.get_log('python_errored_tests_pytest.txt'), 'DEBUG', False, self.job)
         parser.parse()

@@ -102,7 +102,16 @@ class TravisSHARK(object):
             for stage in job['stage']:
                 job.stages.append(stage['name'])
 
+        m_job.config = self._make_dict_keys_compatible(job['config'])
         return m_job
+
+    def _make_dict_keys_compatible(self, d):
+        new = {}
+        for k, v in d.items():
+            if isinstance(v, dict):
+                v = self._make_dict_keys_compatible(v)
+            new[k.replace('.', '').replace('$', '')] = v
+        return new
 
     def _create_mongo_build(self, build):
         m_build = TravisBuild()

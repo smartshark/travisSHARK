@@ -42,9 +42,12 @@ class PythonBuildLogFileParser(BuildLogFileParser):
         self._pytest_sugar_test_name = re.compile("\s*- (\S*):\d*\s(\S*)")
 
     def detect(self):
-        if any(identifier in self.log for identifier in ['python', 'pytest', 'nose', 'nosetests', 'py.test',
-                                                         'pip install']):
-            self.logger.debug("Found Python build file...")
+        if 'language' in self.job.config and self.job.config['language'].lower() != "python":
+            return False
+
+        if self.check_if_list_is_in_job_config(self.job.config, ['python', 'pytest', 'nose', 'nosetests', 'py.test', 'pip']) \
+                or ('language' in self.job.config and self.job.config['language'] == "python"):
+            self.logger.debug("Found Python build...")
             return True
         return False
 

@@ -26,13 +26,19 @@ class MavenBuildLogFileParser(BuildLogFileParser):
         self.job.metrics['tests_run'] = self.tests_run_completely
 
     def detect(self):
+        if 'language' in self.job.config and self.job.config['language'].lower() != "java":
+            return False
+
+        if self.check_if_list_is_in_job_config(self.job.config, ['mvn', 'maven', 'maven_opts']):
+            self.logger.debug("Found Maven build file...")
+            return True
+
         # It seems that the default travis configuration is executing these commands
         # See: https://s3.amazonaws.com/archive.travis-ci.org/jobs/124988080/log.txt
         # And the travis yml for this build:
         # https://github.com/alibaba/druid/blob/a30c83b73a2307d354a1a32e4a1991969074c634/.travis.yml
-        if any(identifier in self.log for identifier in ['mvn install', 'mvn test', 'mvn -Dtest',
-                                                         'maven-surefire-plugin']):
-            self.logger.debug("Found Maven build file...")
+        if "mvn install" in self.log or "mvn test" in self.log or "maven-surefire-plugin" in self.log or\
+                "mvn -Dtest" in self.log:
             return True
         return False
 

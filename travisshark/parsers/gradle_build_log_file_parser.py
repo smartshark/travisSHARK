@@ -9,7 +9,12 @@ class GradleBuildLogFileParser(BuildLogFileParser):
         pass
 
     def detect(self):
-        if any(identifier in self.log for identifier in ['gralde', 'gradlew']):
+        if 'language' in self.job.config and \
+                (self.job.config['language'].lower() != "java" and self.job.config['language'].lower() != "android"):
+            return False
+
+        if self.check_if_list_is_in_job_config(self.job.config, ['gradle', 'gradlew']) or \
+                ('language' in self.job.config and self.job.config['language'].lower() == "android"):
             self.logger.debug("Found Gradle build file...")
             return True
         return False

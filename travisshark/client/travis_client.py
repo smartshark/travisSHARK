@@ -17,7 +17,7 @@ class TravisClient(object):
         logger.setLevel(debug_level)
 
     def get_initial_builds_for_project_sorted_by_number(self, slug):
-        req_url = "%s/repo/%s/builds?sort_by=started_at&limit=100&include=build.jobs" % (self.base_url, slug)
+        req_url = "%s/repo/%s/builds?sort_by=started_at&limit=100&include=build.jobs,job.config" % (self.base_url, slug)
         return self._send_request(req_url)
 
     def get_next_builds(self, next):

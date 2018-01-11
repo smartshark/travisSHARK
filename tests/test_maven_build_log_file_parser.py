@@ -8,15 +8,6 @@ class MavenBuildLogFileParserTest(BaseTest):
     def setUp(self):
         self.job = JobMock()
 
-    def test_detect(self):
-        for log_name in self.get_all_log_names():
-            parser = MavenBuildLogFileParser(self.get_log(log_name), 'DEBUG', False, self.job)
-
-            if log_name.startswith('maven'):
-                self.assertTrue(parser.detect(), 'Log %s should not be an maven log file!' % log_name)
-            else:
-                self.assertFalse(parser.detect(), 'Log %s should be an maven log file!' % log_name)
-
     def test_failed_tests_4(self):
         parser = MavenBuildLogFileParser(self.get_log('maven_failed_tests_junit_4.txt'), 'DEBUG', False, self.job)
         parser.parse()
