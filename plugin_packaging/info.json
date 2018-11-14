@@ -35,122 +35,129 @@
             "type": "execute",
             "description": "path to the root folder of the plugin"
         },
+		{
+            "name": "project_name",
+            "required": true,
+            "position": 2,
+            "type": "execute",
+            "description": "name of the project"
+        },
         {
             "name": "db_user",
             "required": false,
-            "position": 2,
+            "position": 3,
             "type": "execute",
             "description": "database user for the mongodb"
         },
         {
             "name": "db_password",
             "required": false,
-            "position": 3,
+            "position": 4,
             "type": "execute",
             "description": "password for the user of the mongodb"
         },
         {
             "name": "db_database",
             "required": true,
-            "position": 4,
+            "position": 5,
             "type": "execute",
             "description": "name of the database in the mongodb"
         },
         {
             "name": "db_hostname",
             "required": true,
-            "position": 5,
+            "position": 6,
             "type": "execute",
             "description": "hostname of the server, where the mongodb runs on"
         },
         {
             "name": "db_port",
             "required": true,
-            "position": 6,
+            "position": 7,
             "type": "execute",
             "description": "port on which the mongodb is listening on"
         },
         {
             "name": "db_authentication",
             "required": false,
-            "position": 7,
+            "position": 8,
             "type": "execute",
             "description": "databse against which users are authenticated"
         },
         {
             "name": "ssl_enabled",
             "required": false,
-            "position": 8,
+            "position": 9,
             "type": "execute",
             "description": "needs to be set if database uses ssl connection"
         },
         {
-            "name": "url",
+            "name": "travis_url",
             "required": true,
-            "position": 9,
+            "position": 10,
             "type": "execute",
             "description": "url of the project"
         },
         {
             "name": "proxy_host",
             "required": false,
-            "position": 10,
+            "position": 11,
             "type": "execute",
             "description": "host to the proxy, if used"
         },
         {
             "name": "proxy_port",
             "required": false,
-            "position": 11,
+            "position": 12,
             "type": "execute",
             "description": "port of the proxy"
         },
         {
             "name": "proxy_password",
             "required": false,
-            "position": 12,
+            "position": 13,
             "type": "execute",
             "description": "password of the proxy"
         },
         {
             "name": "proxy_user",
             "required": false,
-            "position": 13,
+            "position": 14,
             "type": "execute",
             "description": "user of the proxy"
         },
         {
-            "name": "debug",
+            "name": "log_level",
             "required": false,
-            "position": 14,
+            "position": 15,
             "type": "execute",
             "description": "debug choices (INFO, DEBUG, WARNING, ERROR)"
         },
         {
             "name": "token",
             "required": false,
-            "position": 15,
+            "position": 16,
             "type": "execute",
             "description": "token to use for api requests"
         },
         {
             "name": "ignore_errors",
             "required": false,
-            "position": 16,
+            "position": 17,
             "type": "execute",
             "description": "switch on, if errors should be ignored"
         },
         {
             "name": "only_failed",
             "required": false,
-            "position": 17,
+            "position": 18,
             "type": "execute",
             "description": "switch on, if you only want to mine failed jobs"
         },
         {
             "name": "rerun",
             "required": false,
-            "position": 18,
+            "position": 19,
             "type": "execute",
             "description": "switch on, if you want to rerun on all builds"
         }
