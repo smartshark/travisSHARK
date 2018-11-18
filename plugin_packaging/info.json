@@ -1,7 +1,7 @@
 {
     "name": "travisSHARK",
     "author": "Fabian Trautsch",
-    "version": "1.00",
+    "version": "2.0.1",
     "plugin_type": "other",
     "linux_libraries": [
     ],
@@ -17,7 +17,7 @@
         {
             "name": "vcsSHARK",
             "operator": ">=",
-            "version": "0.10"
+            "version": "0.1.0"
         }
     ],
     "arguments": [
