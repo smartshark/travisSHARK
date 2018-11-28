@@ -10,7 +10,7 @@ if not sys.version_info[0] == 3:
 
 setup(
     name='travisSHARK',
-    version='1.0.0',
+    version='2.0.1',
     description='Collects data from travis-ci and stores it into a mongo database.',
     install_requires=['mongoengine', 'pymongo', 'requests', 'pycoshark>=1.0.17'],
     dependency_links=['git+https://github.com/smartshark/pycoSHARK.git@1.0.17#egg=pycoshark-1.0.17'],
