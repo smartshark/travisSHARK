@@ -18,7 +18,7 @@ class Config(object):
 
         :param args: argumentparser of the class :class:`argparse.ArgumentParser`
         """
-        self.vcs_system_url = args.url.rstrip('/')
+        self.vcs_system_url = args.repository_url.rstrip('/')
         self.token = args.token
         self.host = args.db_hostname
         self.port = args.db_port

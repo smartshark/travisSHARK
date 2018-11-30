@@ -6,7 +6,7 @@ from travisshark.travisshark import TravisSHARK
 
 def start():
     parser = get_base_argparser('Collects information from the Travis CI.', '1.0.0')
-    parser.add_argument('-u', '--url', help='URL of the project (e.g., GIT Url).', required=True)
+    parser.add_argument('-u', '--repository-url', help='URL of the project (e.g., GIT Url).', required=True)
     parser.add_argument('-PH', '--proxy-host', help='Proxy hostname or IP address.', default=None)
     parser.add_argument('-PP', '--proxy-port', help='Port of the proxy to use.', default=None)
     parser.add_argument('-Pp', '--proxy-password', help='Password to use the proxy (HTTP Basic Auth)', default=None)
