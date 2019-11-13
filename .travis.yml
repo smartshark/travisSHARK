@@ -1,43 +1,33 @@
-# check if tests succeed
 sudo: required
 language: python
 python:
-  - "3.6"
-
+- '3.6'
 services:
-  - mongodb
-
+- mongodb
 before_install:
-  - printenv | grep -E '^TRAVIS_' > .env
-  - sudo apt-get install -y build-essential wget git
-  - sudo apt-get install -y python3-pip python3-cffi
-
-    # Get newest pip and setuptools version
-  - pip install -U pip setuptools
-  - pip install Sphinx
-  - pip install sphinx_rtd_theme
-
+- printenv | grep -E '^TRAVIS_' > .env
+- sudo apt-get install -y build-essential wget git
+- sudo apt-get install -y python3-pip python3-cffi
+- pip install -U pip setuptools
+- pip install Sphinx
+- pip install sphinx_rtd_theme
 install:
-  - python setup.py install
-
+- python setup.py install
 script:
-  - python setup.py test
-
+- python setup.py test
 after_success:
-  - cd plugin_packaging && ./build_plugin.sh && cd ..
-
+- cd plugin_packaging && ./build_plugin.sh && cd ..
 deploy:
   - provider: releases
-    api_key:
-      secure: "BehSl642eHTOIuF85G4a2Y8pagxvUQ82eSf1u6IIJogeqfiVRG3+0pLvx5Z06CGUEJCkTeJwI2M25Ap2w9S6RUF/SroImUtorG+DExFQOGc+D1u5ktEH4hXav+TUJlA8/gGfZwTny+j68U9B/lsVv021B67ra9sbL1RODwtX1nYj8BT1YECeZ8SM2XZX6ynZFYkQm7P01d2FcDlIMgqSdmCmZxpkFufhltkizxNlRSOw3+yjYfu6SelGsMiXRSC5eeRaqmlLz8Coik+SPq4R+3NjaCHBJtgfTF1QTU4ZuFz31+2BnejN8P/3w0wletK/5MnLVFyGwySAs2yFng7qF8byCBids49DxOfo7h+QM/sf8dmTmsDLdBB85MMQm3tgJh56xSyH5imBoTcWlvg8zINMPcoVvL1b9Rvggq2aebOccetWaLlVZJNxKICD4WmrViAegjueE5VdJCJrDbo0vvc5BGfde5Vt/oW3WYDfRz5UPy0MfZ55IP+2PF8nELAVRX2bzb8wono4Gipsaes+jRPmzju+u2r3eIhfIOkLqSXf709MDJ1JrKctvnSrEGNiKY1NCd/MH6xIjCyo2Hc/VjEDnFE3xUqbMZBvjcYZW4ciNA+LstYeoioslKyjSRJ/H7uGweqyGgUH+41tR+4eubbaBLvhWAR885nLIrQGq1A="
-    file: "plugin_packaging/travisSHARK_plugin.tar"
+    token: XHAJ+htD3AZJauKuyAGXS0LdvG7nNW2kfy564NMB4MZPuV0MxiDNQqQrA9yUXAc+Q5ATV92FJHRWglAuVONbUEy7+5v8+NSw+iSNeYFWIGjPpGen7y9tJ8ajC4aRgh39TvUOUxglRcX9ldTzRTHPDbP+OQYqYu2/3kZmBqQq2oDXfXmY2QmBC3TTftkK7S/lNL9KlixXHEou2WH+xsb0DXPfG/A4JKmBTup0AY8PfcJP7tBnZfx8bpzVcwqt08yCxB78devmbTvr1eMtGRsCUPwoEQOfuuIQ6wfeegu63DSE8tXdjWOzhdmrX2zyFExC4b+MXBaW4/YONIgejGvMwhlPlIuY9f702ZcdRTW0iCncOd2u5P7I2UwnjQee3wrQ1x5N88d0+84WRm3Zj4SxV+w9+mUctcj1m1eWEOqWTgl9EV49C1D7JGv8MR8MCIiz969ey+Sd92RiQY63dXaFqBPDkv5fH+knefuRGEiYDBIpEvnjM9uo/teW+3Rd9G5lnXM4ORtzQHpCkI7Ux8d+AXD9tFH5A5aDUbG+CnPQZDXIjOZvflQ3oNxx8scpYoo9xQGeqL5EibYC0VI2BuuSZj846IHhCh2SJQZzO1Jp40nItEthU59ik6ddQ0Aivx4j0pIRZThinfExUcwyvvvgw01YhwhI/p6K9D1YvhgHLpA=
+    file: plugin_packaging/travisSHARK_plugin.tar
     skip_cleanup: true
     on:
       repo: smartshark/travisSHARK
       tags: true
   - provider: pages
-    github-token: $(GH_TOKEN}
-    local-dir: $TRAVIS_BUILD_DIR/docs/build
+    token: XHAJ+htD3AZJauKuyAGXS0LdvG7nNW2kfy564NMB4MZPuV0MxiDNQqQrA9yUXAc+Q5ATV92FJHRWglAuVONbUEy7+5v8+NSw+iSNeYFWIGjPpGen7y9tJ8ajC4aRgh39TvUOUxglRcX9ldTzRTHPDbP+OQYqYu2/3kZmBqQq2oDXfXmY2QmBC3TTftkK7S/lNL9KlixXHEou2WH+xsb0DXPfG/A4JKmBTup0AY8PfcJP7tBnZfx8bpzVcwqt08yCxB78devmbTvr1eMtGRsCUPwoEQOfuuIQ6wfeegu63DSE8tXdjWOzhdmrX2zyFExC4b+MXBaW4/YONIgejGvMwhlPlIuY9f702ZcdRTW0iCncOd2u5P7I2UwnjQee3wrQ1x5N88d0+84WRm3Zj4SxV+w9+mUctcj1m1eWEOqWTgl9EV49C1D7JGv8MR8MCIiz969ey+Sd92RiQY63dXaFqBPDkv5fH+knefuRGEiYDBIpEvnjM9uo/teW+3Rd9G5lnXM4ORtzQHpCkI7Ux8d+AXD9tFH5A5aDUbG+CnPQZDXIjOZvflQ3oNxx8scpYoo9xQGeqL5EibYC0VI2BuuSZj846IHhCh2SJQZzO1Jp40nItEthU59ik6ddQ0Aivx4j0pIRZThinfExUcwyvvvgw01YhwhI/p6K9D1YvhgHLpA=
+    local-dir: "$TRAVIS_BUILD_DIR/docs/build"
     skip_cleanup: true
     on:
       branch: master
