@@ -28,7 +28,8 @@ after_success:
 
 deploy:
   - provider: releases
-    api_key: ${GH_TOKEN}
+    api_key:
+      secure: "BehSl642eHTOIuF85G4a2Y8pagxvUQ82eSf1u6IIJogeqfiVRG3+0pLvx5Z06CGUEJCkTeJwI2M25Ap2w9S6RUF/SroImUtorG+DExFQOGc+D1u5ktEH4hXav+TUJlA8/gGfZwTny+j68U9B/lsVv021B67ra9sbL1RODwtX1nYj8BT1YECeZ8SM2XZX6ynZFYkQm7P01d2FcDlIMgqSdmCmZxpkFufhltkizxNlRSOw3+yjYfu6SelGsMiXRSC5eeRaqmlLz8Coik+SPq4R+3NjaCHBJtgfTF1QTU4ZuFz31+2BnejN8P/3w0wletK/5MnLVFyGwySAs2yFng7qF8byCBids49DxOfo7h+QM/sf8dmTmsDLdBB85MMQm3tgJh56xSyH5imBoTcWlvg8zINMPcoVvL1b9Rvggq2aebOccetWaLlVZJNxKICD4WmrViAegjueE5VdJCJrDbo0vvc5BGfde5Vt/oW3WYDfRz5UPy0MfZ55IP+2PF8nELAVRX2bzb8wono4Gipsaes+jRPmzju+u2r3eIhfIOkLqSXf709MDJ1JrKctvnSrEGNiKY1NCd/MH6xIjCyo2Hc/VjEDnFE3xUqbMZBvjcYZW4ciNA+LstYeoioslKyjSRJ/H7uGweqyGgUH+41tR+4eubbaBLvhWAR885nLIrQGq1A="
     file: "plugin_packaging/travisSHARK_plugin.tar"
     skip_cleanup: true
     on:
