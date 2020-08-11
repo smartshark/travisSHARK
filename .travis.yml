@@ -19,14 +19,14 @@ after_success:
 - cd plugin_packaging && ./build_plugin.sh && cd ..
 deploy:
   - provider: releases
-    api_key: ${TRAVIS_GH_TOKEN}
+    api_key: ${GH_TOKEN}
     file: plugin_packaging/travisSHARK_plugin.tar
     skip_cleanup: true
     on:
       repo: smartshark/travisSHARK
       tags: true
   - provider: pages
-    github-token: ${TRAVIS_GH_TOKEN}
+    github-token: ${GH_TOKEN}
     local-dir: "$TRAVIS_BUILD_DIR/docs/build"
     skip_cleanup: true
     on:
