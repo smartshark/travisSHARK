@@ -21,6 +21,7 @@ class BuildLogFileParser(object):
         self.logger.setLevel(debug_level)
         self.ignore_errors = ignore_errors
         self.job = job
+        self.job.job_log = log
 
     def get_correct_parsers(self):
         BuildLogFileParser._import_parser()
