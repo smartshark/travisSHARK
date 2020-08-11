@@ -25,9 +25,9 @@ deploy:
     on:
       repo: smartshark/travisSHARK
       tags: true
-  - provider: pages
-    github-token: ${GH_TOKEN}
-    local-dir: "$TRAVIS_BUILD_DIR/docs/build"
-    skip_cleanup: true
-    on:
-      branch: master
+  # - provider: pages
+  #   github-token: ${GH_TOKEN}
+  #   local-dir: "$TRAVIS_BUILD_DIR/docs/build"
+  #   skip_cleanup: true
+  #   on:
+  #     branch: master
