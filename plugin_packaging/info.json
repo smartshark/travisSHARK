@@ -1,7 +1,7 @@
 {
     "name": "travisSHARK",
     "author": "Fabian Trautsch",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "plugin_type": "other",
     "linux_libraries": [
     ],
@@ -92,7 +92,7 @@
             "description": "needs to be set if database uses ssl connection"
         },
         {
-            "name": "travis_url",
+            "name": "repository_url",
             "required": true,
             "position": 10,
             "type": "execute",

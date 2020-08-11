@@ -12,6 +12,7 @@ class Config(object):
     """
     Config object, that holds all configuration parameters
     """
+
     def __init__(self, args):
         """
         Initialization
@@ -19,6 +20,7 @@ class Config(object):
         :param args: argumentparser of the class :class:`argparse.ArgumentParser`
         """
         self.vcs_system_url = args.repository_url.rstrip('/')
+        self.project_name = args.project_name
         self.token = args.token
         self.host = args.db_hostname
         self.port = args.db_port
@@ -45,7 +47,6 @@ class Config(object):
     def get_slug(self):
         slug = '%2F'.join(self.vcs_system_url.split('/')[-2:])
         return slug
-
 
     def _validate_config(self):
         """
@@ -83,9 +84,9 @@ class Config(object):
         Gets the proxy string to do the requests
         """
         if self.proxy_password is None or self.proxy_username is None:
-            return 'http://'+self.proxy_host+':'+self.proxy_port
+            return 'http://' + self.proxy_host + ':' + self.proxy_port
         else:
-            return 'http://'+self.proxy_username+':'+self.proxy_password+'@'+self.proxy_host+':'+self.proxy_port
+            return 'http://' + self.proxy_username + ':' + self.proxy_password + '@' + self.proxy_host + ':' + self.proxy_port
 
     def get_proxy_dictionary(self):
         """
@@ -127,5 +128,3 @@ class Config(object):
                    self.proxy_username,
                    self.proxy_password
                )
-
-

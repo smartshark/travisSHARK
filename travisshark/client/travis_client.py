@@ -5,8 +5,10 @@ import time
 
 logger = logging.getLogger("main")
 
+
 class RequestException(Exception):
     pass
+
 
 class TravisClient(object):
     def __init__(self, travis_token, proxy, debug_level):
@@ -50,7 +52,7 @@ class TravisClient(object):
             if authorization:
                 headers['Authorization'] = 'token %s' % self.travis_token
 
-            while (dt.datetime.now()-self.last_request).total_seconds() <= 1:
+            while (dt.datetime.now() - self.last_request).total_seconds() <= 1:
                 time.sleep(1)
 
             # Make the request
@@ -68,4 +70,3 @@ class TravisClient(object):
                     return resp.text
 
         raise RequestException("Problem with getting data via url %s. Error: %s" % (url, resp.text))
-

@@ -151,4 +151,3 @@ class TravisSHARK(object):
             m_build.jobs.append(m_job)
 
         return m_build
-

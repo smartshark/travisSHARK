@@ -37,7 +37,7 @@ repository to a folder you want. In the following, we assume that you have clone
 Afterwards, the installation of **travisSHARK** can be done in two different ways:
 
 #### via Pip
-    sudo pip3 install https://github.com/smartshark/issueSHARK/zipball/master --process-dependency-links
+    sudo pip3 install https://github.com/smartshark/travisSHARK/zipball/master --process-dependency-links
     
 #### via setup.py
     sudo python3.5 ~/travisSHARK/setup.py install
@@ -104,7 +104,7 @@ explained in detail.
 
 --rerun: Switch on, if you want to rerun on all builds
 
---token <TOKEN>, -t <TOKEN>: Token to use for accessing Travis (see: https://docs.travis-ci.com/api/)
+--token <TOKEN>, -t <TOKEN>: Token to use for accessing Travis (see: https://developer.travis-ci.com/authentication)
 
 --proxy-host <PROXYHOST>, -PH <PROXYHOST>: Proxy hostname or IP address; Default: None
 
