@@ -16,6 +16,8 @@ def all_subclasses(cls):
 class BuildLogFileParser(object):
     def __init__(self, log, debug_level, ignore_errors, job):
         self.log = log
+        if not log:
+            self.log = ''
         self.logger = logging.getLogger("parser")
         self.debug_level = debug_level
         self.logger.setLevel(debug_level)
