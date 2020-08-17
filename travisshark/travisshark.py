@@ -43,6 +43,7 @@ class TravisSHARK(object):
                 m_build = TravisBuild.objects(vcs_system_id=self.vcs_system_id, number=build['number']).first()
                 if m_build is None:
                     m_build = self._create_mongo_build(build)
+                    m_build.save()
                 else:
                     if not self.cfg.rerun:
                         logger.info("Travis build %s already exists in database. Skipping..." % repr(m_build))
@@ -50,7 +51,8 @@ class TravisSHARK(object):
 
                 logger.info("Build with number %d and id %s got %d job(s). Parsing..." % (m_build.number, m_build.tr_id,
                                                                                           len(m_build.jobs)))
-                for job in m_build.jobs:
+                for job_json in build['jobs']:
+                    job = self._create_mongo_job(job_json, m_build.id)
                     # If we only want to mine failed jobs, we can use the only_failed switch
                     if self.cfg.only_failed and job.state != 'failed':
                         logger.info("Travis job %s did not fail, but %s. Skipping..." % (repr(job), job.state))
@@ -74,7 +76,7 @@ class TravisSHARK(object):
                     except RequestException:
                         logger.warning("Could not get log file for job with id %s. Travis error..." % job.tr_id)
 
-                m_build.save()
+                    job.save()
 
             # If we do not have builds left, we go out of this loop
             if resp['@pagination']['next'] is None:
@@ -86,8 +88,8 @@ class TravisSHARK(object):
         elapsed = timeit.default_timer() - start_time
         logger.info("Execution time: %0.5f s" % elapsed)
 
-    def _create_mongo_job(self, job):
-        m_job = TravisJob()
+    def _create_mongo_job(self, job, mongo_build_id):
+        m_job = TravisJob(build_id=mongo_build_id)
         m_job.tr_id = job['id']
         m_job.allow_failure = bool(job['allow_failure'])
         m_job.number = job['number']
@@ -147,8 +149,8 @@ class TravisSHARK(object):
         except DoesNotExist:
             logger.warning("Could not find commit with hash %s." % build['commit']['sha'])
 
-        for job in build['jobs']:
-            m_job = self._create_mongo_job(job)
-            m_build.jobs.append(m_job)
+        # for job in build['jobs']:
+        #     m_job = self._create_mongo_job(job)
+        #     m_build.jobs.append(m_job)
 
         return m_build
