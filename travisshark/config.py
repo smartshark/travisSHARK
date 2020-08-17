@@ -45,7 +45,7 @@ class Config(object):
         self._validate_config()
 
     def get_slug(self):
-        slug = '%2F'.join(self.vcs_system_url.split('/')[-2:])
+        slug = '%2F'.join(self.vcs_system_url.split('/')[-2:]).replace('.git', '')
         return slug
 
     def _validate_config(self):

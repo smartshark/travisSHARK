@@ -62,6 +62,7 @@ class TravisSHARK(object):
                         logger.info("Collecting data for Job with id %s..." % job.tr_id)
 
                         log = self.client.get_log_for_job_id(job.tr_id)
+                        job.job_log = log
 
                         for parser in BuildLogFileParser(log, self.cfg.get_debug_level(), self.cfg.ignore_errors, job) \
                                 .get_correct_parsers():

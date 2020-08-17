@@ -27,6 +27,14 @@ class TravisClient(object):
         return self._send_request(req_url)
 
     def get_log_for_job_id(self, job_id):
+        # amazonaws no longer works, we use the v3 api
+        req_url = '{}/v3/job/{}/log.txt'.format(self.base_url, job_id)
+        log = self._send_request(req_url, accept_header='', json_format=False)
+
+        if log != 'null':
+            return log
+
+    def _get_log_for_job_id(self, job_id):
         # Currently, travis is using the s3 service to store their job logs, we can directly retrieve it without
         # using the api. Especially, as sometimes the api is failing.
         req_url = "https://s3.amazonaws.com/archive.travis-ci.org/jobs/%s/log.txt" % job_id
@@ -35,7 +43,8 @@ class TravisClient(object):
         try:
             return self._send_request(req_url, accept_header='', json_format=False, authorization=False)
         except RequestException:
-            req_url = "%s/jobs/%s/log.txt" % (self.base_url, job_id)
+            # req_url = "%s/jobs/%s/log.txt" % (self.base_url, job_id)
+            req_url = '{}/v3/job/{}/log.txt'.format(self.base_url, job_id)
             return self._send_request(req_url, accept_header='', json_format=False)
 
     def _send_request(self, url, accept_header='application/vnd.travis-ci.2+json', json_format=True, authorization=True):
