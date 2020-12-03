@@ -1,6 +1,7 @@
 import logging
 import os
 import sys
+import re
 
 
 class JobConfigError(Exception):
@@ -15,9 +16,9 @@ def all_subclasses(cls):
 
 class BuildLogFileParser(object):
     def __init__(self, log, debug_level, ignore_errors, job):
-        self.log = log
-        if not log:
-            self.log = ''
+        self.log = ''
+        if log:
+            self.log = re.sub('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]', '', log)
         self.logger = logging.getLogger("parser")
         self.debug_level = debug_level
         self.logger.setLevel(debug_level)

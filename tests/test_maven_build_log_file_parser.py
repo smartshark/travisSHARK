@@ -199,5 +199,38 @@ class MavenBuildLogFileParserTest(BaseTest):
                             })
         self.assertSetEqual(self.job.metrics['errored_tests'], set([]))
 
+    def test_errored_tests_8(self):
+        # this just makes sure we do not have prolbems iwth ansi color codes
+        parser = MavenBuildLogFileParser(self.get_log('maven_errored_tests_junit_8.txt'), 'DEBUG', False, self.job)
+        parser.parse()
+        # self.assertSetEqual(self.job.metrics['failed_tests'],
+        #                     {
+        #                         'org.apache.ibatis.submitted.associationtest.AssociationTest.shouldGetAllCars',
+        #                         'org.apache.ibatis.submitted.column_prefix.ColumnPrefixNestedQueryTest.testComplexPerson',
+        #                         'org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest.testComplexPerson',
+        #                         'org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest.testSelectPetAndRoom',
+        #                         'org.apache.ibatis.submitted.column_prefix.ColumnPrefixAutoMappingTest.testComplexPerson',
+        #                         'org.apache.ibatis.submitted.column_prefix.ColumnPrefixAutoMappingTest.testSelectPetAndRoom',
+        #                         'org.apache.ibatis.submitted.not_null_column.NotNullColumnTest.testNotNullColumnWithoutChildrenFidWorkaround',
+        #                         'org.apache.ibatis.submitted.null_associations.FooMapperTest.testNullAssociation',
+        #                         'org.apache.ibatis.submitted.parent_childs.ParentChildTest.shouldGetAUser',
+        #                         'org.apache.ibatis.submitted.parent_reference_3level.BlogTest.testSelectBlogWithoutPostsColumnPrefix',
+        #                         'org.apache.ibatis.submitted.parent_reference_3level.BlogTest.testSelectBlogWithoutPosts',
+        #                         'org.apache.ibatis.type.ClobTypeHandlerTest.shouldGetResultNullFromResultSetByName',
+        #                         'org.apache.ibatis.type.ClobTypeHandlerTest.shouldGetResultNullFromCallableStatement',
+        #                         'org.apache.ibatis.type.ClobTypeHandlerTest.shouldGetResultNullFromResultSetByPosition',
+        #                         'org.apache.ibatis.type.NClobTypeHandlerTest.shouldGetResultNullFromResultSetByName',
+        #                         'org.apache.ibatis.type.NClobTypeHandlerTest.shouldGetResultNullFromCallableStatement',
+        #                         'org.apache.ibatis.type.NClobTypeHandlerTest.shouldGetResultNullFromResultSetByPosition',
+        #                         'org.apache.ibatis.submitted.emptycollection.DaoTest.testWithEmptyList',
+        #                     })
+        # self.assertSetEqual(self.job.metrics['errored_tests'], set([]))
+
+
+    def test_encoding_1(self):
+        # this just makes sure we do not have prolbems iwth ansi color codes
+        parser = MavenBuildLogFileParser(self.get_log('maven_encoding_1.txt'), 'DEBUG', False, self.job)
+        parser.parse()
+
 if __name__ == '__main__':
     unittest.main()

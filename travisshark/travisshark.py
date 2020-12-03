@@ -50,7 +50,7 @@ class TravisSHARK(object):
                         continue
 
                 logger.info("Build with number %d and id %s got %d job(s). Parsing..." % (m_build.number, m_build.tr_id,
-                                                                                          len(m_build.jobs)))
+                                                                                          len(build['jobs'])))
                 for job_json in build['jobs']:
                     job = self._create_mongo_job(job_json, m_build.id)
                     # If we only want to mine failed jobs, we can use the only_failed switch

@@ -54,7 +54,11 @@ class MavenBuildLogFileParser(BuildLogFileParser):
         for errored_line in self._errored_tests_lines:
             if '(' in errored_line and ')' in errored_line and "unnecessary Mockito stubbings" not in errored_line:
                 errored_line = errored_line.replace("[ERROR]", "").strip()
-                self.tests_errored.add(self._get_fqn_from_line(errored_line.split(' ')[0]))
+                try:
+                    self.tests_errored.add(self._get_fqn_from_line(errored_line.split(' ')[0]))
+                except IndexError:
+                    self.tests_errored.add(self._get_fqn_from_line(errored_line.split(' ')[2]))  # opennlp has other format
+                    # raise Exception('full line: [{}], errored line: [{}]'.format(errored_line, errored_line.split(' ')[0]))
             else:
                 self.logger.warning("Could not parse line %s. It should be a problem in the setup method"
                                     "or mockito stubs method. Both is not on method level of the test." % errored_line)
@@ -106,8 +110,6 @@ class MavenBuildLogFileParser(BuildLogFileParser):
                         self.tests_errored.add(self._get_fqn_from_line(line_part))
                 else:
                     self.logger.warning("Could not parse line %s..." % line_part)
-
-
 
             if not line.strip():
                 failed_tests_started = False
