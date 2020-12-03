@@ -107,7 +107,7 @@ class TravisSHARK(object):
 
         if job['stage'] is not None:
             for stage in job['stage']:
-                job.stages.append(stage['name'])
+                m_job.stages.append(stage['name'])
 
         m_job.config = self._make_dict_keys_compatible(job['config'])
         return m_job
@@ -142,7 +142,7 @@ class TravisSHARK(object):
 
         if build['stages'] is not None:
             for stage in build['stages']:
-                build.stages.append(stage['name'])
+                m_build.stages.append(stage['name'])
 
         # It can happen that we do not find the corresponding commit. This happens, e.g., if someone did a
         # git rebase to change the history after a build -> travis build was done, but the commit is no longer
