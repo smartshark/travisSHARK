@@ -66,8 +66,13 @@ class TravisSHARK(object):
                         log = self.client.get_log_for_job_id(job.tr_id)
                         job.job_log = log
 
-                        for parser in BuildLogFileParser(log, self.cfg.get_debug_level(), self.cfg.ignore_errors, job) \
-                                .get_correct_parsers():
+                        try:
+                            parsers = BuildLogFileParser(log, self.cfg.get_debug_level(), self.cfg.ignore_errors, job).get_correct_parsers()
+                        except:
+                            logger.warning("Could not detect log parser for job id %s", job.tr_id)
+                            parsers = []
+
+                        for parser in parsers:
                             logger.info("Using %s." % parser.__class__.__name__)
 
                             try:
