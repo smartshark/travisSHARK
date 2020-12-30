@@ -111,7 +111,7 @@ class TravisSHARK(object):
             m_job.finished_at = datetime.datetime.strptime(job['finished_at'], '%Y-%m-%dT%H:%M:%SZ')
 
         if job['stage'] is not None:
-            m_job.stages.append(job['stage'])
+            m_job.stages.append(str(job['stage']))
 
         m_job.config = self._make_dict_keys_compatible(job['config'])
         return m_job
