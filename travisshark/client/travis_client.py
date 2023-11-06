@@ -13,7 +13,7 @@ class RequestException(Exception):
 class TravisClient(object):
     def __init__(self, travis_token, proxy, debug_level):
         self.travis_token = travis_token
-        self.base_url = "https://api.travis-ci.org"
+        self.base_url = "https://api.travis-ci.com"
         self.proxy = proxy
         self.last_request = dt.datetime.now()
         logger.setLevel(debug_level)
@@ -28,7 +28,7 @@ class TravisClient(object):
 
     def get_log_for_job_id(self, job_id):
         # amazonaws no longer works, we use the v3 api
-        req_url = '{}/v3/job/{}/log.txt'.format(self.base_url, job_id)
+        req_url = '{}/job/{}/log.txt'.format(self.base_url, job_id)
         log = self._send_request(req_url, accept_header='', json_format=False)
 
         if log != 'null':
@@ -51,7 +51,6 @@ class TravisClient(object):
         tries = 1
         while tries <= 2:
             logger.debug("Sending request to url: %s" % url)
-
             # If tokens are used, set the header, if not use basic authentication
             headers = {
                 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0',
@@ -69,8 +68,8 @@ class TravisClient(object):
             self.last_request = dt.datetime.now()
 
             if resp.status_code != 200:
-                logger.error("Problem with getting data via url %s. Error: %s" % (url, resp.text))
-                tries = tries + 1
+                logger.error("Problem with getting data via url %s. Error: %s" % (url, resp.status_code))
+                tries += 1
             else:
                 if json_format:
                     logger.debug('Got response: %s' % resp.json())
