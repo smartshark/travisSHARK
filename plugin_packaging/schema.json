@@ -17,16 +17,15 @@
             {
                "type":"ObjectIdType",
                "logical_type":"RID",
-               "reference_to": "vcs_system",
-               "field_name":"vcs_system_id",
-               "desc": "ObjectID of the vcs_system to which this build belongs"
+               "reference_to": "project",
+               "field_name":"project",
+               "desc": "ObjectID of the project to which this build belongs"
             },
             {
-               "type":"ObjectIdType",
-               "logical_type":"RID",
-               "reference_to": "commit",
+               "type":"StringType",
+               "logical_type":"name",
                "field_name":"commit_id",
-               "desc": "ObjectID of the commit to which this build belongs"
+               "desc": "String sha of the commit to which this build belongs"
             },
             {
                "type":"IntegerType",

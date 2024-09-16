@@ -19,7 +19,7 @@ class Config(object):
 
         :param args: argumentparser of the class :class:`argparse.ArgumentParser`
         """
-        self.vcs_system_url = args.repository_url.rstrip('/')
+        self.repository_url = args.repository_url.rstrip('/')
         self.project_name = args.project_name
         self.token = args.token
         self.host = args.db_hostname
@@ -45,7 +45,7 @@ class Config(object):
         self._validate_config()
 
     def get_slug(self):
-        slug = '%2F'.join(self.vcs_system_url.split('/')[-2:]).replace('.git', '')
+        slug = '%2F'.join(self.repository_url.split('/')[-2:]).replace('.git', '')
         return slug
 
     def _validate_config(self):

@@ -12,7 +12,7 @@ setup(
     name='travisSHARK',
     version='2.0.7',
     description='Collects data from travis-ci and stores it into a mongo database.',
-    install_requires=['mongoengine', 'pymongo', 'requests', 'pycoshark>=1.3.1'],
+    install_requires=['mongoengine', 'pymongo', 'requests', 'pycoshark>=1.3.1', 'deepdiff'],
     author='ftrautsch',
     author_email='fabian.trautsch@uni-goettingen.de',
     url='https://github.com/smartshark/travisSHARK',
